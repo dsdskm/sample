@@ -7,5 +7,5 @@ fun sumReduce(vararg nums: Int) =
 
 @JvmOverloads
 fun main() {
-println()
+    println()
 }
