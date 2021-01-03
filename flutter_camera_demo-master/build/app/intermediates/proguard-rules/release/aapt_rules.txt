@@ -1,0 +1,6 @@
+# Referenced at /Users/kkh/workspace/sample/flutter_camera_demo-master/build/app/intermediates/manifests/full/release/AndroidManifest.xml:26
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at /Users/kkh/workspace/sample/flutter_camera_demo-master/build/app/intermediates/manifests/full/release/AndroidManifest.xml:31
+-keep class com.aeologic.fluttercameraapp.MainActivity { <init>(); }
+# Referenced at /Users/kkh/workspace/sample/flutter_camera_demo-master/build/app/intermediates/manifests/full/release/AndroidManifest.xml:26
+-keep class io.flutter.app.FlutterApplication { <init>(); }

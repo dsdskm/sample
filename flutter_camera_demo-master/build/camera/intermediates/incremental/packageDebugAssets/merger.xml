@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/kkh/.pub-cache/git/plugins-f934e9975f4434446198434982524669fd40f36b/packages/camera/android/src/main/assets"/><source path="/Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/kkh/.pub-cache/git/plugins-f934e9975f4434446198434982524669fd40f36b/packages/camera/android/src/debug/assets"/></dataSet></merger>

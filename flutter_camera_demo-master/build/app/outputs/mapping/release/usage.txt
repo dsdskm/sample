@@ -1,0 +1,2695 @@
+android.support.annotation.AnimRes
+android.support.annotation.AnimatorRes
+android.support.annotation.AnyRes
+android.support.annotation.AnyThread
+android.support.annotation.ArrayRes
+android.support.annotation.AttrRes
+android.support.annotation.BinderThread
+android.support.annotation.BoolRes
+android.support.annotation.CallSuper
+android.support.annotation.CheckResult
+android.support.annotation.ColorInt
+android.support.annotation.ColorLong
+android.support.annotation.ColorRes
+android.support.annotation.DimenRes
+android.support.annotation.Dimension
+android.support.annotation.DrawableRes
+android.support.annotation.FloatRange
+android.support.annotation.FontRes
+android.support.annotation.FractionRes
+android.support.annotation.GuardedBy
+android.support.annotation.HalfFloat
+android.support.annotation.IdRes
+android.support.annotation.IntDef
+android.support.annotation.IntRange
+android.support.annotation.IntegerRes
+android.support.annotation.InterpolatorRes
+android.support.annotation.LayoutRes
+android.support.annotation.LongDef
+android.support.annotation.MainThread
+android.support.annotation.MenuRes
+android.support.annotation.NavigationRes
+android.support.annotation.NonNull
+android.support.annotation.Nullable
+android.support.annotation.PluralsRes
+android.support.annotation.Px
+android.support.annotation.RawRes
+android.support.annotation.RequiresApi
+android.support.annotation.RequiresPermission
+android.support.annotation.RequiresPermission$Read
+android.support.annotation.RequiresPermission$Write
+android.support.annotation.RestrictTo
+android.support.annotation.RestrictTo$Scope
+android.support.annotation.Size
+android.support.annotation.StringDef
+android.support.annotation.StringRes
+android.support.annotation.StyleRes
+android.support.annotation.StyleableRes
+android.support.annotation.TransitionRes
+android.support.annotation.UiThread
+android.support.annotation.VisibleForTesting
+android.support.annotation.WorkerThread
+android.support.annotation.XmlRes
+android.support.v4.app.INotificationSideChannel
+android.support.v4.app.INotificationSideChannel$Stub
+android.support.v4.app.INotificationSideChannel$Stub$Proxy
+android.support.v4.os.IResultReceiver
+android.support.v4.os.IResultReceiver$Stub
+android.support.v4.os.IResultReceiver$Stub$Proxy
+android.support.v4.os.ResultReceiver
+android.support.v4.os.ResultReceiver$1
+android.support.v4.os.ResultReceiver$MyResultReceiver
+android.support.v4.os.ResultReceiver$MyRunnable
+androidx.activity.ComponentActivity:
+    137:139:public ComponentActivity(int)
+    220:222:public java.lang.Object getLastCustomNonConfigurationInstance()
+androidx.activity.ImmLeaksCleaner:
+    private static final int NOT_INITIALIAZED
+    private static final int INIT_SUCCESS
+    private static final int INIT_FAILED
+androidx.activity.OnBackPressedDispatcher:
+    95:96:public void addCallback(androidx.activity.OnBackPressedCallback)
+    162:169:public boolean hasEnabledCallbacks()
+androidx.activity.R
+androidx.activity.R$attr
+androidx.activity.R$color
+androidx.activity.R$dimen
+androidx.activity.R$drawable
+androidx.activity.R$id
+androidx.activity.R$integer
+androidx.activity.R$layout
+androidx.activity.R$string
+androidx.activity.R$style
+androidx.activity.R$styleable
+androidx.annotation.AnimRes
+androidx.annotation.AnimatorRes
+androidx.annotation.AnyRes
+androidx.annotation.AnyThread
+androidx.annotation.ArrayRes
+androidx.annotation.AttrRes
+androidx.annotation.BinderThread
+androidx.annotation.BoolRes
+androidx.annotation.CallSuper
+androidx.annotation.CheckResult
+androidx.annotation.ColorInt
+androidx.annotation.ColorLong
+androidx.annotation.ColorRes
+androidx.annotation.ContentView
+androidx.annotation.DimenRes
+androidx.annotation.Dimension
+androidx.annotation.DrawableRes
+androidx.annotation.FloatRange
+androidx.annotation.FontRes
+androidx.annotation.FractionRes
+androidx.annotation.GuardedBy
+androidx.annotation.HalfFloat
+androidx.annotation.IdRes
+androidx.annotation.InspectableProperty
+androidx.annotation.InspectableProperty$EnumEntry
+androidx.annotation.InspectableProperty$FlagEntry
+androidx.annotation.InspectableProperty$ValueType
+androidx.annotation.IntDef
+androidx.annotation.IntRange
+androidx.annotation.IntegerRes
+androidx.annotation.InterpolatorRes
+androidx.annotation.Keep
+androidx.annotation.LayoutRes
+androidx.annotation.LongDef
+androidx.annotation.MainThread
+androidx.annotation.MenuRes
+androidx.annotation.NavigationRes
+androidx.annotation.NonNull
+androidx.annotation.Nullable
+androidx.annotation.PluralsRes
+androidx.annotation.Px
+androidx.annotation.RawRes
+androidx.annotation.RequiresApi
+androidx.annotation.RequiresFeature
+androidx.annotation.RequiresPermission
+androidx.annotation.RequiresPermission$Read
+androidx.annotation.RequiresPermission$Write
+androidx.annotation.RestrictTo
+androidx.annotation.RestrictTo$Scope
+androidx.annotation.Size
+androidx.annotation.StringDef
+androidx.annotation.StringRes
+androidx.annotation.StyleRes
+androidx.annotation.StyleableRes
+androidx.annotation.TransitionRes
+androidx.annotation.UiThread
+androidx.annotation.VisibleForTesting
+androidx.annotation.WorkerThread
+androidx.annotation.XmlRes
+androidx.arch.core.R
+androidx.arch.core.executor.ArchTaskExecutor:
+    91:92:public void setDelegate(androidx.arch.core.executor.TaskExecutor)
+    106:106:public static java.util.concurrent.Executor getMainThreadExecutor()
+    111:111:public static java.util.concurrent.Executor getIOThreadExecutor()
+androidx.arch.core.executor.DefaultTaskExecutor$1:
+    private static final java.lang.String THREAD_NAME_STEM
+androidx.arch.core.executor.TaskExecutor:
+    54:59:public void executeOnMainThread(java.lang.Runnable)
+androidx.arch.core.util.Function
+androidx.collection.ArrayMap:
+    64:65:public ArrayMap(int)
+    71:72:public ArrayMap(androidx.collection.SimpleArrayMap)
+    133:133:public boolean containsAll(java.util.Collection)
+    154:154:public boolean removeAll(java.util.Collection)
+androidx.collection.ArraySet:
+    private static final boolean DEBUG
+    private static final java.lang.String TAG
+    private static final int BASE_SIZE
+    private static final int CACHE_SIZE
+    261:265:public ArraySet(androidx.collection.ArraySet)
+    271:275:public ArraySet(java.util.Collection)
+    410:423:public void addAll(androidx.collection.ArraySet)
+    506:514:public boolean removeAll(androidx.collection.ArraySet)
+androidx.collection.CircularArray
+androidx.collection.CircularIntArray
+androidx.collection.ContainerHelpers:
+    29:29:public static int idealLongArraySize(int)
+    65:80:static int binarySearch(long[],int,long)
+    83:84:private ContainerHelpers()
+androidx.collection.LongSparseArray
+androidx.collection.LruCache
+androidx.collection.SimpleArrayMap:
+    private static final boolean DEBUG
+    private static final java.lang.String TAG
+    private static final boolean CONCURRENT_MODIFICATION_EXCEPTIONS
+    private static final int BASE_SIZE
+    private static final int CACHE_SIZE
+    246:254:public SimpleArrayMap(int)
+    260:264:public SimpleArrayMap(androidx.collection.SimpleArrayMap)
+    498:511:public void putAll(androidx.collection.SimpleArrayMap)
+androidx.collection.SparseArrayCompat:
+    132:133:public void delete(int)
+    156:164:public boolean remove(int,java.lang.Object)
+    171:175:public void removeAt(int)
+    184:188:public void removeAtRange(int,int)
+    198:204:public java.lang.Object replace(int,java.lang.Object)
+    216:224:public boolean replace(int,java.lang.Object,java.lang.Object)
+    313:316:public void putAll(androidx.collection.SparseArrayCompat)
+    328:332:public java.lang.Object putIfAbsent(int,java.lang.Object)
+    352:352:public boolean isEmpty()
+    388:393:public void setValueAt(int,java.lang.Object)
+    401:405:public int indexOfKey(int)
+    419:427:public int indexOfValue(java.lang.Object)
+    432:432:public boolean containsKey(int)
+    437:437:public boolean containsValue(java.lang.Object)
+    460:487:public void append(int,java.lang.Object)
+androidx.core.R:
+    9:9:public R()
+androidx.core.R$attr
+androidx.core.R$color
+androidx.core.R$dimen
+androidx.core.R$drawable
+androidx.core.R$id:
+    68:68:public R$id()
+androidx.core.R$integer
+androidx.core.R$layout
+androidx.core.R$string
+androidx.core.R$style
+androidx.core.R$styleable
+androidx.core.accessibilityservice.AccessibilityServiceInfoCompat
+androidx.core.app.ActivityCompat:
+    149:151:protected ActivityCompat()
+    161:162:public static void setPermissionCompatDelegate(androidx.core.app.ActivityCompat$PermissionCompatDelegate)
+    207:208:public static boolean invalidateOptionsMenu(android.app.Activity)
+    233:238:public static void startActivityForResult(android.app.Activity,android.content.Intent,int,android.os.Bundle)
+    270:277:public static void startIntentSenderForResult(android.app.Activity,android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)
+    287:292:public static void finishAffinity(android.app.Activity)
+    304:309:public static void finishAfterTransition(android.app.Activity)
+    329:341:public static android.net.Uri getReferrer(android.app.Activity)
+    362:370:public static android.view.View requireViewById(android.app.Activity,int)
+    383:389:public static void setEnterSharedElementCallback(android.app.Activity,androidx.core.app.SharedElementCallback)
+    402:408:public static void setExitSharedElementCallback(android.app.Activity,androidx.core.app.SharedElementCallback)
+    411:414:public static void postponeEnterTransition(android.app.Activity)
+    417:420:public static void startPostponedEnterTransition(android.app.Activity)
+    491:524:public static void requestPermissions(android.app.Activity,java.lang.String[],int)
+    548:551:public static boolean shouldShowRequestPermissionRationale(android.app.Activity,java.lang.String)
+    565:565:public static androidx.core.view.DragAndDropPermissionsCompat requestDragAndDropPermissions(android.app.Activity,android.view.DragEvent)
+    577:585:public static void recreate(android.app.Activity)
+androidx.core.app.ActivityCompat$1
+androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
+androidx.core.app.ActivityCompat$PermissionCompatDelegate:
+    public abstract boolean requestPermissions(android.app.Activity,java.lang.String[],int)
+androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
+androidx.core.app.ActivityCompat$SharedElementCallback21Impl
+androidx.core.app.ActivityCompat$SharedElementCallback21Impl$1
+androidx.core.app.ActivityManagerCompat
+androidx.core.app.ActivityOptionsCompat
+androidx.core.app.ActivityOptionsCompat$ActivityOptionsCompatImpl
+androidx.core.app.ActivityRecreator
+androidx.core.app.ActivityRecreator$1
+androidx.core.app.ActivityRecreator$2
+androidx.core.app.ActivityRecreator$3
+androidx.core.app.ActivityRecreator$LifecycleCheckCallbacks
+androidx.core.app.AlarmManagerCompat
+androidx.core.app.AppComponentFactory
+androidx.core.app.AppLaunchChecker
+androidx.core.app.AppOpsManagerCompat
+androidx.core.app.BundleCompat
+androidx.core.app.BundleCompat$BundleCompatBaseImpl
+androidx.core.app.ComponentActivity:
+    75:76:public void putExtraData(androidx.core.app.ComponentActivity$ExtraData)
+    100:100:public androidx.core.app.ComponentActivity$ExtraData getExtraData(java.lang.Class)
+androidx.core.app.ComponentActivity$ExtraData
+androidx.core.app.DialogCompat
+androidx.core.app.FrameMetricsAggregator
+androidx.core.app.FrameMetricsAggregator$FrameMetricsApi24Impl
+androidx.core.app.FrameMetricsAggregator$FrameMetricsApi24Impl$1
+androidx.core.app.FrameMetricsAggregator$FrameMetricsBaseImpl
+androidx.core.app.FrameMetricsAggregator$MetricType
+androidx.core.app.JobIntentService
+androidx.core.app.JobIntentService$CommandProcessor
+androidx.core.app.JobIntentService$CompatJobEngine
+androidx.core.app.JobIntentService$CompatWorkEnqueuer
+androidx.core.app.JobIntentService$CompatWorkItem
+androidx.core.app.JobIntentService$GenericWorkItem
+androidx.core.app.JobIntentService$JobServiceEngineImpl
+androidx.core.app.JobIntentService$JobServiceEngineImpl$WrapperWorkItem
+androidx.core.app.JobIntentService$JobWorkEnqueuer
+androidx.core.app.JobIntentService$WorkEnqueuer
+androidx.core.app.NavUtils
+androidx.core.app.NotificationBuilderWithBuilderAccessor
+androidx.core.app.NotificationCompat
+androidx.core.app.NotificationCompat$Action
+androidx.core.app.NotificationCompat$Action$Builder
+androidx.core.app.NotificationCompat$Action$Extender
+androidx.core.app.NotificationCompat$Action$SemanticAction
+androidx.core.app.NotificationCompat$Action$WearableExtender
+androidx.core.app.NotificationCompat$BadgeIconType
+androidx.core.app.NotificationCompat$BigPictureStyle
+androidx.core.app.NotificationCompat$BigTextStyle
+androidx.core.app.NotificationCompat$Builder
+androidx.core.app.NotificationCompat$CarExtender
+androidx.core.app.NotificationCompat$CarExtender$UnreadConversation
+androidx.core.app.NotificationCompat$CarExtender$UnreadConversation$Builder
+androidx.core.app.NotificationCompat$DecoratedCustomViewStyle
+androidx.core.app.NotificationCompat$Extender
+androidx.core.app.NotificationCompat$GroupAlertBehavior
+androidx.core.app.NotificationCompat$InboxStyle
+androidx.core.app.NotificationCompat$MessagingStyle
+androidx.core.app.NotificationCompat$MessagingStyle$Message
+androidx.core.app.NotificationCompat$NotificationVisibility
+androidx.core.app.NotificationCompat$StreamType
+androidx.core.app.NotificationCompat$Style
+androidx.core.app.NotificationCompat$WearableExtender
+androidx.core.app.NotificationCompatBuilder
+androidx.core.app.NotificationCompatExtras
+androidx.core.app.NotificationCompatJellybean
+androidx.core.app.NotificationCompatSideChannelService
+androidx.core.app.NotificationCompatSideChannelService$NotificationSideChannelStub
+androidx.core.app.NotificationManagerCompat
+androidx.core.app.NotificationManagerCompat$CancelTask
+androidx.core.app.NotificationManagerCompat$NotifyTask
+androidx.core.app.NotificationManagerCompat$ServiceConnectedEvent
+androidx.core.app.NotificationManagerCompat$SideChannelManager
+androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord
+androidx.core.app.NotificationManagerCompat$Task
+androidx.core.app.Person
+androidx.core.app.Person$Builder
+androidx.core.app.RemoteActionCompat:
+    80:87:public RemoteActionCompat(androidx.core.graphics.drawable.IconCompat,java.lang.CharSequence,java.lang.CharSequence,android.app.PendingIntent)
+    99:107:public RemoteActionCompat(androidx.core.app.RemoteActionCompat)
+    115:123:public static androidx.core.app.RemoteActionCompat createFromRemoteAction(android.app.RemoteAction)
+    130:131:public void setEnabled(boolean)
+    137:137:public boolean isEnabled()
+    144:145:public void setShouldShowIcon(boolean)
+    151:151:public boolean shouldShowIcon()
+    158:158:public androidx.core.graphics.drawable.IconCompat getIcon()
+    165:165:public java.lang.CharSequence getTitle()
+    172:172:public java.lang.CharSequence getContentDescription()
+    179:179:public android.app.PendingIntent getActionIntent()
+    190:196:public android.app.RemoteAction toRemoteAction()
+androidx.core.app.RemoteInput
+androidx.core.app.RemoteInput$Builder
+androidx.core.app.RemoteInput$Source
+androidx.core.app.ServiceCompat
+androidx.core.app.ServiceCompat$StopForegroundFlags
+androidx.core.app.ShareCompat
+androidx.core.app.ShareCompat$IntentBuilder
+androidx.core.app.ShareCompat$IntentReader
+androidx.core.app.SharedElementCallback:
+    private android.graphics.Matrix mTempMatrix
+    private static final int MAX_IMAGE_SIZE
+    private static final java.lang.String BUNDLE_SNAPSHOT_BITMAP
+    private static final java.lang.String BUNDLE_SNAPSHOT_IMAGE_SCALETYPE
+    private static final java.lang.String BUNDLE_SNAPSHOT_IMAGE_MATRIX
+    42:42:public SharedElementCallback()
+    133:133:public void onRejectSharedElements(java.util.List)
+    168:207:public android.os.Parcelable onCaptureSharedElementSnapshot(android.view.View,android.graphics.Matrix,android.graphics.RectF)
+    214:236:private static android.graphics.Bitmap createDrawableBitmap(android.graphics.drawable.Drawable)
+    257:280:public android.view.View onCreateSnapshotView(android.content.Context,android.os.Parcelable)
+    301:302:public void onSharedElementsArrived(java.util.List,java.util.List,androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener)
+androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
+androidx.core.app.TaskStackBuilder
+androidx.core.app.TaskStackBuilder$SupportParentable
+androidx.core.content.ContentResolverCompat
+androidx.core.content.ContextCompat:
+    private static final java.lang.String TAG
+    private static android.util.TypedValue sTempValue
+    161:163:protected ContextCompat()
+    191:191:public static boolean startActivities(android.content.Context,android.content.Intent[])
+    223:228:public static boolean startActivities(android.content.Context,android.content.Intent[],android.os.Bundle)
+    250:255:public static void startActivity(android.content.Context,android.content.Intent,android.os.Bundle)
+    274:278:public static java.io.File getDataDir(android.content.Context)
+    327:330:public static java.io.File[] getObbDirs(android.content.Context)
+    380:383:public static java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String)
+    433:436:public static java.io.File[] getExternalCacheDirs(android.content.Context)
+    453:470:public static android.graphics.drawable.Drawable getDrawable(android.content.Context,int)
+    491:494:public static android.content.res.ColorStateList getColorStateList(android.content.Context,int)
+    513:516:public static int getColor(android.content.Context,int)
+    531:535:public static int checkSelfPermission(android.content.Context,java.lang.String)
+    554:558:public static java.io.File getNoBackupFilesDir(android.content.Context)
+    578:582:public static java.io.File getCodeCacheDir(android.content.Context)
+    587:597:private static synchronized java.io.File createFilesDir(java.io.File)
+    633:636:public static android.content.Context createDeviceProtectedStorageContext(android.content.Context)
+    647:650:public static boolean isDeviceProtectedStorage(android.content.Context)
+    660:663:public static java.util.concurrent.Executor getMainExecutor(android.content.Context)
+    692:698:public static void startForegroundService(android.content.Context,android.content.Intent)
+    712:717:public static java.lang.Object getSystemService(android.content.Context,java.lang.Class)
+    732:735:public static java.lang.String getSystemServiceName(android.content.Context,java.lang.Class)
+androidx.core.content.ContextCompat$LegacyServiceMapHolder
+androidx.core.content.ContextCompat$MainHandlerExecutor
+androidx.core.content.FileProvider
+androidx.core.content.FileProvider$PathStrategy
+androidx.core.content.FileProvider$SimplePathStrategy
+androidx.core.content.IntentCompat
+androidx.core.content.MimeTypeFilter
+androidx.core.content.PermissionChecker
+androidx.core.content.PermissionChecker$PermissionResult
+androidx.core.content.SharedPreferencesCompat
+androidx.core.content.SharedPreferencesCompat$EditorCompat
+androidx.core.content.SharedPreferencesCompat$EditorCompat$Helper
+androidx.core.content.pm.ActivityInfoCompat
+androidx.core.content.pm.PackageInfoCompat
+androidx.core.content.pm.PermissionInfoCompat
+androidx.core.content.pm.PermissionInfoCompat$Protection
+androidx.core.content.pm.PermissionInfoCompat$ProtectionFlags
+androidx.core.content.pm.ShortcutInfoCompat
+androidx.core.content.pm.ShortcutInfoCompat$Builder
+androidx.core.content.pm.ShortcutInfoCompatSaver
+androidx.core.content.pm.ShortcutInfoCompatSaver$NoopImpl
+androidx.core.content.pm.ShortcutManagerCompat
+androidx.core.content.pm.ShortcutManagerCompat$1
+androidx.core.content.res.ColorStateListInflaterCompat
+androidx.core.content.res.ComplexColorCompat
+androidx.core.content.res.ConfigurationHelper
+androidx.core.content.res.FontResourcesParserCompat
+androidx.core.content.res.FontResourcesParserCompat$FamilyResourceEntry
+androidx.core.content.res.FontResourcesParserCompat$FetchStrategy
+androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry
+androidx.core.content.res.FontResourcesParserCompat$FontFileResourceEntry
+androidx.core.content.res.FontResourcesParserCompat$ProviderResourceEntry
+androidx.core.content.res.GradientColorInflaterCompat
+androidx.core.content.res.GradientColorInflaterCompat$ColorStops
+androidx.core.content.res.GrowingArrayUtils
+androidx.core.content.res.ResourcesCompat
+androidx.core.content.res.ResourcesCompat$FontCallback
+androidx.core.content.res.ResourcesCompat$FontCallback$1
+androidx.core.content.res.ResourcesCompat$FontCallback$2
+androidx.core.content.res.TypedArrayUtils
+androidx.core.database.CursorWindowCompat
+androidx.core.database.DatabaseUtilsCompat
+androidx.core.database.sqlite.SQLiteCursorCompat
+androidx.core.graphics.BitmapCompat
+androidx.core.graphics.ColorUtils
+androidx.core.graphics.PaintCompat
+androidx.core.graphics.PathParser
+androidx.core.graphics.PathParser$ExtractFloatResult
+androidx.core.graphics.PathParser$PathDataNode
+androidx.core.graphics.PathSegment
+androidx.core.graphics.PathUtils
+androidx.core.graphics.TypefaceCompat
+androidx.core.graphics.TypefaceCompatApi21Impl
+androidx.core.graphics.TypefaceCompatApi24Impl
+androidx.core.graphics.TypefaceCompatApi26Impl
+androidx.core.graphics.TypefaceCompatApi28Impl
+androidx.core.graphics.TypefaceCompatBaseImpl
+androidx.core.graphics.TypefaceCompatBaseImpl$1
+androidx.core.graphics.TypefaceCompatBaseImpl$2
+androidx.core.graphics.TypefaceCompatBaseImpl$StyleExtractor
+androidx.core.graphics.TypefaceCompatUtil
+androidx.core.graphics.drawable.DrawableCompat
+androidx.core.graphics.drawable.IconCompat:
+    private static final java.lang.String TAG
+    public static final int TYPE_UNKNOWN
+    private static final float ADAPTIVE_ICON_INSET_FACTOR
+    private static final float DEFAULT_VIEW_PORT_SCALE
+    private static final float ICON_DIAMETER_FACTOR
+    private static final float BLUR_FACTOR
+    private static final float KEY_SHADOW_OFFSET_FACTOR
+    private static final int KEY_SHADOW_ALPHA
+    private static final int AMBIENT_SHADOW_ALPHA
+    private static final java.lang.String EXTRA_TYPE
+    private static final java.lang.String EXTRA_OBJ
+    private static final java.lang.String EXTRA_INT1
+    private static final java.lang.String EXTRA_INT2
+    private static final java.lang.String EXTRA_TINT_LIST
+    private static final java.lang.String EXTRA_TINT_MODE
+    195:198:public static androidx.core.graphics.drawable.IconCompat createWithResource(android.content.Context,int)
+    206:223:public static androidx.core.graphics.drawable.IconCompat createWithResource(android.content.res.Resources,java.lang.String,int)
+    232:237:public static androidx.core.graphics.drawable.IconCompat createWithBitmap(android.graphics.Bitmap)
+    247:252:public static androidx.core.graphics.drawable.IconCompat createWithAdaptiveBitmap(android.graphics.Bitmap)
+    265:272:public static androidx.core.graphics.drawable.IconCompat createWithData(byte[],int,int)
+    282:287:public static androidx.core.graphics.drawable.IconCompat createWithContentUri(java.lang.String)
+    297:300:public static androidx.core.graphics.drawable.IconCompat createWithContentUri(android.net.Uri)
+    125:313:private IconCompat(int)
+    324:327:public int getType()
+    378:389:public android.graphics.Bitmap getBitmap()
+    402:405:public android.net.Uri getUri()
+    415:415:public androidx.core.graphics.drawable.IconCompat setTint(int)
+    425:426:public androidx.core.graphics.drawable.IconCompat setTintList(android.content.res.ColorStateList)
+    436:437:public androidx.core.graphics.drawable.IconCompat setTintMode(android.graphics.PorterDuff$Mode)
+    448:481:public android.graphics.drawable.Icon toIcon()
+    489:506:public void checkResource(android.content.Context)
+    517:527:public android.graphics.drawable.Drawable loadDrawable(android.content.Context)
+    535:586:private android.graphics.drawable.Drawable loadDrawableInner(android.content.Context)
+    590:605:private static android.content.res.Resources getResources(android.content.Context,java.lang.String)
+    618:667:public void addToShortcutIntent(android.content.Intent,android.graphics.drawable.Drawable,android.content.Context)
+    674:703:public android.os.Bundle toBundle()
+    831:859:public static androidx.core.graphics.drawable.IconCompat createFromBundle(android.os.Bundle)
+    868:883:public static androidx.core.graphics.drawable.IconCompat createFromIcon(android.content.Context,android.graphics.drawable.Icon)
+    894:903:public static androidx.core.graphics.drawable.IconCompat createFromIcon(android.graphics.drawable.Icon)
+    916:929:private static int getType(android.graphics.drawable.Icon)
+    1001:1014:private static android.net.Uri getUri(android.graphics.drawable.Icon)
+    1027:1062:static android.graphics.Bitmap createLegacyIconFromAdaptiveIcon(android.graphics.Bitmap,boolean)
+androidx.core.graphics.drawable.IconCompat$IconType
+androidx.core.graphics.drawable.RoundedBitmapDrawable
+androidx.core.graphics.drawable.RoundedBitmapDrawable21
+androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+androidx.core.graphics.drawable.RoundedBitmapDrawableFactory$DefaultRoundedBitmapDrawable
+androidx.core.graphics.drawable.TintAwareDrawable
+androidx.core.graphics.drawable.WrappedDrawable
+androidx.core.graphics.drawable.WrappedDrawableApi14
+androidx.core.graphics.drawable.WrappedDrawableApi21
+androidx.core.graphics.drawable.WrappedDrawableState
+androidx.core.hardware.display.DisplayManagerCompat
+androidx.core.hardware.fingerprint.FingerprintManagerCompat
+androidx.core.hardware.fingerprint.FingerprintManagerCompat$1
+androidx.core.hardware.fingerprint.FingerprintManagerCompat$AuthenticationCallback
+androidx.core.hardware.fingerprint.FingerprintManagerCompat$AuthenticationResult
+androidx.core.hardware.fingerprint.FingerprintManagerCompat$CryptoObject
+androidx.core.internal.package-info
+androidx.core.internal.view.SupportMenu
+androidx.core.internal.view.SupportMenuItem
+androidx.core.internal.view.SupportSubMenu
+androidx.core.location.LocationManagerCompat
+androidx.core.math.MathUtils
+androidx.core.net.ConnectivityManagerCompat
+androidx.core.net.ConnectivityManagerCompat$RestrictBackgroundStatus
+androidx.core.net.DatagramSocketWrapper
+androidx.core.net.DatagramSocketWrapper$DatagramSocketImplWrapper
+androidx.core.net.TrafficStatsCompat
+androidx.core.os.BuildCompat
+androidx.core.os.CancellationSignal
+androidx.core.os.CancellationSignal$OnCancelListener
+androidx.core.os.ConfigurationCompat
+androidx.core.os.EnvironmentCompat
+androidx.core.os.HandlerCompat
+androidx.core.os.LocaleListCompat
+androidx.core.os.LocaleListCompatWrapper
+androidx.core.os.LocaleListInterface
+androidx.core.os.LocaleListPlatformWrapper
+androidx.core.os.MessageCompat
+androidx.core.os.OperationCanceledException
+androidx.core.os.ParcelCompat
+androidx.core.os.ParcelableCompat
+androidx.core.os.ParcelableCompat$ParcelableCompatCreatorHoneycombMR2
+androidx.core.os.ParcelableCompatCreatorCallbacks
+androidx.core.os.TraceCompat
+androidx.core.os.UserManagerCompat
+androidx.core.provider.FontRequest
+androidx.core.provider.FontsContractCompat
+androidx.core.provider.FontsContractCompat$1
+androidx.core.provider.FontsContractCompat$2
+androidx.core.provider.FontsContractCompat$3
+androidx.core.provider.FontsContractCompat$4
+androidx.core.provider.FontsContractCompat$4$1
+androidx.core.provider.FontsContractCompat$4$2
+androidx.core.provider.FontsContractCompat$4$3
+androidx.core.provider.FontsContractCompat$4$4
+androidx.core.provider.FontsContractCompat$4$5
+androidx.core.provider.FontsContractCompat$4$6
+androidx.core.provider.FontsContractCompat$4$7
+androidx.core.provider.FontsContractCompat$4$8
+androidx.core.provider.FontsContractCompat$4$9
+androidx.core.provider.FontsContractCompat$5
+androidx.core.provider.FontsContractCompat$Columns
+androidx.core.provider.FontsContractCompat$FontFamilyResult
+androidx.core.provider.FontsContractCompat$FontInfo
+androidx.core.provider.FontsContractCompat$FontRequestCallback
+androidx.core.provider.FontsContractCompat$FontRequestCallback$FontRequestFailReason
+androidx.core.provider.FontsContractCompat$TypefaceResult
+androidx.core.provider.SelfDestructiveThread
+androidx.core.provider.SelfDestructiveThread$1
+androidx.core.provider.SelfDestructiveThread$2
+androidx.core.provider.SelfDestructiveThread$2$1
+androidx.core.provider.SelfDestructiveThread$3
+androidx.core.provider.SelfDestructiveThread$ReplyCallback
+androidx.core.telephony.mbms.MbmsHelper
+androidx.core.text.BidiFormatter
+androidx.core.text.BidiFormatter$Builder
+androidx.core.text.BidiFormatter$DirectionalityEstimator
+androidx.core.text.HtmlCompat
+androidx.core.text.ICUCompat
+androidx.core.text.PrecomputedTextCompat
+androidx.core.text.PrecomputedTextCompat$Params
+androidx.core.text.PrecomputedTextCompat$Params$Builder
+androidx.core.text.PrecomputedTextCompat$PrecomputedTextFutureTask
+androidx.core.text.PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback
+androidx.core.text.TextDirectionHeuristicCompat
+androidx.core.text.TextDirectionHeuristicsCompat
+androidx.core.text.TextDirectionHeuristicsCompat$AnyStrong
+androidx.core.text.TextDirectionHeuristicsCompat$FirstStrong
+androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionAlgorithm
+androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl
+androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal
+androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale
+androidx.core.text.TextUtilsCompat
+androidx.core.text.util.FindAddress
+androidx.core.text.util.FindAddress$ZipRange
+androidx.core.text.util.LinkifyCompat
+androidx.core.text.util.LinkifyCompat$1
+androidx.core.text.util.LinkifyCompat$LinkSpec
+androidx.core.text.util.LinkifyCompat$LinkifyMask
+androidx.core.util.AtomicFile
+androidx.core.util.Consumer
+androidx.core.util.DebugUtils:
+    49:50:private DebugUtils()
+androidx.core.util.ObjectsCompat
+androidx.core.util.Pair
+androidx.core.util.PatternsCompat
+androidx.core.util.Pools
+androidx.core.util.Pools$Pool
+androidx.core.util.Pools$SimplePool
+androidx.core.util.Pools$SynchronizedPool
+androidx.core.util.Preconditions:
+    35:38:public static void checkArgument(boolean)
+    49:52:public static void checkArgument(boolean,java.lang.Object)
+    63:66:public static java.lang.Object checkNotNull(java.lang.Object)
+    95:98:public static void checkState(boolean,java.lang.String)
+    108:109:public static void checkState(boolean)
+    121:125:public static int checkArgumentNonnegative(int,java.lang.String)
+    137:141:public static int checkArgumentNonnegative(int)
+    158:168:public static int checkArgumentInRange(int,int,int,java.lang.String)
+    171:172:private Preconditions()
+androidx.core.util.Supplier
+androidx.core.util.TimeUtils
+androidx.core.view.AccessibilityDelegateCompat
+androidx.core.view.AccessibilityDelegateCompat$AccessibilityDelegateAdapter
+androidx.core.view.ActionProvider
+androidx.core.view.ActionProvider$SubUiVisibilityListener
+androidx.core.view.ActionProvider$VisibilityListener
+androidx.core.view.DisplayCutoutCompat
+androidx.core.view.DragAndDropPermissionsCompat
+androidx.core.view.DragStartHelper
+androidx.core.view.DragStartHelper$1
+androidx.core.view.DragStartHelper$2
+androidx.core.view.DragStartHelper$OnDragStartListener
+androidx.core.view.GestureDetectorCompat
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImpl
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase$GestureHandler
+androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2
+androidx.core.view.GravityCompat
+androidx.core.view.InputDeviceCompat
+androidx.core.view.KeyEventDispatcher:
+    51:53:private KeyEventDispatcher()
+androidx.core.view.LayoutInflaterCompat:
+    private static final java.lang.String TAG
+    95:96:private LayoutInflaterCompat()
+    111:128:public static void setFactory(android.view.LayoutInflater,androidx.core.view.LayoutInflaterFactory)
+    169:173:public static androidx.core.view.LayoutInflaterFactory getFactory(android.view.LayoutInflater)
+androidx.core.view.LayoutInflaterCompat$Factory2Wrapper
+androidx.core.view.LayoutInflaterFactory
+androidx.core.view.MarginLayoutParamsCompat
+androidx.core.view.MenuCompat
+androidx.core.view.MenuItemCompat
+androidx.core.view.MenuItemCompat$1
+androidx.core.view.MenuItemCompat$OnActionExpandListener
+androidx.core.view.MotionEventCompat
+androidx.core.view.NestedScrollingChild
+androidx.core.view.NestedScrollingChild2
+androidx.core.view.NestedScrollingChild3
+androidx.core.view.NestedScrollingChildHelper
+androidx.core.view.NestedScrollingParent
+androidx.core.view.NestedScrollingParent2
+androidx.core.view.NestedScrollingParent3
+androidx.core.view.NestedScrollingParentHelper
+androidx.core.view.OnApplyWindowInsetsListener
+androidx.core.view.PointerIconCompat
+androidx.core.view.ScaleGestureDetectorCompat
+androidx.core.view.ScrollingView
+androidx.core.view.TintableBackgroundView
+androidx.core.view.VelocityTrackerCompat
+androidx.core.view.ViewCompat:
+    private static final java.lang.String TAG
+    public static final int OVER_SCROLL_ALWAYS
+    public static final int OVER_SCROLL_IF_CONTENT_SCROLLS
+    public static final int OVER_SCROLL_NEVER
+    public static final int IMPORTANT_FOR_ACCESSIBILITY_AUTO
+    public static final int IMPORTANT_FOR_ACCESSIBILITY_YES
+    public static final int IMPORTANT_FOR_ACCESSIBILITY_NO
+    public static final int IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+    public static final int ACCESSIBILITY_LIVE_REGION_NONE
+    public static final int ACCESSIBILITY_LIVE_REGION_POLITE
+    public static final int ACCESSIBILITY_LIVE_REGION_ASSERTIVE
+    public static final int LAYER_TYPE_NONE
+    public static final int LAYER_TYPE_SOFTWARE
+    public static final int LAYER_TYPE_HARDWARE
+    public static final int LAYOUT_DIRECTION_LTR
+    public static final int LAYOUT_DIRECTION_RTL
+    public static final int LAYOUT_DIRECTION_INHERIT
+    public static final int LAYOUT_DIRECTION_LOCALE
+    public static final int MEASURED_SIZE_MASK
+    public static final int MEASURED_STATE_MASK
+    public static final int MEASURED_HEIGHT_STATE_SHIFT
+    public static final int MEASURED_STATE_TOO_SMALL
+    public static final int SCROLL_AXIS_NONE
+    public static final int SCROLL_AXIS_HORIZONTAL
+    public static final int SCROLL_AXIS_VERTICAL
+    public static final int TYPE_TOUCH
+    public static final int TYPE_NON_TOUCH
+    public static final int SCROLL_INDICATOR_TOP
+    public static final int SCROLL_INDICATOR_BOTTOM
+    public static final int SCROLL_INDICATOR_LEFT
+    public static final int SCROLL_INDICATOR_RIGHT
+    public static final int SCROLL_INDICATOR_START
+    public static final int SCROLL_INDICATOR_END
+    private static java.lang.reflect.Field sMinWidthField
+    private static boolean sMinWidthFieldFetched
+    private static java.lang.reflect.Field sMinHeightField
+    private static boolean sMinHeightFieldFetched
+    private static java.lang.reflect.Method sDispatchStartTemporaryDetach
+    private static java.lang.reflect.Method sDispatchFinishTemporaryDetach
+    private static boolean sTempDetachBound
+    private static java.lang.reflect.Method sChildrenDrawingOrderMethod
+    private static java.lang.reflect.Field sAccessibilityDelegateField
+    private static java.lang.ThreadLocal sThreadLocalRect
+    479:488:private static android.graphics.Rect getEmptyTempRect()
+    502:502:public static boolean canScrollHorizontally(android.view.View,int)
+    516:516:public static boolean canScrollVertically(android.view.View,int)
+    534:534:public static int getOverScrollMode(android.view.View)
+    553:554:public static void setOverScrollMode(android.view.View,int)
+    593:594:public static void onPopulateAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    625:626:public static void onInitializeAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)
+    656:657:public static void onInitializeAccessibilityNodeInfo(android.view.View,androidx.core.view.accessibility.AccessibilityNodeInfoCompat)
+    686:691:public static void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat)
+    723:726:public static varargs void setAutofillHints(android.view.View,java.lang.String[])
+    744:747:public static int getImportantForAutofill(android.view.View)
+    788:791:public static void setImportantForAutofill(android.view.View,int)
+    857:860:public static boolean isImportantForAutofill(android.view.View)
+    870:870:public static boolean hasAccessibilityDelegate(android.view.View)
+    884:891:public static androidx.core.view.AccessibilityDelegateCompat getAccessibilityDelegate(android.view.View)
+    896:901:static androidx.core.view.AccessibilityDelegateCompat getOrCreateAccessibilityDelegateCompat(android.view.View)
+    907:928:private static android.view.View$AccessibilityDelegate getAccessibilityDelegateInternal(android.view.View)
+    941:944:public static boolean hasTransientState(android.view.View)
+    955:958:public static void setHasTransientState(android.view.View,boolean)
+    970:975:public static void postInvalidateOnAnimation(android.view.View)
+    992:997:public static void postInvalidateOnAnimation(android.view.View,int,int,int,int)
+    1010:1015:public static void postOnAnimation(android.view.View,java.lang.Runnable)
+    1032:1037:public static void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)
+    1054:1057:public static int getImportantForAccessibility(android.view.View)
+    1081:1093:public static void setImportantForAccessibility(android.view.View,int)
+    1132:1135:public static boolean isImportantForAccessibility(android.view.View)
+    1154:1157:public static boolean performAccessibilityAction(android.view.View,int,android.os.Bundle)
+    1180:1186:public static int addAccessibilityAction(android.view.View,java.lang.CharSequence,androidx.core.view.accessibility.AccessibilityViewCommand)
+    1224:1237:private static int getAvailableActionIdFromResources(android.view.View)
+    1258:1259:public static void replaceAccessibilityAction(android.view.View,androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat,java.lang.CharSequence,androidx.core.view.accessibility.AccessibilityViewCommand)
+    1263:1270:private static void addAccessibilityAction(android.view.View,androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat)
+    1280:1285:public static void removeAccessibilityAction(android.view.View,int)
+    1288:1295:private static void removeActionWithId(int,android.view.View)
+    1298:1304:private static java.util.List getActionList(android.view.View)
+    1318:1321:public static void enableAccessibleClickableSpanSupport(android.view.View)
+    1347:1353:public static androidx.core.view.accessibility.AccessibilityNodeProviderCompat getAccessibilityNodeProvider(android.view.View)
+    1367:1367:public static float getAlpha(android.view.View)
+    1406:1407:public static void setLayerType(android.view.View,int,android.graphics.Paint)
+    1431:1431:public static int getLayerType(android.view.View)
+    1442:1445:public static int getLabelFor(android.view.View)
+    1456:1459:public static void setLabelFor(android.view.View,int)
+    1492:1501:public static void setLayerPaint(android.view.View,android.graphics.Paint)
+    1515:1518:public static int getLayoutDirection(android.view.View)
+    1539:1542:public static void setLayoutDirection(android.view.View,int)
+    1553:1556:public static android.view.ViewParent getParentForAccessibility(android.view.View)
+    1576:1584:public static android.view.View requireViewById(android.view.View,int)
+    1597:1597:public static boolean isOpaque(android.view.View)
+    1617:1617:public static int resolveSizeAndState(int,int,int)
+    1634:1634:public static int getMeasuredWidthAndState(android.view.View)
+    1651:1651:public static int getMeasuredHeightAndState(android.view.View)
+    1665:1665:public static int getMeasuredState(android.view.View)
+    1680:1680:public static int combineMeasuredStates(int,int)
+    1729:1732:public static void setAccessibilityLiveRegion(android.view.View,int)
+    1744:1747:public static int getPaddingStart(android.view.View)
+    1760:1763:public static int getPaddingEnd(android.view.View)
+    1781:1786:public static void setPaddingRelative(android.view.View,int,int,int,int)
+    1790:1798:private static void bindTempDetach()
+    1804:1821:public static void dispatchStartTemporaryDetach(android.view.View)
+    1827:1844:public static void dispatchFinishTemporaryDetach(android.view.View)
+    1857:1857:public static float getTranslationX(android.view.View)
+    1871:1871:public static float getTranslationY(android.view.View)
+    1893:1893:public static android.graphics.Matrix getMatrix(android.view.View)
+    1904:1927:public static int getMinimumWidth(android.view.View)
+    1938:1961:public static int getMinimumHeight(android.view.View)
+    1972:1980:public static androidx.core.view.ViewPropertyAnimatorCompat animate(android.view.View)
+    1995:1996:public static void setTranslationX(android.view.View,float)
+    2012:2013:public static void setTranslationY(android.view.View,float)
+    2029:2030:public static void setAlpha(android.view.View,float)
+    2044:2045:public static void setX(android.view.View,float)
+    2059:2060:public static void setY(android.view.View,float)
+    2072:2073:public static void setRotation(android.view.View,float)
+    2086:2087:public static void setRotationX(android.view.View,float)
+    2100:2101:public static void setRotationY(android.view.View,float)
+    2113:2114:public static void setScaleX(android.view.View,float)
+    2126:2127:public static void setScaleY(android.view.View,float)
+    2137:2137:public static float getPivotX(android.view.View)
+    2153:2154:public static void setPivotX(android.view.View,float)
+    2166:2166:public static float getPivotY(android.view.View)
+    2182:2183:public static void setPivotY(android.view.View,float)
+    2190:2190:public static float getRotation(android.view.View)
+    2198:2198:public static float getRotationX(android.view.View)
+    2206:2206:public static float getRotationY(android.view.View)
+    2214:2214:public static float getScaleX(android.view.View)
+    2222:2222:public static float getScaleY(android.view.View)
+    2230:2230:public static float getX(android.view.View)
+    2238:2238:public static float getY(android.view.View)
+    2245:2248:public static void setElevation(android.view.View,float)
+    2256:2259:public static float getElevation(android.view.View)
+    2266:2269:public static void setTranslationZ(android.view.View,float)
+    2277:2280:public static float getTranslationZ(android.view.View)
+    2326:2329:public static int getWindowSystemUiVisibility(android.view.View)
+    2337:2342:public static void requestApplyInsets(android.view.View)
+    2357:2375:public static void setChildrenDrawingOrderEnabled(android.view.ViewGroup,boolean)
+    2382:2385:public static boolean getFitsSystemWindows(android.view.View)
+    2398:2399:public static void setFitsSystemWindows(android.view.View,boolean)
+    2412:2413:public static void jumpDrawablesToCurrentState(android.view.View)
+    2421:2436:public static void setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener)
+    2452:2460:public static androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat)
+    2477:2485:public static androidx.core.view.WindowInsetsCompat dispatchApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat)
+    2499:2500:public static void setSaveFromParentEnabled(android.view.View,boolean)
+    2515:2516:public static void setActivated(android.view.View,boolean)
+    2533:2536:public static boolean hasOverlappingRendering(android.view.View)
+    2546:2549:public static boolean isPaddingRelative(android.view.View)
+    2559:2564:public static void setBackground(android.view.View,android.graphics.drawable.Drawable)
+    2573:2577:public static android.content.res.ColorStateList getBackgroundTintList(android.view.View)
+    2589:2608:public static void setBackgroundTintList(android.view.View,android.content.res.ColorStateList)
+    2618:2622:public static android.graphics.PorterDuff$Mode getBackgroundTintMode(android.view.View)
+    2636:2655:public static void setBackgroundTintMode(android.view.View,android.graphics.PorterDuff$Mode)
+    2674:2681:public static void setNestedScrollingEnabled(android.view.View,boolean)
+    2697:2703:public static boolean isNestedScrollingEnabled(android.view.View)
+    2719:2725:public static boolean startNestedScroll(android.view.View,int)
+    2738:2743:public static void stopNestedScroll(android.view.View)
+    2755:2761:public static boolean hasNestedScrollingParent(android.view.View)
+    2784:2792:public static boolean dispatchNestedScroll(android.view.View,int,int,int,int,int[])
+    2815:2822:public static boolean dispatchNestedPreScroll(android.view.View,int,int,int[],int[])
+    2866:2871:public static boolean startNestedScroll(android.view.View,int,int)
+    2883:2888:public static void stopNestedScroll(android.view.View,int)
+    2900:2905:public static boolean hasNestedScrollingParent(android.view.View,int)
+    2941:2948:public static void dispatchNestedScroll(android.view.View,int,int,int,int,int[],int,int[])
+    2977:2984:public static boolean dispatchNestedScroll(android.view.View,int,int,int,int,int[],int)
+    3009:3015:public static boolean dispatchNestedPreScroll(android.view.View,int,int,int[],int[],int)
+    3039:3046:public static boolean dispatchNestedFling(android.view.View,float,float,boolean)
+    3082:3088:public static boolean dispatchNestedPreFling(android.view.View,float,float)
+    3104:3107:public static boolean isInLayout(android.view.View)
+    3115:3118:public static boolean isLaidOut(android.view.View)
+    3132:3135:public static boolean isLayoutDirectionResolved(android.view.View)
+    3146:3149:public static float getZ(android.view.View)
+    3165:3168:public static void setZ(android.view.View,float)
+    3176:3204:public static void offsetTopAndBottom(android.view.View,int)
+    3207:3216:private static void compatOffsetTopAndBottom(android.view.View,int)
+    3224:3252:public static void offsetLeftAndRight(android.view.View,int)
+    3255:3264:private static void compatOffsetLeftAndRight(android.view.View,int)
+    3267:3270:private static void tickleInvalidationFlag(android.view.View)
+    3284:3287:public static void setClipBounds(android.view.View,android.graphics.Rect)
+    3299:3302:public static android.graphics.Rect getClipBounds(android.view.View)
+    3321:3324:public static boolean hasOnClickListeners(android.view.View)
+    3339:3342:public static void setScrollIndicators(android.view.View,int)
+    3373:3376:public static void setScrollIndicators(android.view.View,int,int)
+    3391:3394:public static int getScrollIndicators(android.view.View)
+    3402:3406:public static void setPointerIcon(android.view.View,androidx.core.view.PointerIconCompat)
+    3420:3428:public static android.view.Display getDisplay(android.view.View)
+    3440:3443:public static void setTooltipText(android.view.View,java.lang.CharSequence)
+    3450:3453:public static boolean startDragAndDrop(android.view.View,android.content.ClipData,android.view.View$DragShadowBuilder,java.lang.Object,int)
+    3461:3464:public static void cancelDragAndDrop(android.view.View)
+    3470:3473:public static void updateDragShadow(android.view.View,android.view.View$DragShadowBuilder)
+    3482:3485:public static int getNextClusterForwardId(android.view.View)
+    3496:3499:public static void setNextClusterForwardId(android.view.View,int)
+    3508:3511:public static boolean isKeyboardNavigationCluster(android.view.View)
+    3522:3525:public static void setKeyboardNavigationCluster(android.view.View,boolean)
+    3537:3540:public static boolean isFocusedByDefault(android.view.View)
+    3556:3559:public static void setFocusedByDefault(android.view.View,boolean)
+    3574:3577:public static android.view.View keyboardNavigationClusterSearch(android.view.View,android.view.View,int)
+    3590:3593:public static void addKeyboardNavigationClusters(android.view.View,java.util.Collection,int)
+    3604:3607:public static boolean restoreDefaultFocus(android.view.View)
+    3626:3629:public static boolean hasExplicitFocusable(android.view.View)
+    3639:3650:public static int generateViewId()
+    3662:3694:public static void addOnUnhandledKeyEventListener(android.view.View,androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat)
+    3705:3728:public static void removeOnUnhandledKeyEventListener(android.view.View,androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat)
+    3730:3730:protected ViewCompat()
+    3782:3783:public static void setScreenReaderFocusable(android.view.View,boolean)
+    3801:3802:public static boolean isScreenReaderFocusable(android.view.View)
+    3806:3806:private static androidx.core.view.ViewCompat$AccessibilityViewProperty screenReaderFocusableProperty()
+    3848:3856:public static void setAccessibilityPaneTitle(android.view.View,java.lang.CharSequence)
+    3914:3915:public static boolean isAccessibilityHeading(android.view.View)
+    3931:3932:public static void setAccessibilityHeading(android.view.View,boolean)
+    3935:3935:private static androidx.core.view.ViewCompat$AccessibilityViewProperty accessibilityHeadingProperty()
+androidx.core.view.ViewCompat$1
+androidx.core.view.ViewCompat$2
+androidx.core.view.ViewCompat$3
+androidx.core.view.ViewCompat$4:
+    3890:3891:void frameworkSet(android.view.View,java.lang.CharSequence)
+    3895:3895:boolean shouldUpdate(java.lang.CharSequence,java.lang.CharSequence)
+    3879:3879:bridge synthetic void frameworkSet(android.view.View,java.lang.Object)
+    3879:3879:bridge synthetic boolean shouldUpdate(java.lang.Object,java.lang.Object)
+androidx.core.view.ViewCompat$5
+androidx.core.view.ViewCompat$AccessibilityPaneVisibilityManager:
+    4080:4085:void addAccessibilityPane(android.view.View)
+    4089:4092:void removeAccessibilityPane(android.view.View)
+    4113:4114:private void unregisterForLayoutCallback(android.view.View)
+androidx.core.view.ViewCompat$AccessibilityViewProperty:
+    3965:3967:ViewCompat$AccessibilityViewProperty(int,java.lang.Class,int)
+    3978:3989:void set(android.view.View,java.lang.Object)
+    4011:4011:boolean shouldUpdate(java.lang.Object,java.lang.Object)
+    abstract void frameworkSet(android.view.View,java.lang.Object)
+    4018:4020:boolean booleanNullToFalseEquals(java.lang.Boolean,java.lang.Boolean)
+androidx.core.view.ViewCompat$FocusDirection
+androidx.core.view.ViewCompat$FocusRealDirection
+androidx.core.view.ViewCompat$FocusRelativeDirection
+androidx.core.view.ViewCompat$NestedScrollType
+androidx.core.view.ViewCompat$ScrollAxis
+androidx.core.view.ViewCompat$ScrollIndicators
+androidx.core.view.ViewCompat$UnhandledKeyEventManager:
+    4252:4260:static void registerListeningView(android.view.View)
+    4263:4271:static void unregisterListeningView(android.view.View)
+androidx.core.view.ViewConfigurationCompat
+androidx.core.view.ViewGroupCompat:
+    public static final int LAYOUT_MODE_CLIP_BOUNDS
+    public static final int LAYOUT_MODE_OPTICAL_BOUNDS
+    52:52:private ViewGroupCompat()
+    75:75:public static boolean onRequestSendAccessibilityEvent(android.view.ViewGroup,android.view.View,android.view.accessibility.AccessibilityEvent)
+    98:99:public static void setMotionEventSplittingEnabled(android.view.ViewGroup,boolean)
+    114:117:public static int getLayoutMode(android.view.ViewGroup)
+    130:133:public static void setLayoutMode(android.view.ViewGroup,int)
+    144:149:public static void setTransitionGroup(android.view.ViewGroup,boolean)
+    181:187:public static int getNestedScrollAxes(android.view.ViewGroup)
+androidx.core.view.ViewParentCompat
+androidx.core.view.ViewPropertyAnimatorCompat
+androidx.core.view.ViewPropertyAnimatorCompat$1
+androidx.core.view.ViewPropertyAnimatorCompat$2
+androidx.core.view.ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14
+androidx.core.view.ViewPropertyAnimatorListener
+androidx.core.view.ViewPropertyAnimatorListenerAdapter
+androidx.core.view.ViewPropertyAnimatorUpdateListener
+androidx.core.view.WindowCompat
+androidx.core.view.WindowInsetsCompat
+androidx.core.view.accessibility.AccessibilityClickableSpanCompat
+androidx.core.view.accessibility.AccessibilityEventCompat
+androidx.core.view.accessibility.AccessibilityManagerCompat
+androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
+androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat
+androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper
+androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
+androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper
+androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat
+androidx.core.view.accessibility.AccessibilityNodeInfoCompat$CollectionInfoCompat
+androidx.core.view.accessibility.AccessibilityNodeInfoCompat$CollectionItemInfoCompat
+androidx.core.view.accessibility.AccessibilityNodeInfoCompat$RangeInfoCompat
+androidx.core.view.accessibility.AccessibilityNodeProviderCompat
+androidx.core.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16
+androidx.core.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi19
+androidx.core.view.accessibility.AccessibilityRecordCompat
+androidx.core.view.accessibility.AccessibilityViewCommand
+androidx.core.view.accessibility.AccessibilityViewCommand$CommandArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$MoveAtGranularityArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$MoveHtmlArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$MoveWindowArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$ScrollToPositionArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$SetProgressArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$SetSelectionArguments
+androidx.core.view.accessibility.AccessibilityViewCommand$SetTextArguments
+androidx.core.view.accessibility.AccessibilityWindowInfoCompat
+androidx.core.view.animation.PathInterpolatorApi14
+androidx.core.view.animation.PathInterpolatorCompat
+androidx.core.view.inputmethod.EditorInfoCompat
+androidx.core.view.inputmethod.InputConnectionCompat
+androidx.core.view.inputmethod.InputConnectionCompat$1
+androidx.core.view.inputmethod.InputConnectionCompat$2
+androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
+androidx.core.view.inputmethod.InputContentInfoCompat
+androidx.core.view.inputmethod.InputContentInfoCompat$InputContentInfoCompatApi25Impl
+androidx.core.view.inputmethod.InputContentInfoCompat$InputContentInfoCompatBaseImpl
+androidx.core.view.inputmethod.InputContentInfoCompat$InputContentInfoCompatImpl
+androidx.core.widget.AutoScrollHelper
+androidx.core.widget.AutoScrollHelper$ClampedScroller
+androidx.core.widget.AutoScrollHelper$ScrollAnimationRunnable
+androidx.core.widget.AutoSizeableTextView
+androidx.core.widget.CompoundButtonCompat
+androidx.core.widget.ContentLoadingProgressBar
+androidx.core.widget.ContentLoadingProgressBar$1
+androidx.core.widget.ContentLoadingProgressBar$2
+androidx.core.widget.EdgeEffectCompat
+androidx.core.widget.ImageViewCompat
+androidx.core.widget.ListPopupWindowCompat
+androidx.core.widget.ListViewAutoScrollHelper
+androidx.core.widget.ListViewCompat
+androidx.core.widget.NestedScrollView
+androidx.core.widget.NestedScrollView$AccessibilityDelegate
+androidx.core.widget.NestedScrollView$OnScrollChangeListener
+androidx.core.widget.NestedScrollView$SavedState
+androidx.core.widget.NestedScrollView$SavedState$1
+androidx.core.widget.PopupMenuCompat
+androidx.core.widget.PopupWindowCompat
+androidx.core.widget.ScrollerCompat
+androidx.core.widget.TextViewCompat
+androidx.core.widget.TextViewCompat$AutoSizeTextType
+androidx.core.widget.TextViewCompat$OreoCallback
+androidx.core.widget.TintableCompoundButton
+androidx.core.widget.TintableCompoundDrawablesView
+androidx.core.widget.TintableImageSourceView
+androidx.customview.R
+androidx.customview.R$attr
+androidx.customview.R$color
+androidx.customview.R$dimen
+androidx.customview.R$drawable
+androidx.customview.R$id
+androidx.customview.R$integer
+androidx.customview.R$layout
+androidx.customview.R$string
+androidx.customview.R$style
+androidx.customview.R$styleable
+androidx.customview.view.AbsSavedState
+androidx.customview.view.AbsSavedState$1
+androidx.customview.view.AbsSavedState$2
+androidx.customview.widget.ExploreByTouchHelper
+androidx.customview.widget.ExploreByTouchHelper$1
+androidx.customview.widget.ExploreByTouchHelper$2
+androidx.customview.widget.ExploreByTouchHelper$MyNodeProvider
+androidx.customview.widget.FocusStrategy
+androidx.customview.widget.FocusStrategy$BoundsAdapter
+androidx.customview.widget.FocusStrategy$CollectionAdapter
+androidx.customview.widget.FocusStrategy$SequentialComparator
+androidx.customview.widget.ViewDragHelper
+androidx.customview.widget.ViewDragHelper$1
+androidx.customview.widget.ViewDragHelper$2
+androidx.customview.widget.ViewDragHelper$Callback
+androidx.fragment.R
+androidx.fragment.R$attr
+androidx.fragment.R$color
+androidx.fragment.R$dimen
+androidx.fragment.R$drawable
+androidx.fragment.R$id
+androidx.fragment.R$integer
+androidx.fragment.R$layout
+androidx.fragment.R$string
+androidx.fragment.R$style
+androidx.fragment.R$styleable
+androidx.fragment.app.BackStackRecord:
+    static final java.lang.String TAG
+    146:146:public int getId()
+    151:151:public int getBreadCrumbTitleRes()
+    156:156:public int getBreadCrumbShortTitleRes()
+    162:165:public java.lang.CharSequence getBreadCrumbTitle()
+    171:174:public java.lang.CharSequence getBreadCrumbShortTitle()
+    179:181:void doAddOp(int,androidx.fragment.app.Fragment,java.lang.String,int)
+    186:191:public androidx.fragment.app.FragmentTransaction remove(androidx.fragment.app.Fragment)
+    197:202:public androidx.fragment.app.FragmentTransaction hide(androidx.fragment.app.Fragment)
+    208:213:public androidx.fragment.app.FragmentTransaction show(androidx.fragment.app.Fragment)
+    219:224:public androidx.fragment.app.FragmentTransaction detach(androidx.fragment.app.Fragment)
+    230:236:public androidx.fragment.app.FragmentTransaction setPrimaryNavigationFragment(androidx.fragment.app.Fragment)
+    243:251:public androidx.fragment.app.FragmentTransaction setMaxLifecycle(androidx.fragment.app.Fragment,androidx.lifecycle.Lifecycle$State)
+    282:282:public int commit()
+    287:287:public int commitAllowingStateLoss()
+    292:294:public void commitNow()
+    298:300:public void commitNowAllowingStateLoss()
+    303:318:int commitInternal(boolean)
+    665:665:public boolean isEmpty()
+androidx.fragment.app.DialogFragment
+androidx.fragment.app.DialogFragment$1
+androidx.fragment.app.Fragment:
+    static final int INITIALIZING
+    static final int CREATED
+    static final int ACTIVITY_CREATED
+    static final int STARTED
+    static final int RESUMED
+    324:328:public androidx.lifecycle.LifecycleOwner getViewLifecycleOwner()
+    345:345:public androidx.lifecycle.LiveData getViewLifecycleOwnerLiveData()
+    463:465:public Fragment(int)
+    495:495:public static androidx.fragment.app.Fragment instantiate(android.content.Context,java.lang.String)
+    605:605:public final int getId()
+    613:613:public final java.lang.String getTag()
+    636:636:public final android.os.Bundle getArguments()
+    647:651:public final android.os.Bundle requireArguments()
+    678:683:public void setInitialSavedState(androidx.fragment.app.Fragment$SavedState)
+    702:729:public void setTargetFragment(androidx.fragment.app.Fragment,int)
+    751:751:public final int getTargetRequestCode()
+    826:830:public final java.lang.Object requireHost()
+    849:849:public final java.lang.CharSequence getText(int)
+    860:860:public final java.lang.String getString(int)
+    873:873:public final varargs java.lang.String getString(int,java.lang.Object[])
+    908:913:public final androidx.fragment.app.FragmentManager requireFragmentManager()
+    946:957:public final androidx.fragment.app.Fragment requireParentFragment()
+    964:964:public final boolean isAdded()
+    973:973:public final boolean isDetached()
+    982:982:public final boolean isRemoving()
+    993:993:public final boolean isInLayout()
+    1001:1001:public final boolean isResumed()
+    1010:1011:public final boolean isVisible()
+    1022:1022:public final boolean isHidden()
+    1028:1028:public final boolean hasOptionsMenu()
+    1034:1034:public final boolean isMenuVisible()
+    1060:1070:public void setRetainInstance(boolean)
+    1084:1090:public void setHasOptionsMenu(boolean)
+    1102:1108:public void setMenuVisibility(boolean)
+    1131:1142:public void setUserVisibleHint(boolean)
+    1153:1153:public boolean getUserVisibleHint()
+    1165:1165:public androidx.loader.app.LoaderManager getLoaderManager()
+    1173:1174:public void startActivity(android.content.Intent)
+    1182:1186:public void startActivity(android.content.Intent,android.os.Bundle)
+    1194:1195:public void startActivityForResult(android.content.Intent,int)
+    1203:1207:public void startActivityForResult(android.content.Intent,int,android.os.Bundle)
+    1216:1221:public void startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)
+    1314:1318:public final void requestPermissions(java.lang.String[],int)
+    1363:1366:public boolean shouldShowRequestPermissionRationale(java.lang.String)
+    1396:1399:public final android.view.LayoutInflater getLayoutInflater()
+    2013:2014:public void registerForContextMenu(android.view.View)
+    2024:2025:public void unregisterForContextMenu(android.view.View)
+    2056:2057:public void setEnterSharedElementCallback(androidx.core.app.SharedElementCallback)
+    2067:2068:public void setExitSharedElementCallback(androidx.core.app.SharedElementCallback)
+    2084:2085:public void setEnterTransition(java.lang.Object)
+    2120:2121:public void setReturnTransition(java.lang.Object)
+    2160:2161:public void setExitTransition(java.lang.Object)
+    2199:2200:public void setReenterTransition(java.lang.Object)
+    2234:2235:public void setSharedElementEnterTransition(java.lang.Object)
+    2269:2270:public void setSharedElementReturnTransition(java.lang.Object)
+    2303:2304:public void setAllowEnterTransitionOverlap(boolean)
+    2328:2329:public void setAllowReturnTransitionOverlap(boolean)
+    2375:2376:public void postponeEnterTransition()
+    2409:2418:public final void postponeEnterTransition(long,java.util.concurrent.TimeUnit)
+androidx.fragment.app.Fragment$SavedState
+androidx.fragment.app.Fragment$SavedState$1
+androidx.fragment.app.FragmentActivity:
+    private static final java.lang.String TAG
+    static final java.lang.String FRAGMENTS_TAG
+    static final java.lang.String NEXT_CANDIDATE_REQUEST_INDEX_TAG
+    static final java.lang.String ALLOCATED_REQUEST_INDICIES_TAG
+    static final java.lang.String REQUEST_FRAGMENT_WHO_TAG
+    static final int MAX_NUM_PENDING_FRAGMENT_ACTIVITY_RESULTS
+    boolean mRequestedPermissionsFromFragment
+    82:143:public FragmentActivity(int)
+    194:195:public void supportFinishAfterTransition()
+    206:207:public void setEnterSharedElementCallback(androidx.core.app.SharedElementCallback)
+    219:220:public void setExitSharedElementCallback(androidx.core.app.SharedElementCallback)
+    227:228:public void supportPostponeEnterTransition()
+    235:236:public void supportStartPostponedEnterTransition()
+    646:646:public androidx.loader.app.LoaderManager getSupportLoaderManager()
+    728:732:public final void validateRequestPermissionsRequestCode(int)
+    779:780:public void startActivityFromFragment(androidx.fragment.app.Fragment,android.content.Intent,int)
+    788:801:public void startActivityFromFragment(androidx.fragment.app.Fragment,android.content.Intent,int,android.os.Bundle)
+    810:825:public void startIntentSenderFromFragment(androidx.fragment.app.Fragment,android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)
+    830:845:private int allocateRequestIndex(androidx.fragment.app.Fragment)
+    853:866:void requestPermissionsFromFragment(androidx.fragment.app.Fragment,java.lang.String[],int)
+androidx.fragment.app.FragmentActivity$HostCallbacks:
+    927:928:public void onStartActivityFromFragment(androidx.fragment.app.Fragment,android.content.Intent,int)
+    933:934:public void onStartActivityFromFragment(androidx.fragment.app.Fragment,android.content.Intent,int,android.os.Bundle)
+    941:943:public void onStartIntentSenderFromFragment(androidx.fragment.app.Fragment,android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)
+    948:950:public void onRequestPermissionsFromFragment(androidx.fragment.app.Fragment,java.lang.String[],int)
+    954:954:public boolean onShouldShowRequestPermissionRationale(java.lang.String)
+androidx.fragment.app.FragmentController:
+    83:83:public androidx.loader.app.LoaderManager getSupportLoaderManager()
+    99:99:public int getActiveFragmentsCount()
+    108:108:public java.util.List getActiveFragments(java.util.List)
+    165:167:public void restoreAllState(android.os.Parcelable,java.util.List)
+    180:181:public void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig)
+    208:210:public java.util.List retainNonConfig()
+    224:224:public androidx.fragment.app.FragmentManagerNonConfig retainNestedNonConfig()
+    298:298:public void dispatchReallyStop()
+    308:309:public void dispatchDestroyView()
+    456:456:public void doLoaderStart()
+    469:469:public void doLoaderStop(boolean)
+    478:478:public void doLoaderRetain()
+    487:487:public void doLoaderDestroy()
+    496:496:public void reportLoaderStart()
+    507:507:public androidx.collection.SimpleArrayMap retainLoaderNonConfig()
+    521:521:public void restoreLoaderNonConfig(androidx.collection.SimpleArrayMap)
+    531:531:public void dumpLoaders(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+androidx.fragment.app.FragmentHostCallback:
+    53:55:public FragmentHostCallback(android.content.Context,android.os.Handler,int)
+    119:120:public void onStartActivityFromFragment(androidx.fragment.app.Fragment,android.content.Intent,int)
+    129:134:public void onStartActivityFromFragment(androidx.fragment.app.Fragment,android.content.Intent,int,android.os.Bundle)
+    144:150:public void onStartIntentSenderFromFragment(androidx.fragment.app.Fragment,android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)
+    158:158:public void onRequestPermissionsFromFragment(androidx.fragment.app.Fragment,java.lang.String[],int)
+    165:165:public boolean onShouldShowRequestPermissionRationale(java.lang.String)
+androidx.fragment.app.FragmentManager:
+    public static final int POP_BACK_STACK_INCLUSIVE
+    public abstract androidx.fragment.app.FragmentTransaction beginTransaction()
+    143:143:public androidx.fragment.app.FragmentTransaction openTransaction()
+    public abstract boolean executePendingTransactions()
+    public abstract androidx.fragment.app.Fragment findFragmentById(int)
+    public abstract androidx.fragment.app.Fragment findFragmentByTag(java.lang.String)
+    public abstract void popBackStack()
+    public abstract void popBackStack(java.lang.String,int)
+    public abstract boolean popBackStackImmediate(java.lang.String,int)
+    public abstract void popBackStack(int,int)
+    public abstract boolean popBackStackImmediate(int,int)
+    public abstract int getBackStackEntryCount()
+    public abstract androidx.fragment.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
+    public abstract void addOnBackStackChangedListener(androidx.fragment.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void removeOnBackStackChangedListener(androidx.fragment.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void putFragment(android.os.Bundle,java.lang.String,androidx.fragment.app.Fragment)
+    public abstract androidx.fragment.app.Fragment getFragment(android.os.Bundle,java.lang.String)
+    public abstract androidx.fragment.app.Fragment$SavedState saveFragmentInstanceState(androidx.fragment.app.Fragment)
+    public abstract boolean isDestroyed()
+    public abstract void registerFragmentLifecycleCallbacks(androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks,boolean)
+    public abstract void unregisterFragmentLifecycleCallbacks(androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks)
+    public abstract androidx.fragment.app.Fragment getPrimaryNavigationFragment()
+    434:435:public static void enableDebugLogging(boolean)
+    public abstract boolean isStateSaved()
+androidx.fragment.app.FragmentManager$BackStackEntry
+androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks:
+    454:454:public FragmentManager$FragmentLifecycleCallbacks()
+androidx.fragment.app.FragmentManagerImpl:
+    static final java.lang.String TAG
+    static final java.lang.String TARGET_REQUEST_CODE_STATE_TAG
+    static final java.lang.String TARGET_STATE_TAG
+    static final java.lang.String VIEW_STATE_TAG
+    static final java.lang.String USER_VISIBLE_HINT_TAG
+    static final int ANIM_DUR
+    public static final int ANIM_STYLE_OPEN_ENTER
+    public static final int ANIM_STYLE_OPEN_EXIT
+    public static final int ANIM_STYLE_CLOSE_ENTER
+    public static final int ANIM_STYLE_CLOSE_EXIT
+    public static final int ANIM_STYLE_FADE_ENTER
+    public static final int ANIM_STYLE_FADE_EXIT
+    178:178:public androidx.fragment.app.FragmentTransaction beginTransaction()
+    183:185:public boolean executePendingTransactions()
+    247:248:public void popBackStack()
+    258:259:public void popBackStack(java.lang.String,int)
+    263:264:public boolean popBackStackImmediate(java.lang.String,int)
+    269:273:public void popBackStack(int,int)
+    277:282:public boolean popBackStackImmediate(int,int)
+    329:329:public androidx.fragment.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
+    334:338:public void addOnBackStackChangedListener(androidx.fragment.app.FragmentManager$OnBackStackChangedListener)
+    342:345:public void removeOnBackStackChangedListener(androidx.fragment.app.FragmentManager$OnBackStackChangedListener)
+    426:426:java.util.List getActiveFragments()
+    435:435:int getActiveFragmentCount()
+    441:449:public androidx.fragment.app.Fragment$SavedState saveFragmentInstanceState(androidx.fragment.app.Fragment)
+    1557:1574:public void enqueueAction(androidx.fragment.app.FragmentManagerImpl$OpGenerator,boolean)
+    1597:1613:public int allocBackStackIndex(androidx.fragment.app.BackStackRecord)
+    1688:1705:public void execSingleAction(androidx.fragment.app.FragmentManagerImpl$OpGenerator,boolean)
+    2260:2264:androidx.fragment.app.FragmentManagerNonConfig retainNonConfig()
+    2430:2436:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig)
+    2861:2862:public void registerFragmentLifecycleCallbacks(androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks,boolean)
+    2866:2874:public void unregisterFragmentLifecycleCallbacks(androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks)
+androidx.fragment.app.FragmentManagerImpl$FragmentLifecycleCallbacksHolder:
+    88:91:FragmentManagerImpl$FragmentLifecycleCallbacksHolder(androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks,boolean)
+androidx.fragment.app.FragmentManagerImpl$FragmentTag:
+    public static final int Fragment_id
+    public static final int Fragment_name
+    public static final int Fragment_tag
+    3263:3264:private FragmentManagerImpl$FragmentTag()
+androidx.fragment.app.FragmentManagerImpl$PopBackStackState
+androidx.fragment.app.FragmentManagerNonConfig
+androidx.fragment.app.FragmentManagerViewModel:
+    172:196:void restoreFromSnapshot(androidx.fragment.app.FragmentManagerNonConfig)
+    205:222:androidx.fragment.app.FragmentManagerNonConfig getSnapshot()
+androidx.fragment.app.FragmentPagerAdapter
+androidx.fragment.app.FragmentStatePagerAdapter
+androidx.fragment.app.FragmentTabHost
+androidx.fragment.app.FragmentTabHost$DummyTabFactory
+androidx.fragment.app.FragmentTabHost$SavedState
+androidx.fragment.app.FragmentTabHost$SavedState$1
+androidx.fragment.app.FragmentTabHost$TabInfo
+androidx.fragment.app.FragmentTransaction:
+    static final int OP_NULL
+    static final int OP_ADD
+    static final int OP_REPLACE
+    static final int OP_REMOVE
+    static final int OP_HIDE
+    static final int OP_SHOW
+    static final int OP_DETACH
+    static final int OP_ATTACH
+    static final int OP_SET_PRIMARY_NAV
+    static final int OP_UNSET_PRIMARY_NAV
+    static final int OP_SET_MAX_LIFECYCLE
+    public static final int TRANSIT_ENTER_MASK
+    public static final int TRANSIT_EXIT_MASK
+    public static final int TRANSIT_UNSET
+    public static final int TRANSIT_NONE
+    public static final int TRANSIT_FRAGMENT_OPEN
+    public static final int TRANSIT_FRAGMENT_CLOSE
+    public static final int TRANSIT_FRAGMENT_FADE
+    125:126:public androidx.fragment.app.FragmentTransaction add(androidx.fragment.app.Fragment,java.lang.String)
+    134:135:public androidx.fragment.app.FragmentTransaction add(int,androidx.fragment.app.Fragment)
+    156:157:public androidx.fragment.app.FragmentTransaction add(int,androidx.fragment.app.Fragment,java.lang.String)
+    161:193:void doAddOp(int,androidx.fragment.app.Fragment,java.lang.String,int)
+    200:200:public androidx.fragment.app.FragmentTransaction replace(int,androidx.fragment.app.Fragment)
+    222:226:public androidx.fragment.app.FragmentTransaction replace(int,androidx.fragment.app.Fragment,java.lang.String)
+    239:241:public androidx.fragment.app.FragmentTransaction remove(androidx.fragment.app.Fragment)
+    255:257:public androidx.fragment.app.FragmentTransaction hide(androidx.fragment.app.Fragment)
+    271:273:public androidx.fragment.app.FragmentTransaction show(androidx.fragment.app.Fragment)
+    289:291:public androidx.fragment.app.FragmentTransaction detach(androidx.fragment.app.Fragment)
+    306:308:public androidx.fragment.app.FragmentTransaction attach(androidx.fragment.app.Fragment)
+    329:331:public androidx.fragment.app.FragmentTransaction setPrimaryNavigationFragment(androidx.fragment.app.Fragment)
+    350:351:public androidx.fragment.app.FragmentTransaction setMaxLifecycle(androidx.fragment.app.Fragment,androidx.lifecycle.Lifecycle$State)
+    359:359:public boolean isEmpty()
+    403:403:public androidx.fragment.app.FragmentTransaction setCustomAnimations(int,int)
+    427:431:public androidx.fragment.app.FragmentTransaction setCustomAnimations(int,int,int,int)
+    448:468:public androidx.fragment.app.FragmentTransaction addSharedElement(android.view.View,java.lang.String)
+    478:479:public androidx.fragment.app.FragmentTransaction setTransition(int)
+    488:489:public androidx.fragment.app.FragmentTransaction setTransitionStyle(int)
+    505:511:public androidx.fragment.app.FragmentTransaction addToBackStack(java.lang.String)
+    522:522:public boolean isAddToBackStackAllowed()
+    532:537:public androidx.fragment.app.FragmentTransaction disallowAddToBackStack()
+    548:550:public androidx.fragment.app.FragmentTransaction setBreadCrumbTitle(int)
+    560:562:public androidx.fragment.app.FragmentTransaction setBreadCrumbTitle(java.lang.CharSequence)
+    573:575:public androidx.fragment.app.FragmentTransaction setBreadCrumbShortTitle(int)
+    585:587:public androidx.fragment.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence)
+    620:621:public androidx.fragment.app.FragmentTransaction setReorderingAllowed(boolean)
+    630:630:public androidx.fragment.app.FragmentTransaction setAllowOptimization(boolean)
+    656:661:public androidx.fragment.app.FragmentTransaction runOnCommit(java.lang.Runnable)
+    public abstract int commit()
+    public abstract int commitAllowingStateLoss()
+    public abstract void commitNow()
+    public abstract void commitNowAllowingStateLoss()
+androidx.fragment.app.FragmentTransaction$Op:
+    82:87:FragmentTransaction$Op(int,androidx.fragment.app.Fragment,androidx.lifecycle.Lifecycle$State)
+androidx.fragment.app.FragmentTransition:
+    1105:1105:static boolean supportsTransition()
+    1265:1266:private FragmentTransition()
+androidx.fragment.app.ListFragment
+androidx.fragment.app.ListFragment$1
+androidx.fragment.app.ListFragment$2
+androidx.lifecycle.AndroidViewModel
+androidx.lifecycle.ClassesInfoCache:
+    private static final int CALL_TYPE_NO_ARG
+    private static final int CALL_TYPE_PROVIDER
+    private static final int CALL_TYPE_PROVIDER_WITH_EVENT
+androidx.lifecycle.ComputableLiveData
+androidx.lifecycle.ComputableLiveData$1
+androidx.lifecycle.ComputableLiveData$2
+androidx.lifecycle.ComputableLiveData$3
+androidx.lifecycle.DefaultLifecycleObserver
+androidx.lifecycle.DefaultLifecycleObserver$$CC
+androidx.lifecycle.LifecycleRegistry:
+    233:233:public int getObserverCount()
+androidx.lifecycle.Lifecycling:
+    private static final int REFLECTIVE_CALLBACK
+    private static final int GENERATED_CALLBACK
+    56:57:static androidx.lifecycle.GenericLifecycleObserver getCallback(java.lang.Object)
+    209:210:private Lifecycling()
+androidx.lifecycle.Lifecycling$1:
+    57:57:Lifecycling$1(androidx.lifecycle.LifecycleEventObserver)
+androidx.lifecycle.LiveData:
+    static final int START_VERSION
+    204:215:public void observeForever(androidx.lifecycle.Observer)
+    241:247:public void removeObservers(androidx.lifecycle.LifecycleOwner)
+    266:274:protected void postValue(java.lang.Object)
+    310:310:int getVersion()
+    343:343:public boolean hasObservers()
+androidx.lifecycle.LiveData$AlwaysActiveObserver
+androidx.lifecycle.MediatorLiveData
+androidx.lifecycle.MediatorLiveData$Source
+androidx.lifecycle.MethodCallsLogger:
+    36:40:public boolean approveCall(java.lang.String,int)
+androidx.lifecycle.MutableLiveData:
+    28:29:public void postValue(java.lang.Object)
+androidx.lifecycle.R
+androidx.lifecycle.ReportFragment:
+    private static final java.lang.String REPORT_FRAGMENT_TAG
+    74:74:static androidx.lifecycle.ReportFragment get(android.app.Activity)
+    149:150:void setProcessListener(androidx.lifecycle.ReportFragment$ActivityInitializationListener)
+androidx.lifecycle.Transformations
+androidx.lifecycle.Transformations$1
+androidx.lifecycle.Transformations$2
+androidx.lifecycle.Transformations$2$1
+androidx.lifecycle.ViewModel:
+    156:170:java.lang.Object setTagIfAbsent(java.lang.String,java.lang.Object)
+    179:181:java.lang.Object getTag(java.lang.String)
+androidx.lifecycle.ViewModelProvider:
+    private static final java.lang.String DEFAULT_KEY
+    94:95:public ViewModelProvider(androidx.lifecycle.ViewModelStoreOwner,androidx.lifecycle.ViewModelProvider$Factory)
+androidx.lifecycle.ViewModelProvider$AndroidViewModelFactory
+androidx.lifecycle.ViewModelProvider$KeyedFactory:
+    76:76:public androidx.lifecycle.ViewModel create(java.lang.Class)
+androidx.lifecycle.ViewModelProvider$NewInstanceFactory
+androidx.lifecycle.ViewModelStore:
+    54:54:java.util.Set keys()
+androidx.lifecycle.livedata.R
+androidx.lifecycle.livedata.core.R
+androidx.lifecycle.viewmodel.R
+androidx.loader.R
+androidx.loader.R$attr
+androidx.loader.R$color
+androidx.loader.R$dimen
+androidx.loader.R$drawable
+androidx.loader.R$id
+androidx.loader.R$integer
+androidx.loader.R$layout
+androidx.loader.R$string
+androidx.loader.R$style
+androidx.loader.R$styleable
+androidx.loader.app.LoaderManager:
+    public abstract androidx.loader.content.Loader initLoader(int,android.os.Bundle,androidx.loader.app.LoaderManager$LoaderCallbacks)
+    public abstract androidx.loader.content.Loader restartLoader(int,android.os.Bundle,androidx.loader.app.LoaderManager$LoaderCallbacks)
+    public abstract void destroyLoader(int)
+    public abstract androidx.loader.content.Loader getLoader(int)
+    235:236:public static void enableDebugLogging(boolean)
+    242:242:public boolean hasRunningLoaders()
+androidx.loader.app.LoaderManager$LoaderCallbacks:
+    public abstract androidx.loader.content.Loader onCreateLoader(int,android.os.Bundle)
+androidx.loader.app.LoaderManagerImpl:
+    static final java.lang.String TAG
+    382:400:private androidx.loader.content.Loader createAndInstallLoader(int,android.os.Bundle,androidx.loader.app.LoaderManager$LoaderCallbacks,androidx.loader.content.Loader)
+    408:424:public androidx.loader.content.Loader initLoader(int,android.os.Bundle,androidx.loader.app.LoaderManager$LoaderCallbacks)
+    433:447:public androidx.loader.content.Loader restartLoader(int,android.os.Bundle,androidx.loader.app.LoaderManager$LoaderCallbacks)
+    453:466:public void destroyLoader(int)
+    471:476:public androidx.loader.content.Loader getLoader(int)
+    503:503:public boolean hasRunningLoaders()
+androidx.loader.app.LoaderManagerImpl$LoaderInfo:
+    61:67:LoaderManagerImpl$LoaderInfo(int,android.os.Bundle,androidx.loader.content.Loader,androidx.loader.content.Loader)
+    98:107:androidx.loader.content.Loader setCallback(androidx.lifecycle.LifecycleOwner,androidx.loader.app.LoaderManager$LoaderCallbacks)
+    125:129:boolean isCallbackWaitingForData()
+    172:185:public void onLoadComplete(androidx.loader.content.Loader,java.lang.Object)
+androidx.loader.app.LoaderManagerImpl$LoaderObserver:
+    237:242:LoaderManagerImpl$LoaderObserver(androidx.loader.content.Loader,androidx.loader.app.LoaderManager$LoaderCallbacks)
+androidx.loader.app.LoaderManagerImpl$LoaderViewModel:
+    299:300:void startCreatingLoader()
+    303:303:boolean isCreatingLoader()
+    307:308:void finishCreatingLoader()
+    311:312:void putLoader(int,androidx.loader.app.LoaderManagerImpl$LoaderInfo)
+    316:316:androidx.loader.app.LoaderManagerImpl$LoaderInfo getLoader(int)
+    320:321:void removeLoader(int)
+    324:331:boolean hasRunningLoaders()
+androidx.loader.content.AsyncTaskLoader
+androidx.loader.content.AsyncTaskLoader$LoadTask
+androidx.loader.content.CursorLoader
+androidx.loader.content.Loader:
+    androidx.loader.content.Loader$OnLoadCanceledListener mOnLoadCanceledListener
+    android.content.Context mContext
+    44:120:public Loader(android.content.Context)
+    131:134:public void deliverResult(java.lang.Object)
+    144:147:public void deliverCancellation()
+    154:154:public android.content.Context getContext()
+    161:161:public int getId()
+    173:178:public void registerListener(int,androidx.loader.content.Loader$OnLoadCompleteListener)
+    207:211:public void registerOnLoadCanceledListener(androidx.loader.content.Loader$OnLoadCanceledListener)
+    223:230:public void unregisterOnLoadCanceledListener(androidx.loader.content.Loader$OnLoadCanceledListener)
+    238:238:public boolean isStarted()
+    247:247:public boolean isAbandoned()
+    256:256:public boolean isReset()
+    347:348:public void forceLoad()
+    356:356:protected void onForceLoad()
+    471:474:public boolean takeContentChanged()
+    485:486:public void commitContentChanged()
+    496:499:public void rollbackContentChanged()
+    511:519:public void onContentChanged()
+androidx.loader.content.Loader$ForceLoadContentObserver
+androidx.loader.content.Loader$OnLoadCanceledListener
+androidx.loader.content.Loader$OnLoadCompleteListener:
+    public abstract void onLoadComplete(androidx.loader.content.Loader,java.lang.Object)
+androidx.loader.content.ModernAsyncTask
+androidx.loader.content.ModernAsyncTask$1
+androidx.loader.content.ModernAsyncTask$2
+androidx.loader.content.ModernAsyncTask$3
+androidx.loader.content.ModernAsyncTask$4
+androidx.loader.content.ModernAsyncTask$AsyncTaskResult
+androidx.loader.content.ModernAsyncTask$InternalHandler
+androidx.loader.content.ModernAsyncTask$Status
+androidx.loader.content.ModernAsyncTask$WorkerRunnable
+androidx.savedstate.R
+androidx.savedstate.Recreator:
+    static final java.lang.String CLASSES_KEY
+    static final java.lang.String COMPONENT_KEY
+androidx.savedstate.Recreator$SavedStateProvider
+androidx.savedstate.SavedStateRegistry:
+    private static final java.lang.String SAVED_COMPONENTS_KEY
+    private androidx.savedstate.Recreator$SavedStateProvider mRecreatorProvider
+    109:114:public void registerSavedStateProvider(java.lang.String,androidx.savedstate.SavedStateRegistry$SavedStateProvider)
+    123:124:public void unregisterSavedStateProvider(java.lang.String)
+    134:134:public boolean isRestored()
+    167:181:public void runOnNextRecreation(java.lang.Class)
+androidx.versionedparcelable.NonParcelField
+androidx.versionedparcelable.ParcelField
+androidx.versionedparcelable.ParcelImpl:
+    34:36:public ParcelImpl(androidx.versionedparcelable.VersionedParcelable)
+    46:46:public androidx.versionedparcelable.VersionedParcelable getVersionedParcel()
+androidx.versionedparcelable.ParcelUtils
+androidx.versionedparcelable.R
+androidx.versionedparcelable.VersionedParcel:
+    private static final java.lang.String TAG
+    private static final int EX_SECURITY
+    private static final int EX_BAD_PARCELABLE
+    private static final int EX_ILLEGAL_ARGUMENT
+    private static final int EX_NULL_POINTER
+    private static final int EX_ILLEGAL_STATE
+    private static final int EX_NETWORK_MAIN_THREAD
+    private static final int EX_UNSUPPORTED_OPERATION
+    private static final int EX_PARCELABLE
+    private static final int TYPE_VERSIONED_PARCELABLE
+    private static final int TYPE_PARCELABLE
+    private static final int TYPE_SERIALIZABLE
+    private static final int TYPE_STRING
+    private static final int TYPE_BINDER
+    private static final int TYPE_INTEGER
+    private static final int TYPE_FLOAT
+    protected abstract void writeByteArray(byte[],int,int)
+    protected abstract void writeLong(long)
+    protected abstract void writeFloat(float)
+    protected abstract void writeDouble(double)
+    protected abstract void writeStrongBinder(android.os.IBinder)
+    protected abstract void writeStrongInterface(android.os.IInterface)
+    protected abstract void writeBundle(android.os.Bundle)
+    protected abstract long readLong()
+    protected abstract float readFloat()
+    protected abstract double readDouble()
+    protected abstract android.os.IBinder readStrongBinder()
+    protected abstract android.os.Bundle readBundle()
+    276:278:public void writeStrongInterface(android.os.IInterface,int)
+    285:287:public void writeBundle(android.os.Bundle,int)
+    316:318:public void writeByteArray(byte[],int,int,int)
+    343:345:public void writeLong(long,int)
+    352:354:public void writeFloat(float,int)
+    361:363:public void writeDouble(double,int)
+    379:381:public void writeStrongBinder(android.os.IBinder,int)
+    419:422:public long readLong(long,int)
+    430:433:public float readFloat(float,int)
+    441:444:public double readDouble(double,int)
+    461:464:public android.os.IBinder readStrongBinder(android.os.IBinder,int)
+    493:496:public android.os.Bundle readBundle(android.os.Bundle,int)
+    504:506:public void writeByte(byte,int)
+    514:520:public void writeSize(android.util.Size,int)
+    528:534:public void writeSizeF(android.util.SizeF,int)
+    539:552:public void writeSparseBooleanArray(android.util.SparseBooleanArray,int)
+    557:559:public void writeBooleanArray(boolean[],int)
+    564:573:protected void writeBooleanArray(boolean[])
+    578:581:public boolean[] readBooleanArray(boolean[],int)
+    587:595:protected boolean[] readBooleanArray()
+    601:611:public void writeCharArray(char[],int)
+    625:636:public char[] readCharArray(char[],int)
+    642:644:public void writeIntArray(int[],int)
+    649:658:protected void writeIntArray(int[])
+    663:666:public int[] readIntArray(int[],int)
+    672:680:protected int[] readIntArray()
+    686:688:public void writeLongArray(long[],int)
+    693:702:protected void writeLongArray(long[])
+    707:710:public long[] readLongArray(long[],int)
+    716:724:protected long[] readLongArray()
+    730:732:public void writeFloatArray(float[],int)
+    737:746:protected void writeFloatArray(float[])
+    751:754:public float[] readFloatArray(float[],int)
+    760:768:protected float[] readFloatArray()
+    774:776:public void writeDoubleArray(double[],int)
+    781:790:protected void writeDoubleArray(double[])
+    795:798:public double[] readDoubleArray(double[],int)
+    804:812:protected double[] readDoubleArray()
+    826:827:public void writeSet(java.util.Set,int)
+    840:841:public void writeList(java.util.List,int)
+    854:872:public void writeMap(java.util.Map,int)
+    875:877:private void writeCollection(java.util.Collection,int)
+    880:928:private void writeCollection(java.util.Collection)
+    941:943:public void writeArray(java.lang.Object[],int)
+    948:992:protected void writeArray(java.lang.Object[])
+    995:1010:private int getType(java.lang.Object)
+    1057:1059:public void writeSerializable(java.io.Serializable,int)
+    1062:1081:private void writeSerializable(java.io.Serializable)
+    1107:1147:public void writeException(java.lang.Exception,int)
+    1157:1158:protected void writeNoException()
+    1170:1178:public java.lang.Exception readException(java.lang.Exception,int)
+    1193:1194:private int readExceptionCode()
+    1198:1199:private java.lang.Exception readException(int,java.lang.String)
+    1208:1209:protected static java.lang.Throwable getRootCause(java.lang.Throwable)
+    1219:1237:private java.lang.Exception createException(int,java.lang.String)
+    1245:1248:public byte readByte(byte,int)
+    1256:1264:public android.util.Size readSize(android.util.Size,int)
+    1272:1280:public android.util.SizeF readSizeF(android.util.SizeF,int)
+    1289:1302:public android.util.SparseBooleanArray readSparseBooleanArray(android.util.SparseBooleanArray,int)
+    1318:1321:public java.util.Set readSet(java.util.Set,int)
+    1337:1340:public java.util.List readList(java.util.List,int)
+    1344:1386:private java.util.Collection readCollection(java.util.Collection)
+    1401:1419:public java.util.Map readMap(java.util.Map,int)
+    1435:1438:public java.lang.Object[] readArray(java.lang.Object[],int)
+    1444:1487:protected java.lang.Object[] readArray(java.lang.Object[])
+    1523:1553:protected java.io.Serializable readSerializable()
+androidx.versionedparcelable.VersionedParcel$1
+androidx.versionedparcelable.VersionedParcel$ParcelException
+androidx.versionedparcelable.VersionedParcelParcel:
+    private static final boolean DEBUG
+    private static final java.lang.String TAG
+    136:142:public void writeByteArray(byte[],int,int)
+    151:152:public void writeLong(long)
+    156:157:public void writeFloat(float)
+    161:162:public void writeDouble(double)
+    171:172:public void writeStrongBinder(android.os.IBinder)
+    186:187:public void writeStrongInterface(android.os.IInterface)
+    191:192:public void writeBundle(android.os.Bundle)
+    211:211:public long readLong()
+    216:216:public float readFloat()
+    221:221:public double readDouble()
+    231:231:public android.os.IBinder readStrongBinder()
+    253:253:public android.os.Bundle readBundle()
+androidx.versionedparcelable.VersionedParcelStream
+androidx.versionedparcelable.VersionedParcelStream$1
+androidx.versionedparcelable.VersionedParcelStream$FieldBuffer
+androidx.versionedparcelable.VersionedParcelize
+androidx.viewpager.R
+androidx.viewpager.R$attr
+androidx.viewpager.R$color
+androidx.viewpager.R$dimen
+androidx.viewpager.R$drawable
+androidx.viewpager.R$id
+androidx.viewpager.R$integer
+androidx.viewpager.R$layout
+androidx.viewpager.R$string
+androidx.viewpager.R$style
+androidx.viewpager.R$styleable
+androidx.viewpager.widget.PagerAdapter
+androidx.viewpager.widget.PagerTabStrip
+androidx.viewpager.widget.PagerTabStrip$1
+androidx.viewpager.widget.PagerTabStrip$2
+androidx.viewpager.widget.PagerTitleStrip
+androidx.viewpager.widget.PagerTitleStrip$PageListener
+androidx.viewpager.widget.PagerTitleStrip$SingleLineAllCapsTransform
+androidx.viewpager.widget.ViewPager
+androidx.viewpager.widget.ViewPager$1
+androidx.viewpager.widget.ViewPager$2
+androidx.viewpager.widget.ViewPager$3
+androidx.viewpager.widget.ViewPager$4
+androidx.viewpager.widget.ViewPager$DecorView
+androidx.viewpager.widget.ViewPager$ItemInfo
+androidx.viewpager.widget.ViewPager$LayoutParams
+androidx.viewpager.widget.ViewPager$MyAccessibilityDelegate
+androidx.viewpager.widget.ViewPager$OnAdapterChangeListener
+androidx.viewpager.widget.ViewPager$OnPageChangeListener
+androidx.viewpager.widget.ViewPager$PageTransformer
+androidx.viewpager.widget.ViewPager$PagerObserver
+androidx.viewpager.widget.ViewPager$SavedState
+androidx.viewpager.widget.ViewPager$SavedState$1
+androidx.viewpager.widget.ViewPager$SimpleOnPageChangeListener
+androidx.viewpager.widget.ViewPager$ViewPositionComparator
+com.aeologic.fluttercameraapp.BuildConfig
+com.aeologic.fluttercameraapp.R
+com.aeologic.fluttercameraapp.R$attr
+com.aeologic.fluttercameraapp.R$color
+com.aeologic.fluttercameraapp.R$dimen
+com.aeologic.fluttercameraapp.R$drawable
+com.aeologic.fluttercameraapp.R$id
+com.aeologic.fluttercameraapp.R$integer
+com.aeologic.fluttercameraapp.R$layout
+com.aeologic.fluttercameraapp.R$mipmap
+com.aeologic.fluttercameraapp.R$string
+com.aeologic.fluttercameraapp.R$style
+com.aeologic.fluttercameraapp.R$styleable
+io.flutter.BuildConfig
+io.flutter.FlutterInjector:
+    33:40:public static void setInstance(io.flutter.FlutterInjector)
+    61:63:public static void reset()
+io.flutter.FlutterInjector$Builder:
+    91:92:public io.flutter.FlutterInjector$Builder setFlutterLoader(io.flutter.embedding.engine.loader.FlutterLoader)
+io.flutter.Log:
+    13:13:public Log()
+    30:31:public static void setLogLevel(int)
+    37:37:public static void println(int,java.lang.String,java.lang.String)
+    49:49:public static void v(java.lang.String,java.lang.String,java.lang.Throwable)
+    55:55:public static void i(java.lang.String,java.lang.String)
+    61:61:public static void i(java.lang.String,java.lang.String,java.lang.Throwable)
+    73:73:public static void d(java.lang.String,java.lang.String,java.lang.Throwable)
+    92:93:public static void wtf(java.lang.String,java.lang.String)
+    96:97:public static void wtf(java.lang.String,java.lang.String,java.lang.Throwable)
+io.flutter.app.FlutterActivity:
+    private static final java.lang.String TAG
+    43:43:public io.flutter.view.FlutterView getFlutterView()
+    80:80:public final java.lang.Object valuePublishedByPlugin(java.lang.String)
+io.flutter.app.FlutterActivityDelegate:
+    private static final java.lang.String SPLASH_SCREEN_META_DATA_KEY
+    private static final java.lang.String TAG
+    103:103:public io.flutter.view.FlutterView getFlutterView()
+    115:115:public java.lang.Object valuePublishedByPlugin(java.lang.String)
+    58:58:static synthetic android.view.View access$000(io.flutter.app.FlutterActivityDelegate)
+    58:58:static synthetic android.view.View access$002(io.flutter.app.FlutterActivityDelegate,android.view.View)
+    58:58:static synthetic io.flutter.view.FlutterView access$100(io.flutter.app.FlutterActivityDelegate)
+io.flutter.app.FlutterActivityDelegate$1:
+    458:476:public void onFirstFrame()
+io.flutter.app.FlutterActivityDelegate$1$1
+io.flutter.app.FlutterFragmentActivity
+io.flutter.app.FlutterPluginRegistry:
+    private static final java.lang.String TAG
+    41:59:public FlutterPluginRegistry(io.flutter.embedding.engine.FlutterEngine,android.content.Context)
+    69:69:public java.lang.Object valuePublishedByPlugin(java.lang.String)
+    95:96:public void onPreEngineRestart()
+    26:26:static synthetic io.flutter.plugin.platform.PlatformViewsController access$400(io.flutter.app.FlutterPluginRegistry)
+    26:26:static synthetic java.util.Map access$500(io.flutter.app.FlutterPluginRegistry)
+    26:26:static synthetic java.util.List access$700(io.flutter.app.FlutterPluginRegistry)
+    26:26:static synthetic java.util.List access$800(io.flutter.app.FlutterPluginRegistry)
+    26:26:static synthetic java.util.List access$900(io.flutter.app.FlutterPluginRegistry)
+    26:26:static synthetic java.util.List access$1000(io.flutter.app.FlutterPluginRegistry)
+io.flutter.app.FlutterPluginRegistry$FlutterRegistrar:
+    121:121:public android.content.Context activeContext()
+    131:131:public io.flutter.view.TextureRegistry textures()
+    136:136:public io.flutter.plugin.platform.PlatformViewRegistry platformViewRegistry()
+    146:146:public java.lang.String lookupKeyForAsset(java.lang.String)
+    151:151:public java.lang.String lookupKeyForAsset(java.lang.String,java.lang.String)
+    156:157:public io.flutter.plugin.common.PluginRegistry$Registrar publish(java.lang.Object)
+    169:170:public io.flutter.plugin.common.PluginRegistry$Registrar addActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener)
+    175:176:public io.flutter.plugin.common.PluginRegistry$Registrar addNewIntentListener(io.flutter.plugin.common.PluginRegistry$NewIntentListener)
+    181:182:public io.flutter.plugin.common.PluginRegistry$Registrar addUserLeaveHintListener(io.flutter.plugin.common.PluginRegistry$UserLeaveHintListener)
+    187:188:public io.flutter.plugin.common.PluginRegistry$Registrar addViewDestroyListener(io.flutter.plugin.common.PluginRegistry$ViewDestroyListener)
+io.flutter.embedding.android.AndroidKeyProcessor:
+    private static final java.lang.String TAG
+    80:81:public void destroy()
+io.flutter.embedding.android.AndroidKeyProcessor$EventResponder:
+    private static final long MAX_PENDING_EVENTS
+    195:202:private android.view.KeyEvent removePendingEvent(long)
+    213:214:public void onKeyEventHandled(long)
+    225:226:public void onKeyEventNotHandled(long)
+    257:275:public void dispatchKeyEvent(android.view.KeyEvent)
+io.flutter.embedding.android.AndroidTouchProcessor:
+    private static final int POINTER_DATA_FIELD_COUNT
+    private static final int BYTES_PER_FIELD
+    private static final int POINTER_DATA_FLAG_BATCHED
+    private static final int _POINTER_BUTTON_PRIMARY
+io.flutter.embedding.android.AndroidTouchProcessor$PointerChange
+io.flutter.embedding.android.AndroidTouchProcessor$PointerDeviceKind
+io.flutter.embedding.android.AndroidTouchProcessor$PointerSignalKind
+io.flutter.embedding.android.DrawableSplashScreen
+io.flutter.embedding.android.DrawableSplashScreen$1
+io.flutter.embedding.android.DrawableSplashScreen$DrawableSplashScreenView
+io.flutter.embedding.android.ExclusiveAppComponent
+io.flutter.embedding.android.FlutterActivity
+io.flutter.embedding.android.FlutterActivity$CachedEngineIntentBuilder
+io.flutter.embedding.android.FlutterActivity$NewEngineIntentBuilder
+io.flutter.embedding.android.FlutterActivityAndFragmentDelegate
+io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$1
+io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$Host
+io.flutter.embedding.android.FlutterActivityLaunchConfigs
+io.flutter.embedding.android.FlutterActivityLaunchConfigs$BackgroundMode
+io.flutter.embedding.android.FlutterEngineConfigurator
+io.flutter.embedding.android.FlutterEngineProvider
+io.flutter.embedding.android.FlutterFragment
+io.flutter.embedding.android.FlutterFragment$1
+io.flutter.embedding.android.FlutterFragment$ActivityCallThrough
+io.flutter.embedding.android.FlutterFragment$CachedEngineFragmentBuilder
+io.flutter.embedding.android.FlutterFragment$NewEngineFragmentBuilder
+io.flutter.embedding.android.FlutterFragmentActivity
+io.flutter.embedding.android.FlutterFragmentActivity$CachedEngineIntentBuilder
+io.flutter.embedding.android.FlutterFragmentActivity$NewEngineIntentBuilder
+io.flutter.embedding.android.FlutterImageView
+io.flutter.embedding.android.FlutterImageView$1
+io.flutter.embedding.android.FlutterImageView$SurfaceKind
+io.flutter.embedding.android.FlutterSplashView
+io.flutter.embedding.android.FlutterSplashView$1
+io.flutter.embedding.android.FlutterSplashView$2
+io.flutter.embedding.android.FlutterSplashView$3
+io.flutter.embedding.android.FlutterSplashView$SavedState
+io.flutter.embedding.android.FlutterSplashView$SavedState$1
+io.flutter.embedding.android.FlutterSurfaceView
+io.flutter.embedding.android.FlutterSurfaceView$1
+io.flutter.embedding.android.FlutterSurfaceView$2
+io.flutter.embedding.android.FlutterTextureView
+io.flutter.embedding.android.FlutterTextureView$1
+io.flutter.embedding.android.FlutterView
+io.flutter.embedding.android.FlutterView$1
+io.flutter.embedding.android.FlutterView$2
+io.flutter.embedding.android.FlutterView$3
+io.flutter.embedding.android.FlutterView$FlutterEngineAttachmentListener
+io.flutter.embedding.android.FlutterView$RenderMode
+io.flutter.embedding.android.FlutterView$TransparencyMode
+io.flutter.embedding.android.FlutterView$ZeroSides
+io.flutter.embedding.android.MotionEventTracker:
+    66:77:public android.view.MotionEvent pop(io.flutter.embedding.android.MotionEventTracker$MotionEventId)
+io.flutter.embedding.android.RenderMode
+io.flutter.embedding.android.SplashScreen
+io.flutter.embedding.android.SplashScreen$$CC
+io.flutter.embedding.android.SplashScreenProvider
+io.flutter.embedding.android.TransparencyMode
+io.flutter.embedding.engine.FlutterEngine:
+    private static final java.lang.String TAG
+    private final io.flutter.embedding.engine.FlutterJNI flutterJNI
+    private final io.flutter.embedding.engine.renderer.FlutterRenderer renderer
+    private final io.flutter.embedding.engine.dart.DartExecutor dartExecutor
+    private final io.flutter.embedding.engine.FlutterEngineConnectionRegistry pluginRegistry
+    private final io.flutter.plugin.localization.LocalizationPlugin localizationPlugin
+    private final io.flutter.embedding.engine.systemchannels.AccessibilityChannel accessibilityChannel
+    private final io.flutter.embedding.engine.systemchannels.KeyEventChannel keyEventChannel
+    private final io.flutter.embedding.engine.systemchannels.LifecycleChannel lifecycleChannel
+    private final io.flutter.embedding.engine.systemchannels.LocalizationChannel localizationChannel
+    private final io.flutter.embedding.engine.systemchannels.MouseCursorChannel mouseCursorChannel
+    private final io.flutter.embedding.engine.systemchannels.NavigationChannel navigationChannel
+    private final io.flutter.embedding.engine.systemchannels.RestorationChannel restorationChannel
+    private final io.flutter.embedding.engine.systemchannels.PlatformChannel platformChannel
+    private final io.flutter.embedding.engine.systemchannels.SettingsChannel settingsChannel
+    private final io.flutter.embedding.engine.systemchannels.SystemChannel systemChannel
+    private final io.flutter.embedding.engine.systemchannels.TextInputChannel textInputChannel
+    private final io.flutter.plugin.platform.PlatformViewsController platformViewsController
+    private final java.util.Set engineLifecycleListeners
+    private final io.flutter.embedding.engine.FlutterEngine$EngineLifecycleListener engineLifecycleListener
+    141:142:public FlutterEngine(android.content.Context)
+    150:151:public FlutterEngine(android.content.Context,java.lang.String[])
+    163:169:public FlutterEngine(android.content.Context,java.lang.String[],boolean)
+    194:202:public FlutterEngine(android.content.Context,java.lang.String[],boolean,boolean)
+    215:216:public FlutterEngine(android.content.Context,io.flutter.embedding.engine.loader.FlutterLoader,io.flutter.embedding.engine.FlutterJNI)
+    230:237:public FlutterEngine(android.content.Context,io.flutter.embedding.engine.loader.FlutterLoader,io.flutter.embedding.engine.FlutterJNI,java.lang.String[],boolean)
+    250:258:public FlutterEngine(android.content.Context,io.flutter.embedding.engine.loader.FlutterLoader,io.flutter.embedding.engine.FlutterJNI,io.flutter.plugin.platform.PlatformViewsController,java.lang.String[],boolean)
+    99:317:public FlutterEngine(android.content.Context,io.flutter.embedding.engine.loader.FlutterLoader,io.flutter.embedding.engine.FlutterJNI,io.flutter.plugin.platform.PlatformViewsController,java.lang.String[],boolean,boolean)
+    320:327:private void attachToJni()
+    331:331:private boolean isAttachedToJni()
+    350:362:private void registerPlugins()
+    371:378:public void destroy()
+    385:386:public void addEngineLifecycleListener(io.flutter.embedding.engine.FlutterEngine$EngineLifecycleListener)
+    393:394:public void removeEngineLifecycleListener(io.flutter.embedding.engine.FlutterEngine$EngineLifecycleListener)
+    407:407:public io.flutter.embedding.engine.dart.DartExecutor getDartExecutor()
+    418:418:public io.flutter.embedding.engine.renderer.FlutterRenderer getRenderer()
+    424:424:public io.flutter.embedding.engine.systemchannels.AccessibilityChannel getAccessibilityChannel()
+    430:430:public io.flutter.embedding.engine.systemchannels.KeyEventChannel getKeyEventChannel()
+    436:436:public io.flutter.embedding.engine.systemchannels.LifecycleChannel getLifecycleChannel()
+    442:442:public io.flutter.embedding.engine.systemchannels.LocalizationChannel getLocalizationChannel()
+    448:448:public io.flutter.embedding.engine.systemchannels.NavigationChannel getNavigationChannel()
+    457:457:public io.flutter.embedding.engine.systemchannels.PlatformChannel getPlatformChannel()
+    469:469:public io.flutter.embedding.engine.systemchannels.RestorationChannel getRestorationChannel()
+    478:478:public io.flutter.embedding.engine.systemchannels.SettingsChannel getSettingsChannel()
+    484:484:public io.flutter.embedding.engine.systemchannels.SystemChannel getSystemChannel()
+    490:490:public io.flutter.embedding.engine.systemchannels.MouseCursorChannel getMouseCursorChannel()
+    496:496:public io.flutter.embedding.engine.systemchannels.TextInputChannel getTextInputChannel()
+    504:504:public io.flutter.embedding.engine.plugins.PluginRegistry getPlugins()
+    510:510:public io.flutter.plugin.localization.LocalizationPlugin getLocalizationPlugin()
+    519:519:public io.flutter.plugin.platform.PlatformViewsController getPlatformViewsController()
+    524:524:public io.flutter.embedding.engine.plugins.activity.ActivityControlSurface getActivityControlSurface()
+    529:529:public io.flutter.embedding.engine.plugins.service.ServiceControlSurface getServiceControlSurface()
+    534:534:public io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverControlSurface getBroadcastReceiverControlSurface()
+    539:539:public io.flutter.embedding.engine.plugins.contentprovider.ContentProviderControlSurface getContentProviderControlSurface()
+    73:73:static synthetic java.util.Set access$000(io.flutter.embedding.engine.FlutterEngine)
+    73:73:static synthetic io.flutter.plugin.platform.PlatformViewsController access$100(io.flutter.embedding.engine.FlutterEngine)
+    73:73:static synthetic io.flutter.embedding.engine.systemchannels.RestorationChannel access$200(io.flutter.embedding.engine.FlutterEngine)
+io.flutter.embedding.engine.FlutterEngine$1
+io.flutter.embedding.engine.FlutterEngine$EngineLifecycleListener:
+    public abstract void onPreEngineRestart()
+io.flutter.embedding.engine.FlutterEngineCache
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$1
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$DefaultFlutterAssets
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineActivityPluginBinding
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineBroadcastReceiverPluginBinding
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineContentProviderPluginBinding
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineServicePluginBinding
+io.flutter.embedding.engine.FlutterJNI:
+    private static final java.lang.String TAG
+    private static java.lang.String observatoryUri
+    private io.flutter.plugin.platform.PlatformViewsController platformViewsController
+    177:177:public static java.lang.String getObservatoryUri()
+    192:198:private static void asyncWaitForVsync(long)
+    public static native void nativeOnVsync(long,long,long)
+    public static native io.flutter.view.FlutterCallbackInformation nativeLookupCallbackInformation(long)
+    335:340:public void onFirstFrame()
+    378:381:public void onSurfaceWindowChanged(android.view.Surface)
+    private native void nativeSurfaceWindowChanged(long,android.view.Surface)
+    498:500:public void setPlatformViewsController(io.flutter.plugin.platform.PlatformViewsController)
+    529:535:private void updateSemantics(java.nio.ByteBuffer,java.lang.String[])
+    550:556:private void updateCustomAccessibilityActions(java.nio.ByteBuffer,java.lang.String[])
+    628:631:public void registerTexture(long,io.flutter.embedding.engine.renderer.SurfaceTextureWrapper)
+    private native void nativeRegisterTexture(long,long,io.flutter.embedding.engine.renderer.SurfaceTextureWrapper)
+    645:648:public void markTextureFrameAvailable(long)
+    private native void nativeMarkTextureFrameAvailable(long,long)
+    657:660:public void unregisterTexture(long)
+    private native void nativeUnregisterTexture(long,long)
+    734:739:public void handlePlatformMessage(java.lang.String,byte[],int)
+    745:750:private void handlePlatformMessageResponse(int,byte[])
+    803:812:public void invokePlatformMessageEmptyResponseCallback(int)
+    private native void nativeInvokePlatformMessageEmptyResponseCallback(long,int)
+    822:832:public void invokePlatformMessageResponseCallback(int,java.nio.ByteBuffer,int)
+    private native void nativeInvokePlatformMessageResponseCallback(long,int,java.nio.ByteBuffer,int)
+    857:859:public void removeEngineLifecycleListener(io.flutter.embedding.engine.FlutterEngine$EngineLifecycleListener)
+    864:867:private void onPreEngineRestart()
+    872:878:public void onDisplayOverlaySurface(int,int,int,int,int)
+    883:889:public void onBeginFrame()
+    894:900:public void onEndFrame()
+    905:910:public io.flutter.embedding.engine.FlutterOverlaySurface createOverlaySurface()
+    916:922:public void destroyOverlaySurfaces()
+    938:979:java.lang.String[] computePlatformResolvedLocale(java.lang.String[])
+    995:1002:public void onDisplayPlatformView(int,int,int,int,int,int,int,io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack)
+io.flutter.embedding.engine.FlutterJNI$AccessibilityDelegate:
+    public abstract void updateCustomAccessibilityActions(java.nio.ByteBuffer,java.lang.String[])
+    public abstract void updateSemantics(java.nio.ByteBuffer,java.lang.String[])
+io.flutter.embedding.engine.FlutterJNI$AsyncWaitForVsyncDelegate:
+    public abstract void asyncWaitForVsync(long)
+io.flutter.embedding.engine.FlutterOverlaySurface
+io.flutter.embedding.engine.FlutterShellArgs
+io.flutter.embedding.engine.dart.DartExecutor:
+    private static final java.lang.String TAG
+    private java.lang.String isolateServiceId
+    private io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener isolateServiceIdListener
+    105:105:public boolean isExecutingDart()
+    116:127:public void executeDartEntrypoint(io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint)
+    137:151:public void executeDartCallback(io.flutter.embedding.engine.dart.DartExecutor$DartCallback)
+    168:169:public void send(java.lang.String,java.nio.ByteBuffer)
+    208:208:public int getPendingChannelResponseCount()
+    217:217:public java.lang.String getIsolateServiceId()
+    230:234:public void setIsolateServiceIdListener(io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener)
+    244:247:public void notifyLowMemoryWarning()
+    36:36:static synthetic java.lang.String access$002(io.flutter.embedding.engine.dart.DartExecutor,java.lang.String)
+    36:36:static synthetic io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener access$100(io.flutter.embedding.engine.dart.DartExecutor)
+    36:36:static synthetic java.lang.String access$000(io.flutter.embedding.engine.dart.DartExecutor)
+io.flutter.embedding.engine.dart.DartExecutor$1:
+    51:55:public void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+io.flutter.embedding.engine.dart.DartExecutor$DartCallback
+io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint
+io.flutter.embedding.engine.dart.DartExecutor$DefaultBinaryMessenger:
+    363:364:public void send(java.lang.String,java.nio.ByteBuffer)
+io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener
+io.flutter.embedding.engine.dart.DartMessenger:
+    private static final java.lang.String TAG
+    54:56:public void send(java.lang.String,java.nio.ByteBuffer)
+    79:96:public void handleMessageFromDart(java.lang.String,byte[],int)
+    100:112:public void handlePlatformMessageResponse(int,byte[])
+    127:127:public int getPendingChannelResponseCount()
+    135:140:private static void handleError(java.lang.Error)
+io.flutter.embedding.engine.dart.DartMessenger$Reply
+io.flutter.embedding.engine.dart.PlatformMessageHandler:
+    public abstract void handleMessageFromDart(java.lang.String,byte[],int)
+    public abstract void handlePlatformMessageResponse(int,byte[])
+io.flutter.embedding.engine.loader.ApplicationInfoLoader:
+    static final java.lang.String NETWORK_POLICY_METADATA_KEY
+    19:19:ApplicationInfoLoader()
+io.flutter.embedding.engine.loader.FlutterApplicationInfo:
+    private static final java.lang.String DEFAULT_AOT_SHARED_LIBRARY_NAME
+    private static final java.lang.String DEFAULT_VM_SNAPSHOT_DATA
+    private static final java.lang.String DEFAULT_ISOLATE_SNAPSHOT_DATA
+    private static final java.lang.String DEFAULT_FLUTTER_ASSETS_DIR
+io.flutter.embedding.engine.loader.FlutterLoader:
+    private static final java.lang.String TAG
+    private static final java.lang.String OLD_GEN_HEAP_SIZE_META_DATA_KEY
+    static final java.lang.String AOT_SHARED_LIBRARY_NAME
+    static final java.lang.String SNAPSHOT_ASSET_PATH_KEY
+    static final java.lang.String VM_SNAPSHOT_DATA_KEY
+    static final java.lang.String ISOLATE_SNAPSHOT_DATA_KEY
+    static final java.lang.String FLUTTER_ASSETS_DIR_KEY
+    private static final java.lang.String DEFAULT_LIBRARY
+    private static final java.lang.String DEFAULT_KERNEL_BLOB
+    private static io.flutter.embedding.engine.loader.FlutterLoader instance
+    62:65:public static io.flutter.embedding.engine.loader.FlutterLoader getInstance()
+    292:328:public void ensureInitializationCompleteAsync(android.content.Context,java.lang.String[],android.os.Handler,java.lang.Runnable)
+    332:332:public boolean initialized()
+    372:372:public java.lang.String getLookupKeyForAsset(java.lang.String)
+    386:386:public java.lang.String getLookupKeyForAsset(java.lang.String,java.lang.String)
+    391:391:private java.lang.String fullAssetPathFrom(java.lang.String)
+io.flutter.embedding.engine.loader.FlutterLoader$2
+io.flutter.embedding.engine.loader.FlutterLoader$2$1
+io.flutter.embedding.engine.loader.FlutterLoader$Settings:
+    408:409:public void setLogTag(java.lang.String)
+io.flutter.embedding.engine.loader.ResourceExtractor:
+    private static final java.lang.String TAG
+    private static final java.lang.String TIMESTAMP_PREFIX
+    private final java.lang.String mPackageName
+    private final android.content.pm.PackageManager mPackageManager
+    private final android.content.res.AssetManager mAssetManager
+    134:140:ResourceExtractor(java.lang.String,java.lang.String,android.content.pm.PackageManager,android.content.res.AssetManager)
+    143:144:io.flutter.embedding.engine.loader.ResourceExtractor addResource(java.lang.String)
+    148:149:io.flutter.embedding.engine.loader.ResourceExtractor addResources(java.util.Collection)
+    157:160:io.flutter.embedding.engine.loader.ResourceExtractor start()
+io.flutter.embedding.engine.loader.ResourceExtractor$ExtractTask:
+    53:59:ResourceExtractor$ExtractTask(java.lang.String,java.util.HashSet,java.lang.String,android.content.pm.PackageManager,android.content.res.AssetManager)
+io.flutter.embedding.engine.mutatorsstack.FlutterMutatorView:
+    35:38:public FlutterMutatorView(android.content.Context,float,io.flutter.embedding.android.AndroidTouchProcessor)
+    42:45:public FlutterMutatorView(android.content.Context)
+    52:60:public void readyToDisplay(io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack,int,int,int,int)
+io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack:
+    private java.util.List mutators
+    126:130:public FlutterMutatorsStack()
+    139:144:public void pushTransform(float[])
+    148:155:public void pushClipRect(int,int,int,int)
+    161:161:public java.util.List getMutators()
+io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack$FlutterMutator
+io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack$FlutterMutatorType
+io.flutter.embedding.engine.plugins.FlutterPlugin
+io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets
+io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding
+io.flutter.embedding.engine.plugins.PluginRegistry
+io.flutter.embedding.engine.plugins.activity.ActivityAware
+io.flutter.embedding.engine.plugins.activity.ActivityControlSurface
+io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding$OnSaveInstanceStateListener
+io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverAware
+io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverControlSurface
+io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverPluginBinding
+io.flutter.embedding.engine.plugins.contentprovider.ContentProviderAware
+io.flutter.embedding.engine.plugins.contentprovider.ContentProviderControlSurface
+io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding
+io.flutter.embedding.engine.plugins.lifecycle.HiddenLifecycleReference
+io.flutter.embedding.engine.plugins.service.ServiceAware
+io.flutter.embedding.engine.plugins.service.ServiceAware$OnModeChangeListener
+io.flutter.embedding.engine.plugins.service.ServiceControlSurface
+io.flutter.embedding.engine.plugins.service.ServicePluginBinding
+io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry
+io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry$1
+io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry$ShimRegistrarAggregate
+io.flutter.embedding.engine.plugins.shim.ShimRegistrar
+io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister
+io.flutter.embedding.engine.renderer.FlutterRenderer:
+    private static final java.lang.String TAG
+    private android.view.Surface surface
+    67:67:public boolean isDisplayingFlutterUi()
+    75:80:public void addIsDisplayingFlutterUiListener(io.flutter.embedding.engine.renderer.FlutterUiDisplayListener)
+    87:88:public void removeIsDisplayingFlutterUiListener(io.flutter.embedding.engine.renderer.FlutterUiDisplayListener)
+    96:103:public io.flutter.view.TextureRegistry$SurfaceTextureEntry createSurfaceTexture()
+    182:189:public void startRenderingToSurface(android.view.Surface)
+    199:201:public void swapSurface(android.view.Surface)
+    212:213:public void surfaceChanged(int,int)
+    224:237:public void stopRenderingToSurface()
+    241:292:public void setViewportMetrics(io.flutter.embedding.engine.renderer.FlutterRenderer$ViewportMetrics)
+    297:297:public android.graphics.Bitmap getBitmap()
+    307:308:private void registerTexture(long,io.flutter.embedding.engine.renderer.SurfaceTextureWrapper)
+    312:313:private void markTextureFrameAvailable(long)
+    317:318:private void unregisterTexture(long)
+    322:322:public boolean isSoftwareRenderingEnabled()
+    327:328:public void setAccessibilityFeatures(int)
+    332:333:public void setSemanticsEnabled(boolean)
+    338:339:public void dispatchSemanticsAction(int,int,java.nio.ByteBuffer,int)
+    35:35:static synthetic io.flutter.embedding.engine.FlutterJNI access$200(io.flutter.embedding.engine.renderer.FlutterRenderer)
+    35:35:static synthetic void access$400(io.flutter.embedding.engine.renderer.FlutterRenderer,long)
+    35:35:static synthetic void access$500(io.flutter.embedding.engine.renderer.FlutterRenderer,long)
+io.flutter.embedding.engine.renderer.FlutterRenderer$1:
+    48:49:public void onFlutterUiDisplayed()
+io.flutter.embedding.engine.renderer.FlutterRenderer$SurfaceTextureRegistryEntry
+io.flutter.embedding.engine.renderer.FlutterRenderer$SurfaceTextureRegistryEntry$1
+io.flutter.embedding.engine.renderer.FlutterRenderer$ViewportMetrics
+io.flutter.embedding.engine.renderer.FlutterUiDisplayListener:
+    public abstract void onFlutterUiDisplayed()
+io.flutter.embedding.engine.renderer.RenderSurface
+io.flutter.embedding.engine.renderer.SurfaceTextureWrapper
+io.flutter.embedding.engine.systemchannels.AccessibilityChannel:
+    private static final java.lang.String TAG
+    19:19:static synthetic io.flutter.embedding.engine.systemchannels.AccessibilityChannel$AccessibilityMessageHandler access$000(io.flutter.embedding.engine.systemchannels.AccessibilityChannel)
+io.flutter.embedding.engine.systemchannels.AccessibilityChannel$1:
+    33:77:public void onMessage(java.lang.Object,io.flutter.plugin.common.BasicMessageChannel$Reply)
+io.flutter.embedding.engine.systemchannels.AccessibilityChannel$AccessibilityMessageHandler:
+    public abstract void announce(java.lang.String)
+    public abstract void onTap(int)
+    public abstract void onLongPress(int)
+    public abstract void onTooltip(java.lang.String)
+io.flutter.embedding.engine.systemchannels.KeyEventChannel:
+    private static final java.lang.String TAG
+    78:98:final synthetic void lambda$createReplyHandler$0$KeyEventChannel(long,java.lang.Object)
+io.flutter.embedding.engine.systemchannels.KeyEventChannel$$Lambda$0:
+    public void reply(java.lang.Object)
+io.flutter.embedding.engine.systemchannels.KeyEventChannel$EventResponseHandler:
+    public abstract void onKeyEventHandled(long)
+    public abstract void onKeyEventNotHandled(long)
+io.flutter.embedding.engine.systemchannels.KeyEventChannel$FlutterKeyEvent:
+    233:234:public KeyEventChannel$FlutterKeyEvent(android.view.KeyEvent,long)
+io.flutter.embedding.engine.systemchannels.LifecycleChannel:
+    private static final java.lang.String TAG
+    40:42:public void appIsDetached()
+io.flutter.embedding.engine.systemchannels.LocalizationChannel:
+    private static final java.lang.String TAG
+io.flutter.embedding.engine.systemchannels.MouseCursorChannel:
+    private static final java.lang.String TAG
+    75:76:public void synthesizeMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    18:18:static synthetic io.flutter.embedding.engine.systemchannels.MouseCursorChannel$MouseCursorMethodHandler access$000(io.flutter.embedding.engine.systemchannels.MouseCursorChannel)
+io.flutter.embedding.engine.systemchannels.MouseCursorChannel$1:
+    42:70:public void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+io.flutter.embedding.engine.systemchannels.MouseCursorChannel$MouseCursorMethodHandler:
+    public abstract void activateSystemCursor(java.lang.String)
+io.flutter.embedding.engine.systemchannels.NavigationChannel:
+    private static final java.lang.String TAG
+    30:32:public void pushRoute(java.lang.String)
+    40:41:public void setMethodCallHandler(io.flutter.plugin.common.MethodChannel$MethodCallHandler)
+io.flutter.embedding.engine.systemchannels.PlatformChannel:
+    private static final java.lang.String TAG
+    208:276:private int decodeOrientations(org.json.JSONArray)
+    282:287:private io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription decodeAppSwitcherDescription(org.json.JSONObject)
+    300:313:private java.util.List decodeSystemUiOverlays(org.json.JSONArray)
+    325:356:private io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemChromeStyle decodeSystemChromeStyle(org.json.JSONObject)
+    26:26:static synthetic io.flutter.embedding.engine.systemchannels.PlatformChannel$PlatformMessageHandler access$000(io.flutter.embedding.engine.systemchannels.PlatformChannel)
+    26:26:static synthetic int access$100(io.flutter.embedding.engine.systemchannels.PlatformChannel,org.json.JSONArray)
+    26:26:static synthetic io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription access$200(io.flutter.embedding.engine.systemchannels.PlatformChannel,org.json.JSONObject)
+    26:26:static synthetic java.util.List access$300(io.flutter.embedding.engine.systemchannels.PlatformChannel,org.json.JSONArray)
+    26:26:static synthetic io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemChromeStyle access$400(io.flutter.embedding.engine.systemchannels.PlatformChannel,org.json.JSONObject)
+io.flutter.embedding.engine.systemchannels.PlatformChannel$1:
+    37:173:public void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+io.flutter.embedding.engine.systemchannels.PlatformChannel$2
+io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription
+io.flutter.embedding.engine.systemchannels.PlatformChannel$Brightness:
+    591:596:static io.flutter.embedding.engine.systemchannels.PlatformChannel$Brightness fromValue(java.lang.String)
+io.flutter.embedding.engine.systemchannels.PlatformChannel$ClipboardContentFormat
+io.flutter.embedding.engine.systemchannels.PlatformChannel$DeviceOrientation
+io.flutter.embedding.engine.systemchannels.PlatformChannel$HapticFeedbackType:
+    477:483:static io.flutter.embedding.engine.systemchannels.PlatformChannel$HapticFeedbackType fromValue(java.lang.String)
+io.flutter.embedding.engine.systemchannels.PlatformChannel$PlatformMessageHandler:
+    public abstract void playSystemSound(io.flutter.embedding.engine.systemchannels.PlatformChannel$SoundType)
+    public abstract void vibrateHapticFeedback(io.flutter.embedding.engine.systemchannels.PlatformChannel$HapticFeedbackType)
+    public abstract void setPreferredOrientations(int)
+    public abstract void setApplicationSwitcherDescription(io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription)
+    public abstract void showSystemOverlays(java.util.List)
+    public abstract void restoreSystemUiOverlays()
+    public abstract void setSystemUiOverlayStyle(io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemChromeStyle)
+    public abstract void popSystemNavigator()
+    public abstract java.lang.CharSequence getClipboardData(io.flutter.embedding.engine.systemchannels.PlatformChannel$ClipboardContentFormat)
+    public abstract void setClipboardData(java.lang.String)
+    public abstract boolean clipboardHasStrings()
+io.flutter.embedding.engine.systemchannels.PlatformChannel$SoundType
+io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemChromeStyle:
+    576:582:public PlatformChannel$SystemChromeStyle(java.lang.Integer,io.flutter.embedding.engine.systemchannels.PlatformChannel$Brightness,java.lang.Integer,io.flutter.embedding.engine.systemchannels.PlatformChannel$Brightness,java.lang.Integer)
+io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemUiOverlay:
+    530:535:static io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemUiOverlay fromValue(java.lang.String)
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
+    private static final java.lang.String TAG
+    33:37:public void invokeViewFocused(int)
+    40:43:private static java.lang.String detailedExceptionString(java.lang.Exception)
+    26:26:static synthetic io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewsHandler access$000(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel)
+    26:26:static synthetic java.lang.String access$100(java.lang.Exception)
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$1:
+    52:79:public void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    82:110:private void create(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    113:128:private void dispose(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    131:149:private void resize(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    152:178:private void touch(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    181:191:private void setDirection(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    194:201:private void clearFocus(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$1$1
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewCreationRequest
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewResizeRequest
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewTouch
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewsHandler:
+    public abstract void createAndroidViewForPlatformView(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewCreationRequest)
+    public abstract long createVirtualDisplayForPlatformView(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewCreationRequest)
+    public abstract void disposeVirtualDisplayForPlatformView(int)
+    public abstract void resizePlatformView(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewResizeRequest,java.lang.Runnable)
+    public abstract void onTouch(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewTouch)
+    public abstract void setDirection(int,int)
+    public abstract void clearFocus(int)
+io.flutter.embedding.engine.systemchannels.RestorationChannel
+io.flutter.embedding.engine.systemchannels.RestorationChannel$1
+io.flutter.embedding.engine.systemchannels.RestorationChannel$2
+io.flutter.embedding.engine.systemchannels.SettingsChannel:
+    private static final java.lang.String TAG
+    public static final java.lang.String CHANNEL_NAME
+    private static final java.lang.String TEXT_SCALE_FACTOR
+    private static final java.lang.String ALWAYS_USE_24_HOUR_FORMAT
+    private static final java.lang.String PLATFORM_BRIGHTNESS
+io.flutter.embedding.engine.systemchannels.SystemChannel:
+    private static final java.lang.String TAG
+io.flutter.embedding.engine.systemchannels.TextInputChannel:
+    private static final java.lang.String TAG
+    38:38:static synthetic io.flutter.embedding.engine.systemchannels.TextInputChannel$TextInputMethodHandler access$000(io.flutter.embedding.engine.systemchannels.TextInputChannel)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$1:
+    48:141:public void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration:
+    public final io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration[] fields
+    398:419:public static io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration fromJson(org.json.JSONObject)
+    425:446:private static java.lang.Integer inputActionFromTextInputAction(java.lang.String)
+    580:590:public TextInputChannel$Configuration(boolean,boolean,boolean,io.flutter.embedding.engine.systemchannels.TextInputChannel$TextCapitalization,io.flutter.embedding.engine.systemchannels.TextInputChannel$InputType,java.lang.Integer,java.lang.String,io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration$Autofill,io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration[])
+io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration$Autofill:
+    453:461:public static io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration$Autofill fromJson(org.json.JSONObject)
+    470:547:private static java.lang.String translateAutofillHint(java.lang.String)
+    554:558:public TextInputChannel$Configuration$Autofill(java.lang.String,java.lang.String[],io.flutter.embedding.engine.systemchannels.TextInputChannel$TextEditState)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$InputType:
+    603:606:public static io.flutter.embedding.engine.systemchannels.TextInputChannel$InputType fromJson(org.json.JSONObject)
+    613:617:public TextInputChannel$InputType(io.flutter.embedding.engine.systemchannels.TextInputChannel$TextInputType,boolean,boolean)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$TextCapitalization:
+    657:662:static io.flutter.embedding.engine.systemchannels.TextInputChannel$TextCapitalization fromValue(java.lang.String)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$TextEditState:
+    675:680:public static io.flutter.embedding.engine.systemchannels.TextInputChannel$TextEditState fromJson(org.json.JSONObject)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$TextInputMethodHandler:
+    public abstract void show()
+    public abstract void hide()
+    public abstract void requestAutofill()
+    public abstract void finishAutofillContext(boolean)
+    public abstract void setClient(int,io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration)
+    public abstract void setPlatformViewClient(int)
+    public abstract void setEditableSizeAndTransform(double,double,double[])
+    public abstract void setEditingState(io.flutter.embedding.engine.systemchannels.TextInputChannel$TextEditState)
+    public abstract void clearClient()
+    public abstract void sendAppPrivateCommand(java.lang.String,android.os.Bundle)
+io.flutter.embedding.engine.systemchannels.TextInputChannel$TextInputType:
+    634:639:static io.flutter.embedding.engine.systemchannels.TextInputChannel$TextInputType fromValue(java.lang.String)
+io.flutter.plugin.common.BasicMessageChannel:
+    private static final java.lang.String TAG
+    public static final java.lang.String CHANNEL_BUFFERS_CHANNEL
+    113:114:public void resizeChannelBuffer(int)
+    118:122:static void resizeChannelBuffer(io.flutter.plugin.common.BinaryMessenger,java.lang.String,int)
+    32:32:static synthetic io.flutter.plugin.common.MessageCodec access$200(io.flutter.plugin.common.BasicMessageChannel)
+    32:32:static synthetic java.lang.String access$300(io.flutter.plugin.common.BasicMessageChannel)
+io.flutter.plugin.common.BasicMessageChannel$IncomingMessageHandler:
+    187:199:public void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+io.flutter.plugin.common.BasicMessageChannel$IncomingMessageHandler$1
+io.flutter.plugin.common.BasicMessageChannel$IncomingReplyHandler:
+    170:174:public void reply(java.nio.ByteBuffer)
+io.flutter.plugin.common.BasicMessageChannel$MessageHandler:
+    public abstract void onMessage(java.lang.Object,io.flutter.plugin.common.BasicMessageChannel$Reply)
+io.flutter.plugin.common.BasicMessageChannel$Reply:
+    public abstract void reply(java.lang.Object)
+io.flutter.plugin.common.BinaryCodec
+io.flutter.plugin.common.BinaryMessenger:
+    public abstract void send(java.lang.String,java.nio.ByteBuffer)
+io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler:
+    public abstract void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+io.flutter.plugin.common.BinaryMessenger$BinaryReply:
+    public abstract void reply(java.nio.ByteBuffer)
+io.flutter.plugin.common.ErrorLogResult
+io.flutter.plugin.common.EventChannel:
+    private static final java.lang.String TAG
+    31:31:static synthetic io.flutter.plugin.common.MethodCodec access$000(io.flutter.plugin.common.EventChannel)
+    31:31:static synthetic java.lang.String access$200(io.flutter.plugin.common.EventChannel)
+    31:31:static synthetic io.flutter.plugin.common.BinaryMessenger access$400(io.flutter.plugin.common.EventChannel)
+io.flutter.plugin.common.EventChannel$1
+io.flutter.plugin.common.EventChannel$EventSink:
+    public abstract void error(java.lang.String,java.lang.String,java.lang.Object)
+    public abstract void endOfStream()
+io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler:
+    165:173:public void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+    176:195:private void onListen(java.lang.Object,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+    198:210:private void onCancel(java.lang.Object,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+    155:155:static synthetic java.util.concurrent.atomic.AtomicReference access$300(io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler)
+io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler$EventSinkImplementation
+io.flutter.plugin.common.EventChannel$StreamHandler:
+    public abstract void onListen(java.lang.Object,io.flutter.plugin.common.EventChannel$EventSink)
+    public abstract void onCancel(java.lang.Object)
+io.flutter.plugin.common.FlutterException
+io.flutter.plugin.common.JSONMessageCodec:
+    45:57:public java.lang.Object decodeMessage(java.nio.ByteBuffer)
+io.flutter.plugin.common.JSONMethodCodec:
+    43:54:public io.flutter.plugin.common.MethodCall decodeMethodCall(java.nio.ByteBuffer)
+    60:60:public java.nio.ByteBuffer encodeSuccessEnvelope(java.lang.Object)
+    66:70:public java.nio.ByteBuffer encodeErrorEnvelope(java.lang.String,java.lang.String,java.lang.Object)
+    76:81:public java.nio.ByteBuffer encodeErrorEnvelopeWithStacktrace(java.lang.String,java.lang.String,java.lang.Object,java.lang.String)
+    87:104:public java.lang.Object decodeEnvelope(java.nio.ByteBuffer)
+    109:109:java.lang.Object unwrapNull(java.lang.Object)
+io.flutter.plugin.common.JSONUtil:
+    14:14:private JSONUtil()
+    21:56:public static java.lang.Object unwrap(java.lang.Object)
+io.flutter.plugin.common.MessageCodec:
+    public abstract java.lang.Object decodeMessage(java.nio.ByteBuffer)
+io.flutter.plugin.common.MethodCall:
+    48:48:public java.lang.Object arguments()
+    66:73:public java.lang.Object argument(java.lang.String)
+    89:96:public boolean hasArgument(java.lang.String)
+io.flutter.plugin.common.MethodChannel:
+    private static final java.lang.String TAG
+    129:130:public void resizeChannelBuffer(int)
+    32:32:static synthetic io.flutter.plugin.common.MethodCodec access$000(io.flutter.plugin.common.MethodChannel)
+    32:32:static synthetic java.lang.String access$100(io.flutter.plugin.common.MethodChannel)
+io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler:
+    231:257:public void onMessage(java.nio.ByteBuffer,io.flutter.plugin.common.BinaryMessenger$BinaryReply)
+    260:262:private java.lang.String getStackTrace(java.lang.Exception)
+io.flutter.plugin.common.MethodChannel$IncomingMethodCallHandler$1
+io.flutter.plugin.common.MethodChannel$IncomingResultHandler:
+    206:218:public void reply(java.nio.ByteBuffer)
+io.flutter.plugin.common.MethodChannel$MethodCallHandler:
+    public abstract void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+io.flutter.plugin.common.MethodChannel$Result:
+    public abstract void notImplemented()
+io.flutter.plugin.common.MethodCodec:
+    public abstract io.flutter.plugin.common.MethodCall decodeMethodCall(java.nio.ByteBuffer)
+    public abstract java.nio.ByteBuffer encodeSuccessEnvelope(java.lang.Object)
+    public abstract java.nio.ByteBuffer encodeErrorEnvelope(java.lang.String,java.lang.String,java.lang.Object)
+    public abstract java.nio.ByteBuffer encodeErrorEnvelopeWithStacktrace(java.lang.String,java.lang.String,java.lang.Object,java.lang.String)
+    public abstract java.lang.Object decodeEnvelope(java.nio.ByteBuffer)
+io.flutter.plugin.common.PluginRegistry:
+    public abstract java.lang.Object valuePublishedByPlugin(java.lang.String)
+io.flutter.plugin.common.PluginRegistry$PluginRegistrantCallback
+io.flutter.plugin.common.PluginRegistry$Registrar:
+    public abstract android.content.Context activeContext()
+    public abstract io.flutter.view.TextureRegistry textures()
+    public abstract io.flutter.plugin.platform.PlatformViewRegistry platformViewRegistry()
+    public abstract java.lang.String lookupKeyForAsset(java.lang.String)
+    public abstract java.lang.String lookupKeyForAsset(java.lang.String,java.lang.String)
+    public abstract io.flutter.plugin.common.PluginRegistry$Registrar publish(java.lang.Object)
+    public abstract io.flutter.plugin.common.PluginRegistry$Registrar addActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener)
+    public abstract io.flutter.plugin.common.PluginRegistry$Registrar addNewIntentListener(io.flutter.plugin.common.PluginRegistry$NewIntentListener)
+    public abstract io.flutter.plugin.common.PluginRegistry$Registrar addUserLeaveHintListener(io.flutter.plugin.common.PluginRegistry$UserLeaveHintListener)
+    public abstract io.flutter.plugin.common.PluginRegistry$Registrar addViewDestroyListener(io.flutter.plugin.common.PluginRegistry$ViewDestroyListener)
+io.flutter.plugin.common.StandardMessageCodec:
+    private static final java.lang.String TAG
+    private static final byte NULL
+    private static final byte TRUE
+    private static final byte FALSE
+    private static final byte INT
+    private static final byte LONG
+    private static final byte BIGINT
+    private static final byte DOUBLE
+    private static final byte STRING
+    private static final byte BYTE_ARRAY
+    private static final byte INT_ARRAY
+    private static final byte LONG_ARRAY
+    private static final byte DOUBLE_ARRAY
+    private static final byte LIST
+    private static final byte MAP
+    80:88:public java.lang.Object decodeMessage(java.nio.ByteBuffer)
+    282:291:protected static final int readSize(java.nio.ByteBuffer)
+    297:300:protected static final byte[] readBytes(java.nio.ByteBuffer)
+    305:309:protected static final void readAlignment(java.nio.ByteBuffer,int)
+    313:317:protected final java.lang.Object readValue(java.nio.ByteBuffer)
+    328:418:protected java.lang.Object readValueOfType(byte,java.nio.ByteBuffer)
+io.flutter.plugin.common.StandardMethodCodec:
+    46:52:public io.flutter.plugin.common.MethodCall decodeMethodCall(java.nio.ByteBuffer)
+    57:62:public java.nio.ByteBuffer encodeSuccessEnvelope(java.lang.Object)
+    68:79:public java.nio.ByteBuffer encodeErrorEnvelope(java.lang.String,java.lang.String,java.lang.Object)
+    85:97:public java.nio.ByteBuffer encodeErrorEnvelopeWithStacktrace(java.lang.String,java.lang.String,java.lang.Object,java.lang.String)
+    102:125:public java.lang.Object decodeEnvelope(java.nio.ByteBuffer)
+    129:131:private static java.lang.String getStackTrace(java.lang.Throwable)
+io.flutter.plugin.common.StringCodec:
+    37:52:public java.lang.String decodeMessage(java.nio.ByteBuffer)
+    17:17:public bridge synthetic java.lang.Object decodeMessage(java.nio.ByteBuffer)
+io.flutter.plugin.editing.FlutterTextUtils:
+    public static final int LINE_FEED
+    public static final int CARRIAGE_RETURN
+    public static final int COMBINING_ENCLOSING_KEYCAP
+    public static final int CANCEL_TAG
+    public static final int ZERO_WIDTH_JOINER
+io.flutter.plugin.editing.ImeSyncDeferringInsetsCallback:
+    84:86:void remove()
+    113:117:public void onPrepare(android.view.WindowInsetsAnimation)
+    122:158:public android.view.WindowInsets onProgress(android.view.WindowInsets,java.util.List)
+    163:176:public void onEnd(android.view.WindowInsetsAnimation)
+io.flutter.plugin.editing.InputConnectionAdaptor:
+    private static final java.lang.String TAG
+    249:261:private boolean isSamsung()
+io.flutter.plugin.editing.ListenableEditingState:
+    private static final java.lang.String TAG
+    38:71:public ListenableEditingState(io.flutter.embedding.engine.systemchannels.TextInputChannel$TextEditState,android.view.View)
+io.flutter.plugin.editing.ListenableEditingState$1
+io.flutter.plugin.editing.TextInputPlugin:
+    private static final java.lang.String TAG
+    169:169:public android.view.inputmethod.InputMethodManager getInputMethodManager()
+    174:174:android.text.Editable getEditable()
+    179:179:io.flutter.plugin.editing.ImeSyncDeferringInsetsCallback getImeSyncCallback()
+    184:184:public io.flutter.embedding.android.AndroidKeyProcessor getKeyEventProcessor()
+    205:208:public void lockPlatformViewInputConnection()
+    216:217:public void unlockPlatformViewInputConnection()
+    226:235:public void destroy()
+    347:347:public android.view.inputmethod.InputConnection getLastInputConnection()
+    357:363:public void clearPlatformViewClient(int)
+    366:367:public void sendTextInputAppPrivateCommand(java.lang.String,android.os.Bundle)
+    370:372:private void showTextInput(android.view.View)
+    375:383:private void hideTextInput(android.view.View)
+    388:406:void setTextInputClient(int,io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration)
+    414:418:private void setPlatformViewTextInputClient(int)
+    438:475:private void saveEditableSizeAndTransform(double,double,double[])
+    505:534:void clearTextInputClient()
+    625:635:private void notifyViewEntered()
+    638:648:private void notifyViewExited()
+    660:688:private void updateAutofillConfigurationIfNeeded(io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration)
+    37:37:static synthetic android.view.View access$000(io.flutter.plugin.editing.TextInputPlugin)
+    37:37:static synthetic void access$100(io.flutter.plugin.editing.TextInputPlugin,android.view.View)
+    37:37:static synthetic void access$200(io.flutter.plugin.editing.TextInputPlugin,android.view.View)
+    37:37:static synthetic void access$300(io.flutter.plugin.editing.TextInputPlugin)
+    37:37:static synthetic android.view.autofill.AutofillManager access$400(io.flutter.plugin.editing.TextInputPlugin)
+    37:37:static synthetic void access$500(io.flutter.plugin.editing.TextInputPlugin,int)
+    37:37:static synthetic void access$600(io.flutter.plugin.editing.TextInputPlugin,double,double,double[])
+io.flutter.plugin.editing.TextInputPlugin$1:
+    103:104:public void show()
+    108:109:public void hide()
+    113:114:public void requestAutofill()
+    118:126:public void finishAutofillContext(boolean)
+    131:132:public void setClient(int,io.flutter.embedding.engine.systemchannels.TextInputChannel$Configuration)
+    136:137:public void setPlatformViewClient(int)
+    141:142:public void setEditingState(io.flutter.embedding.engine.systemchannels.TextInputChannel$TextEditState)
+    146:147:public void setEditableSizeAndTransform(double,double,double[])
+    151:152:public void clearClient()
+    156:157:public void sendAppPrivateCommand(java.lang.String,android.os.Bundle)
+io.flutter.plugin.editing.TextInputPlugin$2
+io.flutter.plugin.editing.TextInputPlugin$MinMax
+io.flutter.plugin.localization.LocalizationPlugin:
+    36:115:public java.util.Locale resolveNativeLocale(java.util.List)
+io.flutter.plugin.mouse.MouseCursorPlugin:
+    private static java.util.HashMap systemCursorConstants
+    42:90:private android.view.PointerIcon resolveSystemCursor(java.lang.String)
+    99:100:public void destroy()
+    18:18:static synthetic android.view.PointerIcon access$000(io.flutter.plugin.mouse.MouseCursorPlugin,java.lang.String)
+    18:18:static synthetic io.flutter.plugin.mouse.MouseCursorPlugin$MouseCursorViewDelegate access$100(io.flutter.plugin.mouse.MouseCursorPlugin)
+io.flutter.plugin.mouse.MouseCursorPlugin$1:
+    31:32:public void activateSystemCursor(java.lang.String)
+io.flutter.plugin.mouse.MouseCursorPlugin$2
+io.flutter.plugin.mouse.MouseCursorPlugin$MouseCursorViewDelegate:
+    public abstract android.view.PointerIcon getSystemPointerIcon(int)
+    public abstract void setPointerIcon(android.view.PointerIcon)
+io.flutter.plugin.platform.PlatformPlugin:
+    public static final int DEFAULT_SYSTEM_UI
+    private static final java.lang.String TAG
+    116:117:public void destroy()
+    120:124:private void playSystemSound(io.flutter.embedding.engine.systemchannels.PlatformChannel$SoundType)
+    128:150:void vibrateHapticFeedback(io.flutter.embedding.engine.systemchannels.PlatformChannel$HapticFeedbackType)
+    153:154:private void setSystemChromePreferredOrientations(int)
+    159:176:private void setSystemChromeApplicationSwitcherDescription(io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription)
+    181:209:private void setSystemChromeEnabledSystemUIOverlays(java.util.List)
+    226:227:private void restoreSystemChromeSystemUIOverlays()
+    280:281:private void popSystemNavigator()
+    284:310:private java.lang.CharSequence getClipboardData(io.flutter.embedding.engine.systemchannels.PlatformChannel$ClipboardContentFormat)
+    314:318:private void setClipboardData(java.lang.String)
+    26:26:static synthetic void access$000(io.flutter.plugin.platform.PlatformPlugin,io.flutter.embedding.engine.systemchannels.PlatformChannel$SoundType)
+    26:26:static synthetic void access$100(io.flutter.plugin.platform.PlatformPlugin,int)
+    26:26:static synthetic void access$200(io.flutter.plugin.platform.PlatformPlugin,io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription)
+    26:26:static synthetic void access$300(io.flutter.plugin.platform.PlatformPlugin,java.util.List)
+    26:26:static synthetic void access$400(io.flutter.plugin.platform.PlatformPlugin)
+    26:26:static synthetic void access$500(io.flutter.plugin.platform.PlatformPlugin,io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemChromeStyle)
+    26:26:static synthetic void access$600(io.flutter.plugin.platform.PlatformPlugin)
+    26:26:static synthetic java.lang.CharSequence access$700(io.flutter.plugin.platform.PlatformPlugin,io.flutter.embedding.engine.systemchannels.PlatformChannel$ClipboardContentFormat)
+    26:26:static synthetic void access$800(io.flutter.plugin.platform.PlatformPlugin,java.lang.String)
+io.flutter.plugin.platform.PlatformPlugin$1:
+    41:42:public void playSystemSound(io.flutter.embedding.engine.systemchannels.PlatformChannel$SoundType)
+    47:48:public void vibrateHapticFeedback(io.flutter.embedding.engine.systemchannels.PlatformChannel$HapticFeedbackType)
+    52:53:public void setPreferredOrientations(int)
+    58:59:public void setApplicationSwitcherDescription(io.flutter.embedding.engine.systemchannels.PlatformChannel$AppSwitcherDescription)
+    63:64:public void showSystemOverlays(java.util.List)
+    68:69:public void restoreSystemUiOverlays()
+    74:75:public void setSystemUiOverlayStyle(io.flutter.embedding.engine.systemchannels.PlatformChannel$SystemChromeStyle)
+    79:80:public void popSystemNavigator()
+    85:85:public java.lang.CharSequence getClipboardData(io.flutter.embedding.engine.systemchannels.PlatformChannel$ClipboardContentFormat)
+    90:91:public void setClipboardData(java.lang.String)
+    95:98:public boolean clipboardHasStrings()
+io.flutter.plugin.platform.PlatformView:
+    public abstract void onFlutterViewAttached(android.view.View)
+    public abstract void onFlutterViewDetached()
+    public abstract void onInputConnectionLocked()
+    public abstract void onInputConnectionUnlocked()
+io.flutter.plugin.platform.PlatformView$$CC
+io.flutter.plugin.platform.PlatformViewFactory:
+    private final io.flutter.plugin.common.MessageCodec createArgsCodec
+    14:16:public PlatformViewFactory(io.flutter.plugin.common.MessageCodec)
+    32:32:public final io.flutter.plugin.common.MessageCodec getCreateArgsCodec()
+io.flutter.plugin.platform.PlatformViewRegistry
+io.flutter.plugin.platform.PlatformViewRegistryImpl:
+    21:23:public boolean registerViewFactory(java.lang.String,io.flutter.plugin.platform.PlatformViewFactory)
+    27:27:io.flutter.plugin.platform.PlatformViewFactory getFactory(java.lang.String)
+io.flutter.plugin.platform.PlatformViewsController:
+    private static final java.lang.String TAG
+    private android.view.View flutterView
+    359:396:public android.view.MotionEvent toMotionEvent(float,io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewTouch,boolean)
+    471:478:public void attachToView(android.view.View)
+    488:495:public void detachFromView()
+    522:523:public void detachTextInputPlugin()
+    549:549:public io.flutter.plugin.platform.PlatformViewRegistry getRegistry()
+    558:558:public void onAttachedToJNI()
+    571:572:public void onPreEngineRestart()
+    593:598:private void lockInputConnection(io.flutter.plugin.platform.VirtualDisplayController)
+    601:606:private void unlockInputConnection(io.flutter.plugin.platform.VirtualDisplayController)
+    609:609:private static boolean validateDirection(int)
+    614:619:private static java.util.List parsePointerPropertiesList(java.lang.Object)
+    624:628:private static android.view.MotionEvent$PointerProperties parsePointerProperties(java.lang.Object)
+    633:638:private static java.util.List parsePointerCoordsList(java.lang.Object,float)
+    643:654:private static android.view.MotionEvent$PointerCoords parsePointerCoords(java.lang.Object,float)
+    660:678:private void validateVirtualDisplayDimensions(int,int)
+    681:681:private float getDisplayDensity()
+    685:685:private int toPhysicalPixels(double)
+    700:704:private void initializeRootImageViewIfNeeded()
+    708:730:void initializePlatformViewIfNeeded(int)
+    745:761:public void onDisplayPlatformView(int,int,int,int,int,int,int,io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack)
+    764:778:public void onDisplayOverlaySurface(int,int,int,int,int)
+    781:783:public void onBeginFrame()
+    786:812:public void onEndFrame()
+    815:851:private void finishFrame(boolean)
+    856:858:public io.flutter.embedding.engine.FlutterOverlaySurface createOverlaySurface(io.flutter.embedding.android.FlutterImageView)
+    869:873:public io.flutter.embedding.engine.FlutterOverlaySurface createOverlaySurface()
+    878:885:public void destroyOverlaySurfaces()
+    796:797:final synthetic void lambda$onEndFrame$0$PlatformViewsController()
+    47:47:static synthetic boolean access$000(int)
+    47:47:static synthetic io.flutter.plugin.platform.PlatformViewRegistryImpl access$100(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic android.content.Context access$200(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic int access$500(io.flutter.plugin.platform.PlatformViewsController,double)
+    47:47:static synthetic void access$600(io.flutter.plugin.platform.PlatformViewsController,int,int)
+    47:47:static synthetic io.flutter.view.TextureRegistry access$700(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic io.flutter.plugin.platform.AccessibilityEventsDelegate access$800(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic android.view.View access$900(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic java.util.HashMap access$1000(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic io.flutter.plugin.editing.TextInputPlugin access$1100(io.flutter.plugin.platform.PlatformViewsController)
+    47:47:static synthetic void access$1200(io.flutter.plugin.platform.PlatformViewsController,io.flutter.plugin.platform.VirtualDisplayController)
+    47:47:static synthetic void access$1300(io.flutter.plugin.platform.PlatformViewsController,io.flutter.plugin.platform.VirtualDisplayController)
+    47:47:static synthetic io.flutter.embedding.engine.systemchannels.PlatformViewsChannel access$1400(io.flutter.plugin.platform.PlatformViewsController)
+io.flutter.plugin.platform.PlatformViewsController$$Lambda$0
+io.flutter.plugin.platform.PlatformViewsController$1:
+    124:148:public void createAndroidViewForPlatformView(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewCreationRequest)
+    175:243:public long createVirtualDisplayForPlatformView(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewCreationRequest)
+    248:262:public void disposeVirtualDisplayForPlatformView(int)
+    268:295:public void resizePlatformView(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewResizeRequest,java.lang.Runnable)
+    299:314:public void onTouch(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewTouch)
+    319:336:public void setDirection(int,int)
+    340:343:public void clearFocus(int)
+    346:353:private void ensureValidAndroidVersion(int)
+    217:220:final synthetic void lambda$createVirtualDisplayForPlatformView$0$PlatformViewsController$1(io.flutter.embedding.engine.systemchannels.PlatformViewsChannel$PlatformViewCreationRequest,android.view.View,boolean)
+io.flutter.plugin.platform.PlatformViewsController$1$$Lambda$0
+io.flutter.plugin.platform.PlatformViewsController$1$1
+io.flutter.plugin.platform.SingleViewPresentation:
+    104:136:public SingleViewPresentation(android.content.Context,android.view.Display,io.flutter.plugin.platform.PlatformViewFactory,io.flutter.plugin.platform.AccessibilityEventsDelegate,int,java.lang.Object,android.view.View$OnFocusChangeListener)
+    104:161:public SingleViewPresentation(android.content.Context,android.view.Display,io.flutter.plugin.platform.AccessibilityEventsDelegate,io.flutter.plugin.platform.SingleViewPresentation$PresentationState,android.view.View$OnFocusChangeListener,boolean)
+io.flutter.plugin.platform.SingleViewPresentation$ImmContext
+io.flutter.plugin.platform.SingleViewPresentation$PresentationState:
+    62:62:SingleViewPresentation$PresentationState()
+io.flutter.plugin.platform.SingleViewPresentation$WindowManagerHandler:
+    private static final java.lang.String TAG
+io.flutter.plugin.platform.VirtualDisplayController:
+    private final android.content.Context context
+    private final io.flutter.plugin.platform.AccessibilityEventsDelegate accessibilityEventsDelegate
+    private final int densityDpi
+    private final android.view.View$OnFocusChangeListener focusChangeListener
+    private android.view.Surface surface
+    35:48:public static io.flutter.plugin.platform.VirtualDisplayController create(android.content.Context,io.flutter.plugin.platform.AccessibilityEventsDelegate,io.flutter.plugin.platform.PlatformViewFactory,io.flutter.view.TextureRegistry$SurfaceTextureEntry,int,int,int,java.lang.Object,android.view.View$OnFocusChangeListener)
+    78:96:private VirtualDisplayController(android.content.Context,io.flutter.plugin.platform.AccessibilityEventsDelegate,android.hardware.display.VirtualDisplay,io.flutter.plugin.platform.PlatformViewFactory,android.view.Surface,io.flutter.view.TextureRegistry$SurfaceTextureEntry,android.view.View$OnFocusChangeListener,int,java.lang.Object)
+    99:164:public void resize(int,int,java.lang.Runnable)
+    178:182:void onFlutterViewAttached(android.view.View)
+    186:190:void onFlutterViewDetached()
+    193:197:void onInputConnectionLocked()
+    200:204:void onInputConnectionUnlocked()
+    214:216:public void dispatchTouchEvent(android.view.MotionEvent)
+io.flutter.plugin.platform.VirtualDisplayController$1
+io.flutter.plugin.platform.VirtualDisplayController$1$1
+io.flutter.plugin.platform.VirtualDisplayController$OneTimeOnDrawListener
+io.flutter.plugin.platform.VirtualDisplayController$OneTimeOnDrawListener$1
+io.flutter.plugins.camera.BuildConfig
+io.flutter.plugins.camera.CameraPlugin:
+    private static final int CAMERA_REQUEST_ID
+    private static final java.lang.String TAG
+    139:221:public void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    49:49:static synthetic io.flutter.view.FlutterView access$1100(io.flutter.plugins.camera.CameraPlugin)
+    49:49:static synthetic java.lang.Runnable access$1002(io.flutter.plugins.camera.CameraPlugin,java.lang.Runnable)
+    49:49:static synthetic io.flutter.plugin.common.PluginRegistry$Registrar access$1500(io.flutter.plugins.camera.CameraPlugin)
+    49:49:static synthetic android.util.SparseIntArray access$1800()
+io.flutter.plugins.camera.CameraPlugin$Camera:
+    private int sensorOrientation
+    private boolean isFrontFacing
+    private android.util.Size videoSize
+    private boolean recordingVideo
+    260:334:CameraPlugin$Camera(io.flutter.plugins.camera.CameraPlugin,java.lang.String,java.lang.String,io.flutter.plugin.common.MethodChannel$Result)
+    337:351:private void registerEventChannel()
+    360:361:private boolean hasAudioPermission()
+    367:396:private void computeBestPreviewAndRecordingSize(android.hardware.camera2.params.StreamConfigurationMap,android.util.Size,android.util.Size)
+    400:404:private void computeBestCaptureSize(android.hardware.camera2.params.StreamConfigurationMap)
+    407:428:private void prepareMediaRecorder(java.lang.String)
+    512:517:private void writeToFile(java.nio.ByteBuffer,java.io.File)
+    520:581:private void takePicture(java.lang.String,io.flutter.plugin.common.MethodChannel$Result)
+    584:646:private void startVideoRecording(java.lang.String,io.flutter.plugin.common.MethodChannel$Result)
+    649:663:private void stopVideoRecording(io.flutter.plugin.common.MethodChannel$Result)
+    743:745:private void dispose()
+    244:244:static synthetic void access$600(io.flutter.plugins.camera.CameraPlugin$Camera,java.lang.String,io.flutter.plugin.common.MethodChannel$Result)
+    244:244:static synthetic void access$700(io.flutter.plugins.camera.CameraPlugin$Camera,java.lang.String,io.flutter.plugin.common.MethodChannel$Result)
+    244:244:static synthetic void access$800(io.flutter.plugins.camera.CameraPlugin$Camera,io.flutter.plugin.common.MethodChannel$Result)
+    244:244:static synthetic void access$900(io.flutter.plugins.camera.CameraPlugin$Camera)
+    244:244:static synthetic boolean access$1300(io.flutter.plugins.camera.CameraPlugin$Camera)
+    244:244:static synthetic boolean access$1400(io.flutter.plugins.camera.CameraPlugin$Camera)
+    244:244:static synthetic io.flutter.plugin.common.EventChannel$EventSink access$1602(io.flutter.plugins.camera.CameraPlugin$Camera,io.flutter.plugin.common.EventChannel$EventSink)
+    244:244:static synthetic void access$2400(io.flutter.plugins.camera.CameraPlugin$Camera,java.nio.ByteBuffer,java.io.File)
+    244:244:static synthetic android.media.MediaRecorder access$2700(io.flutter.plugins.camera.CameraPlugin$Camera)
+io.flutter.plugins.camera.CameraPlugin$Camera$1
+io.flutter.plugins.camera.CameraPlugin$Camera$2
+io.flutter.plugins.camera.CameraPlugin$Camera$4
+io.flutter.plugins.camera.CameraPlugin$Camera$5
+io.flutter.plugins.camera.CameraPlugin$Camera$6
+io.flutter.plugins.camera.CameraPlugin$CompareSizesByArea
+io.flutter.plugins.camera.R
+io.flutter.plugins.camera.R$attr
+io.flutter.plugins.camera.R$color
+io.flutter.plugins.camera.R$dimen
+io.flutter.plugins.camera.R$drawable
+io.flutter.plugins.camera.R$id
+io.flutter.plugins.camera.R$integer
+io.flutter.plugins.camera.R$layout
+io.flutter.plugins.camera.R$string
+io.flutter.plugins.camera.R$style
+io.flutter.plugins.camera.R$styleable
+io.flutter.plugins.pathprovider.BuildConfig
+io.flutter.plugins.pathprovider.PathProviderPlugin:
+    31:44:public void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result)
+    47:47:private java.lang.String getPathProviderTemporaryDirectory()
+    51:51:private java.lang.String getPathProviderApplicationDocumentsDirectory()
+    55:55:private java.lang.String getPathProviderStorageDirectory()
+io.flutter.plugins.pathprovider.R
+io.flutter.plugins.pathprovider.R$attr
+io.flutter.plugins.pathprovider.R$color
+io.flutter.plugins.pathprovider.R$dimen
+io.flutter.plugins.pathprovider.R$drawable
+io.flutter.plugins.pathprovider.R$id
+io.flutter.plugins.pathprovider.R$integer
+io.flutter.plugins.pathprovider.R$layout
+io.flutter.plugins.pathprovider.R$string
+io.flutter.plugins.pathprovider.R$style
+io.flutter.plugins.pathprovider.R$styleable
+io.flutter.plugins.sensors.BuildConfig
+io.flutter.plugins.sensors.R
+io.flutter.plugins.sensors.R$attr
+io.flutter.plugins.sensors.R$color
+io.flutter.plugins.sensors.R$dimen
+io.flutter.plugins.sensors.R$drawable
+io.flutter.plugins.sensors.R$id
+io.flutter.plugins.sensors.R$integer
+io.flutter.plugins.sensors.R$layout
+io.flutter.plugins.sensors.R$string
+io.flutter.plugins.sensors.R$style
+io.flutter.plugins.sensors.R$styleable
+io.flutter.plugins.sensors.SensorsPlugin:
+    private static final java.lang.String ACCELEROMETER_CHANNEL_NAME
+    private static final java.lang.String GYROSCOPE_CHANNEL_NAME
+    private static final java.lang.String USER_ACCELEROMETER_CHANNEL_NAME
+    35:37:public void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding)
+    41:42:public void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding)
+    68:71:private void teardownEventChannels()
+io.flutter.plugins.sensors.StreamHandlerImpl:
+    private android.hardware.SensorEventListener sensorEventListener
+    26:28:public void onListen(java.lang.Object,io.flutter.plugin.common.EventChannel$EventSink)
+    32:33:public void onCancel(java.lang.Object)
+    36:36:android.hardware.SensorEventListener createSensorEventListener(io.flutter.plugin.common.EventChannel$EventSink)
+io.flutter.plugins.sensors.StreamHandlerImpl$1
+io.flutter.util.PathUtils:
+    10:10:public PathUtils()
+io.flutter.util.Preconditions:
+    12:12:private Preconditions()
+io.flutter.view.AccessibilityBridge:
+    private static final java.lang.String TAG
+    private static final int ACTION_SHOW_ON_SCREEN
+    private static final float SCROLL_EXTENT_FOR_INFINITY
+    private static final float SCROLL_POSITION_CAP_FOR_INFINITY
+    private static final int ROOT_NODE_ID
+    private static final int MIN_ENGINE_GENERATED_NODE_ID
+    private io.flutter.view.AccessibilityBridge$SemanticsNode lastInputFocusedSemanticsNode
+    211:211:public int getHoveredObjectId()
+    1178:1184:private io.flutter.view.AccessibilityBridge$SemanticsNode getOrCreateSemanticsNode(int)
+    1199:1206:private io.flutter.view.AccessibilityBridge$CustomAccessibilityAction getOrCreateAccessibilityAction(int)
+    1300:1309:void updateCustomAccessibilityActions(java.nio.ByteBuffer,java.lang.String[])
+    1319:1530:void updateSemantics(java.nio.ByteBuffer,java.lang.String[])
+    1533:1561:private android.view.accessibility.AccessibilityEvent createTextChangedEvent(int,java.lang.String,java.lang.String)
+    1604:1620:private void sendWindowChangeEvent(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1673:1702:private void willRemoveSemanticsNode(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    66:66:static synthetic android.view.View access$100(io.flutter.view.AccessibilityBridge)
+    66:66:static synthetic void access$200(io.flutter.view.AccessibilityBridge,int,int)
+    66:66:static synthetic android.view.accessibility.AccessibilityEvent access$300(io.flutter.view.AccessibilityBridge,int,int)
+    66:66:static synthetic void access$400(io.flutter.view.AccessibilityBridge,android.view.accessibility.AccessibilityEvent)
+    66:66:static synthetic io.flutter.view.AccessibilityBridge$SemanticsNode access$6000(io.flutter.view.AccessibilityBridge,int)
+    66:66:static synthetic io.flutter.view.AccessibilityBridge$CustomAccessibilityAction access$6100(io.flutter.view.AccessibilityBridge,int)
+io.flutter.view.AccessibilityBridge$1:
+    240:241:public void announce(java.lang.String)
+    246:247:public void onTap(int)
+    252:253:public void onLongPress(int)
+    258:262:public void onTooltip(java.lang.String)
+    267:269:public void updateCustomAccessibilityActions(java.nio.ByteBuffer,java.lang.String[])
+    274:276:public void updateSemantics(java.nio.ByteBuffer,java.lang.String[])
+io.flutter.view.AccessibilityBridge$CustomAccessibilityAction:
+    1848:1848:static synthetic int access$3702(io.flutter.view.AccessibilityBridge$CustomAccessibilityAction,int)
+    1848:1848:static synthetic int access$3202(io.flutter.view.AccessibilityBridge$CustomAccessibilityAction,int)
+    1848:1848:static synthetic int access$3902(io.flutter.view.AccessibilityBridge$CustomAccessibilityAction,int)
+    1848:1848:static synthetic java.lang.String access$3302(io.flutter.view.AccessibilityBridge$CustomAccessibilityAction,java.lang.String)
+    1848:1848:static synthetic java.lang.String access$2802(io.flutter.view.AccessibilityBridge$CustomAccessibilityAction,java.lang.String)
+    1848:1848:static synthetic int access$3900(io.flutter.view.AccessibilityBridge$CustomAccessibilityAction)
+io.flutter.view.AccessibilityBridge$SemanticsNode:
+    final io.flutter.view.AccessibilityBridge accessibilityBridge
+    private int scrollIndex
+    private float scrollPosition
+    private float scrollExtentMax
+    private float scrollExtentMin
+    private io.flutter.view.AccessibilityBridge$TextDirection textDirection
+    private boolean hadPreviousConfig
+    private int previousFlags
+    private int previousActions
+    private int previousTextSelectionBase
+    private int previousTextSelectionExtent
+    private float previousScrollPosition
+    private float previousScrollExtentMax
+    private float previousScrollExtentMin
+    private java.lang.String previousValue
+    private java.lang.String previousLabel
+    private boolean globalGeometryDirty
+    private float[] globalTransform
+    1894:1950:AccessibilityBridge$SemanticsNode(io.flutter.view.AccessibilityBridge)
+    1982:1982:private boolean hadAction(io.flutter.view.AccessibilityBridge$Action)
+    1993:1993:private boolean hadFlag(io.flutter.view.AccessibilityBridge$Flag)
+    1997:1998:private boolean didScroll()
+    2003:2006:private boolean didChangeLabel()
+    2048:2048:private void log(java.lang.String,boolean)
+    2051:2146:private void updateWith(java.nio.ByteBuffer,java.lang.String[])
+    2215:2221:private void collectRoutes(java.util.List)
+    2226:2237:private java.lang.String getRouteName()
+    2242:2302:private void updateRecursively(float[],java.util.Set,boolean)
+    2305:2311:private void transformPoint(float[],float[],float[])
+    2314:2314:private float min(float,float,float,float)
+    2318:2318:private float max(float,float,float,float)
+    1885:1885:static synthetic int access$002(io.flutter.view.AccessibilityBridge$SemanticsNode,int)
+    1885:1885:static synthetic void access$4000(io.flutter.view.AccessibilityBridge$SemanticsNode,java.nio.ByteBuffer,java.lang.String[])
+    1885:1885:static synthetic boolean access$4100(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic boolean access$4202(io.flutter.view.AccessibilityBridge$SemanticsNode,boolean)
+    1885:1885:static synthetic boolean access$4302(io.flutter.view.AccessibilityBridge$SemanticsNode,boolean)
+    1885:1885:static synthetic void access$4400(io.flutter.view.AccessibilityBridge$SemanticsNode,float[],java.util.Set,boolean)
+    1885:1885:static synthetic void access$4500(io.flutter.view.AccessibilityBridge$SemanticsNode,java.util.List)
+    1885:1885:static synthetic boolean access$4600(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic float access$4700(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic float access$4800(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic float access$4900(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic boolean access$5000(io.flutter.view.AccessibilityBridge$SemanticsNode,io.flutter.view.AccessibilityBridge$Action)
+    1885:1885:static synthetic int access$5100(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic java.util.List access$5200(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic boolean access$5300(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic boolean access$5400(io.flutter.view.AccessibilityBridge$SemanticsNode,io.flutter.view.AccessibilityBridge$Flag)
+    1885:1885:static synthetic java.lang.String access$5500(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic java.lang.String access$5600(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic int access$5700(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic int access$5800(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic java.lang.String access$5900(io.flutter.view.AccessibilityBridge$SemanticsNode)
+    1885:1885:static synthetic io.flutter.view.AccessibilityBridge$SemanticsNode access$2602(io.flutter.view.AccessibilityBridge$SemanticsNode,io.flutter.view.AccessibilityBridge$SemanticsNode)
+io.flutter.view.AccessibilityBridge$TextDirection
+io.flutter.view.AccessibilityViewEmbedder:
+    private static final java.lang.String TAG
+    395:399:public android.view.View platformViewOfNode(int)
+io.flutter.view.FlutterCallbackInformation
+io.flutter.view.FlutterMain:
+    20:20:public FlutterMain()
+    46:47:public static void startInitialization(android.content.Context)
+    62:65:public static void startInitialization(android.content.Context,io.flutter.view.FlutterMain$Settings)
+    91:94:public static void ensureInitializationCompleteAsync(android.content.Context,java.lang.String[],android.os.Handler,java.lang.Runnable)
+    104:104:public static java.lang.String findAppBundlePath(android.content.Context)
+    116:116:public static java.lang.String getLookupKeyForAsset(java.lang.String)
+    130:130:public static java.lang.String getLookupKeyForAsset(java.lang.String,java.lang.String)
+io.flutter.view.FlutterMain$Settings
+io.flutter.view.FlutterNativeView:
+    private static final java.lang.String TAG
+    121:121:public static java.lang.String getObservatoryUri()
+    127:128:public void send(java.lang.String,java.nio.ByteBuffer)
+    25:25:static synthetic io.flutter.view.FlutterView access$000(io.flutter.view.FlutterNativeView)
+    25:25:static synthetic io.flutter.app.FlutterPluginRegistry access$200(io.flutter.view.FlutterNativeView)
+io.flutter.view.FlutterNativeView$1:
+    39:43:public void onFlutterUiDisplayed()
+io.flutter.view.FlutterNativeView$EngineLifecycleListenerImpl:
+    160:167:public void onPreEngineRestart()
+io.flutter.view.FlutterView:
+    private static final java.lang.String TAG
+    152:153:public FlutterView(android.content.Context)
+    156:157:public FlutterView(android.content.Context,android.util.AttributeSet)
+    286:286:public java.lang.String getLookupKeyForAsset(java.lang.String)
+    290:290:public java.lang.String getLookupKeyForAsset(java.lang.String,java.lang.String)
+    326:326:public boolean hasRenderedFirstFrame()
+    339:340:public void removeFirstFrameListener(io.flutter.view.FlutterView$FirstFrameListener)
+    356:361:public void enableTransparentBackground()
+    367:369:public void disableTransparentBackground()
+    376:377:public void pushRoute(java.lang.String)
+    765:772:public void onFirstFrame()
+    834:834:public android.view.PointerIcon getSystemPointerIcon(int)
+    840:841:public void send(java.lang.String,java.nio.ByteBuffer)
+    866:871:public io.flutter.view.TextureRegistry$SurfaceTextureEntry createSurfaceTexture()
+io.flutter.view.FlutterView$FirstFrameListener:
+    public abstract void onFirstFrame()
+io.flutter.view.FlutterView$Provider:
+    public abstract io.flutter.view.FlutterView getFlutterView()
+io.flutter.view.FlutterView$SurfaceTextureRegistryEntry
+io.flutter.view.FlutterView$SurfaceTextureRegistryEntry$1
+io.flutter.view.TextureRegistry:
+    public abstract io.flutter.view.TextureRegistry$SurfaceTextureEntry createSurfaceTexture()
+io.flutter.view.VsyncWaiter:
+    13:13:static synthetic android.view.WindowManager access$000(io.flutter.view.VsyncWaiter)
+io.flutter.view.VsyncWaiter$1:
+    30:41:public void asyncWaitForVsync(long)
+io.flutter.view.VsyncWaiter$1$1

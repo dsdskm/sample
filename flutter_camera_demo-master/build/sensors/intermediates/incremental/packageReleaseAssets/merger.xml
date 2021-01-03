@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/kkh/.pub-cache/hosted/pub.dartlang.org/sensors-0.4.2+6/android/src/main/assets"/><source path="/Users/kkh/workspace/sample/flutter_camera_demo-master/build/sensors/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/Users/kkh/.pub-cache/hosted/pub.dartlang.org/sensors-0.4.2+6/android/src/release/assets"/></dataSet></merger>

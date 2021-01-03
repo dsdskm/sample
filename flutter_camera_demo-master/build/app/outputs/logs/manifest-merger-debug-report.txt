@@ -1,0 +1,143 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+MERGED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-10:12
+MERGED from [:path_provider] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:sensors] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/sensors/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/10561f05f302accd2c2384534f00f0a3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/db5640f6ac22c783dbf1feb718a08d9b/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/85859151815db42072e614f22c16f4b5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/ce5a76818da1afd62a05362511cb6505/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/4a543f621ad27f9335b9b7328e8c8718/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/90abbcb3c65e1dbfaa4a6474a320adda/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/ae8fa38d6e2ead05981a4c293203c40f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/b58b0f4662f990231f20106bca4861d4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/5519873176141019acf99e18ff2f1eb2/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/c6b6740f02ecdf407505d4013f6d8459/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/645da5f892368c72e709a07f608184d5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/fcee08abb76d4f78ae31feefa051b881/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/09ab9edf0d84d24198e15922609ff1c8/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+	package
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:2:5-44
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:1-40:12
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:8:5-66
+	android:name
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:8:22-64
+application
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:15:5-39:19
+MERGED from [androidx.core:core:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/5519873176141019acf99e18ff2f1eb2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/5519873176141019acf99e18ff2f1eb2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/fcee08abb76d4f78ae31feefa051b881/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/fcee08abb76d4f78ae31feefa051b881/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/5519873176141019acf99e18ff2f1eb2/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:17:9-43
+	android:icon
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:18:9-43
+	android:name
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:16:9-57
+activity#com.aeologic.fluttercameraapp.MainActivity
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:19:9-38:20
+	android:screenOrientation
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:23:13-49
+	android:launchMode
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:21:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:25:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:26:13-55
+	android:configChanges
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:24:13-137
+	android:theme
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:22:13-47
+	android:name
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:20:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:31:13-33:40
+	android:value
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:33:17-37
+	android:name
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:32:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:34:13-37:29
+action#android.intent.action.MAIN
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:35:17-68
+	android:name
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:36:17-76
+	android:name
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml:36:27-74
+uses-sdk
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+MERGED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sensors] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/sensors/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sensors] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/sensors/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/10561f05f302accd2c2384534f00f0a3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/10561f05f302accd2c2384534f00f0a3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/db5640f6ac22c783dbf1feb718a08d9b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/db5640f6ac22c783dbf1feb718a08d9b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/85859151815db42072e614f22c16f4b5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/85859151815db42072e614f22c16f4b5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/ce5a76818da1afd62a05362511cb6505/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/ce5a76818da1afd62a05362511cb6505/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/4a543f621ad27f9335b9b7328e8c8718/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/4a543f621ad27f9335b9b7328e8c8718/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/90abbcb3c65e1dbfaa4a6474a320adda/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/90abbcb3c65e1dbfaa4a6474a320adda/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/ae8fa38d6e2ead05981a4c293203c40f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/ae8fa38d6e2ead05981a4c293203c40f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/b58b0f4662f990231f20106bca4861d4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/b58b0f4662f990231f20106bca4861d4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/5519873176141019acf99e18ff2f1eb2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/5519873176141019acf99e18ff2f1eb2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/c6b6740f02ecdf407505d4013f6d8459/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/c6b6740f02ecdf407505d4013f6d8459/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/645da5f892368c72e709a07f608184d5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/645da5f892368c72e709a07f608184d5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/fcee08abb76d4f78ae31feefa051b881/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/fcee08abb76d4f78ae31feefa051b881/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/09ab9edf0d84d24198e15922609ff1c8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kkh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/09ab9edf0d84d24198e15922609ff1c8/AndroidManifest.xml:20:5-44
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kkh/workspace/sample/flutter_camera_demo-master/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-71
+	android:name
+		ADDED from [:camera] /Users/kkh/workspace/sample/flutter_camera_demo-master/build/camera/intermediates/manifests/full/debug/AndroidManifest.xml:8:22-68
