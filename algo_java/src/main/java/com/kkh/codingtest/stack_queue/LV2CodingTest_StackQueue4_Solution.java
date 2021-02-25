@@ -1,8 +1,8 @@
 package com.kkh.codingtest.stack_queue;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
-import java.util.Queue;
 
 public class LV2CodingTest_StackQueue4_Solution {
 
@@ -20,6 +20,21 @@ public class LV2CodingTest_StackQueue4_Solution {
      */
     public static void main(String args[]) {
         LV2CodingTest_StackQueue4_Solution s = new LV2CodingTest_StackQueue4_Solution();
+        System.out.println(s.solution(new int[]{2, 1, 3, 2}, 2));           // 1
+        System.out.println(s.solution(new int[]{1, 1, 9, 1, 1, 1}, 0));           // 5
+        /*
+        value               index
+        2   1   3/   2       0   1   2   3
+        1   3   2   2       1   2   3   0
+        3   2   2   1       2   3   0   1
+            2   2   1           3   0   1
+                2   1               0   1
+                    1                   1
+
+         */
+
+
+//        System.out.println(s.solution(new int[]{1, 1, 9, 1, 1, 1}, 0));       // 5
     }
 
 
@@ -31,9 +46,53 @@ public class LV2CodingTest_StackQueue4_Solution {
         4. 제거할때 최초 입력된 인덱스와 비교
         5. 전체 반복 횟수를 리턴
          */
-        Deque<Integer> test = new ArrayDeque<Integer>();
-        int answer =0;
-        while(true){
+        Deque<Integer> index_list = new ArrayDeque<Integer>();
+        ArrayList<Integer> value_list = new ArrayList<>();
+        for (int i = 0; i < priorities.length; i++) {
+            // 인덱스를 넣는다
+            index_list.add(i);
+
+            // 값을 넣는다.
+            value_list.add(priorities[i]);
+        }
+
+
+        int answer = 0;
+        while (true) {
+            if (index_list.size() == 0) {
+                break;
+            }
+            // 매번 첫번째 값과 나머지 값들을 비교
+            // 마지막에 넣든 아예 빼든 첫번째 값은 무조건 뺀다
+            int firstIndex = index_list.pollFirst();
+            int firstValue = value_list.get(0);
+//            System.out.println("firstIndex : " + firstIndex + " , firstValue : " + firstValue);
+            // 첫번쨰 값 vs 나머지 값들 비교를 한다
+            // 첫번째 값보다 큰 값이 존재하면 index_list의 last에 index 추가, value_list의 첫번째 값지우고 last에 값추가
+            boolean hasBigOne = false;
+            for (int i = 1; i < value_list.size(); i++) {
+                int value = value_list.get(i);
+//                System.out.println("    firstValue : " + firstValue + " , value : " + value);
+                if (firstValue < value) {
+                    index_list.addLast(firstIndex);
+                    value_list.remove(0);
+                    value_list.add(firstValue);
+                    hasBigOne = true;
+                    break;
+                }
+            }
+
+            // 첫번째 값보다 큰 값이 없다면 이밎 index_list에서는 지웠으므로 value_list의 첫번째 값만 지운다
+            if (!hasBigOne) {
+                answer++;
+                value_list.remove(0);
+                // 값을 제거할때의 첫번째 인덱스와 입력된 값이 같으면 break;
+//                System.out.println("firstIndex : " + firstIndex + " , location : " + location);
+                if (firstIndex == location) {
+                    break;
+                }
+            }
+
 
         }
         return answer;
