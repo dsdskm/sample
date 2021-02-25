@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.login
+package com.kkh.mynews.view.login.model
 
 /**
  * User details post authentication that is exposed to the UI

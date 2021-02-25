@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.login
+package com.kkh.mynews.view.login.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

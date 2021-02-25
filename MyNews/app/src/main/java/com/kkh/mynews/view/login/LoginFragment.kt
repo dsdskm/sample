@@ -17,6 +17,9 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.kkh.mynews.R
+import com.kkh.mynews.view.login.model.LoggedInUserView
+import com.kkh.mynews.view.login.viewmodel.LoginViewModel
+import com.kkh.mynews.view.login.viewmodel.LoginViewModelFactory
 
 class LoginFragment : Fragment() {
 
@@ -39,7 +42,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG,"onViewCreated")
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
+
+        // view model이 여러 model을 들고있음
+
+        loginViewModel = ViewModelProvider(this,
+            LoginViewModelFactory()
+        )
             .get(LoginViewModel::class.java)
 
         val usernameEditText = view.findViewById<EditText>(R.id.username)
@@ -47,6 +55,7 @@ class LoginFragment : Fragment() {
         val loginButton = view.findViewById<Button>(R.id.login)
         val loadingProgressBar = view.findViewById<ProgressBar>(R.id.loading)
 
+        // view model의 여러 model 중 원하는 model observe
         loginViewModel.loginFormState.observe(viewLifecycleOwner,
             Observer { loginFormState ->
                 Log.d(TAG,"loginFormSate onChange")

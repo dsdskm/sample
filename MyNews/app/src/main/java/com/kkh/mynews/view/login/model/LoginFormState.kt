@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.login
+package com.kkh.mynews.view.login.model
 
 /**
  * Data validation state of the login form.

@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.login
+package com.kkh.mynews.view.login.model
 
 /**
  * Authentication result : success (user details) or error message.

@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.login
+package com.kkh.mynews.view.login.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,6 +7,9 @@ import android.util.Patterns
 import com.kkh.mynews.R
 import com.kkh.mynews.view.login.data.LoginRepository
 import com.kkh.mynews.view.login.data.Result
+import com.kkh.mynews.view.login.model.LoggedInUserView
+import com.kkh.mynews.view.login.model.LoginFormState
+import com.kkh.mynews.view.login.model.LoginResult
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
@@ -22,19 +25,27 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
         if (result is Result.Success) {
             _loginResult.value =
-                LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
+                LoginResult(
+                    success = LoggedInUserView(
+                        displayName = result.data.displayName
+                    )
+                )
         } else {
-            _loginResult.value = LoginResult(error = R.string.login_failed)
+            _loginResult.value =
+                LoginResult(error = R.string.login_failed)
         }
     }
 
     fun loginDataChanged(username: String, password: String) {
         if (!isUserNameValid(username)) {
-            _loginForm.value = LoginFormState(usernameError = R.string.invalid_username)
+            _loginForm.value =
+                LoginFormState(usernameError = R.string.invalid_username)
         } else if (!isPasswordValid(password)) {
-            _loginForm.value = LoginFormState(passwordError = R.string.invalid_password)
+            _loginForm.value =
+                LoginFormState(passwordError = R.string.invalid_password)
         } else {
-            _loginForm.value = LoginFormState(isDataValid = true)
+            _loginForm.value =
+                LoginFormState(isDataValid = true)
         }
     }
 
