@@ -1,6 +1,7 @@
 package com.kkh.mynews
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import dagger.hilt.android.HiltAndroidApp
 
@@ -12,9 +13,16 @@ Hilt를 사용하는 모든 앱은 @HiltAndroidApp으로 주석이 지정된 App
 생성된 이 Hilt 구성요소는 Application 객체의 수명 주기에 연결되며 이와 관련한 종속 항목을 제공합니다. 또한 이는 앱의 상위 구성요소이므로 다른 구성요소는 이 상위 구성요소에서 제공하는 종속 항목에 액세스할 수 있습니다.
  */
 class MyNewsApplication : Application() {
-
     companion object {
         const val TAG = "[KKH]MyNewsApplication"
+        private var instance: MyNewsApplication? = null
+        fun getAppContext() : Context {
+            return instance!!.applicationContext
+        }
+    }
+
+    init{
+        instance = this
     }
 
     override fun onCreate() {

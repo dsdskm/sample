@@ -1,6 +1,5 @@
 package com.kkh.mynews.network
 
-import com.kkh.mynews.MyNews
 import com.kkh.mynews.model.NewsModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -27,8 +26,7 @@ interface WebService {
     @GET("v1/search/news.json")
     fun getSearchNews(
         @Query("query") query: String,
-        @Query("display") display: Int? = null,
-        @Query("start") start: Int? = null
+        @Query("display") display: Int
     ): Call<NewsModel>
 
     companion object {

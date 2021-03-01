@@ -1,13 +1,27 @@
 package com.kkh.mynews
 
-import android.content.Context
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kkh.mynews.view.MainFragment
-import com.kkh.mynews.view.NewsFragment
-import com.kkh.mynews.view.login.LoginFragment
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import android.util.Log
+import android.view.LayoutInflater
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.EditText
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.*
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textfield.TextInputEditText
+import com.kkh.mynews.common.Constant
+import com.kkh.mynews.item.keyword.model.KeywordModel
+import com.kkh.mynews.item.news.model.NewsItemsModel
+import com.kkh.mynews.view.adapter.KeywordRecyclerViewAdapter
+import com.kkh.mynews.viewmodel.NewsViewModel
+import com.kkh.mynews.view.adapter.MainRecyclerViewAdapter
 
 /*
 
@@ -15,50 +29,93 @@ import javax.inject.Inject
     NewsViewModel(LiveData) - NewsRepository
     NewsRepository - Model(Room)
     NewsRepository - Remote Data Source(Retrofit)
-
-    [02/25+]
-    UI
-        Tab Fragment + RecyclerView + Paging
-        Animation
-
-    [02/28_일]
-    DI(Hilt, Dagger2)
-    네트워크 작업 + 코루틴
-    Room
-    [03/01_월]
-    MVP 패턴
-    Service
-    Mockito
-    Workmanager
-    JobScheduler
-    [03/02_수]
-    Rx
-    [03/03]
-    DesignPattern목
-    [03/04_목]
-    CleanCode
-    [03/05_금]
-    Testing
-        Mockitto + CI +UIAutomator + UnitTest
-    [03/06_토]
-    Performance
-        Memory
-    [03/07_일]
-    Open Liberary
-
-
+    https://developer.android.com/guide/?hl=ko
  */
 
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val TAG = Constant.TAG_PREFIX + "MainActivity"
+    }
+
+    private val mNewsViewModel: NewsViewModel by viewModels()
+
+    val mSearchView by lazy { findViewById<SearchView>(R.id.searchView) }
+    val mSearchBtn by lazy { findViewById<Button>(R.id.searchBtn) }
+    val mClearBtn by lazy { findViewById<Button>(R.id.clearBtn) }
+    val mAddBtn by lazy { findViewById<Button>(R.id.add) }
+    val mKeywordRecyclerView by lazy { findViewById<RecyclerView>(R.id.keywordListView) }
+    val mRecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerView) }
+    val mAdapter = MainRecyclerViewAdapter()
+    private lateinit var mKeywordAdapter: KeywordRecyclerViewAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, NewsFragment.newInstance())
-                .commitNow()
+
+        initView()
+    }
+
+    private fun initView() {
+        mKeywordAdapter = KeywordRecyclerViewAdapter(mNewsViewModel)
+        mKeywordRecyclerView.adapter = mKeywordAdapter
+        mKeywordRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        mKeywordRecyclerView.itemAnimator = DefaultItemAnimator()
+
+
+        mRecyclerView.adapter = mAdapter
+        mRecyclerView.layoutManager = LinearLayoutManager(this)
+        mRecyclerView.itemAnimator = DefaultItemAnimator()
+
+
+        mNewsViewModel.keyword.observe(this, Observer {
+            val list: List<KeywordModel> = it
+            Log.d(TAG, "observed keyword list size ${list.size}")
+            mKeywordAdapter.setList(list)
+        })
+
+        mNewsViewModel.newsItems.observe(this, Observer {
+            Log.d(TAG, "observe ret : ${it}")
+            val list: List<NewsItemsModel> = it
+            Log.d(TAG, "observed list size ${list.size}")
+            mAdapter.setList(list)
+
+        })
+        mSearchBtn.setOnClickListener {
+            mNewsViewModel.requestNews(mSearchView.query.toString())
         }
+
+        mClearBtn.setOnClickListener {
+
+        }
+
+        mAddBtn.setOnClickListener {
+            showDialog()
+        }
+    }
+
+    private fun showDialog() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("키워드 추가")
+        val view = LayoutInflater.from(MyNewsApplication.getAppContext())
+            .inflate(R.layout.dialog_layout, null)
+        val input = view.findViewById<EditText>(R.id.edit)
+        builder.setView(view)
+        builder.setPositiveButton(android.R.string.ok) { dialog: DialogInterface, _: Int ->
+
+            mNewsViewModel.insertKeywordList(
+                KeywordModel(
+                    input.text.toString(),
+                    System.currentTimeMillis()
+                )
+            )
+            dialog.dismiss()
+        }
+        builder.setNegativeButton(android.R.string.cancel) { dialog: DialogInterface, _: Int ->
+            dialog.dismiss()
+        }
+        builder.show()
     }
 }
