@@ -171,5 +171,8 @@ com/kkh/codingtest/heap/LV2CodingTest_Heap1_Solution.java
  com.kkh.codingtest.heap.LV2CodingTest_Heap1_Solution
 com/kkh/codingtest/heap/LV3CodingTest_Heap2_Solution.java
  com.kkh.codingtest.heap.LV3CodingTest_Heap2_Solution
+ com.kkh.codingtest.heap.LV3CodingTest_Heap2_Solution$1
+ com.kkh.codingtest.heap.LV3CodingTest_Heap2_Solution$2
+ com.kkh.codingtest.heap.LV3CodingTest_Heap2_Solution$Job
 com/kkh/codingtest/heap/LV3CodingTest_Heap3_Solution.java
  com.kkh.codingtest.heap.LV3CodingTest_Heap3_Solution

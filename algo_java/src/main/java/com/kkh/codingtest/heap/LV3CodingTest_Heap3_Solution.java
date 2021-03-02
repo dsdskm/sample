@@ -12,7 +12,8 @@ public class LV3CodingTest_Heap3_Solution {
      */
     public static void main(String args[]) {
         LV3CodingTest_Heap3_Solution l = new LV3CodingTest_Heap3_Solution();
-        System.out.println(l.solution(new String[]{"I 16","I 13","I 19","D 1",}));
+        System.out.println(l.solution(new String[]{"I 16", "D 1"}));
+        System.out.println(l.solution(new String[]{"I 7", "I 5", "I -5", "D -1"}));
 
     }
 
@@ -23,25 +24,43 @@ public class LV3CodingTest_Heap3_Solution {
         2. 큐에서 최대값 추출
         3. 큐에서 최소값 추출출
         */
-        PriorityQueue<Integer> minHeap = new PriorityQueue();
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> heap1 = new PriorityQueue<>(Collections.reverseOrder());     // 최대값 삭제를 위한 힙
+        PriorityQueue<Integer> heap2 = new PriorityQueue<>();   //최소값 삭제를 위한 힙
+        int max = 0;
+        int min = 0;
         for (int i = 0; i < operations.length; i++) {
             String s = operations[i];
             if (s.startsWith("I")) {
+                // 큐에 삽입
                 s = s.replace("I ", "");
                 int num = Integer.parseInt(s);
-                minHeap.offer(num);
-                maxHeap.offer(num);
+                heap1.offer(num);
+                heap2.offer(num);
             } else if (s.equals("D 1")) {
-                // poll 은 최소값 추출
-                int poll = minHeap.poll();
-                System.out.println("poll : " + poll);
+                // 최대값 삭제
+                if (heap1.size() > 0) {
+                    int poll = heap1.poll();
+                    heap2.remove(poll);
+                }
             } else if (s.equals("D -1")) {
-                int poll = maxHeap.poll();
+                // 최소값 삭제
+                if (heap2.size() > 0) {
+                    int poll = heap2.poll();
+                    heap1.remove(poll);
+                }
             }
-
         }
-        int[] answer = {};
+        if (heap1.size() == 0) {
+            max = 0;
+        } else {
+            max = heap1.poll();
+        }
+        if (heap2.size() == 0) {
+            min = 0;
+        } else {
+            min = heap2.poll();
+        }
+        int[] answer = {max, min};
         return answer;
     }
 }
