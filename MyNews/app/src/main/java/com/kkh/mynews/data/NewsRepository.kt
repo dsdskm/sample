@@ -41,7 +41,7 @@ class NewsRepository {
 
     fun requestNews(query: String) {
         GlobalScope.launch(Dispatchers.IO) {
-            mWebService.getSearchNews(query,30).enqueue(object :
+            mWebService.getSearchNews(query,100).enqueue(object :
                 Callback<NewsModel> {
                 override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
                     Log.d(TAG, "onResponse : " + response.body().toString())
@@ -66,8 +66,8 @@ class NewsRepository {
         }
     }
 
-    fun getNews(): Flow<List<NewsItemsModel>> {
-        return mNewsItemsDao.load()
+    fun getNewsDao():NewsItemsDao{
+        return mNewsItemsDao
     }
 
     fun getKeyword(): Flow<List<KeywordModel>> {

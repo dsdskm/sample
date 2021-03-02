@@ -1,5 +1,6 @@
 package com.kkh.mynews.item.keyword.dao
 
+import androidx.paging.DataSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE

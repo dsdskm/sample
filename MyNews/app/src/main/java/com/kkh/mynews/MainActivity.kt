@@ -1,11 +1,11 @@
 package com.kkh.mynews
 
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
@@ -15,13 +15,13 @@ import androidx.lifecycle.*
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.textfield.TextInputEditText
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.item.keyword.model.KeywordModel
 import com.kkh.mynews.item.news.model.NewsItemsModel
+import com.kkh.mynews.test.dagger2.DaggerActivity
 import com.kkh.mynews.view.adapter.KeywordRecyclerViewAdapter
 import com.kkh.mynews.viewmodel.NewsViewModel
-import com.kkh.mynews.view.adapter.MainRecyclerViewAdapter
+import com.kkh.mynews.view.adapter.NewsItemsAdapter
 
 /*
 
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     val mAddBtn by lazy { findViewById<Button>(R.id.add) }
     val mKeywordRecyclerView by lazy { findViewById<RecyclerView>(R.id.keywordListView) }
     val mRecyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerView) }
-    val mAdapter = MainRecyclerViewAdapter()
+    val mPagedAdapter = NewsItemsAdapter()
     private lateinit var mKeywordAdapter: KeywordRecyclerViewAdapter
 
 
@@ -64,11 +64,10 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         mKeywordRecyclerView.itemAnimator = DefaultItemAnimator()
 
-
-        mRecyclerView.adapter = mAdapter
-        mRecyclerView.layoutManager = LinearLayoutManager(this)
+        mRecyclerView.adapter = mPagedAdapter
         mRecyclerView.itemAnimator = DefaultItemAnimator()
-
+        mRecyclerView.layoutManager = LinearLayoutManager(this)
+        mRecyclerView.setHasFixedSize(true)
 
         mNewsViewModel.keyword.observe(this, Observer {
             val list: List<KeywordModel> = it
@@ -76,12 +75,10 @@ class MainActivity : AppCompatActivity() {
             mKeywordAdapter.setList(list)
         })
 
-        mNewsViewModel.newsItems.observe(this, Observer {
-            Log.d(TAG, "observe ret : ${it}")
+        mNewsViewModel.newsItemsPaged.observe(this, Observer {
             val list: List<NewsItemsModel> = it
             Log.d(TAG, "observed list size ${list.size}")
-            mAdapter.setList(list)
-
+            mPagedAdapter.setList(list)
         })
         mSearchBtn.setOnClickListener {
             mNewsViewModel.requestNews(mSearchView.query.toString())
@@ -94,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         mAddBtn.setOnClickListener {
             showDialog()
         }
+        startActivity(Intent(this, DaggerActivity::class.java))
     }
 
     private fun showDialog() {
