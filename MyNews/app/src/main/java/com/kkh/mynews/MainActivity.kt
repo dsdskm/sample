@@ -22,6 +22,7 @@ import com.kkh.mynews.test.dagger2.DaggerActivity
 import com.kkh.mynews.view.adapter.KeywordRecyclerViewAdapter
 import com.kkh.mynews.viewmodel.NewsViewModel
 import com.kkh.mynews.view.adapter.NewsItemsAdapter
+import com.kkh.mynews.workmanager.MyWorkerManager
 
 /*
 
@@ -91,6 +92,8 @@ class MainActivity : AppCompatActivity() {
         mAddBtn.setOnClickListener {
             showDialog()
         }
+        MyWorkerManager.workRequest()
+        MyWorkerManager.workRequestMutiTime()
         startActivity(Intent(this, DaggerActivity::class.java))
     }
 

@@ -78,7 +78,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
 
     //dagger
-    def daggerVersion = "2.12"
+    def daggerVersion = "2.15"
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
@@ -99,10 +99,26 @@ dependencies {
 
     // paging
     def paging_version = "2.1.2"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    // For Kotlin use paging-runtime-ktx
+    testImplementation "androidx.paging:paging-common-ktx:$paging_version"
+    // For Kotlin use paging-common-ktx
+    implementation "androidx.paging:paging-rxjava2-ktx:$paging_version"
+    // For Kotlin use paging-rxjava2-ktx
 
-    implementation "androidx.paging:paging-runtime-ktx:$paging_version" // For Kotlin use paging-runtime-ktx
-    // alternatively - without Android dependencies for testing
-    testImplementation "androidx.paging:paging-common-ktx:$paging_version" // For Kotlin use paging-common-ktx
-    // optional - RxJava support
-    implementation "androidx.paging:paging-rxjava2-ktx:$paging_version" // For Kotlin use paging-rxjava2-ktx
+    // work manager
+    def work_version = "2.5.0"
+    // (Java only)
+    implementation "androidx.work:work-runtime:$work_version"
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    // optional - RxJava2 support
+    implementation "androidx.work:work-rxjava2:$work_version"
+    // optional - GCMNetworkManager support
+    implementation "androidx.work:work-gcm:$work_version"
+    // optional - Test helpers
+    androidTestImplementation "androidx.work:work-testing:$work_version"
+    // optional - Multiprocess support
+    implementation "androidx.work:work-multiprocess:$work_version"
 }
+
