@@ -1,0 +1,24 @@
+배열 정렬
+Arrays.sort(A);
+
+리스트 정렬
+Collections.sort(list);
+
+
+Common
+    문제 정독(5번)
+    알고리즘 순서
+    배열 순환시 인덱스 계산
+        -> 크기가 10인 배열 A를 순환화면서 크기가 4인 배열 B의 모든 원소를 반복적으로 비교할 때 (LV1CodingTest_BF1_Solution)
+        -> for (int i = 0; i < answers.length; i++) {
+                       int answer = answers[i];
+                       for (int j = 0; j < a.length; j++) {
+                           int k = i % a[j].length;
+                           if (answer == a[j][k]) {
+                               correct[j]++;
+                           }
+                       }
+                   }
+BruteForce
+   이중 for문이 불가피 한 경우도 있다.
+   소수의 경우는 제곱근까지만 반복하여 판단이 가 (LV2CodingTest_BF2_Solution)
