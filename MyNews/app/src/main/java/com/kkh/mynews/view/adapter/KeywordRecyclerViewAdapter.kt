@@ -1,6 +1,7 @@
 package com.kkh.mynews.view.adapter
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,6 +24,7 @@ class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
 
     private var mList: List<KeywordModel> = ArrayList()
     private val mNewsViewModel = viewmodel;
+    private var mCurrentQuery = "";
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val mCardView: CardView = view.findViewById(R.id.card_view)
@@ -35,6 +37,13 @@ class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
         notifyDataSetChanged()
     }
 
+    fun selectPosition(query: String) {
+        Log.d(TAG,"selectPosition query $query")
+        mCurrentQuery = query
+        notifyDataSetChanged()
+    }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
             LayoutInflater.from(parent.context)
@@ -42,13 +51,25 @@ class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
         return ViewHolder(view)
     }
 
+
     @SuppressLint("LongLogTag")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
-        Log.d(TAG, "keyword : ${data.keyword}")
+        Log.d(TAG, "mCurrentQuery $mCurrentQuery keyword : ${data.keyword} position : $position")
+        if (mCurrentQuery == data.keyword) {
+            holder.mCardView.setCardBackgroundColor(Color.GRAY)
+            holder.mKeywordView.setTextColor(Color.DKGRAY)
+        } else {
+            holder.mCardView.setCardBackgroundColor(Color.DKGRAY)
+            holder.mKeywordView.setTextColor(Color.GRAY)
+        }
+
+
         holder.mCardView.setOnClickListener {
             mNewsViewModel.requestNews(data.keyword)
+            mCurrentQuery = data.keyword
+            notifyDataSetChanged()
         }
         holder.mCardView.setOnLongClickListener {
             mNewsViewModel.deleteKeyword(data.keyword)

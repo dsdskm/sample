@@ -4,6 +4,7 @@
     android:layout_height="wrap_content">
 
     <EditText
+        android:textColorHint="@android:color/white"
         android:id="@+id/edit"
         android:layout_width="match_parent"
         android:hint="여기에 입력하세요"

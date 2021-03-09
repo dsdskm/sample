@@ -29,5 +29,8 @@ class NewsViewModel() : ViewModel() {
     fun deleteKeyword(keyword:String){
         newsRepository.deleteKeyword(keyword)
     }
+    fun deleteNewsAll(){
+        newsRepository.deleteNewsAll()
+    }
 
 }

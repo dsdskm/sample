@@ -41,7 +41,7 @@ class NewsRepository {
 
     fun requestNews(query: String) {
         GlobalScope.launch(Dispatchers.IO) {
-            mWebService.getSearchNews(query,100).enqueue(object :
+            mWebService.getSearchNews(query,10).enqueue(object :
                 Callback<NewsModel> {
                 override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
                     Log.d(TAG, "onResponse : " + response.body().toString())
@@ -93,5 +93,12 @@ class NewsRepository {
             mNewsItemsDao.deleteAllByQuery(keyword)
         }
     }
+
+    fun deleteNewsAll(){
+        GlobalScope.launch(Dispatchers.IO){
+            mNewsItemsDao.deleteAll()
+        }
+    }
+
 
 }

@@ -14,7 +14,7 @@ interface NewsItemsDao {
     @Insert(onConflict = REPLACE)
     fun insert(data: List<NewsItemsModel>)
 
-    @Query("SELECT * FROM newsItems ORDER BY uid DESC")
+    @Query("SELECT * FROM newsItems ORDER BY uid ASC")
     fun loadPagedList(): DataSource.Factory<Int, NewsItemsModel>
 
     @Query("DELETE FROM newsItems")

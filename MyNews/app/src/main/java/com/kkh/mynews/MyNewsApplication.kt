@@ -6,7 +6,7 @@ import android.util.Log
 
 
 /**
-[Android/Kotlin][MyNews]
+[Android/Kotlin]
 https://developer.android.com/guide?hl=ko
 Activity / Fragment / Intent
 View / RecyclerView(Paging) / Window / Widget / Animation / Image / Databinding
@@ -19,7 +19,27 @@ Android SDK
 Google IO
 AAR / Testing / Mockito / UnitTest / CI
 
+[MyNews]
+Intro Animation         ///////////////////[Doing]
+    Progress
+Main
+SearchView
+광고 + switch Animation
+category panel
+연관 List (가로)
+list item
+그리드 list
+한정판 List (가로)
+list item + count
+scrolling + dynamic tab bar
+SearchView
+인기 검색어
+최근 검색어
+추천 검색어
+검색어 추천
 
+
+상품 dto common화 + 모듈화
 
  */
 
