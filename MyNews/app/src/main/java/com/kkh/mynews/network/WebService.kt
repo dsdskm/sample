@@ -1,5 +1,6 @@
 package com.kkh.mynews.network
 
+import com.kkh.mynews.item.shopping.model.ShoppingModel
 import com.kkh.mynews.model.NewsModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -14,14 +15,23 @@ interface WebService {
 
     /*
     Naver Search URL : https://developers.naver.com/docs/search/news/
+    Naver Shopping URL : https://developers.naver.com/docs/search/shopping/
 
     https://openapi.naver.com/v1/search/news.json
+    https://openapi.naver.com/v1/search/shop.json
 
     curl "https://openapi.naver.com/v1/search/news.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&sort=sim" \
     -H "X-Naver-Client-Id: {1AgpA_xzaTOxYnH0Ok7X}" \
     -H "X-Naver-Client-Secret: {LGFq88WXXK}" -v
 
      */
+
+    @GET("v1/search/shop.json")
+    fun getShopping(
+        @Query("query") query: String,
+        @Query("display") display: Int,
+        @Query("sort") sort: String
+    ):Call<ShoppingModel>
 
     @GET("v1/search/news.json")
     fun getSearchNews(

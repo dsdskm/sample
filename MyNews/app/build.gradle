@@ -120,5 +120,9 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$work_version"
     // optional - Multiprocess support
     implementation "androidx.work:work-multiprocess:$work_version"
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
 

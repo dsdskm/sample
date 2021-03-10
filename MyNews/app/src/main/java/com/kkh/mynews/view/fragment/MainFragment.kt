@@ -18,11 +18,17 @@ import com.kkh.mynews.MainActivity
 import com.kkh.mynews.MyNewsApplication
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
+import com.kkh.mynews.item.contents.ContentsModel
 import com.kkh.mynews.item.keyword.model.KeywordModel
 import com.kkh.mynews.item.news.model.NewsItemsModel
-import com.kkh.mynews.view.`interface`.INewsItemEvent
+import com.kkh.mynews.item.shopping.model.ShoppingItemsModel
+import com.kkh.mynews.view.`interface`.IContentsEvent
+import com.kkh.mynews.view.adapter.ContentsAdapter
+import com.kkh.mynews.view.adapter.ContentsAdapter.Companion.VIEW_TYPE_NEWS
+import com.kkh.mynews.view.adapter.ContentsAdapter.Companion.VIEW_TYPE_SHOPPING
 import com.kkh.mynews.view.adapter.KeywordRecyclerViewAdapter
 import com.kkh.mynews.view.adapter.NewsItemsAdapter
+import com.kkh.mynews.view.adapter.ShoppingItemsAdapter
 import com.kkh.mynews.viewmodel.NewsViewModel
 
 class MainFragment : ContentsFragment() {
@@ -38,11 +44,17 @@ class MainFragment : ContentsFragment() {
     private lateinit var mClearBtn: Button
     private lateinit var mAddBtn: Button
     private lateinit var mResetBtn: Button
+
     private lateinit var mKeywordRecyclerView: RecyclerView
     private lateinit var mRecyclerView: RecyclerView
+    private lateinit var mShoppingRecyclerView: RecyclerView
+
+    private lateinit var mContentsAdapter: ContentsAdapter
     private lateinit var mNewsAdapter: NewsItemsAdapter
     private lateinit var mKeywordAdapter: KeywordRecyclerViewAdapter
+    private lateinit var mShoppingAdapter: ShoppingItemsAdapter
 
+    private val mContentsList = ArrayList<ContentsModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
@@ -59,6 +71,12 @@ class MainFragment : ContentsFragment() {
         return view
     }
 
+    private val mIContentsEvent = object : IContentsEvent {
+        override fun onBindItem(data: ContentsModel) {
+            mKeywordAdapter.selectPosition(data.query)
+        }
+    }
+
     private fun initViews(view: View) {
         mSearchView = view.findViewById(R.id.searchView)
         mSearchBtn = view.findViewById(R.id.searchBtn)
@@ -67,20 +85,23 @@ class MainFragment : ContentsFragment() {
         mResetBtn = view.findViewById(R.id.reset)
         mKeywordRecyclerView = view.findViewById(R.id.keywordListView)
         mRecyclerView = view.findViewById(R.id.recyclerView)
+        //mShoppingRecyclerView = view.findViewById(R.id.recyclerView)
 
+        // contents(total)
+        mContentsAdapter = ContentsAdapter()
+        mContentsAdapter.setList(mContentsList)
+        mContentsAdapter.setEvent(mIContentsEvent)
+        mRecyclerView.adapter = mContentsAdapter
+        mRecyclerView.layoutManager = LinearLayoutManager(context)
+        mRecyclerView.itemAnimator = DefaultItemAnimator()
+        mRecyclerView.setHasFixedSize(true)
+
+        // keyword
         mKeywordAdapter = KeywordRecyclerViewAdapter(mNewsViewModel)
         mKeywordRecyclerView.adapter = mKeywordAdapter
         mKeywordRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         mKeywordRecyclerView.itemAnimator = DefaultItemAnimator()
-
-        mNewsAdapter = NewsItemsAdapter()
-        mNewsAdapter.setEvent(mNewsItemEvent)
-        mRecyclerView.adapter = mNewsAdapter
-        mRecyclerView.itemAnimator = DefaultItemAnimator()
-        mRecyclerView.layoutManager = LinearLayoutManager(context)
-        mRecyclerView.setHasFixedSize(true)
-
         mNewsViewModel.keyword.observe(viewLifecycleOwner, Observer {
             val list: List<KeywordModel> = it
             Log.d(MainActivity.TAG, "observed keyword list size ${list.size}")
@@ -90,11 +111,28 @@ class MainFragment : ContentsFragment() {
 
         mNewsViewModel.newsItemsPaged.observe(viewLifecycleOwner, Observer {
             val list: List<NewsItemsModel> = it
+            Log.d(MainActivity.TAG, "observed news list size ${list.size}")
+            //mNewsAdapter.setList(list)
+            if (list.isNotEmpty()) {
+                mContentsList.add(ContentsModel(0, VIEW_TYPE_NEWS, list[0].query, list))
+            }
+            mContentsAdapter.setList(mContentsList)
+        })
+
+        mNewsViewModel.shoppingItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<ShoppingItemsModel> = it
             Log.d(MainActivity.TAG, "observed list size ${list.size}")
-            mNewsAdapter.setList(list)
+            if (list.isNotEmpty()) {
+                mContentsList.add(ContentsModel(0, VIEW_TYPE_SHOPPING, list[0].query, list))
+            }
+            mContentsAdapter.setList(mContentsList)
+
         })
         mSearchBtn.setOnClickListener {
-            mNewsViewModel.requestNews(mSearchView.query.toString())
+            mContentsList.clear()
+            val query = mSearchView.query.toString()
+            mNewsViewModel.requestShopping(query)
+            //mNewsViewModel.requestNews(query)
         }
 
         mClearBtn.setOnClickListener {
@@ -106,6 +144,7 @@ class MainFragment : ContentsFragment() {
         }
 
         mResetBtn.setOnClickListener {
+            mContentsList.clear()
             mNewsViewModel.deleteNewsAll()
         }
 //        MyWorkerManager.workRequest()
@@ -140,12 +179,5 @@ class MainFragment : ContentsFragment() {
             dialog.dismiss()
         }
         builder.show()
-    }
-
-    val mNewsItemEvent: INewsItemEvent = object : INewsItemEvent {
-        override fun onBindItem(data: NewsItemsModel) {
-            mKeywordAdapter.selectPosition(data.query)
-        }
-
     }
 }

@@ -68,6 +68,7 @@ class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
 
         holder.mCardView.setOnClickListener {
             mNewsViewModel.requestNews(data.keyword)
+            mNewsViewModel.requestShopping(data.keyword)
             mCurrentQuery = data.keyword
             notifyDataSetChanged()
         }

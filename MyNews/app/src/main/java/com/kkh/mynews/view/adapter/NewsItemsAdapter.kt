@@ -17,7 +17,7 @@ import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.common.Util
 import com.kkh.mynews.item.news.model.NewsItemsModel
-import com.kkh.mynews.view.`interface`.INewsItemEvent
+import com.kkh.mynews.view.`interface`.IContentsEvent
 
 /*
 
@@ -58,7 +58,6 @@ class NewsItemsAdapter() :
     }
 
     private var mList: List<NewsItemsModel> = ArrayList<NewsItemsModel>()
-    private lateinit var mNewsItemEvent: INewsItemEvent
 
     init {
         Log.d(TAG, "NewsItemsAdapter")
@@ -81,7 +80,7 @@ class NewsItemsAdapter() :
     ): NewsItemsAdapter.ViewHolder {
         Log.d(TAG, "onCreateViewHolder")
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_item_layout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.list_news_item_layout, parent, false)
         return NewsItemsAdapter.ViewHolder(view)
     }
 
@@ -90,7 +89,6 @@ class NewsItemsAdapter() :
     override fun onBindViewHolder(holder: NewsItemsAdapter.ViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder position $position")
         val data = mList[position] ?: return
-        mNewsItemEvent.onBindItem(data)
         holder.mCardView.setOnClickListener {
             Util.openUrl(data.link)
         }
@@ -100,8 +98,4 @@ class NewsItemsAdapter() :
         holder.mTimeView.text = Html.fromHtml(data.pubDate, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
     }
 
-    fun setEvent(event: INewsItemEvent) {
-        mNewsItemEvent = event
-
-    }
 }
