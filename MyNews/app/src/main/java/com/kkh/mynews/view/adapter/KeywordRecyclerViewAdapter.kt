@@ -13,10 +13,10 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
-import com.kkh.mynews.item.keyword.model.KeywordModel
-import com.kkh.mynews.viewmodel.NewsViewModel
+import com.kkh.mynews.data.item.keyword.model.KeywordModel
+import com.kkh.mynews.data.viewmodel.ContentsViewModel
 
-class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
+class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
     RecyclerView.Adapter<KeywordRecyclerViewAdapter.ViewHolder>() {
     companion object {
         const val TAG = Constant.TAG_PREFIX + "KeywordRecyclerViewAdapter"
@@ -38,7 +38,7 @@ class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
     }
 
     fun selectPosition(query: String) {
-        Log.d(TAG,"selectPosition query $query")
+        Log.d(TAG, "selectPosition query $query")
         mCurrentQuery = query
         notifyDataSetChanged()
     }
@@ -66,12 +66,6 @@ class KeywordRecyclerViewAdapter(viewmodel: NewsViewModel) :
         }
 
 
-        holder.mCardView.setOnClickListener {
-            mNewsViewModel.requestNews(data.keyword)
-            mNewsViewModel.requestShopping(data.keyword)
-            mCurrentQuery = data.keyword
-            notifyDataSetChanged()
-        }
         holder.mCardView.setOnLongClickListener {
             mNewsViewModel.deleteKeyword(data.keyword)
             true

@@ -18,7 +18,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
-import com.kkh.mynews.item.shopping.model.ShoppingItemsModel
+import com.kkh.mynews.common.Util
+import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 
 @SuppressLint("LongLogTag")
 class ShoppingItemsAdapter :
@@ -31,7 +32,6 @@ class ShoppingItemsAdapter :
         val mProductType: TextView = view.findViewById(R.id.productType)
         val mBrand: TextView = view.findViewById(R.id.brand)
         val mMaker: TextView = view.findViewById(R.id.maker)
-        val mTime: TextView = view.findViewById(R.id.time)
         val mImage: ImageView = view.findViewById(R.id.image)
     }
 
@@ -74,16 +74,17 @@ class ShoppingItemsAdapter :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder position $position")
         val data = mList[position]
+        holder.mCardView.setOnClickListener {
+            Log.d(TAG,"link ${data.link}")
+            Util.openUrl(data.link)
+        }
         holder.mTitle.text = Html.fromHtml(data.title, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
-        holder.mLprice.text =
-            Html.fromHtml(data.lprice.toString(), Html.FROM_HTML_OPTION_USE_CSS_COLORS)
-        holder.mHprice.text =
-            Html.fromHtml(data.hprice.toString(), Html.FROM_HTML_OPTION_USE_CSS_COLORS)
+        holder.mLprice.text =String.format(holder.itemView.context.getString(R.string.shopping_lprice),data.lprice)
+        holder.mHprice.text =String.format(holder.itemView.context.getString(R.string.shopping_hprice),data.hprice)
         holder.mProductType.text =
             Html.fromHtml(data.productType.toString(), Html.FROM_HTML_OPTION_USE_CSS_COLORS)
         holder.mBrand.text = Html.fromHtml(data.brand, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
         holder.mMaker.text = Html.fromHtml(data.maker, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
-        holder.mTime.text = "time"
         mRequestManager.load(data.image).into(holder.mImage)
 
     }

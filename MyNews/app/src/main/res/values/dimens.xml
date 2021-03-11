@@ -3,4 +3,5 @@
     <dimen name="fragment_horizontal_margin">16dp</dimen>
     <dimen name="fragment_vertical_margin">16dp</dimen>
     <dimen name="list_shopping_image_size">100dp</dimen>
+    <dimen name="list_item_shopping_card_width">275dp</dimen>
 </resources>

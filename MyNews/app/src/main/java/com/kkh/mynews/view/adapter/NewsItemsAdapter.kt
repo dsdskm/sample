@@ -16,8 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.common.Util
-import com.kkh.mynews.item.news.model.NewsItemsModel
-import com.kkh.mynews.view.`interface`.IContentsEvent
+import com.kkh.mynews.data.item.news.model.NewsItemsModel
 
 /*
 
