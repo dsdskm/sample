@@ -1,5 +1,7 @@
 package com.kkh.codingtest.greedy;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,6 +30,7 @@ public class LV3CodingTest_Greedy5_Solution {
 
     Set<Integer> set = new HashSet<>();
     int min = Integer.MAX_VALUE;
+
     public int solution(int n, int[][] costs) {
         /*
         모든 다리를 연결한다
@@ -36,28 +39,45 @@ public class LV3CodingTest_Greedy5_Solution {
         다리를 하나씩 연결한다
         최소 비용만 선택해간다
         */
-        int arr[][] = new int[n][n];
-        for (int i = 0; i < costs.length; i++) {
-            int a = costs[i][0];
-            int b = costs[i][1];
-            int c = costs[i][2];
-            arr[a][b] = c;
-            arr[b][a] = c;
-        }
 
-        for (int i = 0; i < n; i++) {
-            set.add(i);
-            checkArr(arr, i, n, 0, "");
-            set.remove(i);
+        int n_arr[] = new int[n];
+        Integer arr[][] = new Integer[costs.length][costs[0].length];
+        for (int i = 0; i < costs.length; i++) {
+            for (int j = 0; j < costs[i].length; j++) {
+                arr[i][j] = costs[i][j];
+            }
+        }
+        Arrays.sort(arr, new Comparator<Integer[]>() {
+            @Override
+            public int compare(Integer[] o1, Integer[] o2) {
+                return o1[2] - o2[2];
+            }
+        });
+
+
+        for (int i = 0; i < arr.length; i++) {
+            while(isFilled(n_arr)){
+
+            }
+
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
         }
 
         return min;
     }
 
+    private boolean isFilled(int[] n_arr) {
+        
+        return false;
+    }
+
     private void checkArr(int[][] arr, int i, int n, int sum, String space) {
         if (set.size() == n) {
 //            System.out.println(space + "[SUM] " + sum);
-            min = Math.min(min,sum);
+            min = Math.min(min, sum);
         }
 
         for (int index = 0; index < n; index++) {
