@@ -1,22 +1,19 @@
-package com.kkh.mynews.view.adapter
+package com.kkh.mynews.data.item.news.adapter
 
 import android.annotation.SuppressLint
 import android.os.Build
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.cardview.widget.CardView
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.common.Util
 import com.kkh.mynews.data.item.news.model.NewsItemsModel
+import com.kkh.mynews.databinding.ListNewsItemLayoutBinding
 
 /*
 
@@ -26,13 +23,13 @@ PagedList
  */
 @SuppressLint("LongLogTag")
 class NewsItemsAdapter() :
-    PagedListAdapter<NewsItemsModel, NewsItemsAdapter.ViewHolder>(DIFF_CALLBACK) {
+    PagedListAdapter<NewsItemsModel, NewsItemsAdapter.ViewHolder>(
+        DIFF_CALLBACK
+    ) {
+    private var mList: List<NewsItemsModel> = ArrayList<NewsItemsModel>()
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val mCardView: CardView = view.findViewById(R.id.card_view)
-        val mTitleView: TextView = view.findViewById(R.id.title)
-        val mContentView: TextView = view.findViewById(R.id.content)
-        val mTimeView: TextView = view.findViewById(R.id.time)
+    class ViewHolder(b: ListNewsItemLayoutBinding) : RecyclerView.ViewHolder(b.root) {
+        var binding: ListNewsItemLayoutBinding = b
 
     }
 
@@ -56,13 +53,6 @@ class NewsItemsAdapter() :
         }
     }
 
-    private var mList: List<NewsItemsModel> = ArrayList<NewsItemsModel>()
-
-    init {
-        Log.d(TAG, "NewsItemsAdapter")
-    }
-
-
     fun setList(list: List<NewsItemsModel>) {
         mList = list
         Log.d(TAG, "setList list ${mList.size}")
@@ -76,25 +66,28 @@ class NewsItemsAdapter() :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): NewsItemsAdapter.ViewHolder {
+    ): ViewHolder {
         Log.d(TAG, "onCreateViewHolder")
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_news_item_layout, parent, false)
-        return NewsItemsAdapter.ViewHolder(view)
+        val binding =
+            ListNewsItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(
+            binding
+        )
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
     @SuppressLint("LongLogTag")
-    override fun onBindViewHolder(holder: NewsItemsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder position $position")
         val data = mList[position] ?: return
-        holder.mCardView.setOnClickListener {
+        val v = holder.binding
+        v.cardView.setOnClickListener {
             Util.openUrl(data.link)
         }
-        holder.mTitleView.text = Html.fromHtml(data.title, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
-        holder.mContentView.text =
+        v.title.text = Html.fromHtml(data.title, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
+        v.content.text =
             Html.fromHtml(data.description, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
-        holder.mTimeView.text = Html.fromHtml(data.pubDate, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
+        v.time.text = Html.fromHtml(data.pubDate, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
     }
 
 }

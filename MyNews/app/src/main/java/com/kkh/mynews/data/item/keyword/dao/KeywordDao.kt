@@ -15,7 +15,7 @@ interface KeywordDao {
     @Insert(onConflict = REPLACE)
     fun insert(data: KeywordModel)
 
-    @Query("SELECT * FROM keyword ORDER BY time DESC")
+    @Query("SELECT * FROM keyword ORDER BY uid ASC")
     fun load(): Flow<List<KeywordModel>>
 
     @Query("DELETE FROM keyword WHERE keyword=:keyword")

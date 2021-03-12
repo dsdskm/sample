@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
+import com.kkh.mynews.databinding.FragmentIntroBinding
+import com.kkh.mynews.databinding.ListBookItemLayoutBinding
 import kotlin.concurrent.timer
 
 class IntroFragment : ContentsFragment() {
@@ -33,8 +35,9 @@ class IntroFragment : ContentsFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_intro, container, false)
-        startAnimation(view)
+        val view =
+            FragmentIntroBinding.inflate(LayoutInflater.from(container!!.context), container, false)
+        startAnimation(view.root)
         /*
         Handler deprecated
         https://jae-young.tistory.com/25
@@ -44,7 +47,7 @@ class IntroFragment : ContentsFragment() {
          */
 
 
-        return view
+        return view.root
     }
 
     private fun startAnimation(view: View) {

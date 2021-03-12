@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.adapter
+package com.kkh.mynews.data.item.keyword.adapter
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -14,8 +14,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.data.item.keyword.model.KeywordModel
+import com.kkh.mynews.data.item.shopping.adapter.ShoppingItemsAdapter
 import com.kkh.mynews.data.viewmodel.ContentsViewModel
+import com.kkh.mynews.databinding.ListKeywordItemLayoutBinding
+import com.kkh.mynews.databinding.ListShoppingItemLayoutBinding
 
+@SuppressLint("LongLogTag")
 class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
     RecyclerView.Adapter<KeywordRecyclerViewAdapter.ViewHolder>() {
     companion object {
@@ -24,12 +28,10 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
 
     private var mList: List<KeywordModel> = ArrayList()
     private val mNewsViewModel = viewmodel;
-    private var mCurrentQuery = "";
+    private var mCurrentViewType = -1
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val mCardView: CardView = view.findViewById(R.id.card_view)
-        val mKeywordView: TextView = view.findViewById(R.id.keyword)
-
+    class ViewHolder(b: ListKeywordItemLayoutBinding) : RecyclerView.ViewHolder(b.root) {
+        var binding: ListKeywordItemLayoutBinding = b
     }
 
     fun setList(list: List<KeywordModel>) {
@@ -37,18 +39,17 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
         notifyDataSetChanged()
     }
 
-    fun selectPosition(query: String) {
-        Log.d(TAG, "selectPosition query $query")
-        mCurrentQuery = query
+    fun selectPosition(viewType: Int) {
+        Log.d(TAG, "selectPosition viewType $viewType")
+        mCurrentViewType = viewType
         notifyDataSetChanged()
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_keyword_item_layout, parent, false)
-        return ViewHolder(view)
+        val binding =
+            ListKeywordItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
 
@@ -56,21 +57,22 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
-        Log.d(TAG, "mCurrentQuery $mCurrentQuery keyword : ${data.keyword} position : $position")
-        if (mCurrentQuery == data.keyword) {
-            holder.mCardView.setCardBackgroundColor(Color.GRAY)
-            holder.mKeywordView.setTextColor(Color.DKGRAY)
+        Log.d(TAG, "mCurrentCategory $mCurrentViewType data.uid) : ${data.uid}")
+        val v = holder.binding
+        if (mCurrentViewType == data.uid) {
+            v.cardView.setCardBackgroundColor(Color.GRAY)
+            v.keyword.setTextColor(Color.DKGRAY)
         } else {
-            holder.mCardView.setCardBackgroundColor(Color.DKGRAY)
-            holder.mKeywordView.setTextColor(Color.GRAY)
+            v.cardView.setCardBackgroundColor(Color.DKGRAY)
+            v.keyword.setTextColor(Color.GRAY)
         }
 
 
-        holder.mCardView.setOnLongClickListener {
+        v.cardView.setOnLongClickListener {
             mNewsViewModel.deleteKeyword(data.keyword)
             true
         }
-        holder.mKeywordView.text = data.keyword
+        v.keyword.text = data.keyword
     }
 
     override fun getItemCount(): Int {

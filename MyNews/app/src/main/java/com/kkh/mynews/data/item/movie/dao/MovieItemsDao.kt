@@ -12,7 +12,7 @@ interface MovieItemsDao {
     @Insert(onConflict = REPLACE)
     fun insert(data: List<MovieItemsModel>)
 
-    @Query("SELECT * FROM locationItems ORDER BY uid ASC")
+    @Query("SELECT * FROM movieItems ORDER BY uid ASC")
     fun loadPagedList(): DataSource.Factory<Int, MovieItemsModel>
 
     @Query("DELETE FROM movieItems")

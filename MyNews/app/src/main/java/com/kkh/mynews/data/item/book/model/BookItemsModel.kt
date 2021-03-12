@@ -11,8 +11,8 @@ data class BookItemsModel(
     var link: String = "",
     var image: String = "",
     var author: String = "",
-    var price: Int = 0,
-    var discount: Int = 0,
+    var price: String = "",
+    var discount: String ="",
     var publisher: String = "",
     var description: String = "",
     var query:String=""

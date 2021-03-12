@@ -12,9 +12,11 @@ import com.kkh.mynews.data.item.shopping.dao.ShoppingItemsDao
 import com.kkh.mynews.data.item.shopping.model.ShoppingModel
 import com.kkh.mynews.data.item.blog.model.BlogModel
 import com.kkh.mynews.data.item.book.dao.BookItemsDao
+import com.kkh.mynews.data.item.book.model.BookModel
 import com.kkh.mynews.data.item.cafe.dao.CafeItemsDao
 import com.kkh.mynews.data.item.dict.dao.DictItemsDao
 import com.kkh.mynews.data.item.image.dao.ImageItemsDao
+import com.kkh.mynews.data.item.image.model.ImageModel
 import com.kkh.mynews.data.item.know.dao.KnowItemsDao
 import com.kkh.mynews.data.item.location.dao.LocationItemsDao
 import com.kkh.mynews.data.item.movie.dao.MovieItemsDao
@@ -69,29 +71,61 @@ class ContentsRepository {
         mReferItemsDao = mDatabase.referItemsDao()
         mKeywordDao = mDatabase.keywordDao()
     }
-    fun requestBook(query: String, sort: String) {
-        Log.d(TAG, "requestBook")
-        mWebService.getBlog(query, DEFAULT_RESULT, sort).enqueue(object : Callback<BlogModel> {
-            override fun onFailure(call: Call<BlogModel>, t: Throwable) {
-                Log.d(TAG, "requestBlog onFailure : " + t.message)
-            }
 
-            override fun onResponse(call: Call<BlogModel>, response: Response<BlogModel>) {
-                Log.d(TAG, "requestBlog onResponse : " + response.body().toString())
-                val blogModel = response.body()
-                blogModel!!.items?.let {
-                    GlobalScope.launch(Dispatchers.IO) {
-                        mBlogItemsDao.deleteAll()
-                        for (data in it) {
-                            data.query = query
+    fun request
+
+    fun requestImage(query: String, sort: String, filter: String) {
+        Log.d(TAG, "requestImage")
+        mWebService.getImage(query, DEFAULT_RESULT, sort, filter)
+            .enqueue(object : Callback<ImageModel> {
+                override fun onFailure(call: Call<ImageModel>, t: Throwable) {
+                    t.printStackTrace()
+                    Log.d(TAG, "requestImage onFailure : " + t.message)
+                }
+
+                override fun onResponse(call: Call<ImageModel>, response: Response<ImageModel>) {
+                    Log.d(TAG, "requestImage onResponse : " + response.body().toString())
+                    val blogModel = response.body()
+                    blogModel!!.items?.let {
+                        GlobalScope.launch(Dispatchers.IO) {
+                            mImageItemsDao.deleteAll()
+                            for (data in it) {
+                                data.query = query
+                            }
+                            Log.d(TAG, "updatelist $it")
+                            mImageItemsDao.insert(it)
                         }
-                        Log.d(TAG, "updatelist $it")
-                        mBlogItemsDao.insert(it)
                     }
                 }
-            }
 
-        })
+            })
+    }
+
+    fun requestBook(query: String, sort: String) {
+        Log.d(TAG, "requestBook")
+        mWebService.getSearchBook(query, DEFAULT_RESULT, sort)
+            .enqueue(object : Callback<BookModel> {
+                override fun onFailure(call: Call<BookModel>, t: Throwable) {
+                    t.printStackTrace()
+                    Log.d(TAG, "requestBook onFailure : " + t.message)
+                }
+
+                override fun onResponse(call: Call<BookModel>, response: Response<BookModel>) {
+                    Log.d(TAG, "requestBook onResponse : " + response.body().toString())
+                    val blogModel = response.body()
+                    blogModel!!.items?.let {
+                        GlobalScope.launch(Dispatchers.IO) {
+                            mBookItemsDao.deleteAll()
+                            for (data in it) {
+                                data.query = query
+                            }
+                            Log.d(TAG, "updatelist $it")
+                            mBookItemsDao.insert(it)
+                        }
+                    }
+                }
+
+            })
     }
 
 
@@ -192,6 +226,14 @@ class ContentsRepository {
 
     fun getBlogDao(): BlogItemsDao {
         return mBlogItemsDao
+    }
+
+    fun getBookDao(): BookItemsDao {
+        return mBookItemsDao
+    }
+
+    fun getImageDao(): ImageItemsDao {
+        return mImageItemsDao
     }
 
 

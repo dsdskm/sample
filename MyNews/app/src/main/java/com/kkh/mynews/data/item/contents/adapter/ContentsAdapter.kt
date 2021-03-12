@@ -1,4 +1,4 @@
-package com.kkh.mynews.view.adapter
+package com.kkh.mynews.data.item.contents.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.data.item.contents.ContentsModel
 import com.kkh.mynews.view.`interface`.IContentsEvent
-import com.kkh.mynews.view.adapter.presenter.Presenter
+import com.kkh.mynews.view.Presenter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -31,9 +31,6 @@ class ContentsAdapter() : PagedListAdapter<ContentsModel, ContentsAdapter.ViewHo
 
     companion object {
         const val TAG = Constant.TAG_PREFIX + "ContentsAdapter"
-        const val VIEW_TYPE_NEWS = 0
-        const val VIEW_TYPE_SHOPPING = 1
-        const val VIEW_TYPE_BLOG = 2
 
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ContentsModel>() {
             override fun areItemsTheSame(
@@ -54,13 +51,17 @@ class ContentsAdapter() : PagedListAdapter<ContentsModel, ContentsAdapter.ViewHo
     }
 
     private var mList: List<ContentsModel> = ArrayList<ContentsModel>()
-    private var mPresenter: Presenter = Presenter()
+    private lateinit var mPresenter: Presenter
     private lateinit var mIContentsEvent: IContentsEvent
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_contents_item_layout, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.list_contents_item_layout, parent, false)
         Log.d(TAG, "onCreateViewHolder")
-        return ContentsAdapter.ViewHolder(view)
+        mPresenter = Presenter(parent.context)
+        return ViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int {

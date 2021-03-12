@@ -2,6 +2,9 @@ package com.kkh.mynews.network
 
 import com.kkh.mynews.data.item.shopping.model.ShoppingModel
 import com.kkh.mynews.data.item.blog.model.BlogModel
+import com.kkh.mynews.data.item.book.model.BookModel
+import com.kkh.mynews.data.item.image.model.ImageModel
+import com.kkh.mynews.data.item.movie.model.MovieItemsModel
 import com.kkh.mynews.data.item.news.model.NewsModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -33,20 +36,43 @@ interface WebService {
         @Query("query") query: String,
         @Query("display") display: Int,
         @Query("sort") sort: String
-    ):Call<BlogModel>
+    ): Call<BlogModel>
 
     @GET("v1/search/shop.json")
     fun getShopping(
         @Query("query") query: String,
         @Query("display") display: Int,
         @Query("sort") sort: String
-    ):Call<ShoppingModel>
+    ): Call<ShoppingModel>
 
     @GET("v1/search/news.json")
     fun getSearchNews(
         @Query("query") query: String,
         @Query("display") display: Int
     ): Call<NewsModel>
+
+    @GET("v1/search/book.json")
+    fun getSearchBook(
+        @Query("query") query: String,
+        @Query("display") display: Int,
+        @Query("sort") sort: String
+    ): Call<BookModel>
+
+    @GET("v1/search/image.json")
+    fun getImage(
+        @Query("query") query: String,
+        @Query("display") display: Int,
+        @Query("sort") sort: String,
+        @Query("filter") filter: String
+    ): Call<ImageModel>
+
+    @GET("v1/search/movie.json")
+    fun getMovie(
+        @Query("query") query: String,
+        @Query("display") display: Int,
+        @Query("sort") sort: String,
+        @Query("genre") filter: String
+    ): Call<MovieItemsModel>
 
     companion object {
         private const val BASE_URL_NAVER_API = "https://openapi.naver.com/"

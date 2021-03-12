@@ -14,22 +14,27 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kkh.mynews.MainActivity
 import com.kkh.mynews.MyNewsApplication
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.data.item.contents.ContentsModel
 import com.kkh.mynews.data.item.keyword.model.KeywordModel
 import com.kkh.mynews.data.item.blog.model.BlogItemsModel
+import com.kkh.mynews.data.item.book.model.BookItemsModel
 import com.kkh.mynews.data.item.news.model.NewsItemsModel
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 import com.kkh.mynews.view.`interface`.IContentsEvent
-import com.kkh.mynews.view.adapter.ContentsAdapter
-import com.kkh.mynews.view.adapter.ContentsAdapter.Companion.VIEW_TYPE_NEWS
-import com.kkh.mynews.view.adapter.ContentsAdapter.Companion.VIEW_TYPE_SHOPPING
-import com.kkh.mynews.view.adapter.KeywordRecyclerViewAdapter
+import com.kkh.mynews.data.item.contents.adapter.ContentsAdapter
+import com.kkh.mynews.data.item.keyword.adapter.KeywordRecyclerViewAdapter
 import com.kkh.mynews.data.viewmodel.ContentsViewModel
-import com.kkh.mynews.view.adapter.ContentsAdapter.Companion.VIEW_TYPE_BLOG
+import com.kkh.mynews.data.item.image.model.ImageItemsModel
+import com.kkh.mynews.databinding.FragmentMainBinding
+import com.kkh.mynews.databinding.ListBookItemLayoutBinding
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_BLOG
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_BOOK
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_IMAGE
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_NEWS
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_SHOPPING
 
 class MainFragment : ContentsFragment() {
 
@@ -40,18 +45,9 @@ class MainFragment : ContentsFragment() {
     }
 
     private lateinit var mContentsViewModel: ContentsViewModel
-    private lateinit var mSearchView: SearchView
-    private lateinit var mSearchBtn: Button
-    private lateinit var mClearBtn: Button
-    private lateinit var mAddBtn: Button
-    private lateinit var mResetBtn: Button
-    private lateinit var mProgressDialog: View
-
-    private lateinit var mKeywordRecyclerView: RecyclerView
-    private lateinit var mRecyclerView: RecyclerView
-
     private lateinit var mContentsAdapter: ContentsAdapter
     private lateinit var mKeywordAdapter: KeywordRecyclerViewAdapter
+    private lateinit var binding: FragmentMainBinding
 
     private val mContentsList = ArrayList<ContentsModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,19 +59,18 @@ class MainFragment : ContentsFragment() {
 
     private fun initKeywordList() {
         val list = ArrayList<KeywordModel>()
-        list.add(KeywordModel("뉴스"))
-        list.add(KeywordModel("쇼핑"))
-        list.add(KeywordModel("블로그"))
-        list.add(KeywordModel("이미지"))
-        list.add(KeywordModel("책"))
-        list.add(KeywordModel("백과사전"))
-        list.add(KeywordModel("영화"))
-        list.add(KeywordModel("카페글"))
-        list.add(KeywordModel("지식in"))
-        list.add(KeywordModel("지역"))
-        list.add(KeywordModel("오타변환"))
-        list.add(KeywordModel("웹문서"))
-        list.add(KeywordModel("전문자료"))
+        list.add(KeywordModel(0,"뉴스"))
+        list.add(KeywordModel(1,"쇼핑"))
+        list.add(KeywordModel(2,"블로그"))
+        list.add(KeywordModel(3,"책"))
+        list.add(KeywordModel(4,"이미지"))
+        list.add(KeywordModel(5,"영화"))
+        list.add(KeywordModel(6,"백과사전"))
+        list.add(KeywordModel(7,"카페글"))
+        list.add(KeywordModel(8,"지식in"))
+        list.add(KeywordModel(9,"지역"))
+        list.add(KeywordModel(10,"웹문서"))
+        list.add(KeywordModel(11,"전문자료"))
         mContentsViewModel.insertKeywordList(list)
 
     }
@@ -85,23 +80,25 @@ class MainFragment : ContentsFragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d(TAG, "onCreateView");
-        val view = inflater.inflate(R.layout.fragment_main, container, false)
-        initViews(view)
+        binding = FragmentMainBinding.inflate(LayoutInflater.from(container!!.context), container, false)
+
+        initViews()
         initViewModel()
-        return view
+        binding.searchView.setQuery("손흥민",false)
+        return binding.root
     }
 
     private fun initViewModel() {
         mContentsViewModel.keyword.observe(viewLifecycleOwner, Observer {
             val list: List<KeywordModel> = it
-            Log.d(MainActivity.TAG, "observed keyword list size ${list.size}")
+            Log.d(TAG, "observed keyword list size ${list.size}")
             mKeywordAdapter.setList(list)
 
         })
 
         mContentsViewModel.newsItemsPaged.observe(viewLifecycleOwner, Observer {
             val list: List<NewsItemsModel> = it
-            Log.d(MainActivity.TAG, "observed news list size ${list.size}")
+            Log.d(TAG, "observed news list size ${list.size}")
             //mNewsAdapter.setList(list)
             if (list.isNotEmpty()) {
                 mContentsList.add(
@@ -118,7 +115,7 @@ class MainFragment : ContentsFragment() {
 
         mContentsViewModel.shoppingItemsPaged.observe(viewLifecycleOwner, Observer {
             val list: List<ShoppingItemsModel> = it
-            Log.d(MainActivity.TAG, "observed shopping list size ${list.size}")
+            Log.d(TAG, "observed shopping list size ${list.size}")
             if (list.isNotEmpty()) {
                 mContentsList.add(
                     ContentsModel(
@@ -134,12 +131,42 @@ class MainFragment : ContentsFragment() {
 
         mContentsViewModel.blogItemsPaged.observe(viewLifecycleOwner, Observer {
             val list: List<BlogItemsModel> = it
-            Log.d(MainActivity.TAG, "observed blog list size ${list.size}")
+            Log.d(TAG, "observed blog list size ${list.size}")
             if (list.isNotEmpty()) {
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_BLOG,
                         VIEW_TYPE_BLOG,
+                        list[0].query,
+                        list
+                    )
+                )
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.bookItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<BookItemsModel> = it
+            Log.d(TAG, "observed book list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_BOOK,
+                        VIEW_TYPE_BOOK,
+                        list[0].query,
+                        list
+                    )
+                )
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.imageItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<ImageItemsModel> = it
+            Log.d(TAG, "observed image list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_IMAGE,
+                        VIEW_TYPE_IMAGE,
                         list[0].query,
                         list
                     )
@@ -153,62 +180,48 @@ class MainFragment : ContentsFragment() {
 
     private val mIContentsEvent = object : IContentsEvent {
         override fun onBindItem(data: ContentsModel) {
-            mKeywordAdapter.selectPosition(data.query)
+            mKeywordAdapter.selectPosition(data.viewType)
         }
     }
 
-    private fun initViews(view: View) {
-        mSearchView = view.findViewById(R.id.searchView)
-        mSearchBtn = view.findViewById(R.id.searchBtn)
-        mClearBtn = view.findViewById(R.id.clearBtn)
-        mAddBtn = view.findViewById(R.id.add)
-        mAddBtn.visibility = View.GONE
-        mResetBtn = view.findViewById(R.id.reset)
-        mProgressDialog = view.findViewById<View>(R.id.progress)
-        if (REQUEST_COUNT == 0) {
-            mProgressDialog.visibility = View.GONE
-        }
-        mKeywordRecyclerView = view.findViewById(R.id.keywordListView)
-        mRecyclerView = view.findViewById(R.id.recyclerView)
-        //mShoppingRecyclerView = view.findViewById(R.id.recyclerView)
-
+    private fun initViews() {
+        binding.add.visibility = View.GONE
+        binding.progress.root.visibility = View.GONE
         // contents(total)
-        mContentsAdapter = ContentsAdapter()
+        mContentsAdapter =
+            ContentsAdapter()
         mContentsAdapter.setList(mContentsList)
         mContentsAdapter.setEvent(mIContentsEvent)
-        mRecyclerView.adapter = mContentsAdapter
-        mRecyclerView.layoutManager = LinearLayoutManager(context)
-        mRecyclerView.itemAnimator = DefaultItemAnimator()
-        mRecyclerView.setHasFixedSize(true)
+        binding.recyclerView.adapter = mContentsAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.itemAnimator = DefaultItemAnimator()
+        binding.recyclerView.setHasFixedSize(true)
 
         // keyword
-        mKeywordAdapter = KeywordRecyclerViewAdapter(mContentsViewModel)
-        mKeywordRecyclerView.adapter = mKeywordAdapter
-        mKeywordRecyclerView.layoutManager =
+        mKeywordAdapter =
+            KeywordRecyclerViewAdapter(
+                mContentsViewModel
+            )
+        binding.keywordListView.adapter = mKeywordAdapter
+        binding.keywordListView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        mKeywordRecyclerView.itemAnimator = DefaultItemAnimator()
+        binding.keywordListView.itemAnimator = DefaultItemAnimator()
 
 
-        mSearchBtn.setOnClickListener {
+        binding.searchBtn.setOnClickListener {
             mContentsList.clear()
-            val query = mSearchView.query.toString()
-            mProgressDialog.visibility = View.VISIBLE
-            mContentsViewModel.requestShopping(query)
-            mContentsViewModel.requestNews(query)
-            mContentsViewModel.requestBlog(query)
-            REQUEST_COUNT = 3
+            var query = binding.searchView.query.toString()
+            binding.progress.root.visibility = View.VISIBLE
+            mContentsViewModel.request(query)
+            REQUEST_COUNT = 5
 
         }
 
-        mClearBtn.setOnClickListener {
-
+        binding.clearBtn.setOnClickListener {
+            binding.searchView.setQuery("",false)
         }
 
-        mAddBtn.setOnClickListener {
-            showDialog()
-        }
-
-        mResetBtn.setOnClickListener {
+        binding.reset.setOnClickListener {
             mContentsList.clear()
             mContentsViewModel.deleteAll()
         }
@@ -221,7 +234,7 @@ class MainFragment : ContentsFragment() {
         synchronized(lock = this) {
             mContentsAdapter.setList(mContentsList)
             if (mContentsList.size == REQUEST_COUNT) {
-                mProgressDialog.visibility = View.GONE
+                binding.progress.root.visibility = View.GONE
             }
         }
 
@@ -242,13 +255,15 @@ class MainFragment : ContentsFragment() {
         val input = view.findViewById<EditText>(R.id.edit)
         builder.setView(view)
         builder.setPositiveButton(android.R.string.ok) { dialog: DialogInterface, _: Int ->
-
+            /*
             mContentsViewModel.insertKeywordList(
                 KeywordModel(
                     input.text.toString(),
                     System.currentTimeMillis()
                 )
             )
+
+             */
             dialog.dismiss()
         }
         builder.setNegativeButton(android.R.string.cancel) { dialog: DialogInterface, _: Int ->
