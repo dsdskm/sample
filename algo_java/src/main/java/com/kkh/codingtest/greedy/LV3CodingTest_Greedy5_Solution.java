@@ -1,5 +1,7 @@
 package com.kkh.codingtest.greedy;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,50 +25,77 @@ public class LV3CodingTest_Greedy5_Solution {
      */
     public static void main(String args[]) {
         LV3CodingTest_Greedy5_Solution l = new LV3CodingTest_Greedy5_Solution();
-        System.out.println(l.solution(4, new int[][]{{0, 1, 1}, {0, 2, 2}, {1, 2, 5}, {1, 3, 1}, {2, 3, 8}}));      // 4
+        //System.out.println(l.solution(4, new int[][]{{0, 1, 1}, {0, 2, 2}, {1, 2, 5}, {1, 3, 1}, {2, 3, 8}}));      // 4
+        System.out.println(l.solution(5, new int[][]{{0, 1, 1}, {2, 3, 1}, {1, 4, 2}, {0, 2, 3}}));      // 4
     }
 
-    Set<Integer> set = new HashSet<>();
-    int min = Integer.MAX_VALUE;
+    int parent[];
+
     public int solution(int n, int[][] costs) {
         /*
-        모든 다리를 연결한다
-        임의의 곳에서부터 전체 경로를 파악한다
-
-        다리를 하나씩 연결한다
-        최소 비용만 선택해간다
-        */
-        int arr[][] = new int[n][n];
-        for (int i = 0; i < costs.length; i++) {
-            int a = costs[i][0];
-            int b = costs[i][1];
-            int c = costs[i][2];
-            arr[a][b] = c;
-            arr[b][a] = c;
+        1. 가중치 오름 차순으로 배열 정렬
+        2. 자신이 부모인 배열을 생성
+         */
+        int answer = 0;
+        Arrays.sort(costs, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[2] - o2[2];
+            }
+        });
+        parent = new int[n];
+        for (int i = 0; i < parent.length; i++) {
+            parent[i] = i;
         }
 
-        for (int i = 0; i < n; i++) {
-            set.add(i);
-            checkArr(arr, i, n, 0, "");
-            set.remove(i);
-        }
+        int index = 0;
+        while (!isOne(parent)) {
+            int[] current = costs[index++];
+            int one = current[0];
+            int the_other = current[1];
+            //the_other의 값을 one의 값으로 변경하되 the_other의 값과 일치하는 모든 것을 함께 변경한다
+            int cost = current[2];
+            System.out.println("one : " + one + " , the_other : " + the_other + " , parent[one]:" + parent[one] + " , parent[the_other]:" + parent[the_other] + " cost : " + cost);
+            if (parent[the_other] != parent[one]) {
+                //둘은 아직 연결안되어 있고 연결해야하는 상태
+                //the_other의 부모값을 other의 부모값으로 변경한
+                parent = changeCycleTableNumber(parent, one, the_other);
+                display();
+                answer += cost;
 
-        return min;
-    }
-
-    private void checkArr(int[][] arr, int i, int n, int sum, String space) {
-        if (set.size() == n) {
-//            System.out.println(space + "[SUM] " + sum);
-            min = Math.min(min,sum);
-        }
-
-        for (int index = 0; index < n; index++) {
-            if (!set.contains(index) && index != i && arr[i][index] != 0) {
-                set.add(index);
-                checkArr(arr, index, n, arr[i][index] + sum, space + " ");
-                set.remove(index);
             }
         }
+
+        return answer;
+    }
+
+    void display() {
+        for (int i = 0; i < parent.length; i++) {
+            System.out.print(parent[i] + " ");
+        }
+        System.out.println();
+    }
+
+    int[] changeCycleTableNumber(int cycleTable[], int one, int the_other) {
+        int cycleTheOther = cycleTable[the_other];
+        int cycleOne = cycleTable[one];
+        System.out.println("cycleOne : " + cycleOne + " , cycleTheOther : " + cycleTheOther);
+        for (int i = 0; i < cycleTable.length; i++) {
+            if (cycleTable[i] == cycleTheOther) {
+                //부모가 the_other인 것을 찾아 other로 일괄 변경해준다
+                cycleTable[i] = cycleOne;
+            }
+        }
+        return cycleTable;
+    }
+
+    boolean isOne(int[] cycleTable) {
+        for (int i = 1; i < cycleTable.length; i++) {
+            if (cycleTable[i - 1] != cycleTable[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
