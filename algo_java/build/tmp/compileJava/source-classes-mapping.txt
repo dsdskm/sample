@@ -1,9 +1,5 @@
 com/kkh/coupang/practice/QueueTest.java
  com.kkh.coupang.practice.QueueTest
-com/kkh/codingtest/dynamic/CodingTest_Dynamic1.java
- com.kkh.codingtest.dynamic.CodingTest_Dynamic1
-com/kkh/codingtest/dfsbfs/CodingTest_DFSBFS1.java
- com.kkh.codingtest.dfsbfs.CodingTest_DFSBFS1
 com/kkh/algo/Tree.java
  com.kkh.algo.Tree
  com.kkh.algo.Tree$Node
@@ -41,8 +37,8 @@ com/kkh/codejam/online_2020_2_A/Main.java
  com.kkh.codejam.online_2020_2_A.Main
  com.kkh.codejam.online_2020_2_A.Main$Treasure
  com.kkh.codejam.online_2020_2_A.Main$Treasure2
-com/kkh/codingtest/dynamic/CodingTest_Dynamic2.java
- com.kkh.codingtest.dynamic.CodingTest_Dynamic2
+com/kkh/algo/Graph_Dijkstra.java
+ com.kkh.algo.Graph_Dijkstra
 com/kkh/codingtest/heap/LV3CodingTest_Heap3_Solution.java
  com.kkh.codingtest.heap.LV3CodingTest_Heap3_Solution
 com/kkh/codingtest/level1_test/StringTest3.java
@@ -61,18 +57,20 @@ com/kkh/coupang/CoupangDemo2.java
  com.kkh.coupang.CoupangDemo2
  com.kkh.coupang.MyLinkedList
  com.kkh.coupang.MyLinkedList$Node
+com/kkh/codingtest/dfsbfs/LV3CodingTest_DFS2_Solution.java
+ com.kkh.codingtest.dfsbfs.LV3CodingTest_DFS2_Solution
+com/kkh/codingtest/dynamic/LV3CodingTest_DP3_Solution.java
+ com.kkh.codingtest.dynamic.LV3CodingTest_DP3_Solution
 com/kkh/coupang/practice/IteratorTest.java
  com.kkh.coupang.practice.IteratorTest
-com/kkh/codingtest/dfsbfs/CodingTest_DFSBFS2.java
- com.kkh.codingtest.dfsbfs.CodingTest_DFSBFS2
 com/kkh/coupang/practice/TreeTest.java
  com.kkh.coupang.practice.TreeTest
  com.kkh.coupang.practice.TreeTest$Node
 com/kkh/coupang/practice/PriorityQueueTest.java
  com.kkh.coupang.practice.PriorityQueueTest
  com.kkh.coupang.practice.PriorityQueueTest$MyInteger
-com/kkh/algo/Graph_Dijkstra.java
- com.kkh.algo.Graph_Dijkstra
+com/kkh/codingtest/greedy/LV3CodingTest_Greedy5_Solution.java
+ com.kkh.codingtest.greedy.LV3CodingTest_Greedy5_Solution
 com/kkh/codingtest/sort/LV1CodingTest_Sort1_Solution.java
  com.kkh.codingtest.sort.LV1CodingTest_Sort1_Solution
 com/kkh/algo/Prime.java
@@ -83,8 +81,12 @@ com/kkh/codingtest/level1_test/Crane.java
  com.kkh.codingtest.level1_test.Crane
 com/kkh/coupang/test/Coupang_Test4.java
  com.kkh.coupang.test.Coupang_Test4
+com/kkh/codingtest/dfsbfs/LV3CodingTest_DFS3_Solution.java
+ com.kkh.codingtest.dfsbfs.LV3CodingTest_DFS3_Solution
 com/kkh/coupang/test/Coupang_Test1.java
  com.kkh.coupang.test.Coupang_Test1
+com/kkh/codingtest/dfsbfs/LV2CodingTest_DFS1_Solution.java
+ com.kkh.codingtest.dfsbfs.LV2CodingTest_DFS1_Solution
 com/kkh/codingtest/greedy/LV2CodingTest_Greedy4_Solution.java
  com.kkh.codingtest.greedy.LV2CodingTest_Greedy4_Solution
 com/kkh/codingtest/level1_test/StringTest5.java
@@ -113,6 +115,8 @@ com/kkh/codingtest/stack_queue/LV2CodingTest_StackQueue2_Solution.java
 com/kkh/codejam/online_2020_2_B/Main.java
  com.kkh.codejam.online_2020_2_B.Main
  com.kkh.codejam.online_2020_2_B.Main$Node
+com/kkh/codingtest/dynamic/LV3CodingTest_DP2_Solution.java
+ com.kkh.codingtest.dynamic.LV3CodingTest_DP2_Solution
 com/kkh/coupang/test/Coupang_Test2.java
  com.kkh.coupang.test.Coupang_Test2
 com/kkh/codingtest/binarysearch/CodingTest_BS1.java
@@ -136,6 +140,8 @@ com/kkh/algo/PriorityQueueExam.java
  com.kkh.algo.PriorityQueueExam$MyPQ
 com/kkh/coupang/test/CoupangTest_Demo.java
  com.kkh.coupang.test.CoupangTest_Demo
+com/kkh/codingtest/dynamic/LV3CodingTest_DP1_Solution.java
+ com.kkh.codingtest.dynamic.LV3CodingTest_DP1_Solution
 com/kkh/codingtest/hash/LV2CodingTest_Hash3_Solution.java
  com.kkh.codingtest.hash.LV2CodingTest_Hash3_Solution
 com/kkh/codingtest/sort/LV2CodingTest_Sort2_Solution.java
@@ -166,5 +172,6 @@ com/kkh/codingtest/bruteforce/LV2CodingTest_BF3_Solution.java
  com.kkh.codingtest.bruteforce.LV2CodingTest_BF3_Solution
 com/kkh/codingtest/greedy/LV2CodingTest_Greedy2_Solution.java
  com.kkh.codingtest.greedy.LV2CodingTest_Greedy2_Solution
-com/kkh/codingtest/greedy/LV3CodingTest_Greedy5_Solution.java
- com.kkh.codingtest.greedy.LV3CodingTest_Greedy5_Solution
+com/kkh/codingtest/dfsbfs/LV3CodingTest_DFS4_Solution.java
+ com.kkh.codingtest.dfsbfs.LV3CodingTest_DFS4_Solution
+ com.kkh.codingtest.dfsbfs.LV3CodingTest_DFS4_Solution$1
