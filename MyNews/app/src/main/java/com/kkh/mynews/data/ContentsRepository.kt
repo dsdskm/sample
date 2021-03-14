@@ -14,18 +14,25 @@ import com.kkh.mynews.data.item.blog.model.BlogModel
 import com.kkh.mynews.data.item.book.dao.BookItemsDao
 import com.kkh.mynews.data.item.book.model.BookModel
 import com.kkh.mynews.data.item.cafe.dao.CafeItemsDao
+import com.kkh.mynews.data.item.cafe.model.CafeModel
 import com.kkh.mynews.data.item.dict.dao.DictItemsDao
+import com.kkh.mynews.data.item.dict.model.DictModel
 import com.kkh.mynews.data.item.image.dao.ImageItemsDao
 import com.kkh.mynews.data.item.image.model.ImageModel
 import com.kkh.mynews.data.item.know.dao.KnowItemsDao
+import com.kkh.mynews.data.item.know.model.KnowModel
 import com.kkh.mynews.data.item.location.dao.LocationItemsDao
+import com.kkh.mynews.data.item.location.model.LocationModel
 import com.kkh.mynews.data.item.movie.dao.MovieItemsDao
+import com.kkh.mynews.data.item.movie.model.MovieModel
 import com.kkh.mynews.data.item.news.model.NewsModel
 import com.kkh.mynews.data.item.refer.dao.ReferItemsDao
+import com.kkh.mynews.data.item.refer.model.ReferModel
+import com.kkh.mynews.data.item.web.dao.WebItemsDao
+import com.kkh.mynews.data.item.web.model.WebModel
 import com.kkh.mynews.network.WebService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -44,18 +51,19 @@ class ContentsRepository {
         "mynews.db"
     ).build()
 
-    private var mBlogItemsDao: BlogItemsDao
-    private var mBookItemsDao: BookItemsDao
-    private var mCafeItemsDao: CafeItemsDao
-    private var mDictItemsDao: DictItemsDao
-    private var mImageItemsDao: ImageItemsDao
-    private var mKnowItemsDao: KnowItemsDao
-    private var mLocationItemsDao: LocationItemsDao
-    private var mMovieItemsDao: MovieItemsDao
-    private var mNewsItemsDao: NewsItemsDao
-    private var mReferItemsDao: ReferItemsDao
-    private var mShoppingItemsDao: ShoppingItemsDao
-    private var mKeywordDao: KeywordDao
+    var mBlogItemsDao: BlogItemsDao
+    var mBookItemsDao: BookItemsDao
+    var mCafeItemsDao: CafeItemsDao
+    var mDictItemsDao: DictItemsDao
+    var mImageItemsDao: ImageItemsDao
+    var mKnowItemsDao: KnowItemsDao
+    var mLocationItemsDao: LocationItemsDao
+    var mMovieItemsDao: MovieItemsDao
+    var mNewsItemsDao: NewsItemsDao
+    var mReferItemsDao: ReferItemsDao
+    var mShoppingItemsDao: ShoppingItemsDao
+    var mWebDao: WebItemsDao
+    var mKeywordDao: KeywordDao
 
     init {
         mBlogItemsDao = mDatabase.blogItemsDao()
@@ -69,10 +77,201 @@ class ContentsRepository {
         mNewsItemsDao = mDatabase.newsItemDao()
         mShoppingItemsDao = mDatabase.shoppingItemsDao()
         mReferItemsDao = mDatabase.referItemsDao()
+        mWebDao = mDatabase.webItemsDao()
         mKeywordDao = mDatabase.keywordDao()
     }
 
-    fun request
+    fun requestRefer(query: String) {
+        Log.d(TAG, "requestRefer")
+        mWebService.getRefer(query, DEFAULT_RESULT).enqueue(object : Callback<ReferModel> {
+            override fun onResponse(call: Call<ReferModel>, response: Response<ReferModel>) {
+                Log.d(TAG, "requestRefer onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mReferItemsDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "requestRefer $it")
+                        mReferItemsDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<ReferModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestRefer onFailure : " + t.message)
+            }
+
+        })
+    }
+
+    fun requestWeb(query: String) {
+        Log.d(TAG, "requestWeb")
+        mWebService.getWeb(query, DEFAULT_RESULT).enqueue(object : Callback<WebModel> {
+            override fun onResponse(call: Call<WebModel>, response: Response<WebModel>) {
+                Log.d(TAG, "requestWeb onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mWebDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "requestWeb $it")
+                        mWebDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<WebModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestWeb onFailure : " + t.message)
+            }
+
+        })
+    }
+
+    fun requestLocal(query: String) {
+        Log.d(TAG, "requestLocal")
+        mWebService.getLocal(query, DEFAULT_RESULT).enqueue(object : Callback<LocationModel> {
+            override fun onResponse(call: Call<LocationModel>, response: Response<LocationModel>) {
+                Log.d(TAG, "requestLocal onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mLocationItemsDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "requestLocal $it")
+                        mLocationItemsDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<LocationModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestLocal onFailure : " + t.message)
+            }
+
+        })
+    }
+
+    fun requestKnow(query: String) {
+        Log.d(TAG, "requestKnow")
+        mWebService.getKnow(query, DEFAULT_RESULT).enqueue(object : Callback<KnowModel> {
+            override fun onResponse(call: Call<KnowModel>, response: Response<KnowModel>) {
+                Log.d(TAG, "requestKnow onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mKnowItemsDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "requestKnow $it")
+                        mKnowItemsDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<KnowModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestCafe onFailure : " + t.message)
+            }
+
+        })
+    }
+
+    fun requestCafe(query: String) {
+        Log.d(TAG, "requestCafe")
+        mWebService.getCafe(query, DEFAULT_RESULT).enqueue(object : Callback<CafeModel> {
+            override fun onResponse(call: Call<CafeModel>, response: Response<CafeModel>) {
+                Log.d(TAG, "requestCafe onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mCafeItemsDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "requestDict $it")
+                        mCafeItemsDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<CafeModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestCafe onFailure : " + t.message)
+            }
+
+        })
+    }
+
+    fun requestDict(query: String) {
+        Log.d(TAG, "requestDict");
+        mWebService.getDict(query, DEFAULT_RESULT).enqueue(object : Callback<DictModel> {
+            override fun onResponse(call: Call<DictModel>, response: Response<DictModel>) {
+                Log.d(TAG, "requestDict onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mDictItemsDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "requestDict $it")
+                        mDictItemsDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<DictModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestDict onFailure : " + t.message)
+            }
+
+        })
+    }
+
+
+    fun requestMovie(query: String) {
+        Log.d(TAG, "requestMovie");
+        mWebService.getMovie(query, DEFAULT_RESULT).enqueue(object : Callback<MovieModel> {
+            override fun onResponse(call: Call<MovieModel>, response: Response<MovieModel>) {
+                Log.d(TAG, "requestMovie onResponse : " + response.body().toString())
+                val model = response.body()
+                model?.items?.let {
+                    GlobalScope.launch(Dispatchers.IO) {
+                        mMovieItemsDao.deleteAll()
+                        for (data in it) {
+                            data.query = query
+                        }
+                        Log.d(TAG, "updatelist $it")
+                        mMovieItemsDao.insert(it)
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<MovieModel>, t: Throwable) {
+                t.printStackTrace()
+                Log.d(TAG, "requestMovie onFailure : " + t.message)
+            }
+
+        })
+
+    }
+
 
     fun requestImage(query: String, sort: String, filter: String) {
         Log.d(TAG, "requestImage")
@@ -85,8 +284,8 @@ class ContentsRepository {
 
                 override fun onResponse(call: Call<ImageModel>, response: Response<ImageModel>) {
                     Log.d(TAG, "requestImage onResponse : " + response.body().toString())
-                    val blogModel = response.body()
-                    blogModel!!.items?.let {
+                    val model = response.body()
+                    model?.items?.let {
                         GlobalScope.launch(Dispatchers.IO) {
                             mImageItemsDao.deleteAll()
                             for (data in it) {
@@ -112,8 +311,8 @@ class ContentsRepository {
 
                 override fun onResponse(call: Call<BookModel>, response: Response<BookModel>) {
                     Log.d(TAG, "requestBook onResponse : " + response.body().toString())
-                    val blogModel = response.body()
-                    blogModel!!.items?.let {
+                    val model = response.body()
+                    model?.items?.let {
                         GlobalScope.launch(Dispatchers.IO) {
                             mBookItemsDao.deleteAll()
                             for (data in it) {
@@ -138,8 +337,8 @@ class ContentsRepository {
 
             override fun onResponse(call: Call<BlogModel>, response: Response<BlogModel>) {
                 Log.d(TAG, "requestBlog onResponse : " + response.body().toString())
-                val blogModel = response.body()
-                blogModel!!.items?.let {
+                val model = response.body()
+                model?.items?.let {
                     GlobalScope.launch(Dispatchers.IO) {
                         mBlogItemsDao.deleteAll()
                         for (data in it) {
@@ -168,8 +367,8 @@ class ContentsRepository {
                     response: Response<ShoppingModel>
                 ) {
                     Log.d(TAG, "requestShopping onResponse : " + response.body().toString())
-                    val newsModel = response.body()
-                    newsModel!!.items?.let {
+                    val model = response.body()
+                    model?.items?.let {
                         GlobalScope.launch(Dispatchers.IO) {
                             mShoppingItemsDao.deleteAll()
                             for (data in it) {
@@ -192,14 +391,14 @@ class ContentsRepository {
                 Callback<NewsModel> {
                 override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
                     Log.d(TAG, "onResponse : " + response.body().toString())
-                    val newsModel = response.body()
-                    newsModel!!.items?.let {
+                    val model = response.body()
+                    model?.items?.let {
                         GlobalScope.launch(Dispatchers.IO) {
                             mNewsItemsDao.deleteAll()
                             for (data in it) {
                                 data.query = query
                             }
-                            Log.d(TAG, "updatelist $it")
+                            Log.d(TAG, "update list $it")
                             mNewsItemsDao.insert(it)
                         }
                     }
@@ -212,42 +411,11 @@ class ContentsRepository {
         }
     }
 
-    fun getNewsDao(): NewsItemsDao {
-        return mNewsItemsDao
-    }
-
-    fun getKeyword(): Flow<List<KeywordModel>> {
-        return mKeywordDao.load()
-    }
-
-    fun getShoppingDao(): ShoppingItemsDao {
-        return mShoppingItemsDao
-    }
-
-    fun getBlogDao(): BlogItemsDao {
-        return mBlogItemsDao
-    }
-
-    fun getBookDao(): BookItemsDao {
-        return mBookItemsDao
-    }
-
-    fun getImageDao(): ImageItemsDao {
-        return mImageItemsDao
-    }
-
-
     fun insertKeywordList(list: List<KeywordModel>) {
         GlobalScope.launch(Dispatchers.IO) {
             mKeywordDao.insertAll(list)
         }
 
-    }
-
-    fun insertKeyword(data: KeywordModel) {
-        GlobalScope.launch(Dispatchers.IO) {
-            mKeywordDao.insert(data)
-        }
     }
 
     fun deleteKeyword(keyword: String) {

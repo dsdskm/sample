@@ -1,6 +1,6 @@
 package com.kkh.mynews.data.item.refer.model
 
-data class RreferModel(
+data class ReferModel(
     var lastBuildDate: String = "",
     var total: Int = 0,
     var start: Int = 0,

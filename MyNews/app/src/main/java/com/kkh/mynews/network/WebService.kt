@@ -3,9 +3,16 @@ package com.kkh.mynews.network
 import com.kkh.mynews.data.item.shopping.model.ShoppingModel
 import com.kkh.mynews.data.item.blog.model.BlogModel
 import com.kkh.mynews.data.item.book.model.BookModel
+import com.kkh.mynews.data.item.cafe.model.CafeModel
+import com.kkh.mynews.data.item.dict.model.DictModel
 import com.kkh.mynews.data.item.image.model.ImageModel
+import com.kkh.mynews.data.item.know.model.KnowModel
+import com.kkh.mynews.data.item.location.model.LocationModel
 import com.kkh.mynews.data.item.movie.model.MovieItemsModel
+import com.kkh.mynews.data.item.movie.model.MovieModel
 import com.kkh.mynews.data.item.news.model.NewsModel
+import com.kkh.mynews.data.item.refer.model.ReferModel
+import com.kkh.mynews.data.item.web.model.WebModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,11 +26,6 @@ interface WebService {
 
     /*
     Naver Search URL : https://developers.naver.com/docs/search/news/
-    Naver Shopping URL : https://developers.naver.com/docs/search/shopping/
-
-    https://openapi.naver.com/v1/search/news.json
-    https://openapi.naver.com/v1/search/shop.json
-    https://openapi.naver.com/v1/search/blog.json
 
     curl "https://openapi.naver.com/v1/search/news.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&sort=sim" \
     -H "X-Naver-Client-Id: {1AgpA_xzaTOxYnH0Ok7X}" \
@@ -69,10 +71,44 @@ interface WebService {
     @GET("v1/search/movie.json")
     fun getMovie(
         @Query("query") query: String,
-        @Query("display") display: Int,
-        @Query("sort") sort: String,
-        @Query("genre") filter: String
-    ): Call<MovieItemsModel>
+        @Query("display") display: Int
+    ): Call<MovieModel>
+
+    @GET("v1/search/encyc.json")
+    fun getDict(
+        @Query("query") query: String,
+        @Query("display") display: Int
+    ): Call<DictModel>
+
+    @GET("v1/search/cafearticle.json")
+    fun getCafe(
+        @Query("query") query: String,
+        @Query("display") display: Int
+    ): Call<CafeModel>
+
+    @GET("v1/search/kin.json")
+    fun getKnow(
+        @Query("query") query: String,
+        @Query("display") display: Int
+    ): Call<KnowModel>
+
+    @GET("v1/search/local.json")
+    fun getLocal(
+        @Query("query") query: String,
+        @Query("display") display: Int
+    ): Call<LocationModel>
+
+    @GET("v1/search/webkr.json")
+    fun getWeb(
+        @Query("query") query: String,
+        @Query("display") display: Int
+    ): Call<WebModel>
+
+    @GET("v1/search/doc.json")
+    fun getRefer(
+        @Query("query") query: String,
+        @Query("display") display: Int
+    ): Call<ReferModel>
 
     companion object {
         private const val BASE_URL_NAVER_API = "https://openapi.naver.com/"

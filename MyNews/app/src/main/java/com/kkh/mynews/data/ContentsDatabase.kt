@@ -27,6 +27,8 @@ import com.kkh.mynews.data.item.refer.dao.ReferItemsDao
 import com.kkh.mynews.data.item.refer.model.ReferItemsModel
 import com.kkh.mynews.data.item.shopping.dao.ShoppingItemsDao
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
+import com.kkh.mynews.data.item.web.dao.WebItemsDao
+import com.kkh.mynews.data.item.web.model.WebItemsModel
 
 @Database(
     entities = [
@@ -41,6 +43,7 @@ import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
         NewsItemsModel::class,
         ReferItemsModel::class,
         ShoppingItemsModel::class,
+        WebItemsModel::class,
         KeywordModel::class
     ], version = 1
 )
@@ -57,5 +60,6 @@ abstract class ContentsDatabase : RoomDatabase() {
     abstract fun referItemsDao(): ReferItemsDao
     abstract fun shoppingItemsDao(): ShoppingItemsDao
     abstract fun keywordDao(): KeywordDao
+    abstract fun webItemsDao(): WebItemsDao
 
 }

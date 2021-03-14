@@ -21,27 +21,41 @@ import com.kkh.mynews.data.item.contents.ContentsModel
 import com.kkh.mynews.data.item.keyword.model.KeywordModel
 import com.kkh.mynews.data.item.blog.model.BlogItemsModel
 import com.kkh.mynews.data.item.book.model.BookItemsModel
+import com.kkh.mynews.data.item.cafe.model.CafeItemsModel
 import com.kkh.mynews.data.item.news.model.NewsItemsModel
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 import com.kkh.mynews.view.`interface`.IContentsEvent
 import com.kkh.mynews.data.item.contents.adapter.ContentsAdapter
+import com.kkh.mynews.data.item.dict.model.DictItemsModel
 import com.kkh.mynews.data.item.keyword.adapter.KeywordRecyclerViewAdapter
 import com.kkh.mynews.data.viewmodel.ContentsViewModel
 import com.kkh.mynews.data.item.image.model.ImageItemsModel
+import com.kkh.mynews.data.item.know.model.KnowItemsModel
+import com.kkh.mynews.data.item.location.model.LocationItemsModel
+import com.kkh.mynews.data.item.movie.model.MovieItemsModel
+import com.kkh.mynews.data.item.refer.model.ReferItemsModel
+import com.kkh.mynews.data.item.web.model.WebItemsModel
 import com.kkh.mynews.databinding.FragmentMainBinding
 import com.kkh.mynews.databinding.ListBookItemLayoutBinding
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_BLOG
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_BOOK
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_CAFE
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_DICT
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_IMAGE
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_KNOW
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_LOCATION
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_MOVIE
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_NEWS
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_REFER
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_SHOPPING
+import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_WEB
 
 class MainFragment : ContentsFragment() {
 
     companion object {
         const val TAG = Constant.TAG_PREFIX + "MainFragment"
         fun newInstance() = MainFragment()
-        var REQUEST_COUNT = 0
+        var REQUEST_COUNT = 12
     }
 
     private lateinit var mContentsViewModel: ContentsViewModel
@@ -59,18 +73,18 @@ class MainFragment : ContentsFragment() {
 
     private fun initKeywordList() {
         val list = ArrayList<KeywordModel>()
-        list.add(KeywordModel(0,"뉴스"))
-        list.add(KeywordModel(1,"쇼핑"))
-        list.add(KeywordModel(2,"블로그"))
-        list.add(KeywordModel(3,"책"))
-        list.add(KeywordModel(4,"이미지"))
-        list.add(KeywordModel(5,"영화"))
-        list.add(KeywordModel(6,"백과사전"))
-        list.add(KeywordModel(7,"카페글"))
-        list.add(KeywordModel(8,"지식in"))
-        list.add(KeywordModel(9,"지역"))
-        list.add(KeywordModel(10,"웹문서"))
-        list.add(KeywordModel(11,"전문자료"))
+        list.add(KeywordModel(0, "뉴스"))
+        list.add(KeywordModel(1, "쇼핑"))
+        list.add(KeywordModel(2, "블로그"))
+        list.add(KeywordModel(3, "책"))
+        list.add(KeywordModel(4, "이미지"))
+        list.add(KeywordModel(5, "영화"))
+        list.add(KeywordModel(6, "백과사전"))
+        list.add(KeywordModel(7, "카페글"))
+        list.add(KeywordModel(8, "지식in"))
+        list.add(KeywordModel(9, "지역"))
+        list.add(KeywordModel(10, "웹문서"))
+        list.add(KeywordModel(11, "전문자료"))
         mContentsViewModel.insertKeywordList(list)
 
     }
@@ -80,11 +94,12 @@ class MainFragment : ContentsFragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d(TAG, "onCreateView");
-        binding = FragmentMainBinding.inflate(LayoutInflater.from(container!!.context), container, false)
+        binding =
+            FragmentMainBinding.inflate(LayoutInflater.from(container!!.context), container, false)
 
         initViews()
         initViewModel()
-        binding.searchView.setQuery("손흥민",false)
+        binding.searchView.setQuery("손흥민", false)
         return binding.root
     }
 
@@ -98,8 +113,7 @@ class MainFragment : ContentsFragment() {
 
         mContentsViewModel.newsItemsPaged.observe(viewLifecycleOwner, Observer {
             val list: List<NewsItemsModel> = it
-            Log.d(TAG, "observed news list size ${list.size}")
-            //mNewsAdapter.setList(list)
+            Log.d(TAG, "observed news list size ${list}")
             if (list.isNotEmpty()) {
                 mContentsList.add(
                     ContentsModel(
@@ -175,7 +189,125 @@ class MainFragment : ContentsFragment() {
             updateContentsList()
         })
 
-
+        mContentsViewModel.movieItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<MovieItemsModel> = it
+            Log.d(TAG, "observed movie list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_MOVIE,
+                        VIEW_TYPE_MOVIE,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.dictItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<DictItemsModel> = it
+            Log.d(TAG, "observed dict list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_DICT,
+                        VIEW_TYPE_DICT,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.cafeItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<CafeItemsModel> = it
+            Log.d(TAG, "observed cafe list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_CAFE,
+                        VIEW_TYPE_CAFE,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.knowItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<KnowItemsModel> = it
+            Log.d(TAG, "observed know list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_KNOW,
+                        VIEW_TYPE_KNOW,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.localItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<LocationItemsModel> = it
+            Log.d(TAG, "observed local list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_LOCATION,
+                        VIEW_TYPE_LOCATION,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.webItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<WebItemsModel> = it
+            Log.d(TAG, "observed web list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_WEB,
+                        VIEW_TYPE_WEB,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
+        mContentsViewModel.referItemsPaged.observe(viewLifecycleOwner, Observer {
+            val list: List<ReferItemsModel> = it
+            Log.d(TAG, "observed refer list size ${list.size}")
+            if (list.isNotEmpty()) {
+                mContentsList.add(
+                    ContentsModel(
+                        VIEW_TYPE_REFER,
+                        VIEW_TYPE_REFER,
+                        list[0].query,
+                        list
+                    )
+                )
+            } else {
+                REQUEST_COUNT--;
+            }
+            updateContentsList()
+        })
     }
 
     private val mIContentsEvent = object : IContentsEvent {
@@ -213,17 +345,15 @@ class MainFragment : ContentsFragment() {
             var query = binding.searchView.query.toString()
             binding.progress.root.visibility = View.VISIBLE
             mContentsViewModel.request(query)
-            REQUEST_COUNT = 5
-
         }
 
         binding.clearBtn.setOnClickListener {
-            binding.searchView.setQuery("",false)
+            binding.searchView.setQuery("", false)
         }
 
         binding.reset.setOnClickListener {
             mContentsList.clear()
-            mContentsViewModel.deleteAll()
+            mContentsAdapter.setList(mContentsList);
         }
 //        MyWorkerManager.workRequest()
 //        MyWorkerManager.workRequestMutiTime()

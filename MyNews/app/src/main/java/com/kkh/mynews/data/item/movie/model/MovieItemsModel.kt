@@ -14,6 +14,6 @@ data class MovieItemsModel(
     var pubDate: String = "",
     var director: String = "",
     var actor: String = "",
-    var userRating: Int = 0,
+    var userRating: String = "",
     var query: String = ""
 )
