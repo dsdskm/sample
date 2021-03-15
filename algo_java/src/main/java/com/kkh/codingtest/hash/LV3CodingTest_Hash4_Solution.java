@@ -20,8 +20,8 @@ public class LV3CodingTest_Hash4_Solution {
         g = new String[]{"classic", "pop", "classic", "classic", "pop"};
         p = new int[]{500, 600, 150, 800, 2500};
         answer(g, p);
-        g = new String[]{"classic", "pop", "classic", "classic", "pop", "pop", "classic","Jazz","Jazz"};
-        p = new int[]{900, 600, 800, 800, 2500, 900, 800,400,2000};
+        g = new String[]{"classic", "pop", "classic", "classic", "pop", "pop", "classic", "Jazz", "Jazz"};
+        p = new int[]{900, 600, 800, 800, 2500, 900, 800, 400, 2000};
         answer(g, p);
         g = new String[]{"classic", "pop"};
         p = new int[]{500, 700};
@@ -29,8 +29,8 @@ public class LV3CodingTest_Hash4_Solution {
         g = new String[]{"classic"};
         p = new int[]{500};
         answer(g, p);
-        g = new String[]{"classic","Jazz","Balad"};
-        p = new int[]{500,300,700};
+        g = new String[]{"classic", "Jazz", "Balad"};
+        p = new int[]{500, 300, 700};
         answer(g, p);
 
     }
@@ -42,6 +42,24 @@ public class LV3CodingTest_Hash4_Solution {
             System.out.print(res[i] + " ");
         }
         System.out.println();
+    }
+
+    class MyGenres implements Comparator<MyGenres> {
+        int genre_total = 0;
+        int play = 0;
+
+        @Override
+        public int compare(MyGenres o1, MyGenres o2) {
+            if (o1.genre_total >= o2.genre_total) {
+                if (o1.play > o2.play) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            } else {
+                return -1;
+            }
+        }
     }
 
     public int[] solution(String[] genres, int[] plays) {

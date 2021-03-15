@@ -1,5 +1,6 @@
 package com.kkh.codingtest.hash;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -25,6 +26,32 @@ public class LV1CodingTest_Hash1_Solution {
     }
 
     public static String solution(String[] participant, String[] completion) {
+        /*
+        participant 와 completion을 정렬
+        원소가 일치하지 않는 인덱스의 값 리턴
+         */
+        String answer = "";
+
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+
+        // completion 길이가 1작으므로 completion 기준으로 순회
+
+        for (int i = 0; i < completion.length; i++) {
+            if (!completion[i].equalsIgnoreCase(participant[i])) {
+                answer = participant[i];
+                break;
+            }
+        }
+        if (answer.isEmpty()) {
+            answer = participant[participant.length - 1];
+        }
+
+        return answer;
+
+    }
+
+    public static String solution_(String[] participant, String[] completion) {
         /*
         1. 참가한 선수 이름과 명수를 hash로 등록한다. key:name,value:count
         2. 완주한 선수 이름을 hash에서 지워간다

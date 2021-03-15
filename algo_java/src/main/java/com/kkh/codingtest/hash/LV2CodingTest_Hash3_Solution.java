@@ -33,6 +33,46 @@ public class LV2CodingTest_Hash3_Solution {
     }
 
     public int solution(String[][] clothes) {
+        /*
+        [의상 이름, 의상 종류]
+        하루에 최소 1개 입음
+        각 종류별 가지고 있는 의상 수를 알아야 한다. 의상의 이름은 중요하지 않다
+         */
+
+        HashMap<String, Integer> hash = new HashMap<>();
+        for (int i = 0; i < clothes.length; i++) {
+            // 0번째는 의상 이름
+            // 1번째는 의상 종류
+            String category = clothes[i][1];
+            if (hash.containsKey(category)) {
+                // 이미 가지고 있다면 카운트만 추가
+                int count = hash.get(category);
+                hash.replace(category, count + 1);
+            } else {
+                // 안가지고 있다면 추가
+                hash.put(category, 1);
+            }
+        }
+
+        Iterator iter = hash.keySet().iterator();
+        int answer = 1;
+        while(iter.hasNext()){
+            int count = hash.get(iter.next());
+            answer *=(count+1);
+        }
+        /*
+        headgear 2
+        eyewear 1
+
+        (2+1)*(1+1) - 1아무것도 안 입는 경우 = 5
+
+         */
+
+        answer = answer-1;
+        return answer;
+    }
+
+    public int solution_(String[][] clothes) {
 
         /*
         1. 카테고리 카운트를 hash에 저장. name은 중요하지 않음
@@ -54,7 +94,7 @@ public class LV2CodingTest_Hash3_Solution {
             }
         }
 
-        if(hash.size()==1){
+        if (hash.size() == 1) {
             answer = hash.get(clothes[0][1]);
         } else {
             Iterator iter = hash.keySet().iterator();
@@ -63,7 +103,7 @@ public class LV2CodingTest_Hash3_Solution {
                 int count = hash.get(key);
                 //1-1. 안입는 경우까지 고려하여 항목별로 +1하여 곱함
                 answer = answer * (count + 1);
-                System.out.println("key : "+key+" , count : "+count+" , answer : "+answer);
+                System.out.println("key : " + key + " , count : " + count + " , answer : " + answer);
             }
 
             //1-2. 모두 안입는 경우 발생 가능하므로 -1
