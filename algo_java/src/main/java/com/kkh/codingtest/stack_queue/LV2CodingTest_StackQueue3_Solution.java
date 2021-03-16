@@ -1,93 +1,75 @@
 package com.kkh.codingtest.stack_queue;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
 import java.util.Stack;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class LV2CodingTest_StackQueue3_Solution {
     /*
-    트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다.
-    모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다.
-    트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.
+    프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다.
+    각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.
+    또, 각 기능의 개발속도는 모두 다르기 때문에 뒤에 있는 기능이 앞에 있는 기능보다 먼저 개발될 수 있고,
+    이때 뒤에 있는 기능은 앞에 있는 기능이 배포될 때 함께 배포됩니다.
+    먼저 배포되어야 하는 순서대로 작업의 진도가 적힌 정수 배열 progresses와
+    각 작업의 개발 속도가 적힌 정수 배열 speeds가 주어질 때
+    각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.
 
-    경과 시간	다리를 지난 트럭	다리를 건너는 트럭	대기 트럭
-    0	    []	            []	            [7,4,5,6]
-    1~2 	[]	            [7]         	[4,5,6]
-    3   	[7]         	[4]         	[5,6]
-    4   	[7]         	[4,5]	        [6]
-    5   	[7,4]	        [5]         	[6]
-    6~7 	[7,4,5]	        [6]         	[]
-    8   	[7,4,5,6]   	[]          	[]
+    작업의 개수(progresses, speeds배열의 길이)는 100개 이하입니다.
+    작업 진도는 100 미만의 자연수입니다.
+    작업 속도는 100 이하의 자연수입니다.
+    배포는 하루에 한 번만 할 수 있으며, 하루의 끝에 이루어진다고 가정합니다.
+    예를 들어 진도율이 95%인 작업의 개발 속도가 하루에 4%라면 배포는 2일 뒤에 이루어집니다.
 
-    bridge_length	weight	truck_weights	                return
-    2	            10  	[7,4,5,6]	                    8
-    100         	100	    [10]	                        101
-    100         	100	[10,10,10,10,10,10,10,10,10,10] 	110
+    93,30,55            1,30,5          2,1
+    95,90,99,99,80,99   1,1,1,1,1,1     1,3,2
      */
     public static void main(String args[]) {
-        LV2CodingTest_StackQueue3_Solution s = new LV2CodingTest_StackQueue3_Solution();
-        System.out.println(s.solution(2, 10, new int[]{7, 4, 5, 6}));
-        System.out.println(s.solution(100, 100, new int[]{10}));
-        System.out.println(s.solution(100, 100, new int[]{10,10,10,10,10,10,10,10,10,10}));
-
+        new LV2CodingTest_StackQueue3_Solution().solution(new int[]{93, 30, 55}, new int[]{1, 30, 5});
+        new LV2CodingTest_StackQueue3_Solution().solution(new int[]{95, 90, 99, 99, 80, 99}, new int[]{1, 1, 1, 1, 1, 1});
     }
 
-    public int solution(int bridge_length, int weight, int[] truck_weights) {
+    public int[] solution(int[] progresses, int[] speeds) {
         /*
-        1. A:대기 장소에 있는 트럭, B:다리 건너고 있는 트럭, C:다리를 건넌 트럭
-        2. 시간 값을 계속 업데이트하면서 B 스택에 값을 넣거나 뺀다
-        3. 값을 넣거나 뺄때 합을 계속 해서 계산한다
-
+        1. stack에 역순으로 넣고 뽑으면서 계산한다
+        2. 한날에 동시에 완료되는 것들은 list의 동일 원소에 업데이트 되어야 한다
          */
-        int answer = 0;
-        Stack<Integer> waiting = new Stack<Integer>();
-        Queue<Integer> moving = new LinkedList<>();
-        Stack<Integer> passed = new Stack<Integer>();
 
-        for (int i = truck_weights.length - 1; i >= 0; i--) {
-            waiting.push(truck_weights[i]);
+        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack_speed = new Stack<>();
+        for (int i = progresses.length - 1; i >= 0; i--) {
+            stack.push(progresses[i]);
+            stack_speed.push(speeds[i]);
         }
-
-        // bridge_length-1 만큼 미리 0으로 채워 놓는다.
-        for (int i = 0; i < bridge_length; i++) {
-            moving.offer(0);
-        }
-        int sum = 0;
-        while (true) {
-            answer += 1;
-
-            // 매회 무조건 poll 한다.
-            int poll = moving.poll();
-            sum-=poll;
-            //System.out.println("poll : "+poll+" , waiting:"+waiting.size()+" , moving : " + moving.size() + " , passed : "+passed.size()+" , answer : " + answer);
-            if (poll != 0) {
-                passed.push(poll);
-            }
-
-
-            // offer를 waiting에서 가져올지 or 0을 넣을지 결정한다
-            // waiting이 empty일수도 있다
-            if (waiting.isEmpty()) {
-                moving.offer(0);
+        ArrayList<Integer> result = new ArrayList<>();
+        int day = 1;
+        while (!stack.isEmpty()) {
+            int peek = stack.peek();
+            int speed = stack_speed.peek();
+            peek += speed * day;
+            if (peek >= 100) {
+                stack.pop();
+                stack_speed.pop();
+                int last_index = result.size()-1;
+                result.set(last_index, result.get(last_index) + 1);
             } else {
-                int peek = waiting.peek();
-                //System.out.println("sum : "+sum+", peek : "+peek);
-                if (sum + peek > weight) {
-                    moving.offer(0);
-                } else {
-                    int pop = waiting.pop();
-                    sum+=pop;
-                    moving.offer(pop);
-                }
+                result.add(0);
+                day++;
             }
-
-            if (passed.size() == truck_weights.length) {
-                break;
-            }
-
         }
 
+
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i) != 0) {
+                list.add(result.get(i));
+            }
+        }
+
+        int answer[] = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+            System.out.println(answer[i]);
+        }
         return answer;
     }
+
 }

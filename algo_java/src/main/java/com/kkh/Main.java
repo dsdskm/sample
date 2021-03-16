@@ -1,14 +1,44 @@
 package com.kkh;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class Main {
     public static void main(String args[]) {
         Main m = new Main();
-        m.sort();
+//        m.sort();
+//        m.array();
+        m.pq();
+    }
+
+    private void pq() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1-o2;
+            }
+        });
+        pq.add(5);
+        pq.add(2);
+        pq.add(3);
+        pq.add(4);
+        pq.add(1);
+        pq.add(10);
+        while(!pq.isEmpty()){
+            int poll = pq.poll();
+            System.out.println("poll : "+poll);
+        }
+
+    }
+
+    public void array() {
+        int arr[] = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int target[] = new int[3];
+        System.arraycopy(arr, 2, target, 0, 3);
+        for (int i = 0; i < target.length; i++) {
+            System.out.print(target[i] + " ");
+        }
+        System.out.println();
+
     }
 
     public void sort() {
@@ -94,7 +124,7 @@ public class Main {
         }
         System.out.println();
 
-        str = new String[]{"119", "97674224", "1195524421", "1199333","DDDD"};
+        str = new String[]{"119", "97674224", "1195524421", "1199333", "DDDD"};
         Arrays.sort(str);
         for (int i = 0; i < str.length; i++) {
             System.out.println(str[i] + " ");

@@ -1,81 +1,93 @@
 package com.kkh.codingtest.stack_queue;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class LV2CodingTest_StackQueue1_Solution {
     /*
-    초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때,
-    가격이 떨어지지 않은 기간은 몇 초인지를 return 하도록 solution 함수를 완성하세요.
+    트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다.
+    모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다.
+    트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.
 
-    prices의 각 가격은 1 이상 10,000 이하인 자연수입니다.
-    prices의 길이는 2 이상 100,000 이하입니다.
-    입출력 예
-    prices [1,2,3,2,3]
-    return [4,3,1,1,0]
+    경과 시간	다리를 지난 트럭	다리를 건너는 트럭	대기 트럭
+    0	    []	            []	            [7,4,5,6]
+    1~2 	[]	            [7]         	[4,5,6]
+    3   	[7]         	[4]         	[5,6]
+    4   	[7]         	[4,5]	        [6]
+    5   	[7,4]	        [5]         	[6]
+    6~7 	[7,4,5]	        [6]         	[]
+    8   	[7,4,5,6]   	[]          	[]
 
+    bridge_length	weight	truck_weights	                return
+    2	            10  	[7,4,5,6]	                    8
+    100         	100	    [10]	                        101
+    100         	100	[10,10,10,10,10,10,10,10,10,10] 	110
      */
-
-
     public static void main(String args[]) {
-        int prices[] = {1, 2, 3, 2, 3};
-//        new LV2CodingTest_StackQueue1_Solution().solution(prices);
-        new LV2CodingTest_StackQueue1_Solution().solution2(prices);
+        LV2CodingTest_StackQueue1_Solution s = new LV2CodingTest_StackQueue1_Solution();
+        System.out.println(s.solution(2, 10, new int[]{7, 4, 5, 6}));
+//        System.out.println(s.solution(100, 100, new int[]{10}));
+//        System.out.println(s.solution(100, 100, new int[]{10, 10, 10, 10, 10, 10, 10, 10, 10, 10}));
+
     }
 
-    public int[] solution2(int[] prices) {
-        int answer[] = new int[prices.length];
-
-        Stack<Integer[]> stack = new Stack();
-        for (int i = prices.length - 2; i >= 0; i--) {
-            int day = 0;
-
-            while (!stack.isEmpty() && stack.peek()[0] >= prices[i]) {
-                day += stack.pop()[1];
-            }
-
-            answer[i] = stack.push(new Integer[]{prices[i], day + 1})[1];
-        }
-
-        for (int i = 0; i < answer.length; i++) {
-            System.out.println(answer[i]);
-        }
-
-        return answer;
-    }
-
-    public static int[] solution(int[] prices) {
-        int answer[] = new int[prices.length];
-        Stack<int[]> stack = new Stack<>();
-
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
         /*
-        1. 뒤쪽부터 순회한다(len -2부터)
-        2. prices[i] > prices[i+1] => answer[i] = 1 연속 값을 비교했을때 하락했다면 해당 주가는 1일 유지
-        3. prices[i] > prices[i+1] 에서 작은 값을 stack에 쌓는다
-        4. prices[i] <= prices[i+1] => 스택을 돌면서(pop) 스택값이 prices[i]보다 작을때까지 pop
-        5. 유지 기간 = 멈춘 index - i, 스택 끝까지 가면 length -i - 1
+        1. A:대기 장소에 있는 트럭, B:다리 건너고 있는 트럭, C:다리를 건넌 트럭
+        2. 시간 값을 계속 업데이트하면서 B 스택에 값을 넣거나 뺀다
+        3. 값을 넣거나 뺄때 합을 계속 해서 계산한다
+
          */
+        int answer = 0;
+        Stack<Integer> waiting = new Stack<Integer>();
+        Queue<Integer> moving = new LinkedList<>();
+        Stack<Integer> passed = new Stack<Integer>();
 
-        for (int i = prices.length - 2; i >= 0; i--) {
-            if (prices[i] > prices[i + 1]) {
-                answer[i] = 1;
-                stack.push(new int[]{i+1, prices[i + 1]});
-            } else {
-                while (!stack.isEmpty() && (stack.peek()[1] >= prices[i])) {
-                    stack.pop();
-                }
-
-                if (stack.isEmpty()) {
-                    answer[i] = prices.length - i - 1;
-                } else {
-                    answer[i] = stack.peek()[0] - i;
-                }
-            }
+        for (int i = truck_weights.length - 1; i >= 0; i--) {
+            waiting.push(truck_weights[i]);
         }
 
-//        for (int i = 0; i < answer.length; i++) {
-//            System.out.println(answer[i]);
-//        }
+        // bridge_length-1 만큼 미리 0으로 채워 놓는다.
+        for (int i = 0; i < bridge_length; i++) {
+            moving.offer(0);
+        }
+        int sum = 0;
+        while (true) {
+            answer += 1;
+
+            // 매회 무조건 poll 한다.
+            int poll = moving.poll();
+            sum -= poll;
+            //System.out.println("poll : "+poll+" , waiting:"+waiting.size()+" , moving : " + moving.size() + " , passed : "+passed.size()+" , answer : " + answer);
+            if (poll != 0) {
+                passed.push(poll);
+            }
+
+
+            // offer를 waiting에서 가져올지 or 0을 넣을지 결정한다
+            // waiting이 empty일수도 있다
+            if (waiting.isEmpty()) {
+                moving.offer(0);
+            } else {
+                int peek = waiting.peek();
+                //System.out.println("sum : "+sum+", peek : "+peek);
+                if (sum + peek > weight) {
+                    moving.offer(0);
+                } else {
+                    int pop = waiting.pop();
+                    sum += pop;
+                    moving.offer(pop);
+                }
+            }
+
+            if (passed.size() == truck_weights.length) {
+                break;
+            }
+
+        }
+
         return answer;
     }
-
 }

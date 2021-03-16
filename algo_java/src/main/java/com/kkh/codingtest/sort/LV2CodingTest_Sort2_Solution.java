@@ -73,7 +73,6 @@ public class LV2CodingTest_Sort2_Solution {
             } else {
                 return -1;
             }
-
              */
             return ((o2 + o1).compareTo(o1 + o2));  // 직접비교보다 빠르다
         });
