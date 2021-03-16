@@ -1,5 +1,6 @@
 package com.kkh.mynews.data
 
+import android.database.Cursor
 import android.util.Log
 import androidx.room.Room
 import com.kkh.mynews.MyNewsApplication
@@ -28,6 +29,8 @@ import com.kkh.mynews.data.item.movie.model.MovieModel
 import com.kkh.mynews.data.item.news.model.NewsModel
 import com.kkh.mynews.data.item.refer.dao.ReferItemsDao
 import com.kkh.mynews.data.item.refer.model.ReferModel
+import com.kkh.mynews.data.item.search.model.SearchModel
+import com.kkh.mynews.data.item.shopping.dao.SearchDao
 import com.kkh.mynews.data.item.web.dao.WebItemsDao
 import com.kkh.mynews.data.item.web.model.WebModel
 import com.kkh.mynews.network.WebService
@@ -64,6 +67,7 @@ class ContentsRepository {
     var mShoppingItemsDao: ShoppingItemsDao
     var mWebDao: WebItemsDao
     var mKeywordDao: KeywordDao
+    var mSearchDao:SearchDao
 
     init {
         mBlogItemsDao = mDatabase.blogItemsDao()
@@ -79,6 +83,7 @@ class ContentsRepository {
         mReferItemsDao = mDatabase.referItemsDao()
         mWebDao = mDatabase.webItemsDao()
         mKeywordDao = mDatabase.keywordDao()
+        mSearchDao = mDatabase.searchModelDao()
     }
 
     fun requestRefer(query: String) {
@@ -411,11 +416,15 @@ class ContentsRepository {
         }
     }
 
+    fun insertKeyword(data: KeywordModel) {
+        GlobalScope.launch(Dispatchers.IO) {
+            mKeywordDao.insert(data)
+        }
+    }
     fun insertKeywordList(list: List<KeywordModel>) {
         GlobalScope.launch(Dispatchers.IO) {
             mKeywordDao.insertAll(list)
         }
-
     }
 
     fun deleteKeyword(keyword: String) {
@@ -425,11 +434,25 @@ class ContentsRepository {
         }
     }
 
+    fun deleteKeywordAll() {
+        GlobalScope.launch(Dispatchers.IO) {
+            mKeywordDao.deleteAll()
+        }
+    }
+
     fun deleteAll() {
         GlobalScope.launch(Dispatchers.IO) {
             mNewsItemsDao.deleteAll()
             mShoppingItemsDao.deleteAll()
         }
+    }
+
+    fun insertSearchModel(data: SearchModel){
+        mSearchDao.insert(data)
+    }
+
+    fun getSearchWordList(): Cursor {
+        return mSearchDao.loadPagedList()
     }
 
 

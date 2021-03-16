@@ -2,18 +2,13 @@ package com.kkh.mynews.data.item.contents.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.data.item.contents.ContentsModel
-import com.kkh.mynews.view.`interface`.IContentsEvent
+import com.kkh.mynews.databinding.ListContentsItemLayoutBinding
 import com.kkh.mynews.view.Presenter
 import java.util.*
 import kotlin.collections.ArrayList
@@ -22,11 +17,8 @@ class ContentsAdapter() : PagedListAdapter<ContentsModel, ContentsAdapter.ViewHo
     DIFF_CALLBACK
 ) {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val mCardView: CardView = view.findViewById(R.id.card_view)
-        val mTitle: TextView = view.findViewById(R.id.title)
-        val mRecyclerView: RecyclerView = view.findViewById(R.id.rview)
-        val mMore: Button = view.findViewById(R.id.more)
+    class ViewHolder(b: ListContentsItemLayoutBinding) : RecyclerView.ViewHolder(b.root) {
+        var binding: ListContentsItemLayoutBinding = b
     }
 
     companion object {
@@ -52,16 +44,12 @@ class ContentsAdapter() : PagedListAdapter<ContentsModel, ContentsAdapter.ViewHo
 
     private var mList: List<ContentsModel> = ArrayList<ContentsModel>()
     private lateinit var mPresenter: Presenter
-    private lateinit var mIContentsEvent: IContentsEvent
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_contents_item_layout, parent, false)
         Log.d(TAG, "onCreateViewHolder")
         mPresenter = Presenter(parent.context)
-        return ViewHolder(
-            view
-        )
+        val binding =
+            ListContentsItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -75,11 +63,9 @@ class ContentsAdapter() : PagedListAdapter<ContentsModel, ContentsAdapter.ViewHo
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder")
         val data = mList[position]
-        mIContentsEvent.onBindItem(data)
-        mPresenter.update(data, holder)
-        holder.mMore.setOnClickListener {
+        val v = holder.binding
+        mPresenter.update(data, v)
 
-        }
     }
 
 
@@ -93,7 +79,4 @@ class ContentsAdapter() : PagedListAdapter<ContentsModel, ContentsAdapter.ViewHo
         notifyDataSetChanged()
     }
 
-    fun setEvent(event: IContentsEvent) {
-        mIContentsEvent = event
-    }
 }

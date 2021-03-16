@@ -28,7 +28,8 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
 
     private var mList: List<KeywordModel> = ArrayList()
     private val mNewsViewModel = viewmodel;
-    private var mCurrentViewType = -1
+    private var mCurrentPos = -1
+    private lateinit var mIKeywordItemEvent: IKeywordItemEvent
 
     class ViewHolder(b: ListKeywordItemLayoutBinding) : RecyclerView.ViewHolder(b.root) {
         var binding: ListKeywordItemLayoutBinding = b
@@ -39,9 +40,9 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
         notifyDataSetChanged()
     }
 
-    fun selectPosition(viewType: Int) {
-        Log.d(TAG, "selectPosition viewType $viewType")
-        mCurrentViewType = viewType
+    fun selectPosition(pos: Int) {
+        Log.d(TAG, "selectPosition pos $pos")
+        mCurrentPos = pos
         notifyDataSetChanged()
     }
 
@@ -57,9 +58,9 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = mList[position]
-        Log.d(TAG, "mCurrentCategory $mCurrentViewType data.uid) : ${data.uid}")
+        Log.d(TAG, "mCurrentPos $mCurrentPos data.uid) : ${data.uid}")
         val v = holder.binding
-        if (mCurrentViewType == data.uid) {
+        if (mCurrentPos == position) {
             v.cardView.setCardBackgroundColor(Color.GRAY)
             v.keyword.setTextColor(Color.DKGRAY)
         } else {
@@ -67,15 +68,18 @@ class KeywordRecyclerViewAdapter(viewmodel: ContentsViewModel) :
             v.keyword.setTextColor(Color.GRAY)
         }
 
-
-        v.cardView.setOnLongClickListener {
-            mNewsViewModel.deleteKeyword(data.keyword)
-            true
+        v.cardView.setOnClickListener {
+            mIKeywordItemEvent.onItemClick(position)
         }
+
         v.keyword.text = data.keyword
     }
 
     override fun getItemCount(): Int {
         return mList.size
+    }
+
+    fun setEvent(event: IKeywordItemEvent) {
+        mIKeywordItemEvent = event
     }
 }

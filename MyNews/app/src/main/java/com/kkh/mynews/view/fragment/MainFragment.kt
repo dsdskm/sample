@@ -1,14 +1,17 @@
 package com.kkh.mynews.view.fragment
 
 import android.content.DialogInterface
+import android.database.Cursor
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -24,16 +27,17 @@ import com.kkh.mynews.data.item.book.model.BookItemsModel
 import com.kkh.mynews.data.item.cafe.model.CafeItemsModel
 import com.kkh.mynews.data.item.news.model.NewsItemsModel
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
-import com.kkh.mynews.view.`interface`.IContentsEvent
 import com.kkh.mynews.data.item.contents.adapter.ContentsAdapter
 import com.kkh.mynews.data.item.dict.model.DictItemsModel
 import com.kkh.mynews.data.item.keyword.adapter.KeywordRecyclerViewAdapter
 import com.kkh.mynews.data.viewmodel.ContentsViewModel
 import com.kkh.mynews.data.item.image.model.ImageItemsModel
+import com.kkh.mynews.data.item.keyword.adapter.IKeywordItemEvent
 import com.kkh.mynews.data.item.know.model.KnowItemsModel
 import com.kkh.mynews.data.item.location.model.LocationItemsModel
 import com.kkh.mynews.data.item.movie.model.MovieItemsModel
 import com.kkh.mynews.data.item.refer.model.ReferItemsModel
+import com.kkh.mynews.data.item.search.model.SearchModel
 import com.kkh.mynews.data.item.web.model.WebItemsModel
 import com.kkh.mynews.databinding.FragmentMainBinding
 import com.kkh.mynews.databinding.ListBookItemLayoutBinding
@@ -61,6 +65,7 @@ class MainFragment : ContentsFragment() {
     private lateinit var mContentsViewModel: ContentsViewModel
     private lateinit var mContentsAdapter: ContentsAdapter
     private lateinit var mKeywordAdapter: KeywordRecyclerViewAdapter
+    private val mContentLayoutManager:LinearLayoutManager = LinearLayoutManager(context)
     private lateinit var binding: FragmentMainBinding
 
     private val mContentsList = ArrayList<ContentsModel>()
@@ -68,25 +73,6 @@ class MainFragment : ContentsFragment() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
         mContentsViewModel = ViewModelProvider(this).get(ContentsViewModel::class.java)
-        initKeywordList()
-    }
-
-    private fun initKeywordList() {
-        val list = ArrayList<KeywordModel>()
-        list.add(KeywordModel(0, "뉴스"))
-        list.add(KeywordModel(1, "쇼핑"))
-        list.add(KeywordModel(2, "블로그"))
-        list.add(KeywordModel(3, "책"))
-        list.add(KeywordModel(4, "이미지"))
-        list.add(KeywordModel(5, "영화"))
-        list.add(KeywordModel(6, "백과사전"))
-        list.add(KeywordModel(7, "카페글"))
-        list.add(KeywordModel(8, "지식in"))
-        list.add(KeywordModel(9, "지역"))
-        list.add(KeywordModel(10, "웹문서"))
-        list.add(KeywordModel(11, "전문자료"))
-        mContentsViewModel.insertKeywordList(list)
-
     }
 
     override fun onCreateView(
@@ -115,6 +101,7 @@ class MainFragment : ContentsFragment() {
             val list: List<NewsItemsModel> = it
             Log.d(TAG, "observed news list size ${list}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(0, "뉴스"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_NEWS,
@@ -123,6 +110,9 @@ class MainFragment : ContentsFragment() {
                         list
                     )
                 )
+            } else {
+                REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("뉴스");
             }
             updateContentsList()
         })
@@ -131,6 +121,7 @@ class MainFragment : ContentsFragment() {
             val list: List<ShoppingItemsModel> = it
             Log.d(TAG, "observed shopping list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(1, "쇼핑"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_SHOPPING,
@@ -139,6 +130,9 @@ class MainFragment : ContentsFragment() {
                         list
                     )
                 )
+            } else {
+                REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("쇼핑");
             }
             updateContentsList()
         })
@@ -147,6 +141,7 @@ class MainFragment : ContentsFragment() {
             val list: List<BlogItemsModel> = it
             Log.d(TAG, "observed blog list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(2, "블로그"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_BLOG,
@@ -155,6 +150,9 @@ class MainFragment : ContentsFragment() {
                         list
                     )
                 )
+            } else {
+                REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("블로그")
             }
             updateContentsList()
         })
@@ -162,6 +160,7 @@ class MainFragment : ContentsFragment() {
             val list: List<BookItemsModel> = it
             Log.d(TAG, "observed book list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(3, "책"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_BOOK,
@@ -170,6 +169,9 @@ class MainFragment : ContentsFragment() {
                         list
                     )
                 )
+            } else {
+                REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("책")
             }
             updateContentsList()
         })
@@ -177,6 +179,7 @@ class MainFragment : ContentsFragment() {
             val list: List<ImageItemsModel> = it
             Log.d(TAG, "observed image list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(4, "이미지"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_IMAGE,
@@ -185,6 +188,9 @@ class MainFragment : ContentsFragment() {
                         list
                     )
                 )
+            } else {
+                REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("이미지")
             }
             updateContentsList()
         })
@@ -193,6 +199,7 @@ class MainFragment : ContentsFragment() {
             val list: List<MovieItemsModel> = it
             Log.d(TAG, "observed movie list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(5, "영화"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_MOVIE,
@@ -203,6 +210,7 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("영화")
             }
             updateContentsList()
         })
@@ -210,6 +218,7 @@ class MainFragment : ContentsFragment() {
             val list: List<DictItemsModel> = it
             Log.d(TAG, "observed dict list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(6, "백과사전"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_DICT,
@@ -220,6 +229,7 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("백과사전")
             }
             updateContentsList()
         })
@@ -227,6 +237,7 @@ class MainFragment : ContentsFragment() {
             val list: List<CafeItemsModel> = it
             Log.d(TAG, "observed cafe list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(7, "카페글"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_CAFE,
@@ -237,6 +248,7 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("카페글")
             }
             updateContentsList()
         })
@@ -244,6 +256,7 @@ class MainFragment : ContentsFragment() {
             val list: List<KnowItemsModel> = it
             Log.d(TAG, "observed know list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(8, "지식in"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_KNOW,
@@ -254,6 +267,7 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("지식in")
             }
             updateContentsList()
         })
@@ -261,6 +275,7 @@ class MainFragment : ContentsFragment() {
             val list: List<LocationItemsModel> = it
             Log.d(TAG, "observed local list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(9, "지역"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_LOCATION,
@@ -271,6 +286,7 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("지역")
             }
             updateContentsList()
         })
@@ -278,6 +294,7 @@ class MainFragment : ContentsFragment() {
             val list: List<WebItemsModel> = it
             Log.d(TAG, "observed web list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(10, "웹문서"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_WEB,
@@ -288,6 +305,7 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("웹문서")
             }
             updateContentsList()
         })
@@ -295,6 +313,7 @@ class MainFragment : ContentsFragment() {
             val list: List<ReferItemsModel> = it
             Log.d(TAG, "observed refer list size ${list.size}")
             if (list.isNotEmpty()) {
+                mContentsViewModel.insertKeyword(KeywordModel(11, "전문자료"))
                 mContentsList.add(
                     ContentsModel(
                         VIEW_TYPE_REFER,
@@ -305,35 +324,65 @@ class MainFragment : ContentsFragment() {
                 )
             } else {
                 REQUEST_COUNT--;
+                mContentsViewModel.deleteKeyword("전문자료")
             }
             updateContentsList()
         })
+
+
     }
 
-    private val mIContentsEvent = object : IContentsEvent {
-        override fun onBindItem(data: ContentsModel) {
-            mKeywordAdapter.selectPosition(data.viewType)
+    private val mIKeywordItemEvent: IKeywordItemEvent = object : IKeywordItemEvent {
+        override fun onItemClick(pos: Int) {
+            Handler(Looper.getMainLooper()).postDelayed({
+                Log.d(TAG,"onItemClick pos $pos")
+                //binding.recyclerView.smoothScrollToPosition(pos)
+                mContentLayoutManager.scrollToPositionWithOffset(pos,0)
+
+            }, 200)
         }
     }
 
+    private var mWordCursor: Cursor? = null
     private fun initViews() {
         binding.add.visibility = View.GONE
-        binding.progress.root.visibility = View.GONE
+        binding.progressView.root.visibility = View.GONE
         // contents(total)
-        mContentsAdapter =
-            ContentsAdapter()
+        mContentsAdapter = ContentsAdapter()
         mContentsAdapter.setList(mContentsList)
-        mContentsAdapter.setEvent(mIContentsEvent)
         binding.recyclerView.adapter = mContentsAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.layoutManager = mContentLayoutManager
         binding.recyclerView.itemAnimator = DefaultItemAnimator()
         binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                val firstCompletelyVisible = mContentLayoutManager.findFirstCompletelyVisibleItemPosition()
+                val firstVisible = mContentLayoutManager.findFirstVisibleItemPosition()
+                Log.d(
+                    TAG,
+                    "onScrollStateChanged firstCompletelyVisible $firstCompletelyVisible firstVisible $firstVisible"
+                )
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val firstCompletelyVisible = mContentLayoutManager.findFirstCompletelyVisibleItemPosition()
+                val firstVisible = mContentLayoutManager.findFirstVisibleItemPosition()
+                Log.d(
+                    TAG,
+                    "onScrolled dx : $dx dy : $dy firstCompletelyVisible $firstCompletelyVisible firstVisible $firstVisible"
+                )
+                binding.keywordListView.scrollToPosition(firstVisible)
+                mKeywordAdapter.selectPosition(firstVisible)
+
+            }
+        })
+
 
         // keyword
-        mKeywordAdapter =
-            KeywordRecyclerViewAdapter(
-                mContentsViewModel
-            )
+        mKeywordAdapter = KeywordRecyclerViewAdapter(mContentsViewModel)
+        mKeywordAdapter.setEvent(mIKeywordItemEvent)
         binding.keywordListView.adapter = mKeywordAdapter
         binding.keywordListView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -343,28 +392,52 @@ class MainFragment : ContentsFragment() {
         binding.searchBtn.setOnClickListener {
             mContentsList.clear()
             var query = binding.searchView.query.toString()
-            binding.progress.root.visibility = View.VISIBLE
+            binding.progressView.root.visibility = View.VISIBLE
             mContentsViewModel.request(query)
         }
 
-        binding.clearBtn.setOnClickListener {
-            binding.searchView.setQuery("", false)
-        }
 
         binding.reset.setOnClickListener {
             mContentsList.clear()
+            mContentsViewModel.deleteKeywordAll()
             mContentsAdapter.setList(mContentsList);
         }
+
+        Thread {
+            //mContentsViewModel.insertSearchWord(SearchModel(0,word="박지성"))
+            mWordCursor = mContentsViewModel.getSearchWordList()
+            mSearchViewHandler.sendEmptyMessage(0)
+            Log.d(TAG,"mWordCursor ${mWordCursor!!.count}")
+        }.start()
+
+
+
+        binding.searchView.setOnSearchClickListener {
+            binding.suggestionView.visibility = View.VISIBLE
+        }
+        binding.searchView.setOnCloseListener {
+            binding.suggestionView.visibility = View.GONE
+            true
+        }
+
 //        MyWorkerManager.workRequest()
 //        MyWorkerManager.workRequestMutiTime()
 
     }
 
+    private val mSearchViewHandler = object:Handler(Looper.getMainLooper()){
+        override fun handleMessage(msg: Message) {
+            super.handleMessage(msg)
+            binding.searchView.suggestionsAdapter = SearchViewAdapter(context,mWordCursor,true)
+        }
+    }
+
     private fun updateContentsList() {
         synchronized(lock = this) {
+            Log.d(TAG, "updateContentsList list ${mContentsList.size} count $REQUEST_COUNT")
             mContentsAdapter.setList(mContentsList)
             if (mContentsList.size == REQUEST_COUNT) {
-                binding.progress.root.visibility = View.GONE
+                binding.progressView.root.visibility = View.GONE
             }
         }
 

@@ -25,6 +25,8 @@ import com.kkh.mynews.data.item.movie.dao.MovieItemsDao
 import com.kkh.mynews.data.item.movie.model.MovieItemsModel
 import com.kkh.mynews.data.item.refer.dao.ReferItemsDao
 import com.kkh.mynews.data.item.refer.model.ReferItemsModel
+import com.kkh.mynews.data.item.search.model.SearchModel
+import com.kkh.mynews.data.item.shopping.dao.SearchDao
 import com.kkh.mynews.data.item.shopping.dao.ShoppingItemsDao
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 import com.kkh.mynews.data.item.web.dao.WebItemsDao
@@ -44,7 +46,8 @@ import com.kkh.mynews.data.item.web.model.WebItemsModel
         ReferItemsModel::class,
         ShoppingItemsModel::class,
         WebItemsModel::class,
-        KeywordModel::class
+        KeywordModel::class,
+        SearchModel::class
     ], version = 1
 )
 abstract class ContentsDatabase : RoomDatabase() {
@@ -61,5 +64,6 @@ abstract class ContentsDatabase : RoomDatabase() {
     abstract fun shoppingItemsDao(): ShoppingItemsDao
     abstract fun keywordDao(): KeywordDao
     abstract fun webItemsDao(): WebItemsDao
+    abstract fun searchModelDao(): SearchDao
 
 }

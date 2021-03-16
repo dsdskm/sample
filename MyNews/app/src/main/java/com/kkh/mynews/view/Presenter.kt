@@ -2,6 +2,7 @@ package com.kkh.mynews.view
 
 import android.content.Context
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -15,7 +16,6 @@ import com.kkh.mynews.data.item.book.adapter.ImageItemsAdapter
 import com.kkh.mynews.data.item.book.model.BookItemsModel
 import com.kkh.mynews.data.item.cafe.adapter.CafeItemsAdapter
 import com.kkh.mynews.data.item.cafe.model.CafeItemsModel
-import com.kkh.mynews.data.item.contents.adapter.ContentsAdapter
 import com.kkh.mynews.data.item.dict.model.DictItemsModel
 import com.kkh.mynews.data.item.image.model.ImageItemsModel
 import com.kkh.mynews.data.item.know.adapter.KnowItemsAdapter
@@ -33,6 +33,7 @@ import com.kkh.mynews.data.item.shopping.adapter.ShoppingItemsAdapter
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 import com.kkh.mynews.data.item.web.adapter.WebItemsAdapter
 import com.kkh.mynews.data.item.web.model.WebItemsModel
+import com.kkh.mynews.databinding.ListContentsItemLayoutBinding
 
 class Presenter(context: Context) {
     companion object {
@@ -52,33 +53,37 @@ class Presenter(context: Context) {
     }
 
     private val mRequestManager: RequestManager = Glide.with(context)
-    fun update(data: ContentsModel, holder: ContentsAdapter.ViewHolder) {
+    private lateinit var mList:List<Any>
+    private lateinit var mView:ListContentsItemLayoutBinding
+    fun update(data: ContentsModel, v: ListContentsItemLayoutBinding) {
+        mList = data.list
+        mView = v
+        v.rview.layoutManager =
+            LinearLayoutManager(v.root.context, LinearLayoutManager.HORIZONTAL, false)
+        v.rview.itemAnimator = DefaultItemAnimator()
+        v.rview.setHasFixedSize(true)
 
-        holder.mRecyclerView.layoutManager =
-            LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
-        holder.mRecyclerView.itemAnimator = DefaultItemAnimator()
-        holder.mRecyclerView.setHasFixedSize(true)
         when (data.viewType) {
-            VIEW_TYPE_NEWS -> updateNewsPresenter(data.list, holder)
-            VIEW_TYPE_SHOPPING -> updateShoppingPresenter(data.list, holder)
-            VIEW_TYPE_BLOG -> updateBlogPresenter(data.list, holder)
-            VIEW_TYPE_BOOK -> updateBookPresenter(data.list, holder)
-            VIEW_TYPE_IMAGE -> updateImagePresenter(data.list, holder)
-            VIEW_TYPE_MOVIE -> updateMoviePresenter(data.list, holder)
-            VIEW_TYPE_DICT -> updateDictPresenter(data.list, holder)
-            VIEW_TYPE_CAFE -> updateCafePresenter(data.list, holder)
-            VIEW_TYPE_KNOW -> updateKnowPresenter(data.list, holder)
-            VIEW_TYPE_LOCATION -> updateLocalPresenter(data.list, holder)
-            VIEW_TYPE_WEB -> updateWebPresenter(data.list, holder)
-            VIEW_TYPE_REFER -> updateReferPresenter(data.list, holder)
+            VIEW_TYPE_NEWS -> updateNewsPresenter("뉴스")
+            VIEW_TYPE_SHOPPING -> updateShoppingPresenter("쇼핑")
+            VIEW_TYPE_BLOG -> updateBlogPresenter("블로그")
+            VIEW_TYPE_BOOK -> updateBookPresenter("책")
+            VIEW_TYPE_IMAGE -> updateImagePresenter("이미지")
+            VIEW_TYPE_MOVIE -> updateMoviePresenter("영화")
+            VIEW_TYPE_DICT -> updateDictPresenter("백과사전")
+            VIEW_TYPE_CAFE -> updateCafePresenter("카페글")
+            VIEW_TYPE_KNOW -> updateKnowPresenter("지식in")
+            VIEW_TYPE_LOCATION -> updateLocalPresenter("지역")
+            VIEW_TYPE_WEB -> updateWebPresenter("웹")
+            VIEW_TYPE_REFER -> updateReferPresenter("전문자료")
         }
 
     }
 
-    private fun updateNewsPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateNewsPresenter(title:String) {
         val list: ArrayList<NewsItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 element.let {
                     list.add(it as NewsItemsModel)
                 }
@@ -90,15 +95,15 @@ class Presenter(context: Context) {
 
         val adapter = NewsItemsAdapter()
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "News"
+        mView.rview.adapter = adapter
+        mView.title.text = title
 
     }
 
-    private fun updateShoppingPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateShoppingPresenter(title:String) {
         val list: ArrayList<ShoppingItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 element.let {
                     list.add(it as ShoppingItemsModel)
                 }
@@ -112,14 +117,14 @@ class Presenter(context: Context) {
                 mRequestManager
             )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Shopping"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateBlogPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateBlogPresenter(title:String) {
         val list: ArrayList<BlogItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as BlogItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -128,15 +133,15 @@ class Presenter(context: Context) {
 
         val adapter = BlogItemsAdapter()
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Blog"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateBookPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateBookPresenter(title:String) {
         Log.d(TAG, "updateBookPresenter")
         val list: ArrayList<BookItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as BookItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -147,15 +152,15 @@ class Presenter(context: Context) {
             mRequestManager
         )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Book"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateImagePresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateImagePresenter(title:String) {
         Log.d(TAG, "updateImagePresenter")
         val list: ArrayList<ImageItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as ImageItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -166,15 +171,15 @@ class Presenter(context: Context) {
             mRequestManager
         )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Image"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateMoviePresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateMoviePresenter(title:String) {
         Log.d(TAG, "updateMoviePresenter")
         val list: ArrayList<MovieItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as MovieItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -185,15 +190,15 @@ class Presenter(context: Context) {
             mRequestManager
         )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Movie"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateDictPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateDictPresenter(title:String) {
         Log.d(TAG, "updateDictPresenter")
         val list: ArrayList<DictItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as DictItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -204,15 +209,15 @@ class Presenter(context: Context) {
             mRequestManager
         )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Dict"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateCafePresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateCafePresenter(title:String) {
         Log.d(TAG, "updateCafePresenter")
         val list: ArrayList<CafeItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as CafeItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -222,15 +227,15 @@ class Presenter(context: Context) {
         val adapter = CafeItemsAdapter(
         )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Cafe"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateKnowPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateKnowPresenter(title:String) {
         Log.d(TAG, "updateKnowPresenter")
         val list: ArrayList<KnowItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as KnowItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -240,15 +245,15 @@ class Presenter(context: Context) {
         val adapter = KnowItemsAdapter(
         )
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Know"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateLocalPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateLocalPresenter(title:String) {
         Log.d(TAG, "updateLocalPresenter")
         val list: ArrayList<LocationItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as LocationItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -257,15 +262,15 @@ class Presenter(context: Context) {
 
         val adapter = LocalItemsAdapter()
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Local"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateWebPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateWebPresenter(title:String) {
         Log.d(TAG, "updateWebPresenter")
         val list: ArrayList<WebItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as WebItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -274,15 +279,15 @@ class Presenter(context: Context) {
 
         val adapter = WebItemsAdapter()
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Web"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 
-    private fun updateReferPresenter(l: List<Any>, holder: ContentsAdapter.ViewHolder) {
+    private fun updateReferPresenter(title:String) {
         Log.d(TAG, "updateReferPresenter")
         val list: ArrayList<ReferItemsModel> = ArrayList()
         try {
-            for (element in l) {
+            for (element in mList) {
                 list.add(element as ReferItemsModel)
             }
         } catch (e: TypeCastException) {
@@ -291,7 +296,7 @@ class Presenter(context: Context) {
 
         val adapter = ReferItemsAdapter()
         adapter.setList(list)
-        holder.mRecyclerView.adapter = adapter
-        holder.mTitle.text = "Reference"
+        mView.rview.adapter = adapter
+        mView.title.text = title
     }
 }

@@ -1,5 +1,6 @@
 package com.kkh.mynews.data.viewmodel
 
+import android.database.Cursor
 import androidx.lifecycle.*
 import androidx.paging.PagedList
 import androidx.paging.toLiveData
@@ -17,6 +18,7 @@ import com.kkh.mynews.data.item.movie.dao.MovieItemsDao
 import com.kkh.mynews.data.item.movie.model.MovieItemsModel
 import com.kkh.mynews.data.item.news.model.NewsItemsModel
 import com.kkh.mynews.data.item.refer.model.ReferItemsModel
+import com.kkh.mynews.data.item.search.model.SearchModel
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 import com.kkh.mynews.data.item.web.model.WebItemsModel
 
@@ -36,6 +38,8 @@ class ContentsViewModel() : ViewModel() {
     val localItemsPaged:LiveData<PagedList<LocationItemsModel>> = contentsRepository.mLocationItemsDao.loadPagedList().toLiveData(pageSize = 3)
     val webItemsPaged:LiveData<PagedList<WebItemsModel>> = contentsRepository.mWebDao.loadPagedList().toLiveData(pageSize = 3)
     val referItemsPaged:LiveData<PagedList<ReferItemsModel>> = contentsRepository.mReferItemsDao.loadPagedList().toLiveData(pageSize = 3)
+//    val searchItemsPaged:LiveData<PagedList<SearchModel>> = contentsRepository.mSearchDao.loadPagedList().toLiveData(pageSize = 3)
+
 
     val keyword = contentsRepository.mKeywordDao.load().asLiveData()
 
@@ -55,14 +59,28 @@ class ContentsViewModel() : ViewModel() {
         contentsRepository.requestRefer(query)
     }
 
+    fun insertKeyword(data: KeywordModel) {
+        contentsRepository.insertKeyword(data)
+    }
     fun insertKeywordList(list: List<KeywordModel>) {
         contentsRepository.insertKeywordList(list)
     }
     fun deleteKeyword(keyword:String){
         contentsRepository.deleteKeyword(keyword)
     }
+    fun deleteKeywordAll(){
+        contentsRepository.deleteKeywordAll()
+    }
     fun deleteAll(){
         contentsRepository.deleteAll()
+    }
+
+    fun insertSearchWord(data: SearchModel) {
+        contentsRepository.insertSearchModel(data)
+    }
+
+    fun getSearchWordList(): Cursor {
+        return contentsRepository.getSearchWordList()
     }
 
 }
