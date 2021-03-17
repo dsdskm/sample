@@ -1,79 +1,55 @@
-배열 정렬
-Arrays.sort(arr);
-Arrays.sort(arr2, Collections.reverseOrder());  // A는 Integer[]. 배열 역순
-Arrays.sort(arr2, new Comparator<Integer>() {   // A는 Integer[]. 커스텀 정렬
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 - o2;
-            }
-        });
-Arrays.sort(arr3, new Comparator<Integer[]>() { // 2차원 배열 커스텀 정렬
-            @Override
-            public int compare(Integer[] o1, Integer[] o2) {
-                return o1[1]-o2[1];
-            }
-        });
+===== 자료 구조 =====
+해쉬
+배열
+리스트
+링크드 리스트
+스택 : push, peek, pop
+큐 / 우선순위 큐 : offer, peek, poll
+데크
+트리
+	TreeSet : 하나의 노드값만 사용
+	TreeMap : key,value로 저장
+그래프
+	https://freestrokes.tistory.com/87
+	인접 리스트 : 그래프에 간선이 많음
+	인접 행렬 : 그래프에 간선이 적음
 
-Arrays.sort(list, (o1, o2) -> {
-            /*
-            if (Integer.parseInt(o1 + o2) <= Integer.parseInt(o2 + o1)) {
-                return 1;
-            } else {
-                return -1;
-            }
-             */
-            return ((o2 + o1).compareTo(o1 + o2));  // 직접비교보다 빠르다
-        });
+===== 알고리즘 =====
 
-리스트 정렬
-Collections.sort(list);
-Collections.sort(list,Collections.reversOrder());       // 역순 정렬
-Collections.sort(list, new Comparator<Integer>() {      // 커스텀 정렬
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 - o2;
-            }
-        });
-배열 복사
-arr의 배열 인덱스 2부터 3개를 tartget의 배열 index 0부터 집어 넣는다
-int arr[] = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-System.arraycopy(arr, 2, target, 0, 3);
-target = {3,4,5}
-
-priority queue
-PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1-o2;
-            }
-        });
-===============================================
 순열
-    https://minhamina.tistory.com/37
-    길이가 n인 배열에서 r개의 요소를 차례대로 뽑는 것
-    1) swap을 이용해 구현
-    2) DFS를 이용해 구현
+    https://bcp0109.tistory.com/entry/순열-Permutation-Java
+	길이가 n인 배열에서 r개의 요소를 순서대로 뽑는 것
 조합
-    https://bcp0109.tistory.com/entry/%EC%A1%B0%ED%95%A9-Combination-Java
-    길이가 n인 배열에서 r개의 수를 순서 없이 뽑는 것
+    https://bcp0109.tistory.com/entry/조합-Combination-Java
+    길이가 n인 배열에서 r개의 요소를 순서 없이 뽑는 것
 부분 집합
-    https://bcp0109.tistory.com/entry/%EB%B6%80%EB%B6%84%EC%A7%91%ED%95%A9-PowerSet-Java?category=848939
-Hash
-    조합을 계산할때 선택하지 않는 옵션까지 고려하는 경우는 +1을 하여 계산한다(Lv2CodingTest_Hash3_Solution)
+    https://bcp0109.tistory.com/entry/부분집합-PowerSet-Java
+    배열의 모든 부분 집합
 BruteForce
-   이중 for문이 불가피 한 경우도 있다.
-   소수의 경우는 제곱근까지만 반복하여 판단이 가 (LV2CoingTest_BF2_Solution)
-스택/큐
-    밀어내는 개념의 경우 가상의 0값을 원소로 활용해도된다
-Deque
-    양쪽에서
-정렬
-    리스트보다 배열이 속도가 빠다
-힙
-    http://www.gisdeveloper.co.kr/?p=4452
-    Priority Queue 사용
-        Primitive 타입과 Reference 타입 모두 용 가능
-        기본 오름 차순
-brute force
     모든 경우를 탐색
-    삼중 for 문도 허
+동적계획법
+    https://velog.io/@polynomeer/동적-계획법Dynamic-Programming
+    https://www.leafcats.com/71
+    https://www.leafcats.com/72
+    겹치는 부분 문제 : 어떤 문제가 여러 개의 부분 문제로 쪼개질 수 있을때 재귀 알고리즘으로 해결
+    최적 부분 구조 : 어떤 문제의 최적의 해결책이 그 부분 문제의 최적의 해결책으로 부터 설계될 수 있는 경우
+    메모제이션 : 동적계획법에서는 문제를 한 번만 풀어야 한다. 정답을 한번 구하면 캐시에 메모해 놓는다. 시간 복잡도 O(N)
+    구현 방식
+        Top-down : 큰 문제를 작은 문제로 쪼갠다. 재귀. 피보나치
+        Bottom-up : 작은 문제부터 차례대로 푼다. 반복
+탐욕법
+    동적 프로그래밍이 지나치게 일을 많이 하는 것을 보완
+최소 신장 트리
+    프림 알고리즘
+        한 노드를 기준으로 전체를 생각하지 않고 현재 상황에서 최선의 선택만 고려(그리디 알고리즘)
+    크루스칼 알고리즘
+        가장 작은 간선부터 선택해가면서 순환이 생기지 않게 선택(그리디 알고리즘)
+최단 경로 알고리즘
+    다익스트라 알고리즘
+그래프 탐색
+    https://dragon-h.tistory.com/11
+    https://pangsblog.tistory.com/56
+    DFS
+    BFS
+소수
+    제급곤으로 판별

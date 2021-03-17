@@ -6,15 +6,15 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 
-public class Graph {
+public class GraphExam {
 
     public static void main(String args[]) {
-        new Graph();
+        new GraphExam();
     }
 
     HashMap<String, String[]> HASH = new HashMap<>();
 
-    public Graph() {
+    public GraphExam() {
 
         HASH.put("A", new String[]{"B", "C"});
         HASH.put("B", new String[]{"A", "D", "E"});

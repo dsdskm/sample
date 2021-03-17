@@ -1,13 +1,12 @@
-package com.kkh.algo;
+package com.kkh.exam.data_structure;
 
-import javax.swing.tree.TreeNode;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import static com.kkh.algo.Utils.print;
 import static com.kkh.algo.Utils.println;
 
-public class Tree {
+public class TreeExam {
 
     class Node {
         Node left;
@@ -27,10 +26,15 @@ public class Tree {
 
 
     public static void main(String args[]) {
-        new Tree();
+        new TreeExam();
     }
 
-    public Tree() {
+    public TreeExam() {
+        /*
+        TreeSet : 하나의 노드값만 사용
+        TreeMap : key,value로 저장
+        */
+
         TreeMap<Integer, String> treeMap = new TreeMap<>();
         treeMap.put(50, "A");
         treeMap.put(10, "B");
