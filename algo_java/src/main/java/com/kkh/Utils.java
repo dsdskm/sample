@@ -1,4 +1,4 @@
-package com.kkh.algo;
+package com.kkh;
 
 import java.util.ArrayList;
 import java.util.HashMap;

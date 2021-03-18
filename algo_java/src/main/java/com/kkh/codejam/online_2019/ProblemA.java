@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-import static com.kkh.algo.Utils.*;
+import static com.kkh.Utils.*;
 
 public class ProblemA {
     boolean isDebug = true;

@@ -3,8 +3,8 @@ package com.kkh.exam.data_structure;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import static com.kkh.algo.Utils.print;
-import static com.kkh.algo.Utils.println;
+import static com.kkh.Utils.print;
+import static com.kkh.Utils.println;
 
 public class TreeExam {
 

@@ -1,33 +1,10 @@
-package com.kkh.algo;
+package com.kkh.exam.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Graph_Kruskal {
-    //https://brenden.tistory.com/36
-    //https://ghkvud2.tistory.com/97
-    class Edge implements Comparable<Edge> {
-        int v1;
-        int v2;
-        int cost;
-
-        Edge(int v1, int v2, int cost) {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.cost = cost;
-        }
-
-        @Override
-        public int compareTo(Edge o) {
-            if (this.cost < o.cost)
-                return -1;
-            else if (this.cost == o.cost)
-                return 0;
-            else
-                return 1;
-        }
-    }
-
+//https://brenden.tistory.com/36
+public class GraphKruskalExam {
     public static int[] parent;
     public static ArrayList<Edge> edgeList;
 
@@ -52,7 +29,7 @@ public class Graph_Kruskal {
         else return false;
     }
 
-    public Graph_Kruskal(){
+    public static void main(String[] args) {
         edgeList = new ArrayList<Edge>();
         edgeList.add(new Edge(1, 4, 4));
         edgeList.add(new Edge(1, 2, 6));
@@ -77,14 +54,33 @@ public class Graph_Kruskal {
             if (!isSameParent(edge.v1, edge.v2)) {
                 sum += edge.cost;
                 union(edge.v1, edge.v2);
-                System.out.println(edge.cost);
             }
         }
 
-
-    }
-
-    public static void main(String[] args) {
-        new Graph_Kruskal();
+        System.out.println(sum);
     }
 }
+
+class Edge implements Comparable<Edge> {
+    int v1;
+    int v2;
+    int cost;
+
+    Edge(int v1, int v2, int cost) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.cost = cost;
+    }
+
+    @Override
+    public int compareTo(Edge o) {
+        if (this.cost < o.cost)
+            return -1;
+        else if (this.cost == o.cost)
+            return 0;
+        else
+            return 1;
+    }
+}
+
+

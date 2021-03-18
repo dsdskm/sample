@@ -27,7 +27,6 @@ public class LV1CodingTest_BF1_Solution {
         주어진 정답을 모두 순회하면서 답을 비교한다
         제일 많이 맞춘 사람 1명만 리턴
         여려명일 경우 오름으로 리
-
          */
         int[][] a = new int[][]{
                 new int[]{1, 2, 3, 4, 5},
