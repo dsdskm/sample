@@ -3,17 +3,30 @@ package com.kkh.exam.data_structure;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ArrayExam {
     public static void main(String args[]) {
         arrayCopy();
         sort();
         fill();
+        convert();
+    }
+
+    private static void convert() {
+        // Array to List
+        List<String> outList = Arrays.asList("a", "b", "C");
+        List<String> outList2 = Arrays.asList(new String[]{"a", "b", "C"});
+        int[] list = {1, 2, 3, 4, 5, 6};
+
+        // List to Array
+        List<String> arrayList = Arrays.asList("a", "b", "C");
+        String[] array = arrayList.toArray(new String[arrayList.size()]);
     }
 
     private static void fill() {
         int arr[] = new int[10];
-        Arrays.fill(arr,10);
+        Arrays.fill(arr, 10);
     }
 
     private static void sort() {
