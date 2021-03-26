@@ -48,9 +48,15 @@ public class Keypad {
                 // 왼쪽
                 leftIndex[0] = 0;
                 switch (number) {
-                    case 1 -> leftIndex[1] = 0;
-                    case 4 -> leftIndex[1] = 1;
-                    case 7 -> leftIndex[1] = 2;
+                    case 1:
+                        leftIndex[1] = 0;
+                        break;
+                    case 4:
+                        leftIndex[1] = 1;
+                        break;
+                    case 7:
+                        leftIndex[1] = 2;
+                        break;
                 }
                 append = L;
 
@@ -58,9 +64,15 @@ public class Keypad {
                 // 오른쪽
                 rightIndex[0] = 2;
                 switch (number) {
-                    case 3 -> rightIndex[1] = 0;
-                    case 6 -> rightIndex[1] = 1;
-                    case 9 -> rightIndex[1] = 2;
+                    case 3:
+                        rightIndex[1] = 0;
+                        break;
+                    case 6:
+                        rightIndex[1] = 1;
+                        break;
+                    case 9:
+                        rightIndex[1] = 2;
+                        break;
                 }
                 append = R;
             } else {
@@ -68,10 +80,18 @@ public class Keypad {
                 int row = 0;
                 int col = 1;
                 switch (number) {
-                    case 2 -> row = 0;
-                    case 5 -> row = 1;
-                    case 8 -> row = 2;
-                    case 0 -> row = 3;
+                    case 2:
+                        row = 0;
+                        break;
+                    case 5:
+                        row = 1;
+                        break;
+                    case 8:
+                        row = 2;
+                        break;
+                    case 0:
+                        row = 3;
+                        break;
                 }
                 int distanceOfLeft = Math.abs(row - leftIndex[1]) + Math.abs(col - leftIndex[0]);
                 int distanceOfRight = Math.abs(row - rightIndex[1]) + Math.abs(col - rightIndex[0]);
