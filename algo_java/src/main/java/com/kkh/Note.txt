@@ -86,3 +86,5 @@ Tips
     StringBuilder를 사용해야하는 이유
     double은 isNan을 고려하라
     숫자범위가 크게 주어지는 경우 int,long 중 고심해라
+    Integer.toBinaryString(n);    // 10진수->진수
+    Integer.parseInt("111",2);        // 2진수->10진수
