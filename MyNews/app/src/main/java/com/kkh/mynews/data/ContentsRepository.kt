@@ -86,9 +86,9 @@ class ContentsRepository {
         mSearchDao = mDatabase.searchModelDao()
     }
 
-    fun requestRefer(query: String) {
+    fun requestRefer(query: String,count:Int) {
         Log.d(TAG, "requestRefer")
-        mWebService.getRefer(query, DEFAULT_RESULT).enqueue(object : Callback<ReferModel> {
+        mWebService.getRefer(query, count).enqueue(object : Callback<ReferModel> {
             override fun onResponse(call: Call<ReferModel>, response: Response<ReferModel>) {
                 Log.d(TAG, "requestRefer onResponse : " + response.body().toString())
                 val model = response.body()
@@ -113,9 +113,9 @@ class ContentsRepository {
         })
     }
 
-    fun requestWeb(query: String) {
+    fun requestWeb(query: String,count:Int) {
         Log.d(TAG, "requestWeb")
-        mWebService.getWeb(query, DEFAULT_RESULT).enqueue(object : Callback<WebModel> {
+        mWebService.getWeb(query, count).enqueue(object : Callback<WebModel> {
             override fun onResponse(call: Call<WebModel>, response: Response<WebModel>) {
                 Log.d(TAG, "requestWeb onResponse : " + response.body().toString())
                 val model = response.body()
@@ -140,9 +140,9 @@ class ContentsRepository {
         })
     }
 
-    fun requestLocal(query: String) {
+    fun requestLocal(query: String,count:Int) {
         Log.d(TAG, "requestLocal")
-        mWebService.getLocal(query, DEFAULT_RESULT).enqueue(object : Callback<LocationModel> {
+        mWebService.getLocal(query, count).enqueue(object : Callback<LocationModel> {
             override fun onResponse(call: Call<LocationModel>, response: Response<LocationModel>) {
                 Log.d(TAG, "requestLocal onResponse : " + response.body().toString())
                 val model = response.body()
@@ -167,9 +167,9 @@ class ContentsRepository {
         })
     }
 
-    fun requestKnow(query: String) {
+    fun requestKnow(query: String,count:Int) {
         Log.d(TAG, "requestKnow")
-        mWebService.getKnow(query, DEFAULT_RESULT).enqueue(object : Callback<KnowModel> {
+        mWebService.getKnow(query, count).enqueue(object : Callback<KnowModel> {
             override fun onResponse(call: Call<KnowModel>, response: Response<KnowModel>) {
                 Log.d(TAG, "requestKnow onResponse : " + response.body().toString())
                 val model = response.body()
@@ -194,9 +194,9 @@ class ContentsRepository {
         })
     }
 
-    fun requestCafe(query: String) {
+    fun requestCafe(query: String,count:Int) {
         Log.d(TAG, "requestCafe")
-        mWebService.getCafe(query, DEFAULT_RESULT).enqueue(object : Callback<CafeModel> {
+        mWebService.getCafe(query, count).enqueue(object : Callback<CafeModel> {
             override fun onResponse(call: Call<CafeModel>, response: Response<CafeModel>) {
                 Log.d(TAG, "requestCafe onResponse : " + response.body().toString())
                 val model = response.body()
@@ -221,9 +221,9 @@ class ContentsRepository {
         })
     }
 
-    fun requestDict(query: String) {
+    fun requestDict(query: String,count:Int) {
         Log.d(TAG, "requestDict");
-        mWebService.getDict(query, DEFAULT_RESULT).enqueue(object : Callback<DictModel> {
+        mWebService.getDict(query, count).enqueue(object : Callback<DictModel> {
             override fun onResponse(call: Call<DictModel>, response: Response<DictModel>) {
                 Log.d(TAG, "requestDict onResponse : " + response.body().toString())
                 val model = response.body()
@@ -249,9 +249,9 @@ class ContentsRepository {
     }
 
 
-    fun requestMovie(query: String) {
+    fun requestMovie(query: String,count:Int) {
         Log.d(TAG, "requestMovie");
-        mWebService.getMovie(query, DEFAULT_RESULT).enqueue(object : Callback<MovieModel> {
+        mWebService.getMovie(query, count).enqueue(object : Callback<MovieModel> {
             override fun onResponse(call: Call<MovieModel>, response: Response<MovieModel>) {
                 Log.d(TAG, "requestMovie onResponse : " + response.body().toString())
                 val model = response.body()
@@ -278,9 +278,9 @@ class ContentsRepository {
     }
 
 
-    fun requestImage(query: String, sort: String, filter: String) {
+    fun requestImage(query: String, count: Int, filter: String) {
         Log.d(TAG, "requestImage")
-        mWebService.getImage(query, DEFAULT_RESULT, sort, filter)
+        mWebService.getImage(query, count, "sim",filter)
             .enqueue(object : Callback<ImageModel> {
                 override fun onFailure(call: Call<ImageModel>, t: Throwable) {
                     t.printStackTrace()
@@ -305,9 +305,9 @@ class ContentsRepository {
             })
     }
 
-    fun requestBook(query: String, sort: String) {
+    fun requestBook(query: String, count: Int) {
         Log.d(TAG, "requestBook")
-        mWebService.getSearchBook(query, DEFAULT_RESULT, sort)
+        mWebService.getSearchBook(query, count, "sim")
             .enqueue(object : Callback<BookModel> {
                 override fun onFailure(call: Call<BookModel>, t: Throwable) {
                     t.printStackTrace()
@@ -333,9 +333,9 @@ class ContentsRepository {
     }
 
 
-    fun requestBlog(query: String, sort: String) {
+    fun requestBlog(query: String, count: Int) {
         Log.d(TAG, "requestBlog")
-        mWebService.getBlog(query, DEFAULT_RESULT, sort).enqueue(object : Callback<BlogModel> {
+        mWebService.getBlog(query, count, "sim").enqueue(object : Callback<BlogModel> {
             override fun onFailure(call: Call<BlogModel>, t: Throwable) {
                 Log.d(TAG, "requestBlog onFailure : " + t.message)
             }
@@ -359,9 +359,9 @@ class ContentsRepository {
     }
 
 
-    fun requestShopping(query: String, sort: String) {
+    fun requestShopping(query: String, count:Int) {
         Log.d(TAG, "requestShopping")
-        mWebService.getShopping(query, DEFAULT_RESULT, sort)
+        mWebService.getShopping(query, count,"sim")
             .enqueue(object : Callback<ShoppingModel> {
                 override fun onFailure(call: Call<ShoppingModel>, t: Throwable) {
                     Log.d(TAG, "requestShopping onFailure : " + t.message)
@@ -390,9 +390,9 @@ class ContentsRepository {
 
     }
 
-    fun requestNews(query: String) {
+    fun requestNews(query: String,count:Int) {
         GlobalScope.launch(Dispatchers.IO) {
-            mWebService.getSearchNews(query, DEFAULT_RESULT).enqueue(object :
+            mWebService.getSearchNews(query, count).enqueue(object :
                 Callback<NewsModel> {
                 override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
                     Log.d(TAG, "onResponse : " + response.body().toString())

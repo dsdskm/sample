@@ -59,7 +59,8 @@ class MainFragment : ContentsFragment() {
     companion object {
         const val TAG = Constant.TAG_PREFIX + "MainFragment"
         fun newInstance() = MainFragment()
-        var REQUEST_COUNT = 12
+        var REQUEST_COUNT_TOTAL = 12
+        var REQUEST_COUNT = 0
     }
 
     private lateinit var mContentsViewModel: ContentsViewModel
@@ -69,10 +70,37 @@ class MainFragment : ContentsFragment() {
     private lateinit var binding: FragmentMainBinding
 
     private val mContentsList = ArrayList<ContentsModel>()
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG,"onSaveInstanceState")
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        Log.d(TAG,"onViewStateRestored")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
         mContentsViewModel = ViewModelProvider(this).get(ContentsViewModel::class.java)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG,"onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG,"onStop")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG,"onResume")
+        REQUEST_COUNT = 0
     }
 
     override fun onCreateView(
@@ -86,6 +114,7 @@ class MainFragment : ContentsFragment() {
         initViews()
         initViewModel()
         binding.searchView.setQuery("손흥민", false)
+        showDialog()
         return binding.root
     }
 
@@ -99,7 +128,7 @@ class MainFragment : ContentsFragment() {
 
         mContentsViewModel.newsItemsPaged.observe(viewLifecycleOwner, Observer {
             val list: List<NewsItemsModel> = it
-            Log.d(TAG, "observed news list size ${list}")
+            Log.d(TAG, "observed news list size ${list.size}")
             if (list.isNotEmpty()) {
                 mContentsViewModel.insertKeyword(KeywordModel(0, "뉴스"))
                 mContentsList.add(
@@ -110,10 +139,11 @@ class MainFragment : ContentsFragment() {
                         list
                     )
                 )
+
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("뉴스");
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -131,9 +161,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("쇼핑");
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -151,9 +181,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("블로그")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.bookItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -170,9 +200,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("책")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.imageItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -189,9 +219,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("이미지")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -209,9 +239,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("영화")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.dictItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -228,9 +258,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("백과사전")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.cafeItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -247,9 +277,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("카페글")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.knowItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -266,9 +296,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("지식in")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.localItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -285,9 +315,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("지역")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.webItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -304,9 +334,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("웹문서")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.referItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -323,9 +353,9 @@ class MainFragment : ContentsFragment() {
                     )
                 )
             } else {
-                REQUEST_COUNT--;
                 mContentsViewModel.deleteKeyword("전문자료")
             }
+            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -436,8 +466,9 @@ class MainFragment : ContentsFragment() {
         synchronized(lock = this) {
             Log.d(TAG, "updateContentsList list ${mContentsList.size} count $REQUEST_COUNT")
             mContentsAdapter.setList(mContentsList)
-            if (mContentsList.size == REQUEST_COUNT) {
+            if (REQUEST_COUNT == REQUEST_COUNT_TOTAL) {
                 binding.progressView.root.visibility = View.GONE
+                REQUEST_COUNT = 0;
             }
         }
 
@@ -452,10 +483,9 @@ class MainFragment : ContentsFragment() {
     private fun showDialog() {
 
         val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(activity)
-        builder.setTitle("키워드 추가")
+        builder.setTitle("사용 안내")
         val view = LayoutInflater.from(MyNewsApplication.getAppContext())
             .inflate(R.layout.dialog_layout, null)
-        val input = view.findViewById<EditText>(R.id.edit)
         builder.setView(view)
         builder.setPositiveButton(android.R.string.ok) { dialog: DialogInterface, _: Int ->
             /*
@@ -467,9 +497,6 @@ class MainFragment : ContentsFragment() {
             )
 
              */
-            dialog.dismiss()
-        }
-        builder.setNegativeButton(android.R.string.cancel) { dialog: DialogInterface, _: Int ->
             dialog.dismiss()
         }
         builder.show()
