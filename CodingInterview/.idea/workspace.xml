@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="04ea3cb7-5bde-44bf-aacd-3bd3c9c36b09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/MyQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/MyStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/QueueTester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/StackTester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/FixedMultiStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/FullStackException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/MultiStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/NodeWithMin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/StackWithMin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/StackWithMin2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/SetOfStacks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_04_Queue_via_Stacks/MyQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_04_Queue_via_Stacks/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_05_Sort_Stack/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/AnimalQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/Practice01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/java/PracticeExam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/PracticeExam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/Note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/Note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/P136.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qNnFAT6j9vadFNG72BtACvpAFg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace_algo\sample_algo\CodingInterview\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace_algo\sample_algo\CodingInterview\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Question (2)">
+    <configuration name="Ex_08" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Introduction.Big_O.Ex_08" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Introduction.Big_O.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch01ArraysandStrings.Q1_07_Rotate_Matrix.Question" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch01ArraysandStrings.Q1_07_Rotate_Matrix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch03StacksandQueues.Q3_03_Stack_of_Plates.Question" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch03StacksandQueues.Q3_03_Stack_of_Plates.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch01ArraysandStrings.Q1_03_URLify.Question" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch01ArraysandStrings.Q1_03_URLify.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuestionA (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch03StacksandQueues.Q3_01_Three_in_One.QuestionA" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch03StacksandQueues.Q3_01_Three_in_One.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Question (2)" />
+        <item itemvalue="Application.QuestionA (2)" />
+        <item itemvalue="Application.Question (1)" />
+        <item itemvalue="Application.Question" />
+        <item itemvalue="Application.Ex_08" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04ea3cb7-5bde-44bf-aacd-3bd3c9c36b09" name="Default Changelist" comment="" />
+      <created>1616928810086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616928810086</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="906" y="198" key="#Inspections" timestamp="1616932765550">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="906" y="198" key="#Inspections/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1616932765550" />
+    <state width="1311" height="263" key="GridCell.Tab.0.bottom" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+    <state width="1311" height="263" key="GridCell.Tab.0.center" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.center/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+    <state width="1311" height="263" key="GridCell.Tab.0.left" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.left/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+    <state width="1311" height="263" key="GridCell.Tab.0.right" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.right/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+  </component>
+</project>
