@@ -229,5 +229,29 @@ class DetailActivity : AppCompatActivity() {
 
             }
         }
+
+        binding.refreshLayout.setOnRefreshListener {
+            when (viewType) {
+                Presenter.VIEW_TYPE_NEWS -> mContentsViewModel.requestNews(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_SHOPPING -> mContentsViewModel.requestShopping(
+                    query!!,
+                    RESULT_COUNT
+                )
+                Presenter.VIEW_TYPE_BLOG -> mContentsViewModel.requestBlog(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_BOOK -> mContentsViewModel.requestBook(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_IMAGE -> mContentsViewModel.requestImage(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_MOVIE -> mContentsViewModel.requestMovie(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_DICT -> mContentsViewModel.requestDict(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_CAFE -> mContentsViewModel.requestCafe(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_KNOW -> mContentsViewModel.requestKnow(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_LOCATION -> mContentsViewModel.requestLocal(
+                    query!!,
+                    RESULT_COUNT
+                )
+                Presenter.VIEW_TYPE_WEB -> mContentsViewModel.requestWeb(query!!, RESULT_COUNT)
+                Presenter.VIEW_TYPE_REFER -> mContentsViewModel.requestRefer(query!!, RESULT_COUNT)
+            }
+            binding.refreshLayout.isRefreshing = false
+        }
     }
 }

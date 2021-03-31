@@ -130,7 +130,6 @@ class Presenter(context: Context) {
         for (element in l) {
             try {
                 element.let {
-                    Log.d(TAG,"it $it")
                     if(it!=null) {
                         list.add(it as NewsItemsModel)
                     }
