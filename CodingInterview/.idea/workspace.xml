@@ -23,49 +23,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04ea3cb7-5bde-44bf-aacd-3bd3c9c36b09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/MyQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/MyStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/QueueTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Introduction/StackTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/FixedMultiStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/FullStackException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/MultiStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/QuestionA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_01_Three_in_One/QuestionB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/NodeWithMin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/StackWithMin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_02_Stack_Min/StackWithMin2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/SetOfStacks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_03_Stack_of_Plates/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_04_Queue_via_Stacks/MyQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_04_Queue_via_Stacks/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_05_Sort_Stack/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/AnimalQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch03StacksandQueues/Q3_06_Animal_Shelter/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/Practice01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/java/PracticeExam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/PracticeExam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/Note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/Note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/P136.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Introduction/Traversals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_02_Minimal_Tree/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_03_List_of_Depths/QuestionBFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_03_List_of_Depths/QuestionDFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_04_Check_Balanced/QuestionBrute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_04_Check_Balanced/QuestionImproved.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/IntWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_06_Successor/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionEBad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_09_BST_Sequences/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_10_Check_Subtree/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_10_Check_Subtree/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/graph/Practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/tree/Practice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,13 +93,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../algo_java" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace_algo\sample_algo\CodingInterview\src\main\java" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace_algo\sample_algo\CodingInterview\src\main\java" />
     </key>
   </component>
@@ -210,6 +207,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="906" y="198" key="#Inspections/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1616932765550" />
+    <state x="1609" y="271" key="FileChooserDialogImpl" timestamp="1617206248956">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1609" y="271" key="FileChooserDialogImpl/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617206248956" />
     <state width="1311" height="263" key="GridCell.Tab.0.bottom" timestamp="1617104390699">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
