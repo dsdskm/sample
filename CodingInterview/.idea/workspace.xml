@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="04ea3cb7-5bde-44bf-aacd-3bd3c9c36b09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Introduction/Traversals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_02_Minimal_Tree/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_03_List_of_Depths/QuestionBFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_03_List_of_Depths/QuestionDFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_04_Check_Balanced/QuestionBrute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_04_Check_Balanced/QuestionImproved.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/IntWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_06_Successor/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionEBad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_09_BST_Sequences/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_10_Check_Subtree/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_10_Check_Subtree/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/QuestionA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/QuestionB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/graph/Practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/tree/Practice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qNnFAT6j9vadFNG72BtACvpAFg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../algo_java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace_algo\sample_algo\CodingInterview\src\main\java" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace_algo\sample_algo\CodingInterview\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Question (2)">
+    <configuration name="Ex_08" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Introduction.Big_O.Ex_08" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Introduction.Big_O.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch01ArraysandStrings.Q1_07_Rotate_Matrix.Question" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch01ArraysandStrings.Q1_07_Rotate_Matrix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch03StacksandQueues.Q3_03_Stack_of_Plates.Question" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch03StacksandQueues.Q3_03_Stack_of_Plates.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch01ArraysandStrings.Q1_03_URLify.Question" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch01ArraysandStrings.Q1_03_URLify.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuestionA (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ch03StacksandQueues.Q3_01_Three_in_One.QuestionA" />
+      <module name="CodingInterview.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ch03StacksandQueues.Q3_01_Three_in_One.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Question (2)" />
+        <item itemvalue="Application.QuestionA (2)" />
+        <item itemvalue="Application.Question (1)" />
+        <item itemvalue="Application.Question" />
+        <item itemvalue="Application.Ex_08" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04ea3cb7-5bde-44bf-aacd-3bd3c9c36b09" name="Default Changelist" comment="" />
+      <created>1616928810086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616928810086</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="906" y="198" key="#Inspections" timestamp="1616932765550">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="906" y="198" key="#Inspections/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1616932765550" />
+    <state x="1609" y="271" key="FileChooserDialogImpl" timestamp="1617206248956">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1609" y="271" key="FileChooserDialogImpl/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617206248956" />
+    <state width="1311" height="263" key="GridCell.Tab.0.bottom" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+    <state width="1311" height="263" key="GridCell.Tab.0.center" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.center/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+    <state width="1311" height="263" key="GridCell.Tab.0.left" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.left/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+    <state width="1311" height="263" key="GridCell.Tab.0.right" timestamp="1617104390699">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1311" height="263" key="GridCell.Tab.0.right/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617104390699" />
+  </component>
+</project>
