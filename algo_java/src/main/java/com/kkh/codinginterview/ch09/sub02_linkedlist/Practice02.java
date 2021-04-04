@@ -1,8 +1,4 @@
-package com.kkh.codinginterview.ch09.linkedlist;
-
-import com.kkh.codinginterview.ch09.java.PracticeExam;
-
-import java.util.LinkedList;
+package com.kkh.codinginterview.ch09.sub02_linkedlist;
 
 public class Practice02 {
 

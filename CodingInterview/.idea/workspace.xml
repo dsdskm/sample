@@ -23,46 +23,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04ea3cb7-5bde-44bf-aacd-3bd3c9c36b09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Introduction/Traversals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_01_Route_Between_Nodes/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_02_Minimal_Tree/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_03_List_of_Depths/QuestionBFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_03_List_of_Depths/QuestionDFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_04_Check_Balanced/QuestionBrute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_04_Check_Balanced/QuestionImproved.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/IntWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_05_Validate_BST/QuestionB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_06_Successor/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/DFS/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_07_Build_Order/EdgeRemoval/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionEBad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/QuestionF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_08_First_Common_Ancestor/Tester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_09_BST_Sequences/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_10_Check_Subtree/QuestionA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_10_Check_Subtree/QuestionB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_11_Random_Node/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/QuestionA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/QuestionB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ch04TreesandGraphs/Q4_12_Paths_with_Sum/Tester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/graph/Practice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/tree/Practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/Practice1_9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/LinkedListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice2_8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/BstPractice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/BstSearchPractice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/ListGraphPractice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/Practice4_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/Practice4_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/Practice4_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/ShotDistancePractice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub10_sort/Practice10_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub10_sort/Practice10_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub10_sort/Practice10_11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub10_sort/Practice10_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub10_sort/Practice10_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub10_sort/Practice10_8.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/HashExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/HashExam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/MyArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/MyHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/MyHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/MyString.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub01_array_string/MyString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/array_string/Practice01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/graph/Practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub04_tree_graph/Practice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/linkedlist/Practice02.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub02_linkedlist/Practice02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/Practice3_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/Practice3_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/Practice3_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/Practice3_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/Practice3_5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/Practice3_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/Practice3_6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/stack/PracticeExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../algo_java/src/main/java/com/kkh/codinginterview/ch09/sub03_stack/PracticeExam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,10 +213,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="906" y="198" key="#Inspections/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1616932765550" />
-    <state x="1609" y="271" key="FileChooserDialogImpl" timestamp="1617206248956">
+    <state x="1609" y="271" key="FileChooserDialogImpl" timestamp="1617510028045">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1609" y="271" key="FileChooserDialogImpl/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617206248956" />
+    <state x="1609" y="271" key="FileChooserDialogImpl/0.0.2560.1040/-1366.0.1366.728@0.0.2560.1040" timestamp="1617510028045" />
     <state width="1311" height="263" key="GridCell.Tab.0.bottom" timestamp="1617104390699">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

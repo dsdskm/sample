@@ -1,15 +1,10 @@
-package com.kkh.codinginterview.ch09.array_string;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+package com.kkh.codinginterview.ch09.sub01_array_string;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentNavigableMap;
-import java.util.concurrent.ConcurrentSkipListMap;
 
-public class HashExam {
-    public static void main(String args[]){
+public class Practice {
+    public Practice() {
         Hashtable ht = new Hashtable();
         ht.put("key","BBB");
         ht.put("key","CCC");
@@ -22,4 +17,10 @@ public class HashExam {
         ch.putIfAbsent("key",100);
         System.out.println("concurrent hashmap : "+ch.get("key")+" , get Defult 100 : "+ch.getOrDefault("ABC",500));
     }
+
+    public static void main(String args[]) {
+        new Practice();
+    }
+
+
 }

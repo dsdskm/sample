@@ -1,4 +1,4 @@
-package com.kkh.codinginterview.ch09.stack;
+package com.kkh.codinginterview.ch09.sub03_stack;
 
 public class Practice3_1 {
     public static void main(String args[]) {

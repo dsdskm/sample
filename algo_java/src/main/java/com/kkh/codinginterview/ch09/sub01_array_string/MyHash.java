@@ -1,4 +1,4 @@
-package com.kkh.codinginterview.ch09.array_string;
+package com.kkh.codinginterview.ch09.sub01_array_string;
 
 import java.util.LinkedList;
 
