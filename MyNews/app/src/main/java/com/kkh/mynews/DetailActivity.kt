@@ -51,7 +51,6 @@ class DetailActivity : AppCompatActivity() {
         const val TAG = Constant.TAG_PREFIX + "DetailActivity"
         const val RESULT_COUNT = 50;
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
