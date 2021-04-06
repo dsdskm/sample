@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.view.fragment.IntroFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 /*
 
@@ -21,7 +22,7 @@ Android Fragment
     https://developer.android.com/training/basics/fragments/fragment-ui?hl=ko
 
  */
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     companion object {
         const val TAG = Constant.TAG_PREFIX + "MainActivity"

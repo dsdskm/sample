@@ -67,7 +67,7 @@ class ContentsRepository {
     var mShoppingItemsDao: ShoppingItemsDao
     var mWebDao: WebItemsDao
     var mKeywordDao: KeywordDao
-    var mSearchDao:SearchDao
+    var mSearchDao: SearchDao
 
     init {
         mBlogItemsDao = mDatabase.blogItemsDao()
@@ -86,7 +86,7 @@ class ContentsRepository {
         mSearchDao = mDatabase.searchModelDao()
     }
 
-    fun requestRefer(query: String,count:Int) {
+    fun requestRefer(query: String, count: Int) {
         Log.d(TAG, "requestRefer")
         mWebService.getRefer(query, count).enqueue(object : Callback<ReferModel> {
             override fun onResponse(call: Call<ReferModel>, response: Response<ReferModel>) {
@@ -113,7 +113,7 @@ class ContentsRepository {
         })
     }
 
-    fun requestWeb(query: String,count:Int) {
+    fun requestWeb(query: String, count: Int) {
         Log.d(TAG, "requestWeb")
         mWebService.getWeb(query, count).enqueue(object : Callback<WebModel> {
             override fun onResponse(call: Call<WebModel>, response: Response<WebModel>) {
@@ -140,7 +140,7 @@ class ContentsRepository {
         })
     }
 
-    fun requestLocal(query: String,count:Int) {
+    fun requestLocal(query: String, count: Int) {
         Log.d(TAG, "requestLocal")
         mWebService.getLocal(query, count).enqueue(object : Callback<LocationModel> {
             override fun onResponse(call: Call<LocationModel>, response: Response<LocationModel>) {
@@ -167,7 +167,7 @@ class ContentsRepository {
         })
     }
 
-    fun requestKnow(query: String,count:Int) {
+    fun requestKnow(query: String, count: Int) {
         Log.d(TAG, "requestKnow")
         mWebService.getKnow(query, count).enqueue(object : Callback<KnowModel> {
             override fun onResponse(call: Call<KnowModel>, response: Response<KnowModel>) {
@@ -194,7 +194,7 @@ class ContentsRepository {
         })
     }
 
-    fun requestCafe(query: String,count:Int) {
+    fun requestCafe(query: String, count: Int) {
         Log.d(TAG, "requestCafe")
         mWebService.getCafe(query, count).enqueue(object : Callback<CafeModel> {
             override fun onResponse(call: Call<CafeModel>, response: Response<CafeModel>) {
@@ -221,7 +221,7 @@ class ContentsRepository {
         })
     }
 
-    fun requestDict(query: String,count:Int) {
+    fun requestDict(query: String, count: Int) {
         Log.d(TAG, "requestDict");
         mWebService.getDict(query, count).enqueue(object : Callback<DictModel> {
             override fun onResponse(call: Call<DictModel>, response: Response<DictModel>) {
@@ -249,7 +249,7 @@ class ContentsRepository {
     }
 
 
-    fun requestMovie(query: String,count:Int) {
+    fun requestMovie(query: String, count: Int) {
         Log.d(TAG, "requestMovie");
         mWebService.getMovie(query, count).enqueue(object : Callback<MovieModel> {
             override fun onResponse(call: Call<MovieModel>, response: Response<MovieModel>) {
@@ -280,7 +280,7 @@ class ContentsRepository {
 
     fun requestImage(query: String, count: Int, filter: String) {
         Log.d(TAG, "requestImage")
-        mWebService.getImage(query, count, "sim",filter)
+        mWebService.getImage(query, count, "sim", filter)
             .enqueue(object : Callback<ImageModel> {
                 override fun onFailure(call: Call<ImageModel>, t: Throwable) {
                     t.printStackTrace()
@@ -359,9 +359,9 @@ class ContentsRepository {
     }
 
 
-    fun requestShopping(query: String, count:Int) {
+    fun requestShopping(query: String, count: Int) {
         Log.d(TAG, "requestShopping")
-        mWebService.getShopping(query, count,"sim")
+        mWebService.getShopping(query, count, "sim")
             .enqueue(object : Callback<ShoppingModel> {
                 override fun onFailure(call: Call<ShoppingModel>, t: Throwable) {
                     Log.d(TAG, "requestShopping onFailure : " + t.message)
@@ -390,7 +390,7 @@ class ContentsRepository {
 
     }
 
-    fun requestNews(query: String,count:Int) {
+    fun requestNews(query: String, count: Int) {
         GlobalScope.launch(Dispatchers.IO) {
             mWebService.getSearchNews(query, count).enqueue(object :
                 Callback<NewsModel> {
@@ -421,6 +421,7 @@ class ContentsRepository {
             mKeywordDao.insert(data)
         }
     }
+
     fun insertKeywordList(list: List<KeywordModel>) {
         GlobalScope.launch(Dispatchers.IO) {
             mKeywordDao.insertAll(list)
@@ -442,12 +443,25 @@ class ContentsRepository {
 
     fun deleteAll() {
         GlobalScope.launch(Dispatchers.IO) {
+            mBlogItemsDao.deleteAll()
+            mBookItemsDao.deleteAll()
+            mCafeItemsDao.deleteAll()
+            mDictItemsDao.deleteAll()
+            mImageItemsDao.deleteAll()
+            mKnowItemsDao.deleteAll()
+            mLocationItemsDao.deleteAll()
+            mMovieItemsDao.deleteAll()
             mNewsItemsDao.deleteAll()
+            mReferItemsDao.deleteAll()
+            mShoppingItemsDao.deleteAll()
+            mWebDao.deleteAll()
+            mKeywordDao.deleteAll()
+            mSearchDao.deleteAll()
             mShoppingItemsDao.deleteAll()
         }
     }
 
-    fun insertSearchModel(data: SearchModel){
+    fun insertSearchModel(data: SearchModel) {
         mSearchDao.insert(data)
     }
 

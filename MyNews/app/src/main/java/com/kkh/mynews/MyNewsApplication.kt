@@ -3,6 +3,7 @@ package com.kkh.mynews
 import android.app.Application
 import android.content.Context
 import android.util.Log
+import dagger.hilt.android.HiltAndroidApp
 
 
 /**
@@ -43,7 +44,8 @@ SearchView
 
  */
 
-// @HiltAndroidApp 어노테이션을 사용하여 컴파일 타임에 필요한 클래스들을 로
+
+@HiltAndroidApp
 class MyNewsApplication : Application() {
     companion object {
         const val TAG = "[KKH]MyNewsApplication"

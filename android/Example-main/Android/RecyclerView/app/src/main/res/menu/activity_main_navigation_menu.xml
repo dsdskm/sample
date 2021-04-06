@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/chatFragment"
+        android:title="@string/chat" />
+
+    <item
+        android:id="@+id/galleryFragment"
+        android:title="@string/gallery" />
+
+    <item
+        android:id="@+id/toDoFragment"
+        android:title="@string/todo" />
+
+    <item
+        android:id="@+id/selectionFragment"
+        android:title="@string/selection"/>
+
+    <item
+        android:id="@+id/snapHelperFragment"
+        android:title="@string/snap_helper" />
+</menu>

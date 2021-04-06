@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LifeCycle</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="record">Record</string>
+    <string name="resume">Resume</string>
+    <string name="reset">Reset</string>
+    <string name="chronometer">Chronometer</string>
+    <string name="counter">Counter</string>
+    <string name="coroutine">Coroutine</string>
+    <string name="navigate">Navigate</string>
+</resources>

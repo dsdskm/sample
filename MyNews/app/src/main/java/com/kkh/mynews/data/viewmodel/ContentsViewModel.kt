@@ -1,6 +1,7 @@
 package com.kkh.mynews.data.viewmodel
 
 import android.database.Cursor
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.paging.PagedList
 import androidx.paging.toLiveData
@@ -21,9 +22,18 @@ import com.kkh.mynews.data.item.refer.model.ReferItemsModel
 import com.kkh.mynews.data.item.search.model.SearchModel
 import com.kkh.mynews.data.item.shopping.model.ShoppingItemsModel
 import com.kkh.mynews.data.item.web.model.WebItemsModel
+import com.kkh.mynews.view.fragment.MainFragment
+import dagger.Binds
+import dagger.Module
+import dagger.assisted.Assisted
+import dagger.hilt.InstallIn
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import javax.inject.Singleton
 
-// SavedStateHandle을 사용하면 ViewModel에서 관련 액티비티/프래그먼트 저장된 상태와 인수에 액세스할 수 있습니다.
-class ContentsViewModel() : ViewModel() {
+@HiltViewModel
+class ContentsViewModel @Inject constructor(
+): ViewModel() {
 
     private val contentsRepository: ContentsRepository = ContentsRepository()
     val newsItemsPaged: LiveData<PagedList<NewsItemsModel>> =

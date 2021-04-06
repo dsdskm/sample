@@ -3,6 +3,8 @@ package com.kkh.mynews
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -41,10 +43,12 @@ import com.kkh.mynews.data.viewmodel.ContentsViewModel
 import com.kkh.mynews.databinding.ActivityDetailBinding
 import com.kkh.mynews.view.Presenter
 import com.kkh.mynews.view.fragment.MainFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private lateinit var mContentsViewModel: ContentsViewModel
+    val mContentsViewModel: ContentsViewModel by viewModels()
     private lateinit var mRequestManager: RequestManager
 
     companion object {
@@ -56,7 +60,6 @@ class DetailActivity : AppCompatActivity() {
 
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        mContentsViewModel = ViewModelProvider(this).get(ContentsViewModel::class.java)
         mRequestManager = Glide.with(this)
         binding.rview.layoutManager =
             LinearLayoutManager(binding.root.context, LinearLayoutManager.VERTICAL, false)

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="profile">Profile</string>
+    <string name="image">Image</string>
+    <string name="album">Album</string>
+    <string name="todo">ToDo</string>
+    <string name="gallery">Gallery</string>
+    <string name="chat">Chat</string>
+    <string name="is_finished">isFinished</string>
+    <string name="refresh">Refresh</string>
+    <string name="selection">Selection</string>
+    <string name="snap_helper">Snap Helper</string>
+</resources>

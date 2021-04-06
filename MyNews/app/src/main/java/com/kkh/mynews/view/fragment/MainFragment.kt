@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kkh.mynews.MyNewsApplication
 import com.kkh.mynews.R
 import com.kkh.mynews.common.Constant
+import com.kkh.mynews.common.Parser
 import com.kkh.mynews.data.item.contents.ContentsModel
 import com.kkh.mynews.data.item.keyword.model.KeywordModel
 import com.kkh.mynews.data.item.blog.model.BlogItemsModel
@@ -53,7 +55,10 @@ import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_NEWS
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_REFER
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_SHOPPING
 import com.kkh.mynews.view.Presenter.Companion.VIEW_TYPE_WEB
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainFragment : ContentsFragment() {
 
     companion object {
@@ -63,7 +68,9 @@ class MainFragment : ContentsFragment() {
         var REQUEST_COUNT = 0
     }
 
-    private lateinit var mContentsViewModel: ContentsViewModel
+
+    @Inject lateinit var mParser:Parser
+    val mContentsViewModel: ContentsViewModel by viewModels()
     private lateinit var mContentsAdapter: ContentsAdapter
     private lateinit var mKeywordAdapter: KeywordRecyclerViewAdapter
     private val mContentLayoutManager:LinearLayoutManager = LinearLayoutManager(context)
@@ -84,7 +91,7 @@ class MainFragment : ContentsFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
-        mContentsViewModel = ViewModelProvider(this).get(ContentsViewModel::class.java)
+        mParser.print()
     }
 
     override fun onPause() {
@@ -101,6 +108,11 @@ class MainFragment : ContentsFragment() {
         super.onResume()
         Log.d(TAG,"onResume")
         REQUEST_COUNT = 0
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mContentsList.clear();
     }
 
     override fun onCreateView(
@@ -143,7 +155,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("뉴스");
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -163,7 +174,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("쇼핑");
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -183,7 +193,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("블로그")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.bookItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -202,7 +211,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("책")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.imageItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -221,7 +229,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("이미지")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -241,7 +248,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("영화")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.dictItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -260,7 +266,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("백과사전")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.cafeItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -279,7 +284,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("카페글")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.knowItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -298,7 +302,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("지식in")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.localItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -317,7 +320,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("지역")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.webItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -336,7 +338,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("웹문서")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
         mContentsViewModel.referItemsPaged.observe(viewLifecycleOwner, Observer {
@@ -355,7 +356,6 @@ class MainFragment : ContentsFragment() {
             } else {
                 mContentsViewModel.deleteKeyword("전문자료")
             }
-            REQUEST_COUNT++;
             updateContentsList()
         })
 
@@ -428,9 +428,7 @@ class MainFragment : ContentsFragment() {
 
 
         binding.reset.setOnClickListener {
-            mContentsList.clear()
-            mContentsViewModel.deleteKeywordAll()
-            mContentsAdapter.setList(mContentsList);
+            mContentsViewModel.deleteAll()
         }
 
         Thread {
@@ -464,9 +462,10 @@ class MainFragment : ContentsFragment() {
 
     private fun updateContentsList() {
         synchronized(lock = this) {
+            REQUEST_COUNT++;
             Log.d(TAG, "updateContentsList list ${mContentsList.size} count $REQUEST_COUNT")
             mContentsAdapter.setList(mContentsList)
-            if (REQUEST_COUNT == REQUEST_COUNT_TOTAL) {
+            if (REQUEST_COUNT == mContentsList.size) {
                 binding.progressView.root.visibility = View.GONE
                 REQUEST_COUNT = 0;
             }
