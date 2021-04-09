@@ -51,7 +51,7 @@ public class GraphDijkstraExam {
         PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return o1[1]-o2[1];
+                return o1[1] - o2[1];
             }
         });
         pq.add(new int[]{v, 0});
@@ -62,13 +62,13 @@ public class GraphDijkstraExam {
             if (distance[current] < current_d) {
                 continue;
             }
-            System.out.println("=====current : "+current+" , current_d : "+current_d);
+            System.out.println("=====current : " + current + " , current_d : " + current_d);
 
             for (int i = 0; i < maps.length; i++) {
 //                System.out.println("maps["+current+"]["+i+"] : "+maps[current][i]);
                 if (maps[current][i] != 0) {
-                    int next_d = current_d+maps[current][i];
-                    System.out.println("    next : "+ i +" , next_d : "+next_d+distance[i]);
+                    int next_d = current_d + maps[current][i];
+                    System.out.println("    next : " + i + " , next_d : " + next_d + distance[i]);
                     if (next_d < distance[i]) {
                         distance[i] = next_d;
                         pq.add(new int[]{i, next_d});
