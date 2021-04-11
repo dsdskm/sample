@@ -7,12 +7,12 @@ import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
-import com.google.common.collect.HashBasedTable
 import com.kkh.mynews.common.Constant
 import com.kkh.mynews.common.Util
 import com.kkh.mynews.data.item.book.model.BookItemsModel
@@ -33,9 +33,35 @@ class BookItemsAdapter(r: RequestManager) :
     private var mList: List<BookItemsModel> = ArrayList<BookItemsModel>()
     private val mRequestManager: RequestManager = r
 
+    private var count = 0
+    var counter: CountDownTimer? = null
+
+    init {
+        Log.d(TAG, "counter start")
+        if (counter == null) {
+            counter = object : CountDownTimer(30 * 1000 * 10, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    Log.d(TAG, "onTick count $count")
+                    count++
+                    notifyDataSetChanged()
+                }
+
+                override fun onFinish() {
+                    TODO("Not yet implemented")
+                }
+
+            }
+            (counter as CountDownTimer).start()
+        } else {
+            counter!!.cancel()
+            counter!!.start()
+            counter = null
+        }
+
+    }
+
     class ViewHolder(b: ListBookItemLayoutBinding) : RecyclerView.ViewHolder(b.root) {
         var binding: ListBookItemLayoutBinding = b
-
     }
 
     companion object {
@@ -58,12 +84,10 @@ class BookItemsAdapter(r: RequestManager) :
         }
     }
 
-    lateinit var countArray: IntArray
     fun setList(list: List<BookItemsModel>) {
         mList = list
         Log.d(TAG, "setList list ${mList.size}")
         notifyDataSetChanged()
-        countArray = IntArray(mList.size){-1}
     }
 
     override fun getItemCount(): Int {
@@ -97,30 +121,7 @@ class BookItemsAdapter(r: RequestManager) :
         v.cardView.setOnClickListener {
             Util.openUrl(data.link)
         }
-        Log.d(TAG, "kkh onBindViewHolder $position ${countArray[position]}")
-        if (countArray[position]==-1) {
-            countArray[position] = 0
-            v.timer.tag = position
-            object : CountDownTimer(30 * 1000, 1000) {
-                override fun onFinish() {
-                    Log.d(TAG, "onFinish")
-                }
+        v.timer.text = (9000 - count).toString() + " 초 남았습니다."
 
-                override fun onTick(millisUntilFinished: Long) {
-                    countArray[position]+=1
-                    Log.d(TAG, "kkh onTick $position ${countArray[position]} tag ${v.timer.tag}")
-                    if(v.timer.tag == position) {
-                        v.timer.setText("남은시간 ${10000 - countArray[position]}")
-                    }
-
-                }
-
-
-            }.start()
-        } else {
-
-
-        }
     }
-
 }

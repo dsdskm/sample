@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyNews"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".DetailActivity" />
         <activity android:name=".test.dagger2.DaggerActivity" />
         <activity android:name=".view.WebViewActivity" />
         <activity android:name=".MainActivity">
