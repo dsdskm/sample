@@ -1,64 +1,34 @@
 package com.kkh.hackerrank.medium;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
+import com.kkh.Utils;
+
+import java.util.*;
 
 public class NonDivisibleSubset {
     public static void main(String args[]) {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(7);
-        list.add(2);
-        list.add(4);
-        System.out.println(nonDivisibleSubset(3, list));
+        System.out.println(nonDivisibleSubset(3, Utils.getList(1, 7, 2, 4)));//3
     }
 
-    static HashSet<Integer> hashSet = new HashSet<>();
 
     public static int nonDivisibleSubset(int k, List<Integer> s) {
-        // Write your code here
-        /*
-         */
-        boolean isVisited[] = new boolean[s.size()];
-        combination(s, isVisited, 0, s.size(), 2,k);
-        Iterator iterator = hashSet.iterator();
-        while(iterator.hasNext()){
-            int value = (int) iterator.next();
-            System.out.println("value : "+value);
+        //https://gaegosoo.tistory.com/62?category=945477
+        int []cnt = new int[k];
+        // 나머지를 담는 배열
+        for(int i=0;i<s.size();i++){
+            cnt[s.get(i)%k]++;
         }
-        return 0;
-    }
+        int ans = 0;
+        // 나머지가 0인개 있다면 한번만 포함한다
+        if(cnt[0]>0) ans +=1;
 
-    static void combination(List<Integer> s, boolean[] visited, int start, int n, int r, int k) {
-        if (r == 0) {
-            print(s, visited, n,k);
-            return;
+        //k가 짝수이고 3,3형태로 존재한다면 하나만 추가해야한다
+        if(k%2==0 && cnt[k/2] >0) ans +=1;
+        for(int i=1;i<=(k-1)/2;i++){
+            // cnt[i]와 cnt[k-i]를 더하면 k와 나눠진다.
+            // 둘중 하나만 카운트한다
+            ans += Math.max(cnt[i], cnt[k - i]);
         }
-
-        for (int i = start; i < n; i++) {
-            visited[i] = true;
-            combination(s, visited, i + 1, n, r - 1, k);
-            visited[i] = false;
-        }
-    }
-
-    static void print(List<Integer> arr, boolean[] visited, int n, int k) {
-        int index = 0;
-        int temp[] = new int[2];
-        for (int i = 0; i < n; i++) {
-            if (visited[i]) {
-                temp[index++] = arr.get(i);
-                System.out.print(arr.get(i) + " ");
-            }
-        }
-        System.out.println();
-        System.out.println(temp[0] + "," + temp[1] + "=" + (temp[0] + temp[1]));
-        int sum = temp[0]+temp[1];
-        if(sum%k==0){
-            hashSet.add(temp[1]);
-        }
+        return ans;
     }
 
 }

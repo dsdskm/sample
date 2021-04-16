@@ -101,4 +101,12 @@ public class Utils {
         }
         System.out.println();
     }
+
+    public static List<Integer> getList(int...ints) {
+        List<Integer> list = new ArrayList<>();
+        for(int n : ints){
+            list.add(n);
+        }
+        return list;
+    }
 }
