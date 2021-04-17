@@ -19,6 +19,7 @@ package com.android.example.paging.pagingwithnetwork.reddit.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
@@ -46,13 +47,16 @@ class RedditActivity : AppCompatActivity() {
     lateinit var binding: ActivityRedditBinding
         private set
 
+
     private val model: SubRedditViewModel by viewModels {
+        // view model 생성
         object : AbstractSavedStateViewModelFactory(this, null) {
             override fun <T : ViewModel?> create(
                 key: String,
                 modelClass: Class<T>,
                 handle: SavedStateHandle
             ): T {
+                Log.d(TAG,"AbstractSavedStateViewModelFactory onCreate")
                 val repoTypeParam = intent.getIntExtra(KEY_REPOSITORY_TYPE, 0)
                 val repoType = RedditPostRepository.Type.values()[repoTypeParam]
                 val repo = ServiceLocator.instance(this@RedditActivity)
@@ -69,7 +73,7 @@ class RedditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRedditBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        Log.d(TAG,"onCreate")
         initAdapter()
         initSwipeToRefresh()
         initSearch()
@@ -85,12 +89,15 @@ class RedditActivity : AppCompatActivity() {
 
         lifecycleScope.launchWhenCreated {
             adapter.loadStateFlow.collectLatest { loadStates ->
+
                 binding.swipeRefresh.isRefreshing = loadStates.refresh is LoadState.Loading
+                Log.d(TAG,"isRefreshing ${binding.swipeRefresh.isRefreshing }")
             }
         }
 
         lifecycleScope.launchWhenCreated {
             model.posts.collectLatest {
+                Log.d(TAG,"submitData")
                 adapter.submitData(it)
             }
         }
@@ -137,6 +144,7 @@ class RedditActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val TAG = "[KKH]RedditActivity"
         const val KEY_REPOSITORY_TYPE = "repository_type"
         fun intentFor(context: Context, type: RedditPostRepository.Type): Intent {
             val intent = Intent(context, RedditActivity::class.java)
