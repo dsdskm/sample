@@ -9,6 +9,8 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.6'
+
 }
 
 compileKotlin {
