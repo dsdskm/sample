@@ -1,6 +1,6 @@
 package com.kkh.rx.chap05.sec03;
 
-import chap04.DebugSubscriber;
+import com.kkh.rx.chap04.DebugSubscriber;
 import io.reactivex.processors.BehaviorProcessor;
 
 /** 예제 5-3 BehaviorProcessor 예제 */

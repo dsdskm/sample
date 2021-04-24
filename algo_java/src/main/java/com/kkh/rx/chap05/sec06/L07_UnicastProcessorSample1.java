@@ -1,6 +1,6 @@
 package com.kkh.rx.chap05.sec06;
 
-import chap04.DebugSubscriber;
+import com.kkh.rx.chap04.DebugSubscriber;
 import io.reactivex.processors.UnicastProcessor;
 
 /** 예제 5-7 UnicastProcessor 예제 */

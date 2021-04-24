@@ -1,6 +1,6 @@
 package com.kkh.rx.chap05.sec04;
 
-import chap04.DebugSubscriber;
+import com.kkh.rx.chap04.DebugSubscriber;
 import io.reactivex.processors.ReplayProcessor;
 
 /** 예제 5-4 ReplayProcessor 예제 */

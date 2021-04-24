@@ -1,6 +1,6 @@
 package com.kkh.rx.chap06.sec02;
 
-import chap04.DebugSubscriber;
+import com.kkh.rx.chap04.DebugSubscriber;
 import io.reactivex.Flowable;
 
 /** 예제 6-4 doOnComplete(onComplete) 예제 */
