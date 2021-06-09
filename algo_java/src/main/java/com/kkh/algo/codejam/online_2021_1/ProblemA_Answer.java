@@ -2,11 +2,8 @@ package com.kkh.algo.codejam.online_2021_1;
 
 import java.io.*;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Scanner;
 
-public class ProblemA {
+public class ProblemA_Answer {
     /*
     Albert는 QWERTY 키보드를 이용해 (위 그림 참고) 영문 대문자로 ('A'-'Z') 구성된 문자열을 입력하고 싶다.
     아직 키보드 만지는 것이 서툰 Albert는 왼쪽 검지만을 이용해 버튼을 누르는 버릇이 있다.
@@ -27,11 +24,11 @@ public class ProblemA {
     static String[] KEYBOARD = new String[]{"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static HashMap<Character, int[]> keySet = new HashMap<>();
+
     public static void main(String args[]) throws IOException {
-        init();
         int T = Integer.parseInt(br.readLine());
-        for(int i=0;i<T;++i){
+
+        for(int i=0;i<T;i++){
             String s = br.readLine().trim();
             int result = solution(s);
             bw.write(""+result+"\n");
@@ -40,16 +37,7 @@ public class ProblemA {
 
     }
 
-    public static void init(){
-        int index[] = new int[]{-1, -1};
-        for (int i = 0; i < KEYBOARD.length; i++) {
-            for (int j = 0; j < KEYBOARD[i].length(); j++) {
-                index[0] = i;
-                index[1] = j;
-                keySet.put(KEYBOARD[i].charAt(j), new int[]{i, j});
-            }
-        }
-    }
+    private static HashMap<Character, int[]> keySet = new HashMap<>();
 
     public static int solution(String str) {
         /*
@@ -78,7 +66,15 @@ public class ProblemA {
        -> 좌,우,상,하 한방향으로만 이동 -> 단순 빼기
        -> max((x1-x2),(y1-y2))
         */
-
+        int index[] = new int[]{-1, -1};
+        for (int i = 0; i < KEYBOARD.length; i++) {
+            for (int j = 0; j < KEYBOARD[i].length(); j++) {
+                index[0] = i;
+                index[1] = j;
+                //System.out.println(KEYBOARD[i].charAt(j) + "-" + i + "," + j);
+                keySet.put(KEYBOARD[i].charAt(j), new int[]{i, j});
+            }
+        }
         char prvC = str.charAt(0);
         int prvIndex[] = keySet.get(prvC);
         int count = 1;
