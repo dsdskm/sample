@@ -3,6 +3,7 @@ package com.kkh.algo.codejam.online_2021_1;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class ProblemA {
     /*
@@ -15,7 +16,7 @@ public class ProblemA {
     QWERTYUIOP
     ASDFGHJKL
     ZXCVBNM
-0,1 2,4
+
     QWERTY      16
     LOM         9
     FFGGFF      10
@@ -25,11 +26,21 @@ public class ProblemA {
     static String[] KEYBOARD = new String[]{"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};
 
     public static void main(String args[]) {
-        System.out.println(solution("QWERTY"));
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt();
+        String input[] = new String[T];
+        for (int i = 0; i < T; i++) {
+            String str = scn.next();
+            input[i] = str;
+        }
+        for (int i = 0; i < input.length; i++) {
+            System.out.println(solution(input[i]));
+        }
+
+
     }
 
-    static int time = 0;
-    static int remain = 0;
+    private static HashMap<Character, int[]> keySet = new HashMap<>();
 
     public static int solution(String str) {
         /*
@@ -39,75 +50,56 @@ public class ProblemA {
         3. 인접한 한 칸으로 이동한다 2초
         4. 더 이동해야한다 +2초
 
-        1. 첫 키의 인덱스를 찾는다
-        2. 모든 방향으로 다음 키를 찾아 탐색한다
-        3. 가장 빠른 시간에 찾은 방법을 계산한다
-        4. 인덱스를 업데이트 한다
-        5. 다찾을 때 까지 검색한다
-         */
+        1. 모든 키의 좌표를 저장한다
+        2. 키간의 거리 계산 식을 구한다
+        3. 방향별로 계산식을 구한다
+        4. 주어진 문자열을 순회하면서 시간을 누적 계산한다
+        QWERTYUIOP
+        ASDFGHJKL
+        ZXCVBNM
+
+       1)G->W   (1,4) -> (0,1) 4->3
+       2)G->S   (1,4) -> (1,1) 3
+       3)G->X   (1,4) -> (2,1) 4->3
+       4)G->U   (1,4) -> (0,6) 3->2
+       5)G->J   (1,4) -> (1,6) 2
+       6)G->M   (1,4) -> (2,6) 3->2
+       7)R->M   (0,3) => (2,6) 5->3
+       8)R->X   (0,3) => (2,1) 4->2
+       -> 좌,우,상,하 한방향으로만 이동 -> 단순 빼기
+       -> max((x1-x2),(y1-y2))
+        */
         int index[] = new int[]{-1, -1};
         for (int i = 0; i < KEYBOARD.length; i++) {
             for (int j = 0; j < KEYBOARD[i].length(); j++) {
-                if (str.charAt(0) == KEYBOARD[i].charAt(j)) {
-                    index[0] = i;
-                    index[1] = j;
-                }
+                index[0] = i;
+                index[1] = j;
+                //System.out.println(KEYBOARD[i].charAt(j) + "-" + i + "," + j);
+                keySet.put(KEYBOARD[i].charAt(j), new int[]{i, j});
             }
         }
-        remain = str.length();
-        HashSet<Character> checkedSet = new HashSet<>();
-        searchKey(str, index[0], index[1], checkedSet,0);
-        System.out.println("time : " + time);
-        int ret = 0;
-        return ret;
+        char prvC = str.charAt(0);
+        int prvIndex[] = keySet.get(prvC);
+        int count = 1;
+        for (int i = 1; i < str.length(); i++) {
+            char c = str.charAt(i);
+            int curIndex[] = keySet.get(c);
+            int diff = 0;
+            count++;
+            if (curIndex[0] == prvIndex[0] && curIndex[1] == prvIndex[1]) {
+                // all same
+            } else if (curIndex[0] == prvIndex[0]) {
+                // up or down
+                diff = Math.abs(curIndex[1] - prvIndex[1]);
+            } else if (curIndex[1] == prvIndex[1]) {
+                // left or right
+                diff = Math.abs(curIndex[0] - prvIndex[0]);
+            } else {
+                diff = Math.max(Math.abs(curIndex[0] - prvIndex[0]), Math.abs(curIndex[1] - prvIndex[1]));
+            }
+            count += diff * 2;
+            prvIndex = curIndex;
+        }
+        return count;
     }
-
-    private static void searchKey(String str, int i, int j, HashSet<Character> checkedSet,int move) {
-        // 다 찾았으면 리턴
-        if (str.length() == 0) {
-            return;
-        }
-
-        if (remain == 0) {
-            return;
-        }
-
-
-        // i, j 범위 검사
-        if (i < 0 || i >= KEYBOARD.length) {
-            return;
-        }
-        if (j < 0 || j >= KEYBOARD[i].length()) {
-            return;
-        }
-        char c = str.charAt(0);
-        char key = KEYBOARD[i].charAt(j);
-
-        if (checkedSet.contains(key)) {
-            return;
-        }
-        String next = str;
-        checkedSet.add(key);
-        if (c == key) {
-            // 찾았으면 다음 문자열 탐색
-            // 검색한 set 은 초기화
-            checkedSet.clear();
-            next = str.substring(1);
-            System.out.println("move : "+i+" , "+j);
-            time++;
-            remain--;
-        } else {
-            // 못찾았으면 이동
-            move+=2;
-        }
-        searchKey(next, i + 1, j, checkedSet,move);
-        searchKey(next, i + 1, j + 1, checkedSet,move);
-        searchKey(next, i + 1, j - 1, checkedSet,move);
-        searchKey(next, i, j + 1, checkedSet,move);
-        searchKey(next, i, j - 1, checkedSet,move);
-        searchKey(next, i - 1, j, checkedSet,move);
-        searchKey(next, i - 1, j + 1, checkedSet,move);
-        searchKey(next, i - 1, j - 1, checkedSet,move);
-    }
-
 }
