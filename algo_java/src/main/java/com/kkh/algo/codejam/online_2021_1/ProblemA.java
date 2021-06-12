@@ -28,19 +28,20 @@ public class ProblemA {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static HashMap<Character, int[]> keySet = new HashMap<>();
+
     public static void main(String args[]) throws IOException {
         init();
         int T = Integer.parseInt(br.readLine());
-        for(int i=0;i<T;++i){
+        for (int i = 0; i < T; ++i) {
             String s = br.readLine().trim();
             int result = solution(s);
-            bw.write(""+result+"\n");
+            bw.write("" + result + "\n");
             bw.flush();
         }
 
     }
 
-    public static void init(){
+    public static void init() {
         int index[] = new int[]{-1, -1};
         for (int i = 0; i < KEYBOARD.length; i++) {
             for (int j = 0; j < KEYBOARD[i].length(); j++) {
@@ -67,10 +68,10 @@ public class ProblemA {
         ASDFGHJKL
         ZXCVBNM
 
-       1)G->W   (1,4) -> (0,1) 4->3
-       2)G->S   (1,4) -> (1,1) 3
-       3)G->X   (1,4) -> (2,1) 4->3
-       4)G->U   (1,4) -> (0,6) 3->2
+       1)G->W   (1,4) -> (0,1) 4->3         dX > 0   dY > 0
+       2)G->S   (1,4) -> (1,1) 3            dX = 0   dY > 0
+       3)G->X   (1,4) -> (2,1) 4->3         dX < 0   dY > 0
+       4)G->U   (1,4) -> (0,6) 3->2         dX > 0   dY < 0
        5)G->J   (1,4) -> (1,6) 2
        6)G->M   (1,4) -> (2,6) 3->2
        7)R->M   (0,3) => (2,6) 5->3
@@ -85,20 +86,15 @@ public class ProblemA {
         for (int i = 1; i < str.length(); i++) {
             char c = str.charAt(i);
             int curIndex[] = keySet.get(c);
-            int diff = 0;
-            count++;
-            if (curIndex[0] == prvIndex[0] && curIndex[1] == prvIndex[1]) {
-                // all same
-            } else if (curIndex[0] == prvIndex[0]) {
-                // up or down
-                diff = Math.abs(curIndex[1] - prvIndex[1]);
-            } else if (curIndex[1] == prvIndex[1]) {
-                // left or right
-                diff = Math.abs(curIndex[0] - prvIndex[0]);
+            int currentDiffX = curIndex[0] - prvIndex[0];
+            int currentDiffY = curIndex[1] - prvIndex[1];
+            //System.out.println("currentDiffX :"+currentDiffX+" , currentDiffY : "+currentDiffY);
+            if ((currentDiffX >= 0 && currentDiffY >= 0) || (currentDiffX < 0 && currentDiffY < 0)) {
+                count += Math.abs(currentDiffX + currentDiffY)*2;
             } else {
-                diff = Math.max(Math.abs(curIndex[0] - prvIndex[0]), Math.abs(curIndex[1] - prvIndex[1]));
+                count += Math.max(Math.abs(currentDiffX),Math.abs(currentDiffY))*2;
             }
-            count += diff * 2;
+            count++;
             prvIndex = curIndex;
         }
         return count;

@@ -1,5 +1,6 @@
 package com.kkh.algo.codejam.online_2021_1;
 
+import java.io.*;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -36,23 +37,33 @@ public class ProblemB {
 999999998000000001
 
      */
-    public static void main(String args[]) {
-        System.out.println(solution("90000"));
-        System.out.println(solution("66"));
-        System.out.println(solution("102030"));
-        System.out.println(solution("20202021"));
-        System.out.println(solution("999999999999999999"));
+
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+    public static void main(String args[]) throws IOException {
+//        System.out.println(solution(90000));
+//        System.out.println(solution("66"));
+//        System.out.println(solution("102030"));
+//        System.out.println(solution("20202021"));
+//        System.out.println(solution("999999999999999999"));
+//        int T = Integer.parseInt(br.readLine());
+        int T = Integer.parseInt(br.readLine());
+        for (int i = 0; i < T; ++i) {
+            int s = Integer.parseInt(br.readLine().trim());
+            long result = solution(s);
+            bw.write("" + result + "\n");
+            bw.flush();
+        }
     }
 
-    public static long solution(String str) {
+    public static long solution(int num) {
         /*
-        1. 주어진 수를 나누어 가장 큰 두수를 만들어 곱한다
-        2. 내림차순 정렬한다
-        3. 차례대로 나누어 숫자를 만든다
-        4. 곱한다
-
+        1. 내림차순으로 정렬한다
+        2. 두수로 나눈다
+        3. 각 두 수에서 카장 큰자리수를 제외하고 조합을 하여 가장 큰 값을 저장한다
          */
-
+        String str = String.valueOf(num);
         int numArr[] = new int[str.length()];
         for (int i = 0; i < str.length(); i++) {
             numArr[i] = Integer.parseInt(String.valueOf(str.charAt(i)));
@@ -62,21 +73,33 @@ public class ProblemB {
         StringBuilder sb1 = new StringBuilder();
         StringBuilder sb2 = new StringBuilder();
         for (int i = numArr.length - 1; i >= 0; i--) {
-            int num = numArr[i];
-            if(num==6){
-                num = 9;
+            int n = numArr[i];
+            if (n == 6) {
+                n = 9;
             }
             if (bigTurn) {
-                sb1.append(num);
+                sb1.append(n);
             } else {
-                sb2.append(num);
+                sb2.append(n);
             }
             bigTurn = !bigTurn;
         }
-        System.out.println(sb1.toString()+" , "+sb2.toString());
+        System.out.println(sb1.toString() + " , " + sb2.toString());
+
 
         long ret = Long.parseLong(sb1.toString()) * Long.parseLong(sb2.toString());
         return ret;
+    }
+
+    private static long multi(String str) {
+
+        String newStr = str.substring(1);
+        long mul = 1;
+        for (int i = 0; i < newStr.length(); i++) {
+            int n = Integer.parseInt(String.valueOf(newStr.charAt(i)));
+            mul *= n;
+        }
+        return 0;
     }
 
 }

@@ -39,6 +39,7 @@ public class ProblemB_Answer {
             } else {
                 numStr[1] += sorted[cur];
             }
+            System.out.println("num[0] : " + numStr[0] + " , num[1] : " + numStr[1]);
         }
 
         result = Long.parseLong(numStr[0]) * Long.parseLong(numStr[1]);
