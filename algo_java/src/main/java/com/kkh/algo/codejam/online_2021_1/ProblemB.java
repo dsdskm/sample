@@ -42,64 +42,59 @@ public class ProblemB {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     public static void main(String args[]) throws IOException {
-//        System.out.println(solution(90000));
-//        System.out.println(solution("66"));
-//        System.out.println(solution("102030"));
-//        System.out.println(solution("20202021"));
-//        System.out.println(solution("999999999999999999"));
-//        int T = Integer.parseInt(br.readLine());
         int T = Integer.parseInt(br.readLine());
         for (int i = 0; i < T; ++i) {
-            int s = Integer.parseInt(br.readLine().trim());
-            long result = solution(s);
+            long result = solution(br.readLine().trim());
             bw.write("" + result + "\n");
             bw.flush();
         }
     }
 
-    public static long solution(int num) {
+    public static long solution(String num) {
         /*
         1. 내림차순으로 정렬한다
-        2. 두수로 나눈다
+        2. 하나씩 차례대로 각각 두수에 붙인다
         3. 각 두 수에서 카장 큰자리수를 제외하고 조합을 하여 가장 큰 값을 저장한다
          */
-        String str = String.valueOf(num);
-        int numArr[] = new int[str.length()];
-        for (int i = 0; i < str.length(); i++) {
-            numArr[i] = Integer.parseInt(String.valueOf(str.charAt(i)));
+
+        int arr[] = new int[num.length()];
+        for (int i = 0; i < num.length(); i++) {
+            int value = Integer.parseInt(String.valueOf(num.charAt(i)));
+            if (value == 6) {
+                value = 9;
+            }
+            arr[i] = value;
         }
-        Arrays.sort(numArr);
-        boolean bigTurn = true;
+
+        Arrays.sort(arr);
         StringBuilder sb1 = new StringBuilder();
         StringBuilder sb2 = new StringBuilder();
-        for (int i = numArr.length - 1; i >= 0; i--) {
-            int n = numArr[i];
-            if (n == 6) {
-                n = 9;
-            }
-            if (bigTurn) {
-                sb1.append(n);
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int value = arr[i];
+            if (sb1.length() == 0) {
+                sb1.append(value);
+            } else if (sb2.length() == 0) {
+                sb2.append(value);
             } else {
-                sb2.append(n);
+                // sb1에 붙이고 sb1*sb2
+                // sb2에 붙이고 sb1*sb2를 해봐서 큰쪽에 붙인다
+
+                // case1
+                String tSb1 = sb1.toString() + value;
+                long mul1 = Long.parseLong(tSb1) * Long.parseLong(sb2.toString());
+
+                String tSb2 = sb2.toString() + value;
+                long mul2 = Long.parseLong(sb1.toString()) * Long.parseLong(tSb2);
+
+                if (mul1 >= mul2) {
+                    sb1.append(value);
+                } else {
+                    sb2.append(value);
+                }
             }
-            bigTurn = !bigTurn;
         }
         System.out.println(sb1.toString() + " , " + sb2.toString());
-
-
-        long ret = Long.parseLong(sb1.toString()) * Long.parseLong(sb2.toString());
-        return ret;
-    }
-
-    private static long multi(String str) {
-
-        String newStr = str.substring(1);
-        long mul = 1;
-        for (int i = 0; i < newStr.length(); i++) {
-            int n = Integer.parseInt(String.valueOf(newStr.charAt(i)));
-            mul *= n;
-        }
-        return 0;
+        return Long.parseLong(sb1.toString()) * Long.parseLong(sb2.toString());
     }
 
 }
