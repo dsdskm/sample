@@ -11,11 +11,13 @@ public class ProblemD_Answer {
     static boolean possible(int dist, int[] x, int s) {
         int prev = x[0], cnt = 1;
         for (int i = 1; cnt < s && i < x.length; i++) {
+            System.out.println("    x[i]:" + x[i] + " , prev:" + prev + " , x[i]-prev : " + (x[i] - prev) + " , dist:" + dist);
             if (x[i] - prev >= dist) {
                 cnt++;
                 prev = x[i];
             }
         }
+        System.out.println("    cnt:" + cnt + " , s:" + s);
         return cnt >= s;
     }
 
@@ -26,8 +28,12 @@ public class ProblemD_Answer {
         Arrays.sort(x);
         int l = 1, r = x[n - 1];
         while (l <= r) {
+
             int mid = (l + r) / 2;
-            if (possible(mid, x, s))
+
+            boolean p = possible(mid, x, s);
+            System.out.println("l : " + l + " , r : " + r + " , mid : " + mid+" possible : "+p);
+            if (p)
                 l = mid + 1;
             else
                 r = mid - 1;
@@ -36,6 +42,8 @@ public class ProblemD_Answer {
     }
 
     public static void main(String[] args) throws IOException {
+        System.out.println(solve(new int[]{11, 19, 24, 26, 29, 30}, 4));
+        /*
         OutputStreamWriter ow = new OutputStreamWriter(System.out);
         BufferedWriter writer = new BufferedWriter(ow);
 
@@ -54,6 +62,8 @@ public class ProblemD_Answer {
             writer.write(String.format("%d\n", solve(x, s)));
             writer.flush();
         }
+
+         */
     }
 
     // --------------------------------------

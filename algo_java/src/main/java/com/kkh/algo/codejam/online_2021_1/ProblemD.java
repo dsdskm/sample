@@ -41,55 +41,59 @@ public class ProblemD {
             bw.write("" + result + "\n");
             bw.flush();
         }
+
+
     }
 
     public static int solution(int n, int s, String stringArr[]) {
-
         /*
-        s==2 -> 마지막 값 - 첫번째 값
 
-        1. 오름차순 정렬한다
-        2. 거리 합이 큰 구간을 계속 나눠 간다
-        3. s만큼 나누었을 떄 멈춘다
-        */
+        s= 2이면 시작과 끝 값의 차이이다
+        D의 범위는 1<D<arr.length
+        D값을 반으로 줄여가보면서, 가능여부를 계속 체크한다
+        첫번째 원소부터해서 D만큼 거리를 유지하면서 S 카운트를 충족하는지 체크한다
+        충족하는 경우 D를 늘리고 충족하지 않는 경우 D를 줄인다
+
+
+         */
         int arr[] = new int[stringArr.length];
-        int totalSum = 0;
         for (int i = 0; i < stringArr.length; i++) {
             arr[i] = Integer.parseInt(stringArr[i]);
         }
         Arrays.sort(arr);
-        for (int i = 1; i < arr.length; i++) {
-            totalSum += arr[i] - arr[i - 1];
-        }
+        int ret = 0;
         if (s == 2) {
-            return arr[arr.length - 1] - arr[0];
+            ret = arr[arr.length - 1] - arr[0];
         } else {
-            return checkArr(0, arr.length - 1, arr, totalSum, s - 2, 1);
-        }
-    }
-
-    public static int checkArr(int start, int end, int[] arr, int totalSum, int s, int min) {
-        if (s == 0) {
-            return min;
-        }
-        //mid를 거리합 중간 값으로 계산해야한다
-
-        int sum = 0;
-        int mid = start;
-        for (int i = start + 1; i < end; i++) {
-            sum += arr[i] - arr[i - 1];
-            if (sum >= totalSum / 2) {
-                mid = i;
-                break;
+            int left = 1;
+            int right = arr[arr.length - 1];
+            int mid;
+            while (left <= right) {
+                mid = (left + right) / 2;
+                boolean c = check(arr, mid, s);
+                if (c) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+                ret = right;
             }
         }
 
-        if (totalSum - sum > sum) {
-            // 우측이 크다
-            return checkArr(mid + 1, end, arr, totalSum - sum, s - 1, sum);
-        } else {
-            // 좌측이 크다
-            return checkArr(0, mid, arr, sum, s - 1, totalSum - sum);
-        }
+
+        return ret;
     }
+
+    public static boolean check(int arr[], int d, int s) {
+        int prv = arr[0];
+        int count = 1;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] - prv >= d) {
+                count++;
+                prv = arr[i];
+            }
+        }
+        return count >= s;
+    }
+
 }
