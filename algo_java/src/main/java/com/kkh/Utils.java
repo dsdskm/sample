@@ -45,11 +45,20 @@ public class Utils {
         }
     }
 
+    public static void printIntegerList(ArrayList<Integer> list) {
+        System.out.print("[");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println("]");
+    }
+
     public static void printArr(int arr[]) {
+        System.out.print("[");
         for (int i = 0; i < arr.length; i++) {
             System.out.print("a[" + i + "]=" + arr[i] + " ");
         }
-        System.out.println();
+        System.out.println("]");
     }
 
     public static void printArr(int arr[][]) {
@@ -97,14 +106,14 @@ public class Utils {
         Iterator iter = hashSet.iterator();
         while (iter.hasNext()) {
             char value = (char) iter.next();
-            System.out.print(value+" ");
+            System.out.print(value + " ");
         }
         System.out.println();
     }
 
-    public static List<Integer> getList(int...ints) {
+    public static List<Integer> getList(int... ints) {
         List<Integer> list = new ArrayList<>();
-        for(int n : ints){
+        for (int n : ints) {
             list.add(n);
         }
         return list;

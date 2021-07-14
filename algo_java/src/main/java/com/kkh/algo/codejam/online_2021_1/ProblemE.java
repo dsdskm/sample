@@ -54,11 +54,21 @@ public class ProblemE {
 
     }
 
-    public static int solution(int n, int a, int b) {
+    public static int solution(int n, int a, int b){
+        /*
+        n이 주어질때 각 score 별 값을 알아야 한다
+        n = 2 일때 score[0]=1, score[1]=1,score[2]=1
+
+         */
+        int ret = 0;
+        return 1;
+
+    }
+
+    public static int solution_(int n, int a, int b) {
         count = 0;
         /*
-        1. 좋은 배열을 생성 한다
-        2.
+        Brute Force
          */
 
         int arr[] = new int[n + 1];
