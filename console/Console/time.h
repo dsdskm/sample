@@ -13,7 +13,7 @@ public:
 	void addMins(int);
 	Time operator+(Time&);
 	Time operator*(int);
-	void show();
+	virtual void show();
 	~Time();
 	friend Time operator*(int n, Time& t) {
 		return t * n;

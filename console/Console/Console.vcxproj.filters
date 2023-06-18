@@ -26,5 +26,11 @@
     <ClInclude Include="struct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Stock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
