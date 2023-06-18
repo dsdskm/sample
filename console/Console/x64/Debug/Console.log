@@ -1,0 +1,6 @@
+﻿  fun.cpp
+  main.cpp
+D:\workspace\lge\cpp\console\Console\main.cpp(46,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\workspace\lge\cpp\console\Console\main.cpp(49,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Console.vcxproj -> D:\workspace\lge\cpp\console\Console\x64\Debug\Console.exe
